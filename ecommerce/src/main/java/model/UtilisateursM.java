@@ -17,6 +17,11 @@ public class UtilisateursM {
 	
 	public UtilisateursM() {
 	}
+	
+	public UtilisateursM(int id_utilisateur) {
+		this.id_utilisateur = id_utilisateur;
+	}
+	
 
 
 	public UtilisateursM(int id_utilisateur, String nom, String prenom, Date date_inscription, String email,

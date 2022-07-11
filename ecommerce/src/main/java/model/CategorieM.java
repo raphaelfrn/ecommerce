@@ -11,6 +11,10 @@ public class CategorieM {
 	public CategorieM() {
 	}
 	
+	public CategorieM(int id_categorie) {
+		this.id_categorie = id_categorie;
+	}
+	
 	public CategorieM(int id_categorie, String titre) {
 		this.id_categorie = id_categorie;
 		this.titre = titre;

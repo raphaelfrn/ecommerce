@@ -16,6 +16,11 @@ public class ProduitsM {
 	
 	public ProduitsM() {
 	}
+	
+	public ProduitsM(int id_produit) {
+		this.id_produit = id_produit;
+	}
+
 
 
 	public ProduitsM(int id_produit, String titre, String description, float prix, String image,

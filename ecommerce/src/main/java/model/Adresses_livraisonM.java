@@ -14,6 +14,10 @@ public class Adresses_livraisonM {
 	
 	public Adresses_livraisonM() {
 	}
+	
+	public Adresses_livraisonM(int id_adresse_livraison) {
+		this.id_adresse_livraison = id_adresse_livraison;
+	}
 
 	public Adresses_livraisonM(int id_adresse_livraison, UtilisateursM id_utilisateur, String adresse, int code_postal,
 			String ville, String pays) {

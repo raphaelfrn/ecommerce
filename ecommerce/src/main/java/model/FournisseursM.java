@@ -10,6 +10,11 @@ public class FournisseursM {
 	
 	public FournisseursM() {
 	}
+	
+	
+	public FournisseursM(int id_fournisseur) {
+		this.id_fournisseur = id_fournisseur;
+	}
 
 
 	public FournisseursM(int id_fournisseur, String nom) {

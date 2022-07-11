@@ -11,6 +11,10 @@ public class Sous_categoriesM {
 	
 	public Sous_categoriesM() {
 	}
+	
+	public Sous_categoriesM(int id_sous_categorie) {
+		this.id_sous_categorie = id_sous_categorie;
+	}
 
 
 	public Sous_categoriesM(int id_sous_categorie, String titre, CategorieM id_categorie) {	
