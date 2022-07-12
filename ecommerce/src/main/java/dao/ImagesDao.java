@@ -110,5 +110,34 @@ ArrayList<ImagesM> listeImage = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	// Find by Id
+
+	@Override
+	public ImagesM findById(int id) {
+		ImagesM image = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM images"
+					+ " WHERE id_image = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				image = new ImagesM(
+						rs.getInt("id_image"),
+						new ProduitsM(rs.getInt("id_produit")),
+						rs.getString("url")
+						);
+						
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return image;
+	}
 
 }

@@ -113,5 +113,35 @@ ArrayList<RecherchesM> listeRecherche = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	// Find by Id
+
+	@Override
+	public RecherchesM findById(int id) {
+		RecherchesM recherche = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM recherches"
+					+ " WHERE id_recherche = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				recherche = new RecherchesM(
+						rs.getInt("id_recherche"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getString("mot_cle"),
+						rs.getDate("datE")
+						);
+						
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return recherche;
+	}
 
 }

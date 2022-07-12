@@ -115,4 +115,34 @@ ArrayList<Entrees_en_stockM> listeEntree = new ArrayList<>();
 		return false;
 	}
 
+	
+	// Find by Id
+	
+	@Override
+	public Entrees_en_stockM findById(int id) {
+		Entrees_en_stockM entree = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM entrees_en_stock"
+					+ " WHERE id_entrees_en_stock = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				entree = new Entrees_en_stockM(
+						rs.getInt("id_entrees_en_stock"),
+						new FournisseursM(rs.getInt("id_fournisseur")),
+						new ProduitsM(rs.getInt("id_produit")),
+						rs.getDate("dateE")	
+						);		
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return entree;
+	}
+
 }

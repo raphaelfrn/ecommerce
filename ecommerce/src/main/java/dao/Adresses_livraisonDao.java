@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 import model.Adresses_livraisonM;
 import model.UtilisateursM;
 
@@ -119,6 +118,39 @@ ArrayList<Adresses_livraisonM> listeAdresses = new ArrayList<>();
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	
+	// Find by Id
+	
+	@Override
+	public Adresses_livraisonM findById(int id) {
+		Adresses_livraisonM adresse = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM adresses_livraisons"
+					+ " WHERE id_adresse_livraison = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				adresse = new Adresses_livraisonM(
+						rs.getInt("id_adresse_livraison"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getString("adresse"),
+						rs.getInt("code_postal"),
+						rs.getString("ville"),
+						rs.getString("pays")
+						);
+					
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return adresse;
 	}
 
 }

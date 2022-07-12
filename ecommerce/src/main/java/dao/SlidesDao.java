@@ -113,6 +113,37 @@ ArrayList<SlidesM> listeSlide = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	// Find by Id
+
+	@Override
+	public SlidesM findById(int id) {
+		SlidesM slide = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM slides"
+					+ " WHERE id_slides = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				slide = new SlidesM(
+						rs.getInt("id_slides"),
+						rs.getString("titre"),
+						rs.getString("image"),
+						rs.getString("url")
+								
+						);
+						
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return slide;
+	}
 
 	
 }

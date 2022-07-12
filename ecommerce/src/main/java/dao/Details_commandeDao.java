@@ -117,4 +117,34 @@ ArrayList<Details_commandeM> listeDetail = new ArrayList<>();
 		return false;
 	}
 
+	// Find by Id
+	
+	@Override
+	public Details_commandeM findById(int id) {
+		Details_commandeM detail = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM details_commande"
+					+ " WHERE id_details_commande = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				detail = new Details_commandeM(
+						rs.getInt("id_details_commande"),
+						new CommandesM(rs.getInt("id_commande")),
+						new ProduitsM(rs.getInt("id_produit")),
+						rs.getInt("quantite"),
+						rs.getFloat("prix")		
+						);		
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return detail;
+	}
+
 }

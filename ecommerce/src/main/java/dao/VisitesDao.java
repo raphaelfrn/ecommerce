@@ -115,5 +115,37 @@ ArrayList<VisitesM> listeVisite = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	// Find by Id
+
+
+	@Override
+	public VisitesM findById(int id) {
+		VisitesM visite = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM visites"
+					+ " WHERE id_visite = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				 visite = new VisitesM(
+							rs.getInt("id_visite"),
+							new ProduitsM(rs.getInt("id_produit")),
+							new UtilisateursM(rs.getInt("id_utilisateur")),
+							rs.getDate("dateV")
+										
+						);
+						
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return visite;
+	}
 
 }

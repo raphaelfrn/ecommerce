@@ -115,5 +115,35 @@ ArrayList<ContactM> listeContact = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	// Find by Id
+
+	@Override
+	public ContactM findById(int id) {
+		ContactM contact = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM contact"
+					+ " WHERE id_contact = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				contact = new ContactM(
+						rs.getInt("id_contact"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getString("sujet"),
+						rs.getString("message"),
+						rs.getInt("etat")					
+						);		
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return contact;
+	}
 
 }
