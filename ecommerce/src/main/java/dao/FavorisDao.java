@@ -113,5 +113,34 @@ ArrayList<FavorisM> listeFavori = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	
+	// Find by Id
+
+	@Override
+	public FavorisM findById(int id) {
+		FavorisM favori = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM favoris"
+					+ " WHERE id_favoris = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				favori = new FavorisM(
+						rs.getInt("id_favoris"),
+						new ProduitsM(rs.getInt("id_produit")),
+						new UtilisateursM(rs.getInt("id_utilisateur"))
+						);		
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return favori;
+	}
 
 }

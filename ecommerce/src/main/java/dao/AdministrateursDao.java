@@ -117,4 +117,32 @@ public class AdministrateursDao implements IDao<AdministrateursM> {
 		return false;
 	}
 
+	
+	// Find by Id
+
+	@Override
+	public AdministrateursM findById(int id) {
+		AdministrateursM admin = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM administrateurs"
+					+ " WHERE id_administrateurs = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				admin = new AdministrateursM(rs.getInt("id_administrateurs"),rs.getString("nom"),
+						rs.getString("email"),rs.getString("mot_de_passe"),rs.getString("privileges"));
+					
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return admin;
+	}
+	
+
 }

@@ -126,5 +126,41 @@ ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	
+	// Find by Id
+
+	@Override
+	public ProduitsM findById(int id) {
+		ProduitsM produit = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM produits"
+					+ " WHERE id_produit = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				produit = new ProduitsM(
+						rs.getInt("id_produit"),
+						rs.getString("titre"),
+						rs.getString("description"),
+						rs.getFloat("prix"),
+						rs.getString("image"),
+						new Sous_categoriesM(rs.getInt("id_sous_categorie")),
+						rs.getInt("stock"),
+						rs.getInt("stock_minimum")
+								
+						);
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return produit;
+	}
 
 }

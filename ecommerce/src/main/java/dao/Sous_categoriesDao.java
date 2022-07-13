@@ -112,5 +112,36 @@ ArrayList<Sous_categoriesM> listeSousCat = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	// Find by Id
+
+	@Override
+	public Sous_categoriesM findById(int id) {
+		Sous_categoriesM sousCat = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM sous_categories"
+					+ " WHERE id_sous_categorie = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				sousCat = new Sous_categoriesM(
+						rs.getInt("id_sous_categorie"),
+						rs.getString("titre"),
+						new CategorieM(rs.getInt("id_categorie"))
+						
+									
+						);
+						
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return sousCat;
+	}
 
 }

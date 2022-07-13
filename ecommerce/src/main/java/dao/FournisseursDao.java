@@ -107,5 +107,33 @@ ArrayList<FournisseursM> listeFournisseur = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	// Find by Id
+
+	@Override
+	public FournisseursM findById(int id) {
+		FournisseursM fournisseur = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM fournisseurs"
+					+ " WHERE id_fournisseur = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				fournisseur = new FournisseursM(
+						rs.getInt("id_fournisseur"),
+						rs.getString("nom") 
+						);
+						
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return fournisseur;
+	}
 
 }

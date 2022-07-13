@@ -120,4 +120,38 @@ ArrayList<CommandesM> listeCommande = new ArrayList<>();
 		return false;
 	}
 
+	// Find by Id
+	
+	@Override
+	public CommandesM findById(int id) {
+		CommandesM commande = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM commandes"
+					+ " WHERE id_commande = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				commande = new CommandesM(
+						rs.getInt("id_commande"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getDate("dateC"),
+						rs.getFloat("total"),
+						new Adresses_livraisonM(rs.getInt("id_adresse_livraison")),
+						rs.getInt("etat")
+						);
+						
+					
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return commande;
+	}
+	
+
 }

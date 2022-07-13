@@ -108,5 +108,35 @@ ArrayList<CategorieM> listeCategorie = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	// Find by Id
+
+
+	@Override
+	public CategorieM findById(int id) {
+		CategorieM categorie = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM categories"
+					+ " WHERE id_categorie = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				categorie = new CategorieM(
+						rs.getInt("id_categorie"),
+						rs.getString("titre")
+						);
+						
+					
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return categorie;
+	}
 
 }

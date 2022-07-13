@@ -118,5 +118,36 @@ ArrayList<CoordonneesM> listeCoord = new ArrayList<>();
 		}
 		return false;
 	}
+	
+	// Find by Id
+
+	@Override
+	public CoordonneesM findById(int id) {
+		CoordonneesM coord = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM coordonnees"
+					+ " WHERE id_coordonnees = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				 coord = new CoordonneesM(
+						rs.getInt("id_coordonnees"),
+						rs.getString("nom"),
+						rs.getString("adresse"),
+						rs.getString("telephone"),
+						rs.getString("email"),
+						rs.getString("logo")				
+						);		
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return coord;
+	}
 
 }
