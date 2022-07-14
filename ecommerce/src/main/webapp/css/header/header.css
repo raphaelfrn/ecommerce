@@ -7,6 +7,13 @@
 
 .container-header {
 	font-family: avenir, sans-serif;
+	padding-bottom: 8vh;
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-header {
+		padding-bottom: 6vh;
+	}
 }
 
 .container-header a:hover {
