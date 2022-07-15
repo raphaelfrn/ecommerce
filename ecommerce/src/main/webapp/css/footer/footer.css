@@ -51,21 +51,6 @@
 	}
 }
 
-/* .btn-phone { */
-/* 	position: relative; */
-/* 	width: 152px; */
-/*     height: 32px; */
-/* 	display: flex; */
-/*     align-items: center; */
-/*     justify-content: center; */
-/* 	border: 1px solid white; */
-/* 	background: transparent; */
-/* 	color: white; */
-/*     border-radius: 6px; */
-/* } */
-
-
-
 .btn-phone {
 	position: relative;
 	width: 152px;
@@ -126,7 +111,6 @@
 		width: 210px;
 	}
 }
-
 
 .container-footer-body {
 	background: #161616;
