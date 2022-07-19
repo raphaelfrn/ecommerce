@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -55,20 +56,8 @@
 	}
 }
 
-.title-header {
-font-size: 14px;
-}
- @media screen and (min-width: 604px) 
-{
-	.title-header {
-	font-size: 18px;
-	}
-}
- @media screen and (min-width: 820px) 
-{
-	.title-header {
-	font-size: 20px;
-	}
+.logo-dione {
+	 width: 88px;
 }
 
 .container-icon {
