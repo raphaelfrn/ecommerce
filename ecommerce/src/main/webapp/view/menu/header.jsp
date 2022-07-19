@@ -1,7 +1,7 @@
 <header class="container-header">
-	<nav class="container-nav-header">
+	<nav class="container-nav-header">	
 		<div data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img class="icon-menu" alt="icon menu" src="assets/icon/menu.svg"></div>
-		<a class="title-header" href="">Nom entreprise</a>
+		<a class="title-header" href="">Dione</a>
 		
 		<div class="container-icon">
 			<form class="form-search" > <input class="input-search" type="text" placeholder="Rechercher" name="search"> </form>

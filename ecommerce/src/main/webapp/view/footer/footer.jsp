@@ -27,6 +27,6 @@
 	</div>
 	
 	<div class="container-footer-bottom">
-		<p>Copyright © 2022 Nom entreprise</p>
+		<p>Copyright © 2022 Dione - Student project based on Devialet website</p>
 	</div>
 </footer>

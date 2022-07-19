@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+
+
+body{
+	
+	background-color:#FBFBFB !important;
+	margin-left:5vw !important;
+	margin-right:5vw !important;
+}
+
+
+
+.container-confirm{
+	font-family:avenir, sans-serif;
+	width:90vw;
+	height:75vh;
+	font-size:10px;
+	
+}
+
+.container-confirm-head{
+	background: #795929;
+	height:7vh;
+	color:white;
+	text-align:center;
+	display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container-confirm-body{
+	background: white;
+	padding-right:15vw;
+	padding-left:15vw;
+	padding-bottom:15vh;
+}
+
+
+.date{
+	padding-top:2vh;
+	text-align:right;
+	font-weight:bold;
+	
+}
+
+.msg-end{
+	text-align: center;
+	font-weight:bold;
+}
