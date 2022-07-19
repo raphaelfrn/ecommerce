@@ -1,10 +1,9 @@
 @charset "UTF-8";
 
 .container-footer {
+	width: 100vw;
 	color: white;
-	position: fixed;
-    width: 100vw;
-    bottom: 0;
+	font-family: avenir, sans serif;
 }
 
 .container-footer-top {
@@ -36,6 +35,13 @@
  @media screen and (min-width: 820px) 
 {
 	.container-footer-top p {
+		font-size: 18px;
+		margin: 0;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-footer-top p {
 		margin-bottom: 0;
 	}
 }
@@ -48,6 +54,12 @@
 {
 	.container-footer-top {
 	    font-size: 14px;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-footer-top {
+	    font-size: 18px;
 	}
 }
 
@@ -148,7 +160,7 @@
 	.container-footer-body ul {
 	  display: flex;
    	  justify-content: space-between;
-   	  font-size: 16px;
+   	  font-size: 18px;
 	}
 }
 
