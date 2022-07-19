@@ -3,7 +3,7 @@
 	<div class="container-footer-top">
 		<p>Contacter nos conseillers <span>Lun au sam, 10.00-20.00</span></p>
 		<button class="btn-phone">
-			<img alt="icon téléphone" src="assets/icon/phone.svg">
+			<img alt="icon tÃ©lÃ©phone" src="assets/icon/phone.svg">
 			<p>+33  9 75 00 00 00</p>
 		</button>
 	</div>
@@ -28,6 +28,6 @@
 	</div>
 	
 	<div class="container-footer-bottom">
-		<p>Copyright © 2022 Student project.</p>
+		<p>Copyright Â© 2022 Dione - Student project based on Devialet website</p>
 	</div>
 </footer>
