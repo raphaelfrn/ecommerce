@@ -5,21 +5,46 @@
 body{
 	
 	background-color:#FBFBFB !important;
-	margin-left:5vw !important;
-	margin-right:5vw !important;
+	font-family:avenir, sans-serif;
 }
 
 
 
 .container-confirm{
-	font-family:avenir, sans-serif;
+	
 	width:90vw;
 	height:75vh;
-	font-size:10px;
-	margin-top:6vh;
+	margin-top:8vh;
 	filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.18));
+	margin-left:5vw !important;
+	margin-right:5vw !important;
 	
 }
+
+@media screen and (min-width:604px){
+	.container-confirm {
+	width:80vw;
+		margin-left:10vw !important;
+		margin-right:10vw !important;
+	}
+}
+
+@media screen and (min-width:820px){
+	.container-confirm {
+	width:70vw;
+		margin-left:15vw !important;
+		margin-right:15vw !important;
+	}
+}
+
+@media screen and (min-width:1200px){
+	.container-confirm {
+	width:60vw;
+		margin-left:20vw !important;
+		margin-right:20vw !important;
+	}
+}
+
 
 .container-confirm-head{
 	background: #795929;
@@ -30,7 +55,11 @@ body{
     align-content: center;
     justify-content: center;
     align-items: center;
+    font-size:16px;
+    
 }
+
+
 
 
 
@@ -39,13 +68,13 @@ body{
 	padding-right:15vw;
 	padding-left:15vw;
 	padding-bottom:5vh;
+	font-size:14px;
 }
 
 
 .date{
 	padding-top:2vh;
 	text-align:right;
-	font-weight:bold;
 	
 }
 
