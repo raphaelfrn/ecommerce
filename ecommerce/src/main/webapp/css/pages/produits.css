@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.container-hero{
+	width: 100vw;	
+	overflow:hidden;
+	position: relative;
+	z-index: -1;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-hero{
+   		 transform: translate(0px, -64px);
+
+	}
+}
+
+ @media screen and (min-width: 1440px) 
+{
+	.container-hero{
+	    transform: translate(0px, -137px);
+		/* 	height: 85vh; */
+
+	}
+}
+
+.video-hero {
+	width: 100vw;
+	height:auto;
+}
