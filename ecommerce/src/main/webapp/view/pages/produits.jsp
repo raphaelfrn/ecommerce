@@ -14,6 +14,8 @@
 <link href="css/footer/footer.css" rel="stylesheet">
 <link href="css/pages/produits.css" rel="stylesheet">
 
+<script type="text/javascript" defer src="js/produits.js"></script>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
@@ -30,8 +32,23 @@
 	</div>
 	
 	<div class="container-categories">
+		<div class="container-categorie">
+			<img alt="Image produits de la catégorie ..." src="https://assets.devialet.com/fr-fr/media/dvl_media/Range_Phantom_I_Logo_1000x1000.png?twic=v1/background=FFFFFF/cover=800x800">
+			<h1>Phantom I</h1>
+			<div class="container-categorie-btn">
+				<button class="btn-categorie-show">Découvrir</button>
+			</div>
+		</div>
+		<div class="container-categorie">
+			<img alt="Image produits de la catégorie ..." src="https://assets.devialet.com/fr-fr/media/dvl_media/Range_Phantom_II_Logo_1000x1000.png?twic=v1/background=FFFFFF/cover=800x800">
+			<h1>Phantom II</h1>
+			<div class="container-categorie-btn">
+				<button class="btn-categorie-show">Découvrir</button>
+			</div>
+		</div>
 	</div>
 	
+	<img class="icon-back" alt="Icon retour" src="assets/icon/back.svg">
 	<div class="container-produits scrolling-wrapper">
 		<div class="container-card-produit">
 			<div class="card-produit-top">

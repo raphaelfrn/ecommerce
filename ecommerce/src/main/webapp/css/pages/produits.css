@@ -30,13 +30,156 @@ body{
 	height:auto;
 }
 
+.container-categories {
+	margin: 6% 0 20%;
+	flex-wrap: wrap;
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-categories {
+		display: flex;
+    	flex-direction: row;
+		justify-content: space-evenly;
+		margin: 0% 0 10%;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-categories {
+		margin: 0% 17% 10%;
+	}
+}
+ 
+.container-categorie {
+    background: white;
+    padding: 8% 4% 12%;
+    margin-bottom: 8%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-categorie{
+		margin: 0 9%;
+	    width: 83vw;
+		margin-bottom: 1%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-categorie{
+		margin:0;
+	    width: 49vw;
+		margin-bottom: 1%;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-categorie{
+		width: 32vw;
+		padding: 8% 3% 7%;
+	}
+}
+
+.container-categorie img {
+    width: 90vw;
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-categorie img {
+		width: 73vw;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-categorie img {
+	    width: 42vw;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-categorie img {
+		width: 26vw;
+	}
+}
+
+.container-categorie h1 {
+	text-align: center;
+    font-size: 22px;
+	margin-bottom: 8%;
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-categorie h1 {
+   		margin-top: 25%;
+	}
+}
+
+.container-categorie-btn {
+	text-align: center;
+}
+
+.container-categorie button {
+    width: 88vw;
+    height: 6vh;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 2px;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-categorie button  {
+    	width: 70vw;
+		height: 5vh;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-categorie button  {
+	    width: 42vw;
+    	height: 3vh;
+    	border-radius: 4px;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-categorie button  {
+	    width: 26vw;
+	    height: 4vh;
+	}
+}
+
+.container-categorie-btn button:hover {
+	color: black;
+	border: 1px solid black;
+	background: white;
+}
+
+.icon-back {
+	margin: 2% 4%;
+	display: none;
+	cursor: pointer;
+	transition-duration: 1s;
+}
+.icon-back:hover {
+	transform: scale(1.2);
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-categorie button  {
+		margin: 0% 4% 2%;
+	}
+}
+
 .container-produits {
 	margin-bottom: 4%;
-	display: flex;
 	flex-wrap: nowrap;
 	overflow-x: auto;
 	margin: 3%;
 	-webkit-overflow-scrolling: touch;
+	display: none;
 }
 
   .container-produits::-webkit-scrollbar {
@@ -46,7 +189,6 @@ body{
  @media screen and (min-width: 820px) 
 {
 	.container-produits {
-	    display: flex;
 	    justify-content: space-evenly;
 	    flex-wrap: wrap;
 	    margin: 0;
@@ -55,12 +197,10 @@ body{
  @media screen and (min-width: 1200px) 
 {
 	.container-produits {
-		margin: 0 2% 7%;
+		margin: 2% 2% 7%;
     	justify-content: flex-start;
 	}
 }
-
-
 
 .container-card-produit {
 	width: 90vw;
@@ -139,7 +279,6 @@ body{
 	}
 }
 
-
 .card-produit-bottom {
 	display: flex;
 }
@@ -190,7 +329,7 @@ body{
 }
 
 .card-produit-icons-add img:hover{
-   transform: scale(1.4);
+   transform: scale(1.2);
 }
 
  @media screen and (min-width: 820px) 

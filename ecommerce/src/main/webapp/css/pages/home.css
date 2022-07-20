@@ -4,14 +4,12 @@
 	width: 100vw;	
 	overflow:hidden;
 	position: relative;
-	z-index: -1;
 }
 
  @media screen and (min-width: 1440px) 
 {
 	.container-hero{
 	height: 85vh;
-
 	}
 }
 
@@ -88,7 +86,9 @@
 }
 
 .btn-hero:hover{
-	background: red;
+	background: black;
+	border: none;
+	font-family: "Avenir-roman";
 }
 
 .categorie, .categories-modifier {
@@ -162,7 +162,7 @@
 
 .container-categorie-infos button {
 	border: none;
-    border-radius: 6px;
+    border-radius: 2px;
     background: black;
     color: white;
     font-size: 10px;
@@ -202,10 +202,11 @@
  @media screen and (min-width: 820px) 
 {
 	.container-categorie-infos button {
-    font-size: 18px;
-    width: 174px;
-    height: 48px;
-    letter-spacing: 1px;
+		width: 146px;
+   		height: 35px;
+   		font-size: 14px;
+   		border-radius: 6px;
+    	letter-spacing: 1px;
 	}
 }
 
@@ -243,26 +244,34 @@
     justify-content: center;
 	margin: 10% 0;
 	padding: 10%;
-	background: #F0F0F0;
+	background: #f0f0f06e;
 }
  @media screen and (min-width: 820px) 
 {
 	.container-infos-dione {
 		margin: 6% 0;
-		padding: 6%;
+		padding: 6% 12%;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-infos-dione {
+		margin: 6% 0;
+		padding: 6% 16%;
 	}
 }
 
 .container-infos-dione h1{
 	font-family: "Avenir-black";
-	font-size: 18px;
+	text-transform: uppercase;
+	font-size: 14px;
 	color: #995E06;
 	margin-bottom: 8%;
 }
  @media screen and (min-width: 604px) 
 {
 	.container-infos-dione h1{
-	    font-size: 2Àpx;
+	    font-size: 20px;
 	    margin-bottom: 4%;
 	}
 }
