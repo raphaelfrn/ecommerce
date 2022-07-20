@@ -22,7 +22,7 @@
 	<c:import url="/header"></c:import>
 	
 	<div class="container-hero">
-		  	<video class="video-hero" muted autoplay="autoplay" loop preload="auto">
+		<video class="video-hero" muted autoplay="autoplay" loop preload="auto">
 	          <source src="assets/video/phantom-gold.mp4" type="video/mp4">
         </video>
 		<div class="container-hero-infos">

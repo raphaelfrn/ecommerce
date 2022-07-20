@@ -1,4 +1,3 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <footer class="container-footer">
 	<div class="container-footer-top">
 		<p>Contacter nos conseillers <span>Lun au sam, 10.00-20.00</span></p>
@@ -28,6 +27,6 @@
 	</div>
 	
 	<div class="container-footer-bottom">
-		<p>Copyright Â© 2022 Dione - Student project based on Devialet website</p>
+		<p>Copyright © 2022 Dione - Student project based on Devialet website</p>
 	</div>
 </footer>

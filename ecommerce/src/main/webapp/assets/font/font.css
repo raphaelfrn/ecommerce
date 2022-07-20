@@ -1,6 +1,12 @@
 @charset "UTF-8";
 
 @font-face {
+  font-weight:  300;
+  font-family: 'Avenir-light';
+  src : url('Avenir-Light.ttf');
+}
+
+@font-face {
   font-weight:  400;
   font-family: 'Avenir-book';
   src : url('AvenirLTStd-Book.otf');
@@ -16,4 +22,10 @@
   font-weight: 800;
   font-family: 'Avenir-black';
   src : url('AvenirLTStd-Black.otf');
+}
+
+@font-face {
+  font-weight: 900;
+  font-family: 'Avenir-heavy';
+  src : url('Avenir-Heavy.ttf');
 }
