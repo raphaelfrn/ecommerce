@@ -1,0 +1,262 @@
+@charset "UTF-8";
+
+ @media screen and (min-width: 820px) 
+{
+	.container-account {
+		display: flex;
+    	flex-direction: column-reverse; 
+	}
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.container-account {
+		height: 90vh;
+		flex-direction: row;
+		align-content: center;
+		justify-content: center;
+    	align-items: center;
+	}
+}
+
+.container-clients {
+	padding: 15% 6% 12%;
+}
+ @media screen and (min-width: 430px) 
+{
+	.container-clients {
+		padding: 15% 13% 12%;
+	}
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-clients {
+		padding: 11% 12% 5%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-clients {
+		width: 62vw;
+		margin: 4% 6% 6%;
+    	padding: 0;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-clients {
+		width: 45vw;
+		height: 70vh;
+    	border-right: 3px solid black;
+    	margin: 0;
+		padding: 4% 8% 4% 0%;
+	}
+}
+
+.container-infos-client-first {
+    margin-bottom: 12%;
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-infos-client-first {
+   		margin-bottom: 6%;
+	}
+}
+
+.infos-client-title {
+	font-family: 'Avenir-black';
+	font-size: 16px !important;
+}
+ @media screen and (min-width: 820px) 
+{
+	.infos-client-title {
+		font-size: 20px !important;
+	}
+}
+
+.infos-client-span {
+	font-family: 'Avenir-black';
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.infos-client-span:hover {
+    text-decoration-style: dotted;
+    color: #DEB72D;
+}
+
+.container-clients h1, .container-clients p{
+	font-size: 14px;
+	margin-bottom: 6px;
+}
+
+.container-clients span{
+	font-size: 12px;
+}
+
+.container-client {
+	 margin-bottom: 14%;
+}
+
+ @media screen and (min-width: 604px) 
+{
+	.container-client {
+	    margin-bottom: 9%;
+	}
+}
+
+.container-client h1{
+	font-family: "Avenir-black";
+}
+
+.container-infos-client, .container-infos-client-first {
+	display: flex;
+    justify-content: space-between;
+}
+
+.container-infos-client span{
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.container-infos-client span:hover{
+    font-family: 'Avenir-black';
+}
+
+.icon-arrow {
+	cursor: pointer;
+	transition: 1s;
+}
+.icon-arrow:hover {
+	transform: scale(1.4);
+}
+
+.container-command {
+    width: 100vw;
+	position: fixed;
+    bottom: 0;
+	padding: 6%;
+    background: #FBFBFB;
+    border-top: 1px solid #eeeeee;
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-command {
+		padding: 4% 6%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-command {
+		width: 62vw;
+		padding:0;
+		background: white;
+		position: initial;
+		margin: 8% 6% 2%;
+		border-top: none;
+		border-bottom: 1px solid gainsboro;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-command {
+		width: 45vw;
+		height: 70vh;
+		border-bottom: none;
+		margin: 0;
+		padding: 4% 0 0 8%;
+	}
+}
+
+.container-last-order {
+	display: none;
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-last-order {
+		display: block;
+	}
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-last-order h1 {
+		font-size: 20px;
+		font-family: "Avenir-black";
+		margin-bottom: 5%;
+	}
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-last-order-infos p {
+		font-size: 16px;
+		font-family: "Avenir-heavy";
+    	margin-bottom: 1%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-last-order-infos {
+		font-size: 12px;
+		font-family: "Avenir-light";
+		margin-bottom: 3%;
+	}
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-last-order-infos a{
+		text-decoration: underline !important;
+		margin-left: 4%;
+		cursor: pointer;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-last-order-infos a:hover{
+		text-decoration: none !important;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-last-order-infos a, .container-last-order-infos span{
+		letter-spacing: 0.15em;
+	}
+}
+
+.container-last-order-img {
+    flex-wrap: wrap;
+    margin-bottom: 6%;
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-last-order-img {
+	    flex-wrap: wrap;
+	    margin-bottom: 12%;
+	}
+}
+
+.container-last-order-img img{
+	width: 13vw;
+    margin-bottom: 1%;
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-last-order-img img{
+		width: 8vw;
+	}
+}
+
+.title-order-history {
+	font-size: 14px;
+	font-family: "Avenir-black";
+	text-transform: uppercase;
+	color: #C29318;
+	cursor: pointer;
+	margin-bottom: 5%;
+	text-decoration: underline;
+}
+
+.title-order-history:hover {
+	text-decoration: none;
+}
