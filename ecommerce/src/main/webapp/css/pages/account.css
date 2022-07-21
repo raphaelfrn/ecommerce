@@ -258,5 +258,8 @@
 }
 
 .title-order-history:hover {
+	text-decoration-color: none;
 	text-decoration: none;
+	color: #C29318;
+	
 }
