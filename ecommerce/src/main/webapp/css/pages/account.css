@@ -130,6 +130,13 @@
 	transform: scale(1.4);
 }
 
+ @media screen and (min-width: 820px) 
+{
+	.icon-arrow {
+		width: 10px;
+	}
+}
+
 .container-command {
     width: 100vw;
 	position: fixed;
