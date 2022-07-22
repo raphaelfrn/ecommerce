@@ -23,6 +23,9 @@
 <title>Compte</title>
 </head>
 <body>
+	<c:url value="/address" var="address"/>
+	<c:url value="/historique" var="historique"/>
+	
 	<c:import url="/header"></c:import>
 	
 		<div class="container-account">
@@ -47,7 +50,7 @@
 					<h1>Adresse</h1>
 					<div class="container-infos-client">
 						<p>14 Avenue du Marachal Fosch</p>
-						<img class="icon-arrow update-address" alt="Icon flêche" src="assets/icon/arrow.svg">
+						<a href="${address}"><img class="icon-arrow update-address" alt="Icon flêche" src="assets/icon/arrow.svg"></a>
 					</div>
 					<p>75000 Paris, France</p>
 				</div>
@@ -82,7 +85,7 @@
 						<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Opera3.webp">
 					</div>
 				</div>
-				<a class="title-order-history" href="">Historique de commande</a>
+				<a class="title-order-history" href="${historique}">Historique de commande</a>
 			</div>
 		</div>
 	<c:import url="/modalUpdate"></c:import>

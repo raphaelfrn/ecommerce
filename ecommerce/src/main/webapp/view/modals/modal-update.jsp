@@ -9,7 +9,7 @@
 				<div class="container-input-modal-update">
 				</div>
 				<div class="container-btn-modal-update">
-					<button class="btn-modal-update">Modifier</button>
+					<a><button class="btn-modal-update">Modifier</button></a>
 				</div>
 			</form>
 		</div>

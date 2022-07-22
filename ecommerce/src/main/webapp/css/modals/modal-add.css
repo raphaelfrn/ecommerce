@@ -22,7 +22,7 @@
 
  @media screen and (min-width: 820px) 
 {
-	.container-modal-update {
+	.container-modal-add {
 		width: 66vw;
     	height: auto;
 	    background: white;
@@ -30,7 +30,7 @@
 }
  @media screen and (min-width: 1200px) 
 {
-	.container-modal-update {
+	.container-modal-add {
 		width: 46vw;
 	}
 }
@@ -68,7 +68,7 @@
 	}
 }
 
-.title-modal-update {
+.title-modal-add {
 	font-size: 18px;
 	text-align: center;
 	font-family: "Avenir-black";
@@ -82,29 +82,29 @@
 }
  @media screen and (min-width: 820px) 
 {
-	.title-modal-update {
+	.title-modal-add {
 		font-size: 22px;
 	}
 }
 
-.container-input-modal-update {
+.container-input-modal-add {
 	margin-bottom: 16%;
 	text-align: center;
 }
  @media screen and (min-width: 604px) 
 {
-	.container-input-modal-update {
+	.container-input-modal-add {
 		margin-bottom: 12%;
 	}
 }
  @media screen and (min-width: 820px) 
 {
-	.container-input-modal-update {
+	.container-input-modal-add {
 		margin-bottom: 6%;
 	}
 }
 
-.container-input-modal-update input {
+.container-input-modal-add input {
     width: 90vw;
     border: none;
     border-bottom: 1px solid black;
@@ -122,31 +122,31 @@
 } 
  @media screen and (min-width: 604px) 
 {
-	.container-input-modal-update input {
+	.container-input-modal-add input {
     	margin-bottom: 5%;
 	}
 }
  @media screen and (min-width: 820px) 
 {
-	.container-input-modal-update input {
+	.container-input-modal-add input {
 		width: 54vw;
     	font-size: 16px;
 	}
 }
  @media screen and (min-width: 1200px) 
 {
-	.container-input-modal-update input {
+	.container-input-modal-add input {
 		width: 38vw;
     	font-size: 16px;
 	}
 }
 
-.container-btn-modal-update {
+.container-btn-modal-add {
 	display: flex;
     justify-content: center;
 }
 
-.btn-modal-update  {
+.btn-modal-add  {
 	border: none;
     width: 90vw;
     height: 6vh;
@@ -157,7 +157,7 @@
     font-size: 12px;
     text-transform: uppercase;
 }
-.btn-modal-update:hover  {
+.btn-modal-add:hover  {
 	border: 2px solid black;
 	background: white;
 	color: black;
@@ -165,14 +165,14 @@
 
  @media screen and (min-width: 604px) 
 {
-	.btn-modal-update {
+	.btn-modal-add {
 		height: 5vh;
 	    font-size: 14px;
 	}
 }
  @media screen and (min-width: 820px) 
 {
-	.btn-modal-update {
+	.btn-modal-add {
 		width: 54vw;
 		height: 44px;
 	    font-size: 14px;
@@ -181,7 +181,7 @@
 }
  @media screen and (min-width: 1200px) 
 {
-	.btn-modal-update {
+	.btn-modal-add {
 		width: 38vw;
 	}
 }

@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HistoriqueCommande
+ * Servlet implementation class Address
  */
-@WebServlet("/historique")
-public class HistoriqueCommande extends HttpServlet {
+@WebServlet("/address")
+public class Address extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HistoriqueCommande() {
+    public Address() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,10 +26,8 @@ public class HistoriqueCommande extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.getRequestDispatcher("view/pages/historique.jsp").forward(request, response);	}
-	
-	
+		request.getRequestDispatcher("view/pages/address.jsp").forward(request, response);
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
