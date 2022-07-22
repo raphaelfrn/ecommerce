@@ -11,7 +11,6 @@
 <link href="css/_reset.css" rel="stylesheet" type="text/css">
 <link href="assets/font/font.css" rel="stylesheet">
 <link href="css/header/header.css" rel="stylesheet">
-<link href="css/footer/footer.css" rel="stylesheet">
 <link href="css/pages/address.css" rel="stylesheet">
 <link href="css/modals/modal-add.css" rel="stylesheet">
 
