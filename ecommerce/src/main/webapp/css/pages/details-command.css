@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+body {
+	background: #f4f4f4 !important;
+}
+ @media screen and (min-width: 820px) 
+{
+	body {
+		background: #f9fcfc !important;
+	}
+}
+
+.container-title {
+	 width: 100vw;
+	 height: 7vh;
+	 display: flex;
+     align-items: center;
+     justify-content: center;
+	 background: black;
+     margin-top: 4%; 
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-title {
+	     margin-top: 2%; 
+	}
+}
+
+.container-title h1  {
+	font-size: 12px;
+    color: white;
+    margin: 0;
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-title h1 {
+    	font-size: 14px;
+    	letter-spacing: 1px;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-title h1 {
+    	font-size: 16px;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-title h1 {
+    	font-size: 16px;
+    	letter-spacing: 2px;
+	}
+}
+
+
+.container-page  {
+	margin-top: 4%;
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-page  {
+		margin-top: 0;
+	}
+}
+
+.container-overflow {
+    max-height: 60vh;
+	overflow: scroll;
+}
+
+.container-overflow::-webkit-scrollbar {
+	display: none;
+}
+ @media screen and (min-width: 430px) 
+{
+	.container-overflow {
+	    max-height: 63vh;
+		overflow: scroll;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-overflow {
+    	max-height: 72vh;
+	}
+}
+
+.container-row-details-command {
+	background: white;
+}
+.container-row-details-command:hover {
+	background: #f9f9f9;
+}
+
+ @media screen and (min-width: 604px) 
+{
+	.container-row-details-command {
+	    display: flex;
+	}
+}
+
+.container-row-details-command img {
+	display: none;
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-row-details-command img {
+		display: flex;
+		width: 16vw;
+		border-bottom: 1px solid #E2E2E2;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-row-details-command img {
+		width: 14vw;
+		
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-row-details-command img {
+		width: 8vw;
+	}
+}
+
+.container-details-command {
+   	padding: 6%;
+   	border-bottom: 1px solid #E2E2E2;
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-details-command {
+    	width: 100vw;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0% 5%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-details-command {
+    	padding: 0% 8% 0% 5%;
+	}
+}
+
+.container-infos-product h1 {
+	font-size: 14px;
+	font-family: "Avenir-black";
+	text-transform: uppercase;
+}
+
+.container-infos-product p {
+    font-size: 12px;	
+    margin-bottom: 0;
+    color: #AF9330;
+}
+
+.container-price {
+	display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-price {
+	 	align-items: flex-start;
+	}
+}
+
+.container-price span {
+	 margin-bottom: 0;
+	 border: 1px solid black;
+     border-radius: 4px;
+     width: 30px;
+     text-align: center;
+     margin-right: 20px;
+}
+
+.container-price p {
+ 	margin-bottom: 0;	
+}
+
+.container-total {
+	height: 6vh;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #6d4407;
+    color: white;
+    padding: 0 4%;
+}
+
+.price-product {
+	font-size: 14px;
+	margin-bottom: 0;
+	letter-spacing: 1px;
+}
+ @media screen and (min-width: 604px) 
+{
+	.price-product {
+		font-size: 16px;
+		letter-spacing: 2px;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.price-product {
+		font-size: 16px;
+		letter-spacing: 3px;
+	}
+}
+
+.container-download {
+	display: flex;
+    align-items: baseline;
+    cursor: pointer;
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-download {
+    	align-items: center
+	}
+}
+
+.container-download p {
+	display: none;
+}
+.container-download p:hover {
+	text-decoration: underline;
+}
+
+ @media screen and (min-width: 604px) 
+{
+	.container-download p {
+		display: flex;
+		font-size: 16px;
+		letter-spacing: 2px;
+		margin-bottom: 0;
+	}
+}
+
+.icon-download {
+	margin-left: 12px;
+	transition: 1s;
+}
+
+.icon-download:hover {
+	transform: scale(1.2);
+}
+ @media screen and (min-width: 604px) 
+{
+	.icon-download {
+	 	margin-left: 34px;
+   		width: 20px;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+.icon-download {
+		
+	}
+}
+
+
+
