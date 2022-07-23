@@ -22,73 +22,127 @@
 </head>
 <body>
 	<c:import url="/header"></c:import>
-	
-	
+
 	<div class="container-table">
-	
-	
-			<div class="container-title"><h1>Historique de commande</h1></div>
-			
-			<div class="container-data">
-			
-				<table>
-				
+		<div class="container-title">
+			<h1>Historique de commande</h1>
+		</div>
+		<div class="container-data">
+			<table>
 				<thead>
-				<tr>
-					<th>N° commande</th>
-					<th>Date</th>
-					<th>Total</th>
-					<th>Show</th>
-					<th>Facture</th>
-				</tr>
+					<tr>
+						<th class="thead-first-three">N° commande</th>
+						<th class="thead-first-three">Date</th>
+						<th class="thead-first-three">Total</th>
+						<th class="thead-2-last-two">Show</th>
+						<th class="thead-2-last-two">Facture</th>
+					</tr>
 				</thead>
-			
 				<tbody>
-			
-				<tr> 
-					<td>23623</td>
-					<td>18/06/2022</td>
-					<td>2310€</td>
-					<td><img src="assets/icon/show.svg" alt="show"></td>
-					<td><img src="assets/icon/download.svg" alt="download"></td>
-				</tr>
-				
-				<tr> 
-					<td>27399</td>
-					<td>18/06/2022</td>
-					<td>2310€</td>
-					<td><img src="assets/icon/show.svg" alt="show"></td>
-					<td><img src="assets/icon/download.svg" alt="download"></td>
-				
-				
-				</tr>
-				
-				<tr> 
-					<td>27399</td>
-					<td>18/06/2022</td>
-					<td>2310€</td>
-					<td><img src="assets/icon/show.svg" alt="show"></td>
-					<td><img src="assets/icon/download.svg" alt="download"></td>
-				
-				
-				</tr>
-				
-				
-				
+					<tr>
+						<td>23623</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
+					<tr>
+						<td>27399</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
+					<tr>
+						<td>27399</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>					<tr>
+						<td>23623</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
+					<tr>
+						<td>27399</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
+					<tr>
+						<td>27399</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>					<tr>
+						<td>23623</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
+					<tr>
+						<td>27399</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
+					<tr>
+						<td>27399</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>					<tr>
+						<td>23623</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
+					<tr>
+						<td>27399</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
+					<tr>
+						<td>27399</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>					<tr>
+						<td>23623</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
+					<tr>
+						<td>27399</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
+					<tr>
+						<td>27399</td>
+						<td>18/06/2022</td>
+						<td>2310€</td>
+						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><img src="assets/icon/download.svg" alt="download"></td>
+					</tr>
 				</tbody>
-				
-				
-				
-				
-				</table>
-			
-			</div>
-
-
+			</table>
+		</div>
 	</div>
-
-
-
-
 </body>
 </html>
