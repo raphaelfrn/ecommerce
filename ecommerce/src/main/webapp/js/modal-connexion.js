@@ -12,9 +12,8 @@ IconConnexion.addEventListener("click", () => {
 	let input_password = document.createElement('input');
 	
 	let icon_email = document.createElement("img");
-	icon_email.id = 'icon-co';
 	let icon_pwd = document.createElement("img");
-	icon_email.id = 'icon-con';
+	icon_pwd.className='iconPwd';
 	
 	input_email.id = 'newEmail';
 	input_email.setAttribute('name','newEmail');

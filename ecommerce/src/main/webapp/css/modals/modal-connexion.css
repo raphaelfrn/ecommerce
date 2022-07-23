@@ -35,6 +35,23 @@ icon-co {
     top: 7px;
 }
 
+ @media screen and (min-width: 430px) 
+{
+	.container-input-modal-connexion img {
+		 top: 5px;
+   		 width: 18px;
+	}
+}
+
+ @media screen and (min-width: 604px) 
+{
+	.iconPwd {
+	    top: 0 !important;
+    	width: 21px !important;
+	}
+}
+
+
 .container-input-modal-connexion input {
 	padding-left: 8%;
 }
@@ -292,4 +309,3 @@ icon-co {
 		width: 38vw;
 	}
 }
-
