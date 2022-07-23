@@ -6,9 +6,9 @@
     
 		<div class="container-icon">
 			<form class="form-search" > <input class="input-search" type="text" placeholder="Rechercher" name="search"> </form>
-			<a href=""><img class="icon icon-search" alt="icon compte" src="assets/icon/search.svg"></a> 
-			<img class="icon connexion-click" alt="icon compte" src="assets/icon/account.svg">
-			<a href=""><img class="icon" alt="icon panier" src="assets/icon/basket.svg"></a>
+			<a href=""><img class="icon icon-search" alt="Icon compte" src="assets/icon/search.svg"></a> 
+			<a ><img class="icon icon-connexion" alt="Icon compte" src="assets/icon/account.svg"></a> 
+			<a href=""><img class="icon" alt="Icon panier" src="assets/icon/basket.svg"></a>
 		</div> 
 	</nav>
 	
@@ -34,4 +34,5 @@
 	</div>
 	<c:import url="/modalConnexion"></c:import>
 </header>
+
 
