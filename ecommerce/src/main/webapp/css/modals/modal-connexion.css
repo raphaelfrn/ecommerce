@@ -1,15 +1,49 @@
 @charset "UTF-8";
 
-.background-modal-connexion{
+.background-modal-connexion {
 	display:none;
+	   
+    align-items: center;
+    justify-content: center;
+    
     position: fixed;
-    z-index: 1;	
+    z-index: 2;	
     top: 0;
     left: 0;
     right:0;
     bottom: 0;
-    background: white;
+    background: #000000e0;;
     overflow: auto;  
+}
+
+icon-co {
+	position: absolute;
+}
+
+.container-modal-connexion {
+    background: white;
+    height: 94vh;
+    width: 94vw;
+}
+
+.container-input-modal-connexion {
+	position: relative;
+}
+
+.container-input-modal-connexion img {
+	position: absolute;
+    top: 7px;
+}
+
+.container-input-modal-connexion input {
+	padding-left: 8%;
+}
+
+ @media screen and (min-width: 430px) 
+{
+	.container-input-modal-connexion input {
+		padding-left: 5%;
+	}
 }
 
  @media screen and (min-width: 820px) 
@@ -17,7 +51,6 @@
 	.background-modal-connexion {
 	    justify-content: center;
 	    align-items: center;
-	    background: #353535d9;
 	}
 }
 
@@ -111,8 +144,6 @@
 	}
 }
 
-
-
 .container-input-modal-connexion{
 	margin-bottom: 16%;
 	text-align: center;
@@ -131,7 +162,7 @@
 }
 
 .container-input-modal-connexion input {
-    width: 90vw;
+    width: 80vw;
     border: none;
     border-bottom: 1px solid black;
     margin-bottom: 7%;
@@ -178,7 +209,7 @@
 
 .btn-modal-connexion {
 	border: none;
-    width: 90vw;
+    width: 80vw;
     height: 6vh;
     align-self: center;
     background: black;
@@ -224,7 +255,7 @@
 
 .btn-modal-inscription {
 	border: none;
-    width: 90vw;
+    width: 80vw;
     height: 6vh;
     align-self: center;
     background: black;
@@ -261,3 +292,4 @@
 		width: 38vw;
 	}
 }
+
