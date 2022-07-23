@@ -52,7 +52,6 @@ body {
 	}
 }
 
-
 .container-page  {
 	margin-top: 4%;
 }
@@ -120,7 +119,7 @@ body {
  @media screen and (min-width: 1200px) 
 {
 	.container-row-details-command img {
-		width: 8vw;
+		width: 10vw;
 	}
 }
 
@@ -227,6 +226,7 @@ body {
 .container-download p {
 	display: none;
 }
+
 .container-download p:hover {
 	text-decoration: underline;
 }
