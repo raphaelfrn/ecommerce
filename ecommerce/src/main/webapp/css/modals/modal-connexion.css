@@ -1,0 +1,263 @@
+@charset "UTF-8";
+
+.background-modal-connexion{
+	display:none;
+    position: fixed;
+    z-index: 1;	
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    background: white;
+    overflow: auto;  
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.background-modal-connexion {
+	    justify-content: center;
+	    align-items: center;
+	    background: #353535d9;
+	}
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-modal-connexion {
+		width: 66vw;
+    	height: auto;
+	    background: white;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-modal-connexion {
+		width: 46vw;
+	}
+}
+
+.container-icon-close-connexion {
+	text-align: end;
+}
+
+.container-icon-close-connexion img {
+	margin: 8% 10%;
+	cursor: pointer;
+	transition: 1s;
+}
+.container-icon-close-connexion img:hover {
+	transform: scale(1.2);
+}
+ @media screen and (min-width: 820px) 
+{
+.container-icon-close-connexion img {
+		width: 18px;
+	    margin: 6% 8%;
+	}
+}
+
+.content-modal-connexion {
+	height: 70vh;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ @media screen and (min-width: 820px) 
+{
+	.content-modal-connexion {
+		height: auto;
+	}
+}
+
+/* title connexion */
+
+.title-modal-connexion {
+	font-size: 18px;
+	text-align: center;
+	font-family: "Avenir-black";
+	margin-bottom: 14%;
+}
+ @media screen and (min-width: 604px) 
+{
+	.title-modal-connexion {
+		margin-bottom: 12%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.title-modal-connexion {
+		font-size: 22px;
+	}
+}
+
+
+/* title inscription */
+.title-modal-inscription {
+	font-size: 18px;
+	text-align: center;
+	font-family: "Avenir-black";
+	margin-bottom: 14%;
+}
+ @media screen and (min-width: 604px) 
+{
+	.title-modal-inscription {
+		margin-bottom: 12%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.title-modal-inscription {
+		font-size: 22px;
+	}
+}
+
+
+
+.container-input-modal-connexion{
+	margin-bottom: 16%;
+	text-align: center;
+}
+ @media screen and (min-width: 604px) 
+{
+	.container-input-modal-connexion {
+		margin-bottom: 12%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-input-modal-connexion {
+		margin-bottom: 6%;
+	}
+}
+
+.container-input-modal-connexion input {
+    width: 90vw;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 7%;
+    padding-bottom: 2%;
+    caret-color: #995E06;
+    cursor: pointer;
+    -webkit-text-fill-color: black; 
+    font-size: 14px;    
+}
+
+.container-input-modal-connexion input:focus  {
+	outline-width: 0; 
+	-webkit-text-fill-color: #995E06; 
+} 
+ @media screen and (min-width: 604px) 
+{
+	.container-input-modal-connexion input {
+    	margin-bottom: 5%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-input-modal-connexion input {
+		width: 54vw;
+    	font-size: 16px;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-input-modal-connexion input {
+		width: 38vw;
+    	font-size: 16px;
+	}
+}
+
+
+/* btn connexion */
+
+
+.container-btn-modal-connexion {
+	display: flex;
+    justify-content: center;
+}
+
+.btn-modal-connexion {
+	border: none;
+    width: 90vw;
+    height: 6vh;
+    align-self: center;
+    background: black;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.btn-modal-connexion:hover  {
+	border: 2px solid black;
+	background: white;
+	color: black;
+}
+
+ @media screen and (min-width: 604px) 
+{
+	.btn-modal-connexion {
+		height: 5vh;
+	    font-size: 14px;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.btn-modal-connexion {
+		width: 54vw;
+		height: 44px;
+	    font-size: 14px;
+	   	margin-bottom: 12%;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.btn-modal-connexion {
+		width: 38vw;
+	}
+}
+
+/* btn inscription */
+.container-btn-modal-inscription {
+	display: flex;
+    justify-content: center;
+}
+
+.btn-modal-inscription {
+	border: none;
+    width: 90vw;
+    height: 6vh;
+    align-self: center;
+    background: black;
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.btn-modal-inscription:hover  {
+	border: 2px solid black;
+	background: white;
+	color: black;
+}
+
+ @media screen and (min-width: 604px) 
+{
+	.btn-modal-inscription {
+		height: 5vh;
+	    font-size: 14px;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.btn-modal-inscription {
+		width: 54vw;
+		height: 44px;
+	    font-size: 14px;
+	   	margin-bottom: 12%;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.btn-modal-inscription {
+		width: 38vw;
+	}
+}

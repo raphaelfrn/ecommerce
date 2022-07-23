@@ -12,6 +12,8 @@
 <link href="css/header/header.css" rel="stylesheet">
 <link href="css/footer/footer.css" rel="stylesheet">
 <link href="css/pages/details-produit.css" rel="stylesheet">
+<link href="css/modals/modal-connexion.css" rel="stylesheet">
+<script type="text/javascript" defer src="js/modal-connexion.js"></script>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
