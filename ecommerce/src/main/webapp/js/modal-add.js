@@ -1,5 +1,5 @@
 let modal = document.querySelector(".background-modal");
-let close = document.querySelector(".icon-close");
+let close_add = document.querySelector(".icon-close-add");
 let title = document.querySelector(".title-modal-add");
 let containerInput = document.querySelector(".container-input-modal-add");
 
@@ -40,7 +40,7 @@ add_address.addEventListener("click", () => {
 	containerInput.appendChild(input_zip_code);
 	containerInput.appendChild(input_country);
 	
-	close.addEventListener("click", () => {
+	close_add.addEventListener("click", () => {
 		modal.style.display = "none";
 		input_address.remove();
 		input_city.remove();
