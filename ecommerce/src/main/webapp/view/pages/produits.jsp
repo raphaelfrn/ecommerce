@@ -25,6 +25,8 @@
 </head>
 
 <body>
+	<c:url value="/details" var="details"/>
+
 	<c:import url="/header"></c:import>
 	
 	<div class="container-hero">
@@ -55,7 +57,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
@@ -78,7 +80,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
@@ -101,7 +103,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
@@ -124,7 +126,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
@@ -147,7 +149,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
@@ -170,7 +172,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
