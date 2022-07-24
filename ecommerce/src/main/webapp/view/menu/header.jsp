@@ -1,4 +1,4 @@
-<header class="container-header">
+<header class="container-header-nav">
 
 	<c:url value="/home" var="home"/>
 	<c:url value="/produits" var="produits"/>
@@ -13,8 +13,8 @@
 		<div class="container-icon">
 			<form class="form-search" > <input class="input-search" type="text" placeholder="Rechercher" name="search"> </form>
 			<a href=""><img class="icon icon-search" alt="Icon compte" src="assets/icon/search.svg"></a> 
-			<a ><img class="icon icon-connexion" alt="Icon compte" src="assets/icon/account.svg"></a> 
-			<a href=""><img class="icon" alt="Icon panier" src="assets/icon/basket.svg"></a>
+			<a><img class="icon icon-connexion" alt="Icon compte" src="assets/icon/account.svg"></a> 
+			<a><img class="icon" alt="Icon panier" src="assets/icon/basket.svg" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></a>
 		</div> 
 	</nav>
 	
@@ -39,6 +39,7 @@
 	 	</div>
 	</div>
 	<c:import url="/modalConnexion"></c:import>
+	<c:import url="/modalPanier"></c:import>
 </header>
 
 
