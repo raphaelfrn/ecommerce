@@ -1,5 +1,5 @@
 let modal = document.querySelector(".background-modal");
-let close = document.querySelector(".icon-close");
+let close_update = document.querySelector(".icon-close-update");
 let title = document.querySelector(".title-modal-update");
 let containerInput = document.querySelector(".container-input-modal-update");
 let fullname = document.querySelector(".update-fullname");
@@ -27,7 +27,7 @@ fullname.addEventListener("click", () => {
 	containerInput.appendChild(input_lastname);
 	containerInput.appendChild(input_firstname);
 	
-	close.addEventListener("click", () => {
+	close_update.addEventListener("click", () => {
 		modal.style.display = "none";
 		input_lastname.remove();
 		input_firstname.remove();
@@ -54,7 +54,7 @@ mail.addEventListener("click", () => {
 	containerInput.appendChild(input_new_mail);
 	containerInput.appendChild(input_repeat_mail);
 	
-	close.addEventListener("click", () => {
+	close_update.addEventListener("click", () => {
 		modal.style.display = "none";
 		input_new_mail.remove();
 		input_repeat_mail.remove();
@@ -81,7 +81,7 @@ phone.addEventListener("click", () => {
 	containerInput.appendChild(input_new_phone);
 	containerInput.appendChild(input_repeat_phone);
 	
-	close.addEventListener("click", () => {
+	close_update.addEventListener("click", () => {
 		modal.style.display = "none";
 		input_new_phone.remove();
 		input_repeat_phone.remove();
@@ -116,7 +116,7 @@ pwd.addEventListener("click", () => {
 	containerInput.appendChild(input_new_pwd);
 	containerInput.appendChild(input_repeat_pwd);
 	
-	close.addEventListener("click", () => {
+	close_update.addEventListener("click", () => {
 		modal.style.display = "none";
 		input_last_pwd.remove();
 		input_new_pwd.remove();
