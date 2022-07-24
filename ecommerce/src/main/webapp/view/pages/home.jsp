@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<link rel="icon" href="assets/logo/favicon.ico" type="image/x-icon">
 <link href="css/_reset.css" rel="stylesheet" type="text/css">
 <link href="assets/font/font.css" rel="stylesheet">
 <link href="css/header/header.css" rel="stylesheet">
@@ -14,6 +15,7 @@
 <link href="css/pages/home.css" rel="stylesheet">
 <link href="css/modals/modal-connexion.css" rel="stylesheet">
 
+<script type="text/javascript" defer src="js/muted-video.js"></script>
 <script type="text/javascript" defer src="js/modal-connexion.js"></script>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -29,6 +31,7 @@
 	          <source src="assets/video/phantom-gold.mp4" type="video/mp4">
         </video>
 		<div class="container-hero-infos">
+			<img class="icon-sound" alt="Icon son" src="assets/icon/sound.svg">
 			<div class="container-hero-title">
 			 	<h2>Phantom</h2>
         		<h1>Le son libéré</h1>

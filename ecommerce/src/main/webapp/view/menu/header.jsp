@@ -1,4 +1,4 @@
-<header class="container-header-nav">
+<header class="container-header">
 
 	<c:url value="/home" var="home"/>
 	<c:url value="/produits" var="produits"/>
