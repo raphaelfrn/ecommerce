@@ -23,7 +23,7 @@ IconConnexion.addEventListener("click", () => {
 	
 	input_password.id = 'newPassword';
 	input_password.setAttribute('name','newPassword');
-	input_password.setAttribute('type','text');
+	input_password.setAttribute('type','password');
 	input_password.setAttribute('placeholder','Mot de passe');
 	icon_pwd.src = "assets/icon/pwd.svg";
 	 

@@ -5,7 +5,7 @@
 		</div>
 		<div class="content-modal-connexion">
 			<form action="">
-				<div>
+				<div class="container-connexion">
 					<h1 class="title-modal-connexion">Connexion</h1>
 					<div class="container-input-modal-connexion container-input-modal-connexion1">
 					</div>
@@ -17,11 +17,13 @@
 				</div>
 				<hr>
 			</form>
-			<div>
-				<h1 class="title-modal-inscription">S'inscrire</h1>
-				<div class="container-btn-modal-inscription">
+			<div class="container-inscription">
+				
+					<h1 class="title-modal-inscription">S'inscrire</h1>
+					<div class="container-btn-modal-inscription">
 					<a><button class="btn-modal-inscription">S'inscrire</button></a>
-				</div>
+					</div>
+				
 			</div>
 		</div>
 	</div>

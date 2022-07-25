@@ -24,7 +24,10 @@ icon-co {
     background: white;
     height: 94vh;
     width: 94vw;
+ 
 }
+
+
 
 .container-input-modal-connexion {
 	position: relative;
@@ -118,6 +121,7 @@ icon-co {
 		height: auto;
 	}
 }
+
 
 /* title connexion */
 
@@ -309,3 +313,10 @@ icon-co {
 		width: 38vw;
 	}
 }
+
+
+
+
+
+
+

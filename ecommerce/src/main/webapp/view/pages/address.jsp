@@ -25,9 +25,9 @@
 </head>
 <body>
 		<c:url value="/account" var="account"/>
-		
-		<c:import url="/header"></c:import>
 		<c:import url="/modalAdd"></c:import>
+		<c:import url="/header"></c:import>
+		
 		
 		<div class="container-back-address"><a class="back-address" href="${account}" >Retour</a></div>
 		<div class="container-page">
