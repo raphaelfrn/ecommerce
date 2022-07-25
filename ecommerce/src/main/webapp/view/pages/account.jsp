@@ -27,8 +27,10 @@
 	<c:url value="/address" var="address"/>
 	<c:url value="/historique" var="historique"/>
 	
-	<c:import url="/header"></c:import>
-	<c:import url="/modalUpdate"></c:import>
+	
+		<c:import url="/modalUpdate"></c:import>
+		<c:import url="/header"></c:import>
+	
 	
 		<div class="container-account">
 			<div class="container-clients">
@@ -90,6 +92,5 @@
 				<a class="title-order-history" href="${historique}">Historique de commande</a>
 			</div>
 		</div>
-	
 </body>
 </html>

@@ -33,12 +33,13 @@
 				</div>
 				<div class="content-account">
 					<a href="${account}">Mes informations</a> 
-					<a href="${historique}">Mon histotique de commandes</a>
+					<a href="${historique}">Mon historique de commandes</a>
 				</div>
 			</nav>
 	 	</div>
 	</div>
 	<c:import url="/modalConnexion"></c:import>
+	<c:import url="/modalInscription"></c:import>
 	<c:import url="/modalPanier"></c:import>
 </header>
 
