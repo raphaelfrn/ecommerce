@@ -184,10 +184,11 @@
 
 
 .btn-inscription  {
-	width: 30vw;
+	width: 60vw;
 	height: 35px;
 	font-size: 14px;
 	margin-bottom: 12%;
+	margin-top:4%;
 	border: none;
     align-self: center;
     background: black;
@@ -202,6 +203,15 @@
 	color: black;
 }
 
+ @media screen and (min-width: 820px) 
+{
+	.btn-inscription {
+		width:30vw;
+		font-size:16px;
+	}
+}
+
+
 
 /* title */
 
@@ -209,12 +219,12 @@
 	font-size: 18px;
 	text-align: center;
 	font-family: "Avenir-black";
-	margin-bottom: 14%;
+	margin-bottom: 8%;
 }
  @media screen and (min-width: 604px) 
 {
 	.title-modal-inscription {
-		margin-bottom: 12%;
+		margin-bottom: 10%;
 	}
 }
  @media screen and (min-width: 820px) 
