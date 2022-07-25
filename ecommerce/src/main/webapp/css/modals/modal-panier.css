@@ -167,7 +167,7 @@
   -webkit-transition: all .8s ease-in-out;
   transition: all .8s ease-in-out;
   -webkit-transform: translateX(-90%) translateY(-15%) rotate(53deg);
-  transform: translateX(-90%) translateY(-15%) rotate(53deg);
+  transform: translateX(-90%) translateY(-1%) rotate(53deg);
 }
 
 .modal-panier-btn-validate:hover:after {
