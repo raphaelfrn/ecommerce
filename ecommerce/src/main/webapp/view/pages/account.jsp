@@ -27,15 +27,8 @@
 	<c:url value="/address" var="address"/>
 	<c:url value="/historique" var="historique"/>
 	
-<<<<<<< Updated upstream
-	
 		<c:import url="/modalUpdate"></c:import>
 		<c:import url="/header"></c:import>
-	
-=======
-	<c:import url="/modalUpdate"></c:import>
-	<c:import url="/header"></c:import>
->>>>>>> Stashed changes
 	
 		<div class="container-account">
 			<div class="container-clients">
