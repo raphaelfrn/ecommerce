@@ -115,6 +115,10 @@
 	overflow: scroll;
 }
 
+.container-basket-product-overflow::-webkit-scrollbar {
+	background: none;
+}
+
  @media screen and (min-width: 430px) 
 {
 	.container-basket-product-overflow {
