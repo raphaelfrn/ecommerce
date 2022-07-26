@@ -32,7 +32,6 @@
 			<h1 class="title-basket">Panier</h1>
 			<h1 class="title-wishlist">Wishlist</h1>
 		</div>
-
 		<div class="container-basket-wislist">
 			<section class="container-basket">
 				<form class="container-basket-form">
@@ -40,7 +39,6 @@
 						<div class="content-basket-title">
 							<h1>Votre Panier</h1>
 						</div>
-						
 						<div class="container-basket-product-overflow">
 							<article class="container-basket-product">
 								<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
@@ -61,97 +59,92 @@
 									</div>
 								</div>
 							</article>
-						
-						<article class="container-basket-product">
-							<img alt="Image produit"
-								src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-							<div class="content-basket-product">
-								<div class="container-basket-product-infos">
-									<div class="content-basket-product-infos">
-										<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-										<p>Feuille d'or</p>
+							<article class="container-basket-product">
+								<img alt="Image produit"
+									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
+								<div class="content-basket-product">
+									<div class="container-basket-product-infos">
+										<div class="content-basket-product-infos">
+											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
+											<p>Feuille d'or</p>
+										</div>
+										<div class="content-basket-quantity-price">
+											<input type="number" id="quantity" name="quantity" min="1"
+												max="10" placeholder="0">
+											<p>1335 €</p>
+										</div>
 									</div>
-									<div class="content-basket-quantity-price">
-										<input type="number" id="quantity" name="quantity" min="1"
-											max="10" placeholder="0">
-										<p>1335 €</p>
-									</div>
-								</div>
-								<div class="container-delivery-and-supr">
-									<p>Livraison offerte - Expédié sous 5 jours</p>
-									<a href="">Supprimer</a>
-								</div>
-							</div>
-						</article>
-								
-						<article class="container-basket-product">
-							<img alt="Image produit"
-								src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-							<div class="content-basket-product">
-								<div class="container-basket-product-infos">
-									<div class="content-basket-product-infos">
-										<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-										<p>Feuille d'or</p>
-									</div>
-									<div class="content-basket-quantity-price">
-										<input type="number" id="quantity" name="quantity" min="1"
-											max="10" placeholder="0">
-										<p>1335 €</p>
+									<div class="container-delivery-and-supr">
+										<p>Livraison offerte - Expédié sous 5 jours</p>
+										<a href="">Supprimer</a>
 									</div>
 								</div>
-								<div class="container-delivery-and-supr">
-									<p>Livraison offerte - Expédié sous 5 jours</p>
-									<a href="">Supprimer</a>
-								</div>
-							</div>
-						</article>
-						
-						<article class="container-basket-product">
-							<img alt="Image produit"
-								src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-							<div class="content-basket-product">
-								<div class="container-basket-product-infos">
-									<div class="content-basket-product-infos">
-										<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-										<p>Feuille d'or</p>
+							</article>		
+							<article class="container-basket-product">
+								<img alt="Image produit"
+									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
+								<div class="content-basket-product">
+									<div class="container-basket-product-infos">
+										<div class="content-basket-product-infos">
+											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
+											<p>Feuille d'or</p>
+										</div>
+										<div class="content-basket-quantity-price">
+											<input type="number" id="quantity" name="quantity" min="1"
+												max="10" placeholder="0">
+											<p>1335 €</p>
+										</div>
 									</div>
-									<div class="content-basket-quantity-price">
-										<input type="number" id="quantity" name="quantity" min="1"
-											max="10" placeholder="0">
-										<p>1335 €</p>
-									</div>
-								</div>
-								<div class="container-delivery-and-supr">
-									<p>Livraison offerte - Expédié sous 5 jours</p>
-									<a href="">Supprimer</a>
-								</div>
-							</div>
-						</article>
-						
-						<article class="container-basket-product">
-							<img alt="Image produit"
-								src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-							<div class="content-basket-product">
-								<div class="container-basket-product-infos">
-									<div class="content-basket-product-infos">
-										<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-										<p>Feuille d'or</p>
-									</div>
-									<div class="content-basket-quantity-price">
-										<input type="number" id="quantity" name="quantity" min="1"
-											max="10" placeholder="0">
-										<p>1335 €</p>
+									<div class="container-delivery-and-supr">
+										<p>Livraison offerte - Expédié sous 5 jours</p>
+										<a href="">Supprimer</a>
 									</div>
 								</div>
-								<div class="container-delivery-and-supr">
-									<p>Livraison offerte - Expédié sous 5 jours</p>
-									<a href="">Supprimer</a>
+							</article>
+							<article class="container-basket-product">
+								<img alt="Image produit"
+									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
+								<div class="content-basket-product">
+									<div class="container-basket-product-infos">
+										<div class="content-basket-product-infos">
+											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
+											<p>Feuille d'or</p>
+										</div>
+										<div class="content-basket-quantity-price">
+											<input type="number" id="quantity" name="quantity" min="1"
+												max="10" placeholder="0">
+											<p>1335 €</p>
+										</div>
+									</div>
+									<div class="container-delivery-and-supr">
+										<p>Livraison offerte - Expédié sous 5 jours</p>
+										<a href="">Supprimer</a>
+									</div>
 								</div>
-							</div>
-						</article>
+							</article>
+							<article class="container-basket-product">
+								<img alt="Image produit"
+									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
+								<div class="content-basket-product">
+									<div class="container-basket-product-infos">
+										<div class="content-basket-product-infos">
+											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
+											<p>Feuille d'or</p>
+										</div>
+										<div class="content-basket-quantity-price">
+											<input type="number" id="quantity" name="quantity" min="1"
+												max="10" placeholder="0">
+											<p>1335 €</p>
+										</div>
+									</div>
+									<div class="container-delivery-and-supr">
+										<p>Livraison offerte - Expédié sous 5 jours</p>
+										<a href="">Supprimer</a>
+									</div>
+								</div>
+							</article>
 						</div>
 					</div>
-					
 					<section class="container-total">
 						<div class="content-total">
 							<div class="container-total-title">
@@ -168,7 +161,6 @@
 								<p class="total-infos-command-delivery">Date de livraison</p>
 							</div>
 						</div>
-
 						<div class="container-basket-total-validate">
 							<div class="container-basket-total-price">
 								<p>Total</p>
@@ -201,8 +193,7 @@
 							</div>
 						</div>
 					</article>
-					
-										<article class="container-wishlist-product">
+					<article class="container-wishlist-product">
 						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
 						<div class="content-wishlist-product">
 							<div class="container-wishlist-product-infos">
@@ -218,7 +209,7 @@
 							</div>
 						</div>
 					</article>
-										<article class="container-wishlist-product">
+					<article class="container-wishlist-product">
 						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
 						<div class="content-wishlist-product">
 							<div class="container-wishlist-product-infos">
@@ -234,7 +225,7 @@
 							</div>
 						</div>
 					</article>
-										<article class="container-wishlist-product">
+					<article class="container-wishlist-product">
 						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
 						<div class="content-wishlist-product">
 							<div class="container-wishlist-product-infos">
@@ -250,7 +241,7 @@
 							</div>
 						</div>
 					</article>
-										<article class="container-wishlist-product">
+					<article class="container-wishlist-product">
 						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
 						<div class="content-wishlist-product">
 							<div class="container-wishlist-product-infos">
@@ -266,11 +257,9 @@
 							</div>
 						</div>
 					</article>
-
 				</div>
 			</section>
 		</div>
-	</div>
-	
+	</div>	
 </body>
 </html>
