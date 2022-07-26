@@ -485,5 +485,126 @@
 	display: none;
 }
 
+.content-wishlist {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+	margin-top: 4%;
+}
+
+.container-wishlist-product {
+	width: 44vw;
+	padding-bottom: 6%;
+    margin-bottom: 4%;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-wishlist-product {
+    	display: flex;
+    	padding-bottom: 0;
+	}
+}
+
+.wishlist-product-img {
+	width: 44vw;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.wishlist-product-img {
+		width: 16vw;
+		height: 19vh;
+	}
+}
+
+.container-wishlist-product-infos {
+	padding: 12% 8% 2%;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-wishlist-product-infos {
+		display: flex;
+	    flex-direction: column;
+	    justify-content: space-between;
+		padding: 6% 0 6% 6%;		
+	}
+}
+
+.container-wishlist-product-infos h1 {
+	font-size: 12px;
+}
+
+.wishlist-product-subtitle {
+	color: #AF9330;
+    font-size: 12px;
+}
+
+.wishlist-product-delivery {
+	font-size: 9px;
+}
+
+.container-wishlist-management {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-wishlist-management {
+	    flex-direction: column;
+	    align-items: flex-end;
+	    padding: 6% 6% 6% 0;
+	}
+}
+
+.container-wishlist-management p {
+    font-size: 14px;
+	margin-bottom: 0;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-wishlist-management-icon {
+		display: flex;
+	    flex-direction: column;
+	    align-items: flex-end;
+	}
+}
+
+.wishlist-management-icon-basket, .wishlist-management-icon-wishlist {
+	cursor: pointer;
+	transition: 1s;
+}
+
+.wishlist-management-icon-basket:hover, .wishlist-management-icon-wishlist:hover {
+	transform: scale(1.2);
+}
+
+.wishlist-management-icon-basket {
+	width: 20px;
+	margin-right: 12px;	
+	cursor: pointer;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.wishlist-management-icon-basket {
+		margin-right: 0;	
+		 margin-bottom: 16px;
+	}
+}
+
+.wishlist-management-icon-wishlist {
+	
+}
+
+
+
+
 
 
