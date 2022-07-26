@@ -20,7 +20,12 @@
 <title>Compte</title>
 </head>
 <body>
-	<c:import url="/header"></c:import>
+<<<<<<< Updated upstream
+
+	<c:url value="/address" var="address"/>
+	<c:url value="/historique" var="historique"/>
+	
+		<c:import url="/modalUpdate"></c:import>
 	
 		<div class="container-account">
 			<div class="container-clients">
