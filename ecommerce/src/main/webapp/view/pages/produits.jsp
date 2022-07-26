@@ -8,12 +8,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<link rel="icon" href="assets/logo/favicon.ico" type="image/x-icon">
 <link href="css/_reset.css" rel="stylesheet" type="text/css">
 <link href="assets/font/font.css" rel="stylesheet">
 <link href="css/header/header.css" rel="stylesheet">
 <link href="css/footer/footer.css" rel="stylesheet">
 <link href="css/pages/produits.css" rel="stylesheet">
+<link href="css/modals/modal-connexion.css" rel="stylesheet">
+<script type="text/javascript" defer src="js/modal-connexion.js"></script>
 
+<script type="text/javascript" defer src="js/muted-video.js"></script>
 <script type="text/javascript" defer src="js/produits.js"></script>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -23,12 +27,16 @@
 </head>
 
 <body>
-	<c:import url="/header"></c:import>
+	<c:url value="/details" var="details"/>
+	<c:import url="/header"></c:import>	
 	
 	<div class="container-hero">
 		<video class="video-hero" muted autoplay="autoplay" loop preload="auto">
 	          <source src="assets/video/hp-2.mp4" type="video/mp4">
         </video>
+		<div class="container-hero-infos">
+			<img class="icon-sound" alt="Icon son" src="assets/icon/sound.svg">
+		</div>
 	</div>
 	
 	<div class="container-categories">
@@ -53,7 +61,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
@@ -76,7 +84,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
@@ -99,7 +107,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
@@ -122,7 +130,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
@@ -145,7 +153,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
@@ -168,7 +176,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1>Titre</h1>
-				<p>Détails</p>
+				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">

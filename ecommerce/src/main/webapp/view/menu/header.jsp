@@ -1,14 +1,20 @@
 <header class="container-header">
+
+	<c:url value="/home" var="home"/>
+	<c:url value="/produits" var="produits"/>
+	<c:url value="/account" var="account"/>
+	<c:url value="/historique" var="historique"/>
+	
 	<nav class="container-nav-header">	
 		<div data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img class="icon-menu" alt="icon menu" src="assets/icon/menu.svg"></div>
 
-		<a href="#"> <img class="logo-dione" alt="logo Dione" src="assets/logo/logo-dione-black.svg"> </a>
+		<a href="${home}"> <img class="logo-dione" alt="logo Dione" src="assets/logo/logo-dione-black.svg"> </a>
     
 		<div class="container-icon">
 			<form class="form-search" > <input class="input-search" type="text" placeholder="Rechercher" name="search"> </form>
-			<a href=""><img class="icon icon-search" alt="icon compte" src="assets/icon/search.svg"></a> 
-			<a href=""><img class="icon" alt="icon compte" src="assets/icon/account.svg"></a> 
-			<a href=""><img class="icon" alt="icon panier" src="assets/icon/basket.svg"></a>
+			<a href=""><img class="icon icon-search" alt="Icon compte" src="assets/icon/search.svg"></a> 
+			<a><img class="icon icon-connexion" alt="Icon compte" src="assets/icon/account.svg"></a> 
+			<a><img class="icon" alt="Icon panier" src="assets/icon/basket.svg" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></a>
 		</div> 
 	</nav>
 	
@@ -19,18 +25,22 @@
 		<div class="offcanvas-body">
 			<nav class="menu">
 				<div class="content-menu">
-					<a href="">Accueil</a>
-					<a href="">Enceintes</a> 
+					<a href="${home}">Accueil</a>
+					<a href="${produits}">Enceintes</a> 
 					<a href="">Barre de son</a>
 					<a href="">Ecouteurs</a> 
 					<a href="">Amplificateurs</a>
 				</div>
 				<div class="content-account">
-					<a href="">Mes informations</a> 
-					<a href="">Mon histotique de commandes</a>
+					<a href="${account}">Mes informations</a> 
+					<a href="${historique}">Mon historique de commandes</a>
 				</div>
 			</nav>
 	 	</div>
 	</div>
+	<c:import url="/modalConnexion"></c:import>
+	<c:import url="/modalInscription"></c:import>
+	<c:import url="/modalPanier"></c:import>
 </header>
+
 
