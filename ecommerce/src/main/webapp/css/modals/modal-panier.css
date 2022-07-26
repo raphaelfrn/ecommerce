@@ -155,7 +155,6 @@
     margin-left: 10px;
 }
 
-
 .modal-panier-btn-validate:after {
   content: "";
   position: absolute;
@@ -198,4 +197,3 @@
 .modal-panier-btn-shop:hover {
 	border: 2px solid black;
 }
-
