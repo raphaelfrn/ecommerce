@@ -16,3 +16,4 @@ back.addEventListener("click", () => {
 	containerCategories.style.display = "flex";
 	back.style.display = "none";
 })
+

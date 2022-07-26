@@ -215,6 +215,7 @@ body{
 	.container-produits {
 		margin: 2% 2% 7%;
     	justify-content: flex-start;
+    	
 	}
 }
 
@@ -234,6 +235,8 @@ body{
 		margin-right: 0;
 		margin-bottom: 2%;
 	}
+	
+	
 }
 
  @media screen and (min-width: 1200px) 
@@ -246,7 +249,8 @@ body{
 	}
 	
 	.container-card-produit:nth-child(3n) {
-    	margin-right: 0;
+    	margin-right: -2%;
+    	
 	}
 
 }
