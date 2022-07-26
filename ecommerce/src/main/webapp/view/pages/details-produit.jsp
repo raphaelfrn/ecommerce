@@ -83,14 +83,10 @@
 		
 		<div class="container-title-icon"><p class="title">PHANTOM 1</p>  <img class="icon-bookmark"alt="bookmark" src="assets/icon/bookmark.svg"> </div>
 		<p class="text-description">Une puissance indécente, des basses ultra-profondes.</p>
+	
 		
 		<div class="quantity-form">
 		<form> <label for="quantity">Quantité : </label>	<input type="number" name="quantity"></form>
-		
-		
-		
-		
-		
 		</div> 
 		<div class="container-button-price"><button type="submit"> <span>Ajouter au panier</span> </button> <h5>1200€</h5> </div>	
 	
