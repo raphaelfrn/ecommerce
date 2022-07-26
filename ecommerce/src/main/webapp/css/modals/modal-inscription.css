@@ -1,9 +1,6 @@
 @charset "UTF-8";
 
 
-
-
-
 .background-modal-inscription {
 	display:none;
     align-items: center;
@@ -17,7 +14,6 @@
     background: #000000e0;;
     overflow: auto;  
 }
-
 
 
  @media screen and (min-width: 820px) 
@@ -34,6 +30,15 @@
     height: 84vh;
     width: 84vw;
  
+}
+
+ @media screen and (min-width: 375px) 
+{
+	.container-modal-inscription {
+		width: 45vw;
+    	height: 45vw;
+	    background: white;
+	}
 }
 
 
@@ -54,22 +59,16 @@
 
 
 
+.container-inscription{
+margin-left:10%;
+margin-right:10%;
+}
+
 .container-input-modal-inscription {
 	position: relative;
 }
 
-.container-input-modal-inscription input {
-	margin-left:10%;
 
-}
-
- @media screen and (min-width: 430px) 
-{
-	.container-input-modal-inscription input {
-		margin-left:10%;
-		
-	}
-}
 
 .container-icon-close-inscription{
 	text-align: end;
@@ -159,17 +158,9 @@
 
 
 .row-inscription input{
-	width:25vw;
+	justify-content:space-between;
 	
 }
-
-@media screen and (min-width:1200px){
-	.row-inscription input{
-	width:10vw;
-	}
-}
-
-
 
 
 
@@ -225,6 +216,8 @@
 {
 	.title-modal-inscription {
 		margin-bottom: 10%;
+		text-align: left;
+		margin-left:10%;
 	}
 }
  @media screen and (min-width: 820px) 

@@ -15,7 +15,11 @@
 <link href="css/footer/footer.css" rel="stylesheet">
 <link href="css/pages/produits.css" rel="stylesheet">
 <link href="css/modals/modal-connexion.css" rel="stylesheet">
+<link href="css/modals/modal-inscription.css" rel="stylesheet">
+
+
 <script type="text/javascript" defer src="js/modal-connexion.js"></script>
+<script type="text/javascript" defer src="js/modal-inscription.js"></script>
 
 <script type="text/javascript" defer src="js/muted-video.js"></script>
 <script type="text/javascript" defer src="js/produits.js"></script>

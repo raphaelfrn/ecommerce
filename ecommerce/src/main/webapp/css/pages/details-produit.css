@@ -335,6 +335,7 @@
 	width:95vw;
 	margin-right:5vw;
 	margin-left:5vw;
+	display:none;
 }
 
 
@@ -453,6 +454,8 @@ opacity: 1
 .rating:hover>input:checked~label:before {
 opacity: 0.4
 }
+
+
 
 
 
