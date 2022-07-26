@@ -43,25 +43,24 @@
 						
 						<div class="container-basket-product-overflow">
 							<article class="container-basket-product">
-							<img alt="Image produit"
-								src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-							<div class="content-basket-product">
-								<div class="container-basket-product-infos">
-									<div class="content-basket-product-infos">
-										<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-										<p>Feuille d'or</p>
+								<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
+								<div class="content-basket-product">
+									<div class="container-basket-product-infos">
+										<div class="content-basket-product-infos">
+											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
+											<p>Feuille d'or</p>
+										</div>
+										<div class="content-basket-quantity-price">
+											<input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0">
+											<p>1335 €</p>
+										</div>
 									</div>
-									<div class="content-basket-quantity-price">
-										<input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0">
-										<p>1335 €</p>
+									<div class="container-delivery-and-supr">
+										<p>Livraison offerte - Expédié sous 5 jours</p>
+										<a href="">Supprimer</a>
 									</div>
 								</div>
-								<div class="container-delivery-and-supr">
-									<p>Livraison offerte - Expédié sous 5 jours</p>
-									<a href="">Supprimer</a>
-								</div>
-							</div>
-						</article>
+							</article>
 						
 						<article class="container-basket-product">
 							<img alt="Image produit"
@@ -188,64 +187,82 @@
 				<div class="content-wishlist">
 					<article class="container-wishlist-product">
 						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
-						<div class="container-wishlist-product-infos">
-							<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-							<p class="wishlist-product-subtitle">Feuille d'or</p>
-							<p class="wishlist-product-delivery">Livraison offerte - Expédié sous 5 jours</p>
-						</div>
-						<div class="container-wishlist-management">
-							<p>1335 €</p>
-							<div class="container-wishlist-management-icon">
-								<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
-								<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+						<div class="content-wishlist-product">
+							<div class="container-wishlist-product-infos">
+								<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
+								<p class="wishlist-product-subtitle">Feuille d'or</p>
+							</div>
+							<div class="container-wishlist-management">
+								<p>1335 €</p>
+								<div class="container-wishlist-management-icon">
+									<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
+									<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+								</div>
 							</div>
 						</div>
 					</article>
 					
-					<article class="container-wishlist-product">
+										<article class="container-wishlist-product">
 						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
-						<div class="container-wishlist-product-infos">
-							<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-							<p class="wishlist-product-subtitle">Feuille d'or</p>
-							<p class="wishlist-product-delivery">Livraison offerte - Expédié sous 5 jours</p>
-						</div>
-						<div class="container-wishlist-management">
-							<p>1335 €</p>
-							<div class="container-wishlist-management-icon">
-								<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
-								<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+						<div class="content-wishlist-product">
+							<div class="container-wishlist-product-infos">
+								<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
+								<p class="wishlist-product-subtitle">Feuille d'or</p>
+							</div>
+							<div class="container-wishlist-management">
+								<p>1335 €</p>
+								<div class="container-wishlist-management-icon">
+									<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
+									<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+								</div>
 							</div>
 						</div>
 					</article>
-					
-					<article class="container-wishlist-product">
+										<article class="container-wishlist-product">
 						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
-						<div class="container-wishlist-product-infos">
-							<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-							<p class="wishlist-product-subtitle">Feuille d'or</p>
-							<p class="wishlist-product-delivery">Livraison offerte - Expédié sous 5 jours</p>
-						</div>
-						<div class="container-wishlist-management">
-							<p>1335 €</p>
-							<div class="container-wishlist-management-icon">
-								<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
-								<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+						<div class="content-wishlist-product">
+							<div class="container-wishlist-product-infos">
+								<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
+								<p class="wishlist-product-subtitle">Feuille d'or</p>
+							</div>
+							<div class="container-wishlist-management">
+								<p>1335 €</p>
+								<div class="container-wishlist-management-icon">
+									<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
+									<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+								</div>
 							</div>
 						</div>
 					</article>
-					
-					<article class="container-wishlist-product">
+										<article class="container-wishlist-product">
 						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
-						<div class="container-wishlist-product-infos">
-							<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-							<p class="wishlist-product-subtitle">Feuille d'or</p>
-							<p class="wishlist-product-delivery">Livraison offerte - Expédié sous 5 jours</p>
+						<div class="content-wishlist-product">
+							<div class="container-wishlist-product-infos">
+								<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
+								<p class="wishlist-product-subtitle">Feuille d'or</p>
+							</div>
+							<div class="container-wishlist-management">
+								<p>1335 €</p>
+								<div class="container-wishlist-management-icon">
+									<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
+									<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+								</div>
+							</div>
 						</div>
-						<div class="container-wishlist-management">
-							<p>1335 €</p>
-							<div class="container-wishlist-management-icon">
-								<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
-								<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+					</article>
+										<article class="container-wishlist-product">
+						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
+						<div class="content-wishlist-product">
+							<div class="container-wishlist-product-infos">
+								<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
+								<p class="wishlist-product-subtitle">Feuille d'or</p>
+							</div>
+							<div class="container-wishlist-management">
+								<p>1335 €</p>
+								<div class="container-wishlist-management-icon">
+									<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
+									<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+								</div>
 							</div>
 						</div>
 					</article>
