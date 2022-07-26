@@ -3,6 +3,7 @@ let close = document.querySelector(".icon-close");
 let containerInput1 = document.querySelector(".container-input-modal-connexion1");
 let containerInput2 = document.querySelector(".container-input-modal-connexion2");
 let IconConnexion = document.querySelector(".icon-connexion");
+let InscriptionBtn = document.querySelector(".btn-modal-inscription")
 
 
 IconConnexion.addEventListener("click", () => {
@@ -41,4 +42,15 @@ IconConnexion.addEventListener("click", () => {
 		icon_email.remove();
 		icon_pwd.remove();
 	});
+	
+	
+	InscriptionBtn.addEventListener("click", () => {
+		input_email.remove();
+		input_password.remove();
+		icon_email.remove();
+		icon_pwd.remove();
+		
+		
+		
+	})
 });
