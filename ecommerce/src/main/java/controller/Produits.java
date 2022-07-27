@@ -30,6 +30,7 @@ public class Produits extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		request.setAttribute("list", produitsDao.readBySousCat(1));
 		
 		request.getRequestDispatcher("/view/pages/produits.jsp").forward(request, response);
