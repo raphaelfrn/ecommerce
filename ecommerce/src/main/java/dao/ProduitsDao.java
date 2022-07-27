@@ -50,7 +50,7 @@ public class ProduitsDao implements IDao<ProduitsM>{
 ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 		
 		try {
-			PreparedStatement req = connect.prepareStatement("SELECT * FROM produits");
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM produits INNER JOIN sous_categories ON sous_categories.id_sous_categorie=produits.id_sous_categorie");
 			
 			ResultSet rs = req.executeQuery();
 			
@@ -162,5 +162,41 @@ ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 		}
 		return produit;
 	}
+	
+	
+	public ArrayList<ProduitsM> readBySousCat(int idSousCat) {
+		ArrayList<ProduitsM> listeProduit = new ArrayList<>();
+				
+				try {
+					PreparedStatement req = connect.prepareStatement("SELECT * FROM produits INNER JOIN sous_categories ON sous_categories.id_sous_categorie=produits.id_sous_categorie WHERE produits.id_sous_categorie=?");
+					req.setInt(1, idSousCat);
+					
+					ResultSet rs = req.executeQuery();
+					
+					while (rs.next()) {
+						ProduitsM produit = new ProduitsM(
+								rs.getInt("id_produit"),
+								rs.getString("titre"),
+								rs.getString("description"),
+								rs.getFloat("prix"),
+								rs.getString("image"),
+								new Sous_categoriesM(rs.getInt("id_sous_categorie")),
+								rs.getInt("stock"),
+								rs.getInt("stock_minimum")
+										
+								);
+						listeProduit.add(produit);
+						
+						
+					}
+					
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return listeProduit;
+			}
+
 
 }

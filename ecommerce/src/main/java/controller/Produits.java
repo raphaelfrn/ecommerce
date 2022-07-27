@@ -7,12 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.ProduitsDao;
+
 /**
  * Servlet implementation class Produits
  */
 @WebServlet("/produits")
 public class Produits extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	ProduitsDao produitsDao = new ProduitsDao();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -26,6 +30,8 @@ public class Produits extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("list", produitsDao.readBySousCat(1));
+		
 		request.getRequestDispatcher("/view/pages/produits.jsp").forward(request, response);
 	}
 

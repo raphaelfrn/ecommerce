@@ -8,7 +8,7 @@ public class DatabaseConnection {
 	
 	public static Connection getConnection() {
 		String url = "jdbc:mysql://localhost/";
-		String dbName = "vtc";
+		String dbName = "ecommerce";
 		String user="root";
 		String pwd="";
 
