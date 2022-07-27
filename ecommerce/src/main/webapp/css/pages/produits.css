@@ -235,8 +235,6 @@ body{
 		margin-right: 0;
 		margin-bottom: 2%;
 	}
-	
-	
 }
 
  @media screen and (min-width: 1200px) 
@@ -251,7 +249,6 @@ body{
 	.container-card-produit:nth-child(3n) {
     	margin-right: -2%;
 	}
-
 }
 
 .card-produit-top {
@@ -260,10 +257,14 @@ body{
     align-items: baseline;
 }
 
+.container-card-produit h1{
+		font-size: 16px;	
+}
+
  @media screen and (min-width: 820px) 
 {
 	.container-card-produit h1{
-		font-size: 28px;	
+		font-size: 20px;	
 	}
 }
 
@@ -314,13 +315,14 @@ body{
 
 .card-produit-infos p {
    margin-bottom: 0;
-   font-size: 18px;
-    margin-right: 10px;
+   font-size: 16px;
+   margin-right: 10px;
 }
+
  @media screen and (min-width: 820px) 
 {
 	.card-produit-infos p {
-	    font-size: 22px;
+	    font-size: 18px;
 	}
 }
 
@@ -359,4 +361,3 @@ body{
 	    width: 25px;
 	}
 }
-
