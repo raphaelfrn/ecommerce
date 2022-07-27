@@ -32,6 +32,7 @@
 
 <body>
 	<c:url value="/details" var="details"/>
+	
 	<c:import url="/header"></c:import>	
 	
 	<div class="container-hero">
@@ -69,7 +70,7 @@
 		<div class="container-card-produit">
 			<div class="card-produit-top">
 				<h1> <c:out value="${produits.titre }" /> </h1>
-				<a href="${details}">Détails</a>
+				<a href="${details}?id=${produits.id_produit}&param=findById">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
 				<img alt="Image produit" src=" <c:out value="${produits.image }"/>">
