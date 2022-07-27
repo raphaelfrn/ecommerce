@@ -1,11 +1,9 @@
 @charset "UTF-8";
 
 .background-modal-connexion {
-	display:none;
-	   
+	display:none;   
     align-items: center;
     justify-content: center;
-    
     position: fixed;
     z-index: 2;	
     top: 0;
@@ -16,20 +14,58 @@
     overflow: auto;  
 }
 
-icon-co {
-	position: absolute;
+ @media screen and (min-width: 820px) 
+{
+	.background-modal-connexion {
+	    justify-content: center;
+	    align-items: center;
+	}
 }
 
 .container-modal-connexion {
-    background: white;
-    height: 94vh;
     width: 94vw;
- 
+    height: 94vh;
+    background: white;
 }
 
+ @media screen and (min-width: 604px) 
+{
+	.container-modal-connexion {
+    	width: 70vw;
+		height: auto;
+	}
+}
 
-.container-input-modal-connexion {
-	position: relative;
+ @media screen and (min-width: 820px) 
+{
+	.container-modal-connexion {
+		width: 74vw;
+	}
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.container-modal-connexion {
+		width: 70vw;
+	}
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-connexion {
+	    padding-top: 8%;
+	    padding-right: 54px;
+    	border-right: 1px solid black;
+    	margin-right: 46px;
+	}
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.container-connexion {
+	    padding-right: 87px;
+	    margin-right: 88px;
+	}
 }
 
 .container-input-modal-connexion img {
@@ -45,46 +81,67 @@ icon-co {
 	}
 }
 
+.container-input-modal-connexion {
+	position: relative;
+	text-align: center;
+}
+
+.container-input-modal-connexion input {
+    width: 80vw;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 10%;
+    padding-left: 8%;
+    padding-bottom: 2%;
+    caret-color: #995E06;
+    cursor: pointer;
+    -webkit-text-fill-color: black; 
+    font-size: 14px;    
+}
+
+.container-input-modal-connexion input:focus  {
+	outline-width: 0; 
+	-webkit-text-fill-color: #995E06; 
+} 
+
+ @media screen and (min-width: 430px) 
+{
+	.container-input-modal-connexion input {
+		padding-left: 8%;
+	}
+}
+
+ @media screen and (min-width: 604px) 
+{
+	.container-input-modal-connexion input {
+		width: 58vw;
+    	margin-bottom: 8%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-input-modal-connexion input {
+		width: 30vw;
+    	font-size: 16px;
+    	padding-left: 12%;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-input-modal-connexion input {
+    	font-size: 16px;
+	}
+}
+
+icon-co {
+	position: absolute;
+}
+
  @media screen and (min-width: 604px) 
 {
 	.iconPwd {
 	    top: 0 !important;
     	width: 21px !important;
-	}
-}
-
-
-.container-input-modal-connexion input {
-	padding-left: 8%;
-}
-
- @media screen and (min-width: 430px) 
-{
-	.container-input-modal-connexion input {
-		padding-left: 5%;
-	}
-}
-
- @media screen and (min-width: 820px) 
-{
-	.background-modal-connexion {
-	    justify-content: center;
-	    align-items: center;
-	}
-}
-
- @media screen and (min-width: 820px) 
-{
-	.container-modal-connexion {
-		width: 66vw;
-    	height: auto;
-	    background: white;
-	}
-}
- @media screen and (min-width: 1200px) 
-{
-	.container-modal-connexion {
-		width: 46vw;
 	}
 }
 
@@ -97,19 +154,27 @@ icon-co {
 	cursor: pointer;
 	transition: 1s;
 }
+
 .container-icon-close-connexion img:hover {
 	transform: scale(1.2);
 }
+
  @media screen and (min-width: 820px) 
 {
 .container-icon-close-connexion img {
 		width: 18px;
-	    margin: 6% 8%;
+	    margin: 6% 8% 3%;
+	}
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-icon-close-connexion img {
+   		 margin: 3% 5%;
 	}
 }
 
 .content-modal-connexion {
-	height: 70vh;
 	display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,11 +183,16 @@ icon-co {
 {
 	.content-modal-connexion {
 		height: auto;
+		flex-direction: row;
 	}
 }
 
-
-/* title connexion */
+ @media screen and (min-width: 820px) 
+{
+	.content-modal-connexion hr {
+		display: none
+	}
+}
 
 .title-modal-connexion {
 	font-size: 18px;
@@ -143,13 +213,11 @@ icon-co {
 	}
 }
 
-
-/* title inscription */
 .title-modal-inscription {
 	font-size: 18px;
 	text-align: center;
 	font-family: "Avenir-black";
-	margin-bottom: 14%;
+	margin: 10% 0 14%;
 }
  @media screen and (min-width: 604px) 
 {
@@ -160,71 +228,22 @@ icon-co {
  @media screen and (min-width: 820px) 
 {
 	.title-modal-inscription {
+		margin: 0 0 14%;
 		font-size: 22px;
 	}
 }
 
-.container-input-modal-connexion{
-	margin-bottom: 16%;
-	text-align: center;
-}
- @media screen and (min-width: 604px) 
-{
-	.container-input-modal-connexion {
-		margin-bottom: 12%;
-	}
-}
- @media screen and (min-width: 820px) 
-{
-	.container-input-modal-connexion {
-		margin-bottom: 6%;
-	}
-}
-
-.container-input-modal-connexion input {
-    width: 80vw;
-    border: none;
-    border-bottom: 1px solid black;
-    margin-bottom: 7%;
-    padding-bottom: 2%;
-    caret-color: #995E06;
-    cursor: pointer;
-    -webkit-text-fill-color: black; 
-    font-size: 14px;    
-}
-
-.container-input-modal-connexion input:focus  {
-	outline-width: 0; 
-	-webkit-text-fill-color: #995E06; 
-} 
- @media screen and (min-width: 604px) 
-{
-	.container-input-modal-connexion input {
-    	margin-bottom: 5%;
-	}
-}
- @media screen and (min-width: 820px) 
-{
-	.container-input-modal-connexion input {
-		width: 54vw;
-    	font-size: 16px;
-	}
-}
- @media screen and (min-width: 1200px) 
-{
-	.container-input-modal-connexion input {
-		width: 38vw;
-    	font-size: 16px;
-	}
-}
-
-
-/* btn connexion */
-
-
 .container-btn-modal-connexion {
 	display: flex;
     justify-content: center;
+  	 margin: 8% 0 15%;
+}
+
+ @media screen and (min-width: 604px) 
+{
+	.container-btn-modal-connexion {
+   	 	margin: 4% 0 10%;
+	}
 }
 
 .btn-modal-connexion {
@@ -247,6 +266,7 @@ icon-co {
  @media screen and (min-width: 604px) 
 {
 	.btn-modal-connexion {
+		width: 58vw;
 		height: 5vh;
 	    font-size: 14px;
 	}
@@ -254,20 +274,13 @@ icon-co {
  @media screen and (min-width: 820px) 
 {
 	.btn-modal-connexion {
-		width: 54vw;
-		height: 44px;
+		width: 30vw;
+		height: 36px;
 	    font-size: 14px;
-	   	margin-bottom: 12%;
-	}
-}
- @media screen and (min-width: 1200px) 
-{
-	.btn-modal-connexion {
-		width: 38vw;
+	   	margin-bottom: 14%;
 	}
 }
 
-/* btn inscription */
 .container-btn-modal-inscription {
 	display: flex;
     justify-content: center;
@@ -293,6 +306,7 @@ icon-co {
  @media screen and (min-width: 604px) 
 {
 	.btn-modal-inscription {
+		width: 58vw;
 		height: 5vh;
 	    font-size: 14px;
 	}
@@ -300,8 +314,8 @@ icon-co {
  @media screen and (min-width: 820px) 
 {
 	.btn-modal-inscription {
-		width: 54vw;
-		height: 44px;
+		width: 22vw;
+		height: 36px;
 	    font-size: 14px;
 	   	margin-bottom: 12%;
 	}
@@ -309,13 +323,28 @@ icon-co {
  @media screen and (min-width: 1200px) 
 {
 	.btn-modal-inscription {
-		width: 38vw;
+		width: 14vw;
 	}
 }
 
+ @media screen and (min-width: 604px) 
+{
+	.container-inscription-modal-co {
+		margin-bottom: 12%;
+	}
+}
 
+ @media screen and (min-width: 820px) 
+{
+	.container-inscription-modal-co {
+		margin-bottom: 0;
+		transform: translate(0px, 88px);
+	}
+}
 
-
-
-
-
+ @media screen and (min-width: 1200px) 
+{
+	.container-inscription-modal-co {
+		transform: translate(0px, 130px);
+	}
+}
