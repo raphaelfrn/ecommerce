@@ -62,18 +62,22 @@
 	
 	<img class="icon-back" alt="Icon retour" src="assets/icon/back.svg">
 	<div class="container-produits scrolling-wrapper">
+	
+	
+	<c:forEach items="${list }" var="produits">
+	
 		<div class="container-card-produit">
 			<div class="card-produit-top">
-				<h1>Titre</h1>
+				<h1> <c:out value="${produits.titre }" /> </h1>
 				<a href="${details}">Détails</a>
 			</div>
 			<div class="container-card-produit-img">
-				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
+				<img alt="Image produit" src=" <c:out value="${produits.image }"/>">
 			</div>
 			<div class="card-produit-bottom">
 			
 				<div class="card-produit-infos">
-					<p>Prix</p>
+					<p><c:out value="${produits.prix }"/> €</p>
 					<img alt="Icon étoile" src="assets/icon/star.svg">
 					<span>4,5</span>
 				</div>
@@ -85,120 +89,11 @@
 			</div>
 		</div>
 		
-		<div class="container-card-produit">
-			<div class="card-produit-top">
-				<h1>Titre</h1>
-				<a href="${details}">Détails</a>
-			</div>
-			<div class="container-card-produit-img">
-				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
-			</div>
-			<div class="card-produit-bottom">
-			
-				<div class="card-produit-infos">
-					<p>Prix</p>
-					<img alt="Icon étoile" src="assets/icon/star.svg">
-					<span>4,5</span>
-				</div>
-				
-				<div class="card-produit-icons-add">
-					<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg">
-					<img alt="Icon ajout panier" src="assets/icon/basket-add.svg">
-				</div>
-			</div>
-		</div>
+		</c:forEach>
 		
-		<div class="container-card-produit">
-			<div class="card-produit-top">
-				<h1>Titre</h1>
-				<a href="${details}">Détails</a>
-			</div>
-			<div class="container-card-produit-img">
-				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
-			</div>
-			<div class="card-produit-bottom">
-			
-				<div class="card-produit-infos">
-					<p>Prix</p>
-					<img alt="Icon étoile" src="assets/icon/star.svg">
-					<span>4,5</span>
-				</div>
-				
-				<div class="card-produit-icons-add">
-					<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg">
-					<img alt="Icon ajout panier" src="assets/icon/basket-add.svg">
-				</div>
-			</div>
-		</div>
 		
-		<div class="container-card-produit">
-			<div class="card-produit-top">
-				<h1>Titre</h1>
-				<a href="${details}">Détails</a>
-			</div>
-			<div class="container-card-produit-img">
-				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
-			</div>
-			<div class="card-produit-bottom">
-			
-				<div class="card-produit-infos">
-					<p>Prix</p>
-					<img alt="Icon étoile" src="assets/icon/star.svg">
-					<span>4,5</span>
-				</div>
-				
-				<div class="card-produit-icons-add">
-					<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg">
-					<img alt="Icon ajout panier" src="assets/icon/basket-add.svg">
-				</div>
-			</div>
-		</div>
 		
-		<div class="container-card-produit">
-			<div class="card-produit-top">
-				<h1>Titre</h1>
-				<a href="${details}">Détails</a>
-			</div>
-			<div class="container-card-produit-img">
-				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
-			</div>
-			<div class="card-produit-bottom">
-			
-				<div class="card-produit-infos">
-					<p>Prix</p>
-					<img alt="Icon étoile" src="assets/icon/star.svg">
-					<span>4,5</span>
-				</div>
-				
-				<div class="card-produit-icons-add">
-					<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg">
-					<img alt="Icon ajout panier" src="assets/icon/basket-add.svg">
-				</div>
-			</div>
-		</div>
-		
-		<div class="container-card-produit">
-			<div class="card-produit-top">
-				<h1>Titre</h1>
-				<a href="${details}">Détails</a>
-			</div>
-			<div class="container-card-produit-img">
-				<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Duo2.webp">
-			</div>
-			<div class="card-produit-bottom">
-			
-				<div class="card-produit-infos">
-					<p>Prix</p>
-					<img alt="Icon étoile" src="assets/icon/star.svg">
-					<span>4,5</span>
-				</div>
-				
-				<div class="card-produit-icons-add">
-					<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg">
-					<img alt="Icon ajout panier" src="assets/icon/basket-add.svg">
-				</div>
-			</div>
-		</div>
+
 	</div>
 	
 	<c:import url="/view/footer/footer.jsp"></c:import>
