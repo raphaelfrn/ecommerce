@@ -2,6 +2,9 @@
 
 	<c:url value="/home" var="home"/>
 	<c:url value="/produits" var="produits"/>
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+	
 	<c:url value="/account" var="account"/>
 	<c:url value="/historique" var="historique"/>
 	

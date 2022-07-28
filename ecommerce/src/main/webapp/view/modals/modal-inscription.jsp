@@ -1,43 +1,54 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><div class="background-modal-inscription">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
+<div class="background-modal-inscription">
 	<div class="container-modal-inscription">
 		<div class="container-icon-close-inscription">
 			<img class="icon-close-inscription" alt="Icon fermer" src="assets/icon/close.svg">
 		</div>		
 		<div class="content-modal-inscription">
-			<form action="">
+			<form method="post" action="#" class="modal-inscription-form" onsubmit="return verif()"  >
 				<div class="container-inscription">
-					<h1 class="modal-inscription-title">Inscription</h1>
+					<h1 class="modal-inscription-title">Inscription ${name}</h1>
 					
 						<div class="container-modal-inscription-input">
 						
 						<div class="row-input-inscription">
-							<input  type="text" id="name" name="name" placeholder="Nom *" required>
-							<input  type="text" id="firstname" name="firstname" placeholder="PrÈnom *" required> 
+							<input  type="text" id="name" name="name" value=""  placeholder="Nom *" >
+						
+							<input  type="text" id="firstname" name="firstname" value="" placeholder="Pr√©nom *" > 
 						</div>
 						
-							<div><input type="text" id="email" name="email" placeholder="Email *" required></div>
-							<div><input type="text" id="address" name="address" placeholder="Adresse *" required></div>
+							<div><input type="text" id="email" name="email" value="" placeholder="Email *" ></div>
+							
+							<div><input type="text" id="address" name="address" value="" placeholder="Adresse *" ></div>
 						
 						<div class="row-input-inscription">
-							<input type="text" id="city" name="city" placeholder="Ville *" required>
-							<input type="text" id="zipCode" name="zipCode" placeholder="Code Postal *" required>
+							<input type="text" id="city" name="city" value="" placeholder="Ville *" >
+							<input type="number" id="zipCode" name="zipCode" value="" placeholder="Code Postal *" >
 						</div>
 						
 						<div class="row-input-inscription">
-							<input type="text" id="country" name="country" placeholder="Pays *" required>
-							<input type="text" id="phone" name="phone" placeholder="TÈlÈphone *" required>
+							<input type="text" id="country" name="country" value="" placeholder="Pays *" >
+							<input type="number" id="phone" name="phone" value="" placeholder="T√©l√©phone *" >
 						</div>
 						
-							<div><input type="password" id="password" name="password" placeholder="Mot de passe *" required></div>
-							<div><input type="password" id="passwordConfirm" name="passwordConfirm" placeholder="RÈpÈter votre mot de passe *" required></div>
+							<div><input class="pwd" type="password" id="password" name="password" placeholder="Mot de passe *" ></div>
 						
+							<div><input class="pwd" type="password" id="passwordConfirm" name="passwordConfirm" placeholder="R√©p√©ter votre mot de passe *" ></div>
+							<div class="container-alerty"><p class="alerty"></p></div>
 						</div>
 						<div class="container-btn-inscription">
-							<button class="btn-inscription">CrÈer mon compte</button>
+							<input name="btnInscription" class="btn-inscription" type="submit" value="Cr√©er mon compte" > 
 						</div>
 				</div>
 			</form>
 		</div>
 	</div>	
 </div>
+
+<c:if test="${msgUser}">
+	<div class="confirm-register">
+		<p>Votre compte √† bien √©t√© cr√©er, merci de vous connecter</p>
+	</div>
+</c:if>

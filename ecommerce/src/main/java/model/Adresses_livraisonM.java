@@ -3,7 +3,7 @@ package model;
 public class Adresses_livraisonM {
 
 	private int id_adresse_livraison;
-	private UtilisateursM id_utilisateur;
+	private UtilisateursM utilisateur;
 	private String adresse;
 	private int code_postal;
 	private String ville;
@@ -19,17 +19,15 @@ public class Adresses_livraisonM {
 		this.id_adresse_livraison = id_adresse_livraison;
 	}
 
-	public Adresses_livraisonM(int id_adresse_livraison, UtilisateursM id_utilisateur, String adresse, int code_postal,
+	public Adresses_livraisonM(int id_adresse_livraison, UtilisateursM utilisateur, String adresse, int code_postal,
 			String ville, String pays) {
 		this.id_adresse_livraison = id_adresse_livraison;
-		this.id_utilisateur = id_utilisateur;
+		this.utilisateur = utilisateur;
 		this.adresse = adresse;
 		this.code_postal = code_postal;
 		this.ville = ville;
 		this.pays = pays;
 	}
-	
-	// Getters and Setters
 
 	public int getId_adresse_livraison() {
 		return id_adresse_livraison;
@@ -39,12 +37,12 @@ public class Adresses_livraisonM {
 		this.id_adresse_livraison = id_adresse_livraison;
 	}
 
-	public UtilisateursM getId_utilisateur() {
-		return id_utilisateur;
+	public UtilisateursM getUtilisateur() {
+		return utilisateur;
 	}
 
-	public void setId_utilisateur(UtilisateursM id_utilisateur) {
-		this.id_utilisateur = id_utilisateur;
+	public void setUtilisateur(UtilisateursM utilisateur) {
+		this.utilisateur = utilisateur;
 	}
 
 	public String getAdresse() {
@@ -81,9 +79,10 @@ public class Adresses_livraisonM {
 
 	@Override
 	public String toString() {
-		return "Adresses_livraisonM [id_adresse_livraison=" + id_adresse_livraison + ", id_utilisateur="
-				+ id_utilisateur + ", adresse=" + adresse + ", code_postal=" + code_postal + ", ville=" + ville
-				+ ", pays=" + pays + "]";
+		return "id_adresse_livraison " + id_adresse_livraison + " " + utilisateur
+				+ " " + adresse + " " + code_postal + " " + ville + " " + pays;
 	}
+
+	
 	
 }

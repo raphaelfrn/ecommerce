@@ -145,6 +145,14 @@ icon-co {
 
 }
 
+.container-modal-inscription-input  input[type="number"]::-webkit-outer-spin-button,
+.container-modal-inscription-input  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    background: none;
+    width: 0;
+    border: none;
+}
+
 .container-modal-inscription-input input:focus  {
 	font-size: 12px;
 	outline-width: 0; 
@@ -268,3 +276,42 @@ icon-co {
 		width: 28vw;
 	}
 }
+
+
+ .error{
+	-webkit-text-fill-color: red!important; 
+	background: #FFF2F2!important;
+}
+
+.error::placeholder{
+	-webkit-text-fill-color: red!important; 
+	background: #FFF2F2!important;
+}
+
+.alerty {
+	font-size: 14px;
+}
+
+.confirm-register {
+    position: absolute;
+    top: 6%;
+    z-index: 3;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #606e60;
+}
+
+.confirm-register p {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-family: 'Avenir-heavy';
+    letter-spacing: 1.6px;
+    color: white;
+}
+
+
+

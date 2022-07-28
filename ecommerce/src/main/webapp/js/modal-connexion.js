@@ -48,9 +48,16 @@ IconConnexion.addEventListener("click", () => {
 		input_email.remove();
 		input_password.remove();
 		icon_email.remove();
-		icon_pwd.remove();
+		icon_pwd.remove();	
+		
+		modalConnexion.style.display = "none";
+		modalInscription.style.display = "flex";
+
+	
+		closeInscription.addEventListener("click", () => {
+		modalInscription.style.display = "none";
 		
 		
-		
+	});
 	})
 });

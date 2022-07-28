@@ -23,7 +23,7 @@ public class Adresses_livraisonDao implements IDao<Adresses_livraisonM> {
 			PreparedStatement req = connect.prepareStatement("INSERT INTO adresses_livraison (id_utilisateur, adresse, code_postal, ville, pays)"
 					+ "VALUES (?,?,?,?,?)");
 			
-			req.setInt(1, adresse.getId_utilisateur().getId_utilisateur());
+			req.setInt(1, adresse.getUtilisateur().getId_utilisateur());
 			req.setString(2, adresse.getAdresse());
 			req.setInt(3, adresse.getCode_postal());
 			req.setString(4, adresse.getVille());
@@ -79,7 +79,7 @@ ArrayList<Adresses_livraisonM> listeAdresses = new ArrayList<>();
 			PreparedStatement req = connect.prepareStatement("UPDATE adresses_livraison SET id_utilisateur=?, "
 					+ "adresse=?,code_postal=?,ville=?,pays=? WHERE id_adresse_livraison=?");
 			
-			req.setInt(1, adresse.getId_utilisateur().getId_utilisateur());
+			req.setInt(1, adresse.getUtilisateur().getId_utilisateur());
 			req.setString(2, adresse.getAdresse());
 			req.setInt(3, adresse.getCode_postal());
 			req.setString(4, adresse.getVille());
@@ -142,8 +142,7 @@ ArrayList<Adresses_livraisonM> listeAdresses = new ArrayList<>();
 						rs.getInt("code_postal"),
 						rs.getString("ville"),
 						rs.getString("pays")
-						);
-					
+						);	
 			}
 			
 		} catch (SQLException e) {
