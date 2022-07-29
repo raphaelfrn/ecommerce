@@ -385,6 +385,7 @@ icon-co {
 {
 	.container-alerty-co {
 		width: 30vw;
+		font-size: 12px;
 	}
 }
  @media screen and (min-width: 1200px) 
@@ -404,7 +405,7 @@ icon-co {
 
  @media screen and (min-width: 820px) 
 {
-	.container-alerty-co {
+	.alerty-co  {
 		 font-size: 12px;
 	}
 }

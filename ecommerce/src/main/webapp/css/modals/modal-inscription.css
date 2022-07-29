@@ -279,17 +279,35 @@ icon-co {
 
 
 .error{
-	-webkit-text-fill-color: red!important; 
+	-webkit-text-fill-color: #963030!important; 
 	background: #FFF2F2!important;
 }
 
 .error::placeholder{
-	-webkit-text-fill-color: red!important; 
+	-webkit-text-fill-color: #963030!important; 
 	background: #FFF2F2!important;
 }
 
-.alerty {
-	font-size: 14px;
+.container-alerty {
+	text-align: center;
+    margin-top: 2%;
+    background: #963030;
+    margin-bottom: 0;
+}
+
+.alerty  {
+	margin-bottom: 0;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-family: 'Avenir-heavy';
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.alerty  {
+		 font-size: 12px;
+	}
 }
 
 .confirm-register {
@@ -312,6 +330,3 @@ icon-co {
     letter-spacing: 1.6px;
     color: white;
 }
-
-
-
