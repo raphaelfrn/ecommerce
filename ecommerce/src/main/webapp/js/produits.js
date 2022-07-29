@@ -3,7 +3,7 @@ let containerProduits  = document.querySelector(".container-produits ");
 let containerCategories = document.querySelector(".container-categories");
 let back = document.querySelector(".icon-back");
 
-
+/*
 btnCategorie.forEach(element => 
 	element.addEventListener("click", () => {
 		
@@ -21,3 +21,4 @@ back.addEventListener("click", () => {
 	back.style.display = "none";
 })
 
+*/

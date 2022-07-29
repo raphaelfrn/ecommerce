@@ -200,7 +200,7 @@ ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 
 	
 	
-	public ArrayList<ProduitsM> produitByIdCat(int idSousCat) {
+	public ArrayList<ProduitsM> produitByIdSousCat(int idSousCat) {
 		ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 				
 				try {

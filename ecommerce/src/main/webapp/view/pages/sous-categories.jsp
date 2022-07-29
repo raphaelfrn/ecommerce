@@ -32,6 +32,7 @@
 
 <body>
 	<c:url value="/details" var="details"/>
+	<c:url value="/produits" var="produits"/>
 	
 	<c:import url="/header"></c:import>	
 	
@@ -50,9 +51,9 @@
 	
 		<div class="container-categorie">
 			<img alt="Image produits de la catégorie ..." src="<c:out value="${sousCat.image }" />">
-			<h1><c:out value="${sousCat.titre }" /> </h1>
+			<h1><c:out value="${sousCat.titre }" /> </h1>	
 			<div class="container-categorie-btn">
-				<button name="btn-sous-cat"  class="btn-categorie-show">Découvrir</button>
+			<a href="${produits}?idSousCat=${sousCat.id_sous_categorie}"><button name="btn-sous-cat"  class="btn-categorie-show">Découvrir</button></a>	
 			</div>	
 		</div>
 	
@@ -64,7 +65,6 @@
 		
 		
 
-	</div>
 	
 	<c:import url="/view/footer/footer.jsp"></c:import>
 </body>

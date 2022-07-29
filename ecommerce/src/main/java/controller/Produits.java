@@ -35,12 +35,12 @@ public class Produits extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		int idCat= Integer.valueOf(request.getParameter("idCat"));	
-		request.setAttribute("listSousCat", sousCatDao.readByCat(idCat));
+		int idSousCat= Integer.valueOf(request.getParameter("idSousCat"));
+		 request.setAttribute("listProduits", produitsDao.produitByIdSousCat(idSousCat));
+		 
+		 
 		
-	//	int idSousCat= Integer.valueOf(request.getParameter("idSousCat"));
-		 request.setAttribute("list", produitsDao.produitByIdCat(1));
-		
+		 
 
 
 		
