@@ -62,13 +62,16 @@ public class ModalInscription extends HttpServlet {
 			user.setTelephone(phone);
 			user.setMot_de_passe(password);
 			
-			request.setAttribute("msgUser", userDao.create(user));
+			if (!userDao.verifMail(mail)) {
+				request.setAttribute("msgUser", userDao.create(user));	
+			} else {
+				request.setAttribute("msgUser", "Votre compte existe déjà.");
+			}
 			
 			String adresse = request.getParameter("address");
 			String city = request.getParameter("city");
 			int zipCode = Integer.valueOf(request.getParameter("zipCode"));
 			String country = request.getParameter("country");
-			
 			
 			userDao.findByMail(mail).getId_utilisateur();
 
@@ -80,7 +83,12 @@ public class ModalInscription extends HttpServlet {
 			address.setCode_postal(zipCode);
 			address.setPays(country);
 			
-			addressDao.create(address);
+			if (!addressDao.verifAddress(userDao.findByMail(mail).getId_utilisateur()))
+			{
+				addressDao.create(address);
+			}
+			System.out.println(userDao.findByMail(mail).getId_utilisateur());
+			System.out.println(!addressDao.verifAddress(userDao.findByMail(mail).getId_utilisateur()));
 		}
 
 		doGet(request, response);

@@ -104,7 +104,7 @@ ArrayList<Adresses_livraisonM> listeAdresses = new ArrayList<>();
 	@Override
 	public boolean delete(int id) {
 		try {
-			PreparedStatement req = connect.prepareStatement("DELETE FROM adresses_livraisons WHERE "
+			PreparedStatement req = connect.prepareStatement("DELETE FROM adresses_livraison WHERE "
 					+ "id_adresse_livraison = ?");
 			
 			req.setInt(1,id);
@@ -127,7 +127,7 @@ ArrayList<Adresses_livraisonM> listeAdresses = new ArrayList<>();
 	public Adresses_livraisonM findById(int id) {
 		Adresses_livraisonM adresse = null;
 		try {
-			PreparedStatement req = connect.prepareStatement("SELECT * FROM adresses_livraisons"
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM adresses_livraison"
 					+ " WHERE id_adresse_livraison = ? ");
 			
 			req.setInt(1, id);
@@ -150,6 +150,35 @@ ArrayList<Adresses_livraisonM> listeAdresses = new ArrayList<>();
 			e.printStackTrace();
 		}
 		return adresse;
+	}
+	
+	public boolean verifAddress(int id) {
+		Adresses_livraisonM adresse = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM adresses_livraison"
+					+ " WHERE id_utilisateur = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				adresse = new Adresses_livraisonM(
+						rs.getInt("id_adresse_livraison"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getString("adresse"),
+						rs.getInt("code_postal"),
+						rs.getString("ville"),
+						rs.getString("pays")
+						);
+				return true;
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 }
