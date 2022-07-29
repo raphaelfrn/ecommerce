@@ -159,5 +159,34 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 		}
 		return utilisateur;
 	}
+	
+	public UtilisateursM findByMail(String email) {
+		UtilisateursM utilisateur = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM utilisateurs"
+					+ " WHERE email = ? ");
+			
+			req.setString(1, email);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				utilisateur = new UtilisateursM(
+						rs.getInt("id_utilisateur"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getDate("date_inscription"),
+						rs.getString("email"),
+						rs.getString("mot_de_passe")		
+						);
+						
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return utilisateur;
+	}
 
 }

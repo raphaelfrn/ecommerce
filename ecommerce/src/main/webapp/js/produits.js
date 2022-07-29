@@ -11,7 +11,6 @@ btnCategorie.forEach(element =>
 		back.style.display = "flex";
 		
 		
-		
 		if(window.location.href.indexOf("?idSousCat")> -1){
 			console.log("ok");
 			containerProduits.style.display = "flex";
