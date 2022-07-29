@@ -72,7 +72,7 @@ arrayInputsCo.push(input_email);
 function keyupInputCo() {
 	arrayInputsCo.forEach(function(element, index, arr){
 		arr[index].addEventListener('keyup', () => {
-			arr[index].classList.remove('error');
+			arr[index].classList.remove('errorCo');
 			console.log(arr[index])
 		} )
 	})
@@ -85,7 +85,7 @@ function verifCo() {
 		arrayInputsCo.forEach(function(element, index, arr){
 		
 		arr[index].value == "" ? 
-				(arr[index].className = "error", 
+				(arr[index].className = "errorCo", 
 				alertyCo.innerHTML = "Veuillez remplier tous les champs",
 				notVerified ++) : alertyCo.innerHTML = "", arr[index].focus();	
 			
