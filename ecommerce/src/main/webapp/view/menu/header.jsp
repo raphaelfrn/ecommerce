@@ -1,10 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <header class="container-header">
 
 	<c:url value="/home" var="home"/>
-	<c:url value="/produits" var="produits"/>
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-	
+	<c:url value="/sous-categories" var="sousCat"/>
 	<c:url value="/account" var="account"/>
 	<c:url value="/historique" var="historique"/>
 	
@@ -31,7 +31,7 @@
 					<a href="${home}">Accueil</a>
 					
 				<c:forEach items="${listCat }" var="categorie">	
-					<a href="${produits}?idCat=${categorie.id_categorie}"><c:out value="${categorie.titre }"/></a> 
+					<a href="${sousCat}?idCat=${categorie.id_categorie}"><c:out value="${categorie.titre }"/></a> 
 					</c:forEach>
 				</div>
 				<div class="content-account">
