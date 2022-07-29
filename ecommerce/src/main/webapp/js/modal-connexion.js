@@ -5,12 +5,13 @@ let containerInput2 = document.querySelector(".container-input-modal-connexion2"
 let IconConnexion = document.querySelector(".icon-connexion");
 let InscriptionBtn = document.querySelector(".btn-modal-inscription")
 
+let input_email = document.createElement('input');
+let input_password = document.createElement('input');
+	
 
+// Creation des inputs
 IconConnexion.addEventListener("click", () => {
 	modalConnexion.style.display = "flex";
-	
-	let input_email = document.createElement('input');
-	let input_password = document.createElement('input');
 	
 	let icon_email = document.createElement("img");
 	let icon_pwd = document.createElement("img");
@@ -53,11 +54,42 @@ IconConnexion.addEventListener("click", () => {
 		modalConnexion.style.display = "none";
 		modalInscription.style.display = "flex";
 
-	
 		closeInscription.addEventListener("click", () => {
 		modalInscription.style.display = "none";
-		
-		
-	});
+		});
 	})
 });
+
+
+// Verification formulaire
+
+let alertyCo = document.querySelector('.alerty-co');
+let arrayInputsCo = [];
+
+arrayInputsCo.push(input_password);
+arrayInputsCo.push(input_email);
+
+function keyupInputCo() {
+	arrayInputsCo.forEach(function(element, index, arr){
+		arr[index].addEventListener('keyup', () => {
+			arr[index].classList.remove('error');
+			console.log(arr[index])
+		} )
+	})
+} keyupInputCo();
+
+
+function verifCo() {
+	let notVerified = 0;
+	
+		arrayInputsCo.forEach(function(element, index, arr){
+		
+		arr[index].value == "" ? 
+				(arr[index].className = "error", 
+				alertyCo.innerHTML = "Veuillez remplier tous les champs",
+				notVerified ++) : alertyCo.innerHTML = "", arr[index].focus();	
+			
+	})
+	
+	return notVerified >= 1 ? (alertyCo.innerHTML="Veuillez remplir tous les champs", false) : alertyCo.innerHTML = "" ; 
+}
