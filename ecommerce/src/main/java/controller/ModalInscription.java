@@ -64,23 +64,24 @@ public class ModalInscription extends HttpServlet {
 			
 			request.setAttribute("msgUser", userDao.create(user));
 			
-//			String adresse = request.getParameter("address");
-//			String city = request.getParameter("city");
-//			int zipCode = Integer.valueOf(request.getParameter("zipCode"));
-//			String country = request.getParameter("country");
-//			
-//			int userById = Integer.parseInt(request.getParameter("utilisateur"));
-//
-//
-//			Adresses_livraisonDao  addressDao = new Adresses_livraisonDao();
-//			Adresses_livraisonM address = new Adresses_livraisonM();
-//			address.setUtilisateur(new UtilisateursM(userById));
-//			address.setAdresse(adresse);
-//			address.setVille(city);
-//			address.setCode_postal(zipCode);
-//			address.setPays(country);
-//			
-//			addressDao.create(address);
+			String adresse = request.getParameter("address");
+			String city = request.getParameter("city");
+			int zipCode = Integer.valueOf(request.getParameter("zipCode"));
+			String country = request.getParameter("country");
+			
+			
+			int userById = user.getId_utilisateur();
+			userDao.findByMail(mail).getId_utilisateur();
+
+			Adresses_livraisonDao  addressDao = new Adresses_livraisonDao();
+			Adresses_livraisonM address = new Adresses_livraisonM();
+			address.setUtilisateur(new UtilisateursM(userDao.findByMail(mail).getId_utilisateur()));
+			address.setAdresse(adresse);
+			address.setVille(city);
+			address.setCode_postal(zipCode);
+			address.setPays(country);
+			
+			addressDao.create(address);
 		}
 
 		doGet(request, response);
