@@ -1,10 +1,12 @@
 package model;
 
+
 public class Sous_categoriesM {
 	
 	private int id_sous_categorie;
 	private String titre;
 	private CategorieM id_categorie;
+	private String image;
 	
 	
 	// Constructors
@@ -17,10 +19,11 @@ public class Sous_categoriesM {
 	}
 
 
-	public Sous_categoriesM(int id_sous_categorie, String titre, CategorieM id_categorie) {	
+	public Sous_categoriesM(int id_sous_categorie, String titre, CategorieM id_categorie, String image) {	
 		this.id_sous_categorie = id_sous_categorie;
 		this.titre = titre;
 		this.id_categorie = id_categorie;
+		this.image = image;
 	}
 
 	// Getters and Setters
@@ -56,12 +59,22 @@ public class Sous_categoriesM {
 	}
 
 
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
 	@Override
 	public String toString() {
 		return "Sous_categoriesM [id_sous_categorie=" + id_sous_categorie + ", titre=" + titre + ", id_categorie="
-				+ id_categorie + "]";
+				+ id_categorie + ", image=" + image + "]";
 	}
+
 	
 	
 
 }
+

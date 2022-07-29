@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <header class="container-header">
 
 	<c:url value="/home" var="home"/>
@@ -33,7 +31,7 @@
 					<a href="${home}">Accueil</a>
 					
 				<c:forEach items="${listCat }" var="categorie">	
-					<a href="${produits}?idCat=${categorie.id_categorie}"><c:out value="${categorie.titre }"/></a> 
+					<a href="${sous-categories}?idCat=${categorie.id_categorie}"><c:out value="${categorie.titre }"/></a> 
 					</c:forEach>
 				</div>
 				<div class="content-account">

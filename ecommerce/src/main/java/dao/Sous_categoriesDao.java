@@ -20,11 +20,12 @@ public class Sous_categoriesDao implements IDao<Sous_categoriesM> {
 	@Override
 	public boolean create(Sous_categoriesM sousCat) {
 		try {
-			PreparedStatement req = connect.prepareStatement("INSERT INTO sous_categories (titre, id_categorie)"
-					+ "VALUES (?,?)");
+			PreparedStatement req = connect.prepareStatement("INSERT INTO sous_categories (titre, id_categorie, image)"
+					+ "VALUES (?,?,?)");
 			
 			req.setString(1, sousCat.getTitre());
 			req.setInt(2, sousCat.getId_categorie().getId_categorie());
+			req.setString(1, sousCat.getImage());
 
 			
 			req.executeUpdate();
@@ -53,7 +54,8 @@ ArrayList<Sous_categoriesM> listeSousCat = new ArrayList<>();
 				Sous_categoriesM sousCat = new Sous_categoriesM(
 						rs.getInt("id_sous_categorie"),
 						rs.getString("titre"),
-						new CategorieM(rs.getInt("id_categorie"))
+						new CategorieM(rs.getInt("id_categorie")),
+						rs.getString("image")
 						
 								
 						);
@@ -74,11 +76,13 @@ ArrayList<Sous_categoriesM> listeSousCat = new ArrayList<>();
 	public boolean update(Sous_categoriesM sousCat, int id) {
 		try {
 			PreparedStatement req = connect.prepareStatement("UPDATE sous_categories SET titre=?, "
-					+ "id_categorie=? WHERE id_sous_categorie=?");
+					+ "id_categorie=?, image=? WHERE id_sous_categorie=?");
 			
 			req.setString(1, sousCat.getTitre());
 			req.setInt(2, sousCat.getId_categorie().getId_categorie());
-			req.setInt(3, id);
+			req.setString(3, sousCat.getImage());
+			req.setInt(4, id);
+			
 			
 			req.executeUpdate();
 			
@@ -130,7 +134,8 @@ ArrayList<Sous_categoriesM> listeSousCat = new ArrayList<>();
 				sousCat = new Sous_categoriesM(
 						rs.getInt("id_sous_categorie"),
 						rs.getString("titre"),
-						new CategorieM(rs.getInt("id_categorie"))
+						new CategorieM(rs.getInt("id_categorie")),
+						rs.getString("image")
 						
 									
 						);
@@ -159,7 +164,8 @@ ArrayList<Sous_categoriesM> listeSousCat = new ArrayList<>();
 				Sous_categoriesM sousCat = new Sous_categoriesM(
 						rs.getInt("id_sous_categorie"),
 						rs.getString("titre"),
-						new CategorieM(rs.getInt("id_categorie"))
+						new CategorieM(rs.getInt("id_categorie")),
+						rs.getString("image")
 						
 								
 						);
