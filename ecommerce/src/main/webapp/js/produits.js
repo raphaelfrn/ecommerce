@@ -6,11 +6,12 @@ let back = document.querySelector(".icon-back");
 /*
 btnCategorie.forEach(element => 
 	element.addEventListener("click", () => {
-		
-			back.style.display = "flex";
-			containerProduits.style.display = "flex";
-			containerCategories.style.display = "none";
-		
+  back.style.display = "flex";
+  back.style.display = "flex";
+  
+  if(window.location.href.indexOf("?idSousCat")> -1){
+			console.log("ok");
+
 		}
 	)
 );
