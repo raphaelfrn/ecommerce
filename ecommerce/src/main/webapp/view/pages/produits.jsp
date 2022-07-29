@@ -45,20 +45,19 @@
 	</div>
 	
 	<div class="container-categories">
+	<c:forEach items="${listSousCat }" var="sousCat">
+	
+	
 		<div class="container-categorie">
 			<img alt="Image produits de la catégorie ..." src="https://assets.devialet.com/fr-fr/media/dvl_media/Range_Phantom_I_Logo_1000x1000.png?twic=v1/background=FFFFFF/cover=800x800">
-			<h1>Phantom I</h1>
+			<h1><c:out value="${sousCat.titre }" /> ${sousCat.id_sous_categorie}</h1>
 			<div class="container-categorie-btn">
-				<button class="btn-categorie-show">Découvrir</button>
+				<a href="?idCat=${sousCat.id_categorie.id_categorie}&?idSousCat=${sousCat.id_sous_categorie}">	<button name="btn-sous-cat"  class="btn-categorie-show">Découvrir</button> </a>
 			</div>
 		</div>
-		<div class="container-categorie">
-			<img alt="Image produits de la catégorie ..." src="https://assets.devialet.com/fr-fr/media/dvl_media/Range_Phantom_II_Logo_1000x1000.png?twic=v1/background=FFFFFF/cover=800x800">
-			<h1>Phantom II</h1>
-			<div class="container-categorie-btn">
-				<button class="btn-categorie-show">Découvrir</button>
-			</div>
-		</div>
+	
+		
+	</c:forEach>
 	</div>
 	
 	<img class="icon-back" alt="Icon retour" src="assets/icon/back.svg">
