@@ -37,12 +37,6 @@ public class Produits extends HttpServlet {
 		
 		int idSousCat= Integer.valueOf(request.getParameter("idSousCat"));
 		 request.setAttribute("listProduits", produitsDao.produitByIdSousCat(idSousCat));
-		 
-		 
-		
-		 
-
-
 		
 		request.getRequestDispatcher("/view/pages/produits.jsp").forward(request, response);
 	}
