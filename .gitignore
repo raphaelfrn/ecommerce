@@ -1,5 +1,5 @@
 /.metadata/
 .DS_Store
 
-/Database
+-- Database --
 /DatabaseConnection.java
