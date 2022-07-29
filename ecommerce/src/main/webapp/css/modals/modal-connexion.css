@@ -353,13 +353,13 @@ icon-co {
 	}
 }
 
- .error{
-	-webkit-text-fill-color: red!important; 
+ .errorCo{
+	-webkit-text-fill-color: #963030!important; 
 	background: #FFF2F2!important;
 }
 
-.error::placeholder{
-	-webkit-text-fill-color: red!important; 
+.errorCo::placeholder{
+	-webkit-text-fill-color: #963030!important; 
 	background: #FFF2F2!important;
 }
 
