@@ -5,6 +5,7 @@
 
 	<c:url value="/home" var="home"/>
 	<c:url value="/sous-categories" var="sousCat"/>
+
 	<c:url value="/account" var="account"/>
 	<c:url value="/historique" var="historique"/>
 	

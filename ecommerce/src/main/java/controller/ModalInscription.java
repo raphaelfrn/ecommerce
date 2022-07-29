@@ -70,7 +70,6 @@ public class ModalInscription extends HttpServlet {
 			String country = request.getParameter("country");
 			
 			
-			int userById = user.getId_utilisateur();
 			userDao.findByMail(mail).getId_utilisateur();
 
 			Adresses_livraisonDao  addressDao = new Adresses_livraisonDao();
