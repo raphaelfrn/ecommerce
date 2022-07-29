@@ -130,6 +130,8 @@
 {
 	.container-input-modal-connexion input {
     	font-size: 16px;
+    	padding-left: 8%;
+    	margin-bottom: 6%;
 	}
 }
 
@@ -236,7 +238,9 @@ icon-co {
 .container-btn-modal-connexion {
 	display: flex;
     justify-content: center;
-  	 margin: 8% 0 15%;
+    flex-direction: column;
+    align-items: center;
+  	margin: 8% 0 15%;
 }
 
  @media screen and (min-width: 604px) 
@@ -346,5 +350,61 @@ icon-co {
 {
 	.container-inscription-modal-co {
 		transform: translate(0px, 130px);
+	}
+}
+
+ .error{
+	-webkit-text-fill-color: red!important; 
+	background: #FFF2F2!important;
+}
+
+.error::placeholder{
+	-webkit-text-fill-color: red!important; 
+	background: #FFF2F2!important;
+}
+
+.container-alerty-co {
+	width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	text-align: center;
+    margin-top: 2%;
+    background: #963030;
+    margin-bottom: 0;
+}
+
+ @media screen and (min-width: 604px) 
+{
+.container-alerty-co {
+		width: 70vw;
+	}
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-alerty-co {
+		width: 30vw;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.container-alerty-co {
+		width: 30vw;
+	}
+}
+
+.alerty-co {
+	margin-bottom: 0;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-family: 'Avenir-heavy';
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-alerty-co {
+		 font-size: 12px;
 	}
 }
