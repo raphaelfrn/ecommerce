@@ -58,8 +58,12 @@ public class ModalConnexion extends HttpServlet {
 					System.out.println("top connecté");
 					HttpSession session = request.getSession( true );
 			        session.setAttribute( "userid", user.getId_utilisateur());
-			        session.setAttribute( "usernom", user.getNom() );
+			        session.setAttribute( "userEmail", user.getEmail());
+			        session.setAttribute( "userNom", user.getNom());
+			        session.setAttribute( "userPrenom", user.getPrenom());
+			        session.setAttribute( "userTelephone", user.getTelephone());
 			        session.setAttribute( "isConnected", true );
+			        System.out.println(user);
 					connected=true;
 					response.sendRedirect("home");
 				}
