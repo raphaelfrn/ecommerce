@@ -163,7 +163,7 @@ icon-co {
 @media screen and (-webkit-min-device-pixel-ratio:0) 
 { 
 	.container-modal-inscription-input input:focus { 
-		font-size: 16px; 
+		font-size: 14px; 
  		outline:  none;
 	} 
 }

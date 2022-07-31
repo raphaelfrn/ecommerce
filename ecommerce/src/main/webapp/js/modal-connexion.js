@@ -17,14 +17,14 @@ IconConnexion.addEventListener("click", () => {
 	let icon_pwd = document.createElement("img");
 	icon_pwd.className='iconPwd';
 	
-	input_email.id = 'newEmail';
-	input_email.setAttribute('name','newEmail');
+	input_email.id = 'emailCo';
+	input_email.setAttribute('name','emailCo');
 	input_email.setAttribute('type','text');
 	input_email.setAttribute('placeholder','Email');
 	icon_email.src = "assets/icon/mail.svg";
 	
-	input_password.id = 'newPassword';
-	input_password.setAttribute('name','newPassword');
+	input_password.id = 'passwordCo';
+	input_password.setAttribute('name','passwordCo');
 	input_password.setAttribute('type','password');
 	input_password.setAttribute('placeholder','Mot de passe');
 	icon_pwd.src = "assets/icon/pwd.svg";

@@ -14,7 +14,7 @@
 						class=" container-input-modal-connexion container-input-modal-connexion2">
 					</div>
 					<div class="container-btn-modal-connexion">
-						<button class="btn-modal-connexion" >Se connecter</button>
+						<button name="btnConnexion" class="btn-modal-connexion" >Se connecter</button>
 						<div class="container-alerty-co"><p class="alerty-co"></p></div>
 					</div>
 				</div>
@@ -23,7 +23,7 @@
 			<div class="container-inscription-modal-co">
 				<h1 class="title-modal-inscription">S'inscrire</h1>
 				<div class="container-btn-modal-inscription">
-					<a><button class="btn-modal-inscription">S'inscrire</button></a>
+					<a><button  class="btn-modal-inscription">S'inscrire</button></a>
 				</div>
 
 			</div>

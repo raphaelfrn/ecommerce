@@ -7,7 +7,7 @@
 			<img class="icon-close-inscription" alt="Icon fermer" src="assets/icon/close.svg">
 		</div>		
 		<div class="content-modal-inscription">
-			<form method="post" action="#" class="modal-inscription-form" onsubmit="return verif()"  >
+			<form method="post" class="modal-inscription-form" onsubmit="return verif()"  >
 				<div class="container-inscription">
 					<h1 class="modal-inscription-title">Inscription ${name}</h1>
 					

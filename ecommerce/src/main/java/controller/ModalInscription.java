@@ -87,10 +87,8 @@ public class ModalInscription extends HttpServlet {
 			{
 				addressDao.create(address);
 			}
-			System.out.println(userDao.findByMail(mail).getId_utilisateur());
-			System.out.println(!addressDao.verifAddress(userDao.findByMail(mail).getId_utilisateur()));
 		}
 
 		doGet(request, response);
-	}
+	} 
 }	
