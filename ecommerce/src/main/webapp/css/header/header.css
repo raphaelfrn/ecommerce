@@ -6,6 +6,7 @@
 }
 
 .container-header {
+	position: relative;
 	font-family: avenir, sans-serif;
 	padding-bottom: 8vh;
 }
@@ -25,6 +26,63 @@
 	text-decoration: none;
 	color: black;
 }
+
+.content-header-name-user {
+	color: #795929;
+    transform: translate(10px, 9px);
+    margin-bottom: 0;
+    font-size: 12px;
+    cursor: pointer;
+}
+.content-header-name-user:hover {
+	text-decoration: underline;
+}
+
+.container-icon-close-user-choice {
+	text-align: end;
+	position: absolute;
+    top: 19px;
+    right: 27px;
+}
+
+.icon-close-user-choice {
+	width: 12px;
+	cursor: pointer;
+	transition: 1s;
+}
+
+.icon-close-user-choice:hover {
+	transform: scale(1.4);
+}
+
+.container-header-account-choice {
+	display: none;
+	border-top: 1px solid #e7e4e4;
+    position: absolute;
+    top: 0;
+    right: 26px;
+    margin-top: 6vh;
+    background: white;
+    padding: 3% 0 2%;
+   	padding-right: 4%;
+    font-size: 14px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 10%);
+    border-radius: 0px 0px 2px 2px;
+}
+
+.container-header-account-choice ul {
+	margin-bottom: 0;
+	position: relative;
+}
+
+.container-header-account-choice li:nth-child(even) {
+	margin: 8% 0;
+}
+
+.container-header-account-choice li a{
+	margin-left: 0!important;
+}
+
 
 .container-nav-header {
 	z-index: 1;

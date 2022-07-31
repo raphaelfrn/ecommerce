@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+ <script type="text/javascript" defer src="js/header.js"></script>
+    
 <header class="container-header">
 
 	<c:url value="/home" var="home"/>
@@ -17,7 +19,28 @@
 		<div class="container-icon">
 			<form class="form-search" > <input class="input-search" type="text" placeholder="Rechercher" name="search"> </form>
 			<a href=""><img class="icon icon-search" alt="Icon compte" src="assets/icon/search.svg"></a> 
-			<a><img class="icon icon-connexion" alt="Icon compte" src="assets/icon/account.svg"></a> 
+			<% if((boolean)session.getAttribute("isConnected")==false){ %>
+            	<a><img class="icon icon-connexion" alt="Icon compte" src="assets/icon/account.svg"></a> 
+			<% }else{ %>
+				<a><img class="icon header-account-click" alt="Icon compte" src="assets/icon/account.svg"></a>
+				<p class="content-header-name-user header-account-click">Hello, Oum</p> 
+					<div class="container-header-account-choice">
+						<div class="container-icon-close-user-choice">
+						<img class="icon-close-user-choice" alt="Icon fermer" src="assets/icon/close.svg">	
+						</div>
+						<ul>
+							<li>
+								<a href="${account}">Mon compte</a>
+							</li>
+							<li>
+								<a href="${historique}">Historique de commande</a>
+							</li>
+							<li>
+								<a href="">Déconnexion</a>
+							</li>
+						</ul>
+					</div>
+			<% } %>
 			<a><img class="icon" alt="Icon panier" src="assets/icon/basket.svg" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></a>
 		</div> 
 	</nav>

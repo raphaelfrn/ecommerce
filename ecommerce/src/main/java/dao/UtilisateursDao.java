@@ -25,6 +25,18 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 			return encoded;
 		}
 		
+		public static byte[] decoded(String value) throws NoSuchAlgorithmException {
+			MessageDigest md = MessageDigest.getInstance("SHA-256");
+			byte[] hash = md.digest(value.getBytes(StandardCharsets.UTF_8)); byte[] decoded = Base64.getDecoder().decode(hash);
+			return decoded;
+		}
+		
+		public static String decode(String value) throws NoSuchAlgorithmException {
+			Base64.Decoder decoder = Base64.getDecoder();
+		    String decoded = new String(decoder.decode(value));
+			return decoded;
+		}
+		
 		
 	// Create
 
@@ -65,6 +77,7 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 						rs.getString("prenom"),
 						rs.getDate("date_inscription"),
 						rs.getString("email"),
+						rs.getString("telephone"),
 						rs.getString("mot_de_passe")
 								
 						);
@@ -93,7 +106,6 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 			req.setString(4, utilisateur.getEmail());
 			req.setString(5, utilisateur.getMot_de_passe());
 			req.setInt(6, id);
-			
 			req.executeUpdate();
 			
 			return true;
@@ -116,7 +128,6 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 					+ "id_utilisateur = ?");
 			
 			req.setInt(1,id);
-			
 			req.executeUpdate();
 			
 			return true;
@@ -148,6 +159,7 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 						rs.getString("prenom"),
 						rs.getDate("date_inscription"),
 						rs.getString("email"),
+						rs.getString("telephone"),
 						rs.getString("mot_de_passe")		
 						);
 						
@@ -176,6 +188,7 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 						rs.getString("nom"),
 						rs.getString("prenom"),
 						rs.getDate("date_inscription"),
+						rs.getString("telephone"),
 						rs.getString("email"),
 						rs.getString("mot_de_passe")		
 						);
@@ -205,6 +218,7 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 						rs.getString("nom"),
 						rs.getString("prenom"),
 						rs.getDate("date_inscription"),
+						rs.getString("telephone"),
 						rs.getString("email"),
 						rs.getString("mot_de_passe")	
 						);
@@ -216,6 +230,36 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	
+	public UtilisateursM connexion(String email,String password) {
+		try {
+
+				PreparedStatement preparedStatement  = connect.prepareStatement("SELECT * FROM utilisateurs WHERE email= ? AND mot_de_passe=?");
+				preparedStatement.setString(1,email);
+				preparedStatement.setString(2,password);
+				ResultSet resultat=preparedStatement.executeQuery();
+				UtilisateursM u = new UtilisateursM();
+				if(resultat.next()) {
+					u.setId_utilisateur(resultat.getInt( "id_utilisateur"));
+					u.setNom(resultat.getString( "nom" ));
+					u.setPrenom(resultat.getString("prenom"));
+					u.setEmail(resultat.getString( "email"));
+					u.setTelephone(resultat.getString("telephone"));
+					u.setDate_inscription(resultat.getDate("date_inscription"));
+					u.setMot_de_passe(resultat.getString("mot_de_passe"));
+					System.out.println("ok");
+					return u;
+				}else {
+					System.out.println("pas ok null");
+					return null;
+				}
+		} catch (Exception ex) {
+        	ex.printStackTrace();
+        	System.out.println("pb catch");
+        	return null;
+        }
 	}
 
 }

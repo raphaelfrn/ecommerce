@@ -7,6 +7,7 @@ let timeout_register = document.querySelector(".confirm-register");
 let alerty = document.querySelector('.alerty');
 let inputs_register = document.querySelectorAll(".container-modal-inscription-input input");
 let mail = document.querySelector(".container-modal-inscription-input input#email");
+let zipCode = document.querySelector(".container-modal-inscription-input input#zipCode");
 let tel = document.querySelector(".container-modal-inscription-input input#phone");
 let password = document.querySelector(".container-modal-inscription-input input#password");
 let passwordConfirm = document.querySelector(".container-modal-inscription-input input#passwordConfirm");
@@ -31,8 +32,7 @@ var myTimeout = setTimeout(() => {
 
 function myStopFunction() {
   clearTimeout(myTimeout);
-}
-
+} 
 
 //Verification du formulaire
 
@@ -41,6 +41,7 @@ function keyupInput() {
 		arr[index].addEventListener('keyup', () => {
 			arr[index].classList.remove('error');
 		} )
+
 	})
 } keyupInput();
 
@@ -48,67 +49,47 @@ function keyupInput() {
 function verifMail() {
 	let regexMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 	
-	if (mail.value.match(regexMail)) {
-		alerty.innerHTML="";
-		return true
-				
-	} else {
-		mail.className = "error";
-		alerty.innerHTML="L'email n'est pas valide"
-		return false
-	}
+	return mail.value.match(regexMail) ? 
+	(alerty.innerHTML="",  true ) : (mail.focus(), mail.className = "error", alerty.innerHTML="L'email n'est pas valide", false)
 }
+
+function verifZipCode() {
+	var regZipCode = new RegExp(/[0-9]{5}/, 'g');
+	
+	return !regZipCode.test(zipCode.value) || Number.isNaN(Number(zipCode.value)) ? 
+	(zipCode.focus(), zipCode.className = "error", alerty.innerHTML="Code postal non valide", false) : (alerty.innerHTML="", true)
+}
+
 
 function verifPhone() {
 	let regexPhone = /^(01|02|03|04|05|06|07|08|09)[0-9]{8}$/;
 	
-	if (!regexPhone.test(tel.value) || Number.isNaN(Number(tel.value))) {
-		tel.className = "error";
-		alerty.innerHTML="Numéro de télèphone non valide"
-		return false
-	} else {
-		alerty.innerHTML="";
- 		return true
-	}
+	return !regexPhone.test(tel.value) || Number.isNaN(Number(tel.value)) ? 
+	(tel.focus(), tel.className = "error", alerty.innerHTML="Numéro de télèphone non valide", false) : (alerty.innerHTML="", true)
 }
 
 function verifpwd() {
-	if (password.value != passwordConfirm.value) {
-		password.className = "error";
-		passwordConfirm.className = "error";
-		alerty.innerHTML="Veuillez entrer des mots de passe identique"
-		return false
-	} else {
-		password.className = "removeError";
-		passwordConfirm.className = "removeError";
-		alerty.innerHTML="";
- 		return true
-	}
+	
+	return password.value != passwordConfirm.value ?
+	(password.focus(), password.className = "error", passwordConfirm.className = "error", alerty.innerHTML="Veuillez entrer des mots de passe identique", false) :
+	(password.className = "removeError", passwordConfirm.className = "removeError", alerty.innerHTML="", true)
 }
 
 function verif() {
 	let notVerified = 0;
 	
-	inputs_register.forEach(function(element, index, arr){
-		if (arr[index].value == "") {
-				arr[index].className = "error";
-				notVerified ++;
-		} else {
-			arr[index].focus();
-		}
+	inputs_register.forEach(function(element, index, arr){	
+		return arr[index].value == "" ? (arr[index].className = "error", arr[index].focus(), notVerified ++, false) : true
 	})
 
-	if (notVerified >= 1) {
-		alerty.innerHTML="Veuillez remplir tous les champs"
-		return false;
-	} else {
-		alerty.innerHTML="";
-	}
-			
+		
 	if (notVerified == 0) {
-		if  (verifPhone() == false || verifpwd() == false || verifMail() == false) {
+		if  (verifZipCode() == false || verifPhone() == false || verifpwd() == false || verifMail() == false) {
 			return false;
 		}
 		return true;
 	}
+	
+	return notVerified >= 1 ? (alerty.innerHTML="Veuillez remplir tous les champs", false) : alerty.innerHTML="";
 }
+
