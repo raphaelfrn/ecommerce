@@ -30,8 +30,6 @@ public class UtilisateursM {
 		this.telephone = telephone;
 	}
 	
-	
-
 	public UtilisateursM(int id_utilisateur, String nom, String prenom, Date date_inscription, String email,
 			String telephone, String mot_de_passe) {
 		super();
@@ -42,6 +40,15 @@ public class UtilisateursM {
 		this.email = email;
 		this.telephone = telephone;
 		this.mot_de_passe = mot_de_passe;
+	}
+
+	public UtilisateursM(int id_utilisateur, String nom, String prenom, String email, String telephone) {
+		super();
+		this.id_utilisateur = id_utilisateur;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
 	}
 
 	public int getId_utilisateur() {
