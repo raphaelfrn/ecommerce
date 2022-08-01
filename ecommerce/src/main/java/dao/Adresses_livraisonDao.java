@@ -44,7 +44,7 @@ public class Adresses_livraisonDao implements IDao<Adresses_livraisonM> {
 
 	@Override
 	public ArrayList<Adresses_livraisonM> read() {
-ArrayList<Adresses_livraisonM> listeAdresses = new ArrayList<>();
+		ArrayList<Adresses_livraisonM> listeAdresses = new ArrayList<>();
 		
 		try {
 			PreparedStatement req = connect.prepareStatement("SELECT * FROM adresses_livraison");
@@ -179,6 +179,33 @@ ArrayList<Adresses_livraisonM> listeAdresses = new ArrayList<>();
 			e.printStackTrace();
 		}
 		return false;
+	}
+	
+	public Adresses_livraisonM addressUser(int id) {
+		Adresses_livraisonM address =null;
+		try {
+
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM adresses_livraison"
+					+ " WHERE id_utilisateur = ? ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				address = new Adresses_livraisonM(
+						rs.getInt("id_adresse_livraison"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getString("adresse"),
+						rs.getInt("code_postal"),
+						rs.getString("ville"),
+						rs.getString("pays")
+						);	
+			}
+		} catch (Exception ex) {
+        	ex.printStackTrace();
+        }
+		return address;
 	}
 
 }

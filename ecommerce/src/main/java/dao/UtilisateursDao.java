@@ -25,18 +25,6 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 			return encoded;
 		}
 		
-		public static byte[] decoded(String value) throws NoSuchAlgorithmException {
-			MessageDigest md = MessageDigest.getInstance("SHA-256");
-			byte[] hash = md.digest(value.getBytes(StandardCharsets.UTF_8)); byte[] decoded = Base64.getDecoder().decode(hash);
-			return decoded;
-		}
-		
-		public static String decode(String value) throws NoSuchAlgorithmException {
-			Base64.Decoder decoder = Base64.getDecoder();
-		    String decoded = new String(decoder.decode(value));
-			return decoded;
-		}
-		
 		
 	// Create
 
@@ -249,15 +237,12 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 					u.setTelephone(resultat.getString("telephone"));
 					u.setDate_inscription(resultat.getDate("date_inscription"));
 					u.setMot_de_passe(resultat.getString("mot_de_passe"));
-					System.out.println("ok");
 					return u;
 				}else {
-					System.out.println("pas ok null");
 					return null;
 				}
 		} catch (Exception ex) {
         	ex.printStackTrace();
-        	System.out.println("pb catch");
         	return null;
         }
 	}

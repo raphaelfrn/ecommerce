@@ -6,8 +6,8 @@
 <header class="container-header">
 
 	<c:url value="/home" var="home"/>
+	<c:url value="/deconnexion" var="deconnexion"/>
 	<c:url value="/sous-categories" var="sousCat"/>
-
 	<c:url value="/account" var="account"/>
 	<c:url value="/historique" var="historique"/>
 	
@@ -15,7 +15,8 @@
 		<div data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img class="icon-menu" alt="icon menu" src="assets/icon/menu.svg"></div>
 
 		<a href="${home}"> <img class="logo-dione" alt="logo Dione" src="assets/logo/logo-dione-black.svg"> </a>
-    
+
+							
 		<div class="container-icon">
 			<form class="form-search" > <input class="input-search" type="text" placeholder="Rechercher" name="search"> </form>
 			<a href=""><img class="icon icon-search" alt="Icon compte" src="assets/icon/search.svg"></a> 
@@ -28,15 +29,16 @@
 						<div class="container-icon-close-user-choice">
 						<img class="icon-close-user-choice" alt="Icon fermer" src="assets/icon/close.svg">	
 						</div>
-						<ul>
+						<ul> 
 							<li>
 								<a href="${account}">Mon compte</a>
 							</li>
 							<li>
+							
 								<a href="${historique}">Historique de commande</a>
 							</li>
 							<li>
-								<a href="">Déconnexion</a>
+								<a href="${deconnexion}">Déconnexion</a>
 							</li>
 						</ul>
 					</div>

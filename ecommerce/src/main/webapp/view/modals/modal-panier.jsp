@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <link href="css/modals/modal-panier.css" rel="stylesheet">
 
+<c:url value="/panier" var="panier"/>
+
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header modal-header modal-header-panier">
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
