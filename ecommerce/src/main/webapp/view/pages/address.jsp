@@ -38,11 +38,14 @@
 					<h1 class="address-title">Votre adresse de livraison</h1>
 				</div>
 				
-				<div class="container-address">
-					<h1>Adresse par default</h1>
-					<p>14 Avenue du Marachal Fosch</p>
-					<p>75000 Paris, France</p>
-				</div>
+				<c:forEach items="${listAddress }" var="addressUser">	
+					<div class="container-address">
+						<h1>Adresse par default</h1>
+						<p>${addressUser.adresse}</p>
+						<p>${addressUser.code_postal} ${addressUser.ville}, ${addressUser.pays}</p>
+					</div>
+				</c:forEach>
+				
 				
 				<div class="overflow-address">
 					<div class="container-address container-address-modifier">
