@@ -57,7 +57,7 @@
 							<p>${addressUser.adresse}</p>
 							<a href="${address}"><img class="icon-arrow update-address" alt="Icon flêche" src="assets/icon/arrow.svg"></a>
 						</div>
-						<p>${addressUser.pays} ${addressUser.ville}, ${addressUser.pays}</p>
+						<p>${addressUser.code_postal} ${addressUser.ville}, ${addressUser.pays}</p>
 					</div>
 				</c:forEach>
 				
