@@ -67,6 +67,7 @@
 			</nav>
 	 	</div>
 	</div>
+	
 	<c:import url="/modalConnexion"></c:import>
 	<c:import url="/modalInscription"></c:import>
 	<c:import url="/modalPanier"></c:import>
