@@ -39,31 +39,33 @@
 				
 				<div id="carouselDetailsProduct" class="carousel slide" data-bs-ride="carousel">
 			  <div class="carousel-indicators">
-			    <button type="button" data-bs-target="#carouselDetailsProduct" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-			    <button type="button" data-bs-target="#carouselDetailsProduct" data-bs-slide-to="1" aria-label="Slide 2"></button>
-			    <button type="button" data-bs-target="#carouselDetailsProduct" data-bs-slide-to="2" aria-label="Slide 3"></button>
-			      <button type="button" data-bs-target="#carouselDetailsProduct" data-bs-slide-to="3" aria-label="Slide 4"></button>
-			         <button type="button" data-bs-target="#carouselDetailsProduct" data-bs-slide-to="4" aria-label="Slide 5"></button>
-			            
+			  
+			  	<c:forEach items="${image }" var="image" varStatus="status">
+			  		<c:if test="${status.first }">
+			    			<button type="button" data-bs-target="#carouselDetailsProduct" data-bs-slide-to="${image.id_image-1}" class="active" aria-current="true" aria-label="${image.id_image }"></button>
+			   		</c:if>
+			   		<c:if test="${!status.first }">
+			   				<button type="button" data-bs-target="#carouselDetailsProduct" data-bs-slide-to="${image.id_image-1}" aria-label="${image.id_image}"></button>
+			    	</c:if>
+				</c:forEach>
 			  </div>
-			  <div class="carousel-inner">
-			    <div class="carousel-item active">
-			      <img src="assets/img/enceintes/Phantom-1/Phantom-1-Black1.webp" class="d-block w-100" alt="First slide">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="assets/img/enceintes/Phantom-1/Phantom-1-Black2.webp" class="d-block w-100" alt="Second slide">
-			    </div>
-			    <div class="carousel-item">
-			      <img src="assets/img/enceintes/Phantom-1/Phantom-1-Black3.webp" class="d-block w-100" alt="Third slide">
-			    </div>
-			     <div class="carousel-item">
-			      <img src="assets/img/enceintes/Phantom-1/Phantom-1-Black4.webp" class="d-block w-100" alt="Fourth slide">
-			    </div>
-			     <div class="carousel-item">
-			      <img src="assets/img/enceintes/Phantom-1/Phantom-1-Black5.webp" class="d-block w-100" alt="Fifth slide">
-			    </div>
-			   
+			  
+			  <div class="carousel-inner"> 
+			 
+				  <c:forEach items="${image }" var="image" varStatus="status">
+				  	<c:if test="${status.first}">
+					    <div class="carousel-item active">
+					      <img src=" <c:out value="${image.url}"/>" class="d-block w-100" alt="${image.url}">
+					    </div>
+					</c:if>
+					<c:if test="${!status.first }">
+						<div class="carousel-item">
+						 <img src=" <c:out value="${image.url}"/>" class="d-block w-100" alt="${image.url}">
+						 </div>
+					</c:if> 
+				   </c:forEach>
 			  </div>
+			  
 			  <button class="carousel-control-prev" type="button" data-bs-target="#carouselDetailsProduct" data-bs-slide="prev">
 			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			    <span class="visually-hidden">Previous</span>

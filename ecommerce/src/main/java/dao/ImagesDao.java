@@ -139,5 +139,34 @@ ArrayList<ImagesM> listeImage = new ArrayList<>();
 		}
 		return image;
 	}
+	
+	// read image by id_produit
+	public ArrayList<ImagesM> readByIdProduit(int idProduit) {
+		ArrayList<ImagesM> listeImage = new ArrayList<>();
+				
+				try {
+					PreparedStatement req = connect.prepareStatement("SELECT * FROM images WHERE id_produit = ?");
+					
+					req.setInt(1, idProduit);
+					
+					ResultSet rs = req.executeQuery();
+					
+					while (rs.next()) {
+						ImagesM image = new ImagesM(
+								rs.getInt("id_image"),
+								new ProduitsM(rs.getInt("id_produit")),
+								rs.getString("url")
+										
+								);
+						listeImage.add(image);
+					}
+					
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return listeImage;
+			}
 
 }
