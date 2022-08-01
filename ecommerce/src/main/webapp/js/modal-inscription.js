@@ -13,7 +13,6 @@ let tel = document.querySelector(".container-modal-inscription-input input#phone
 let password = document.querySelector(".container-modal-inscription-input input#password");
 let passwordConfirm = document.querySelector(".container-modal-inscription-input input#passwordConfirm");
 
-console.log(inputs_register_txt);
 //Display Inscription
 BtnInscription.addEventListener("click", () => {
 	
