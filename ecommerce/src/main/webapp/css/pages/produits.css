@@ -125,12 +125,21 @@ body{
 }
 
 .container-card-produit-img img{
-   width: 84vw;
+   width: 70vw;
+   margin-top:5%;
+   margin-bottom:5%;
 }
  @media screen and (min-width: 820px) 
 {
 	.container-card-produit-img img{
-	   width: auto;
+	   width: 300px;
+	   padding-top:5%;
+	  
+	   
+	}
+	
+	.container-card-produit-img{
+	height:300px;
 	}
 }
 
