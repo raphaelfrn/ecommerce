@@ -66,21 +66,12 @@ public class ModalConnexion extends HttpServlet {
 			        session.setAttribute( "userPrenom", user.getPrenom());
 			        session.setAttribute( "userTelephone", user.getTelephone());
 			        System.out.println("top connecté");
-//			        int userCo = user.getId_utilisateur();
-//			        System.out.println(userCo);
-//			        request.setAttribute("addt", addressDao.addressUser(userCo));
-//			        System.out.println(addressDao.addressUser(userCo));
-//			        request.setAttribute("adresseUser", addressDao.addressUser(userCo).getAdresse());
-//			        request.setAttribute("villeUser", addressDao.addressUser(user.getId_utilisateur()).getVille());
-//			        request.setAttribute("CodePostalUser", addressDao.addressUser(user.getId_utilisateur()).getCode_postal());
-//			        request.setAttribute("PaysUser", addressDao.addressUser(user.getId_utilisateur()).getPays());
-//			        String pays =  addressDao.addressUser(user.getId_utilisateur()).getPays();
-//			        System.out.println(addressDao.addressUser(userCo));
-//			        
-//			    System.out.println(pays);
 			        
 			        session.setAttribute( "isConnected", true );
 					connected=true;
+					response.sendRedirect("panier");
+					System.out.println("connected " +connected);
+					
 					
 					
 				}
@@ -89,12 +80,7 @@ public class ModalConnexion extends HttpServlet {
 			if(connected==false) {
 				System.out.println("connected " + connected);
 				request.getRequestDispatcher("view/modals/modal-connexion.jsp").forward(request, response);
-			} else {
-				response.sendRedirect("panier");
-				System.out.println("connected " +connected);
-				return;
 			}
-			
 	
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();

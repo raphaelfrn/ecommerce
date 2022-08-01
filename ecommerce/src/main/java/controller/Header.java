@@ -37,6 +37,7 @@ public class Header extends HttpServlet {
 			session.setAttribute( "isConnected", false );
 		}
 		
+		
 		request.setAttribute("listCat", catDao.read());
 
 		request.getRequestDispatcher("/view/menu/header.jsp").forward(request, response);
