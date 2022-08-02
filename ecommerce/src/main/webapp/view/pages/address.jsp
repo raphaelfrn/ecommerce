@@ -19,6 +19,7 @@
 <script type="text/javascript" defer src="js/modal-connexion.js"></script>
 <script type="text/javascript" defer src="js/modal-add.js"></script>
 <script type="text/javascript" defer src="js/modal-inscription.js"></script>
+<script type="text/javascript" defer src="js/address.js"></script>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -78,12 +79,13 @@
 			<div class="container-address-add">
 				<div class="container-address-add-hide">
 					<div class="container-first-title-adress"><h1 class="first-title-adress">Ajouter une nouvelle adresse de livraison</h1></div>					
-					<form action="">
+					<form method="post" onsubmit="return verifAddress()">
 						<div class="container-input-add-address">
 							<input type="text" id="addressAdd" name="address" placeholder="Adresse" >
-							<input type="text" id="cityAdd" name="city" placeholder="Ville" >
+							<input class="address-input-txtOnly" type="text" id="cityAdd" name="city" placeholder="Ville" >
 							<input class="addressZipCode" type="text" id="zipCodeAdd" name="zipCode" placeholder="Code Postal" >
-							<input type="text" id="countryAdd" name="country" placeholder="Pays" >
+							<input class="address-input-txtOnly" type="text" id="countryAdd" name="country" placeholder="Pays" >
+							<div class="container-alerty-address"><p class="alerty-address"></p></div>
 						</div>
 						<div class="container-btn-add-address">
 							<button class="btn-add-address">Ajouter</button>

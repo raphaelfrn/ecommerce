@@ -34,7 +34,7 @@ function verifZipCodeModalAddress() {
 	var regZipCode = new RegExp(/[0-9]{5}/, 'g');
 	
 	return !regZipCode.test(ZipCode_modal_address.value) || Number.isNaN(Number(ZipCode_modal_address.value)) ? 
-	(ZipCode_modal_address.focus(), ZipCode_modal_address.className = "error", alerty_modal_address.innerHTML="Code postal non valide", false) : (alerty.innerHTML="", true)
+	(ZipCode_modal_address.focus(), ZipCode_modal_address.className = "error", alerty_modal_address.innerHTML="Code postal non valide", false) : (alerty_modal_address.innerHTML="", true)
 }
 
 function verifTxtModalAddresstreet() {
@@ -50,12 +50,12 @@ function verifTxtModalAddress() {
 	let error = 0;
 	
 	address_input_txt_only.forEach(function(element, index, arr){
-		let min = /^[a-zA-Z].{3,}$/;
+		let min = /^[a-zA-Z].{2,}$/;
 		let regexNbr =/^[^0-9]+$/;	
 		
 		!regexNbr.test(arr[index].value) ? alerty_modal_address.innerHTML="Vous ne pouvez pas entrer de chiffre" : "";
 		 
-		!min.test(arr[index].value) ? alerty_modal_address.innerHTML="4 caractères minimum requis" : "";
+		!min.test(arr[index].value) ? alerty_modal_address.innerHTML="3 caractères minimum requis" : "";
 		
 		return !regexNbr.test(arr[index].value) || !min.test(arr[index].value)  ? 
 		(arr[index].className = "error", arr[index].focus(), error ++) : error ;
@@ -65,7 +65,7 @@ function verifTxtModalAddress() {
 	return error >= 1 ? false : true;
 }
 
-function verifAddress() {
+function verifAddressModal() {
 	let notVerified = 0;
 	
 	inputs_modal_address.forEach(function(element, index, arr){	
@@ -73,7 +73,6 @@ function verifAddress() {
 		
 	})
 
-		console.log(notVerified);
 	if (notVerified == 0) {
 		alerty_modal_address.innerHTML="";
 		if  (verifZipCodeModalAddress() == false || verifTxtModalAddress()== false || verifTxtModalAddresstreet()== false ) {

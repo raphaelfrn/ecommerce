@@ -280,15 +280,44 @@
 }
 
 .title-add-address:hover {
-/* 	text-decoration-color: none; */
-/* 	text-decoration: none; */
-	color: #C29318;
-	
+	color: #C29318;	
 }
  @media screen and (min-width: 820px) 
 {
 	.title-add-address {
 		display: none;
+	}
+}
+
+.error{
+	-webkit-text-fill-color: #963030!important; 
+	background: #FFF2F2!important;
+}
+
+.error::placeholder{
+	-webkit-text-fill-color: #963030!important; 
+	background: #FFF2F2!important;
+}
+
+.container-alerty-address {
+	width: 30vw;
+	text-align: center;
+    background: #963030;
+    margin-bottom: 0;
+}
+
+.alerty-address  {
+	margin-bottom: 0;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-family: 'Avenir-heavy';
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.alerty-address  {
+		 font-size: 12px;
 	}
 }
 
