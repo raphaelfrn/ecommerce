@@ -41,9 +41,9 @@ public class Produits extends HttpServlet {
 		 
 		 Sous_categoriesM sousCat = sousCatDao.findById(idSousCat);
 			
-			request.setAttribute("sousCat", sousCat);
+			request.setAttribute("sC", sousCat);
 			
-			System.out.println(sousCat);
+			
 		
 		request.getRequestDispatcher("/view/pages/produits.jsp").forward(request, response);
 	}
