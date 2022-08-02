@@ -30,6 +30,12 @@ body{
 	height:auto;
 }
 
+.image-hero{
+	width: 100vw;
+	height:auto;
+}
+
+
 .icon-sound {
 	display: none;
 }

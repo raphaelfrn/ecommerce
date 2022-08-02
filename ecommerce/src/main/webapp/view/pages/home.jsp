@@ -42,6 +42,9 @@
 		</div>
 	</div>
 	
+	
+	
+	
 	<div class="container-categorie">
 		<div class="categorie">
 			<div class="container-categorie-infos">

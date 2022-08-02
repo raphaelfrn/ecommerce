@@ -4,7 +4,53 @@ body{
 	background: #f8f8f8 !important;
 }
 
+.container-hero{
+	width: 100vw;	
+	overflow:hidden;
+	position: relative;
+	position: relative;
+}
 
+ @media screen and (min-width: 820px) 
+{
+	.container-hero{
+   		 transform: translate(0px, -64px);
+	}
+}
+
+ @media screen and (min-width: 1440px) 
+{
+	.container-hero{
+	    transform: translate(0px, -137px);
+	}
+}
+
+.video-hero {
+	width: 100vw;
+	height:auto;
+}
+
+.image-hero{
+	width: 100vw;
+	height:auto;
+}
+
+
+.icon-sound {
+	display: none;
+}
+
+ @media screen and (min-width: 430px) 
+{
+	.icon-sound {
+		display: block;
+		position: absolute;
+	    bottom: 32px;
+	    right: 33px;
+	    width: 20px;
+	    cursor: pointer;
+	}
+}
 
 .icon-back {
 	margin: 2% 4%;

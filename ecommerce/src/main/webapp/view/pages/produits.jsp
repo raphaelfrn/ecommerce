@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+ 
 <!DOCTYPE html>
 <html> 
 <head>
@@ -35,7 +37,30 @@
 	<c:import url="/header"></c:import>	
 	
 	
+	<div class="container-hero">
+		
+		<c:set var="url" value="${sC.video }"/>
 	
+		<c:if test="${fn:contains(url,'mp4')}"> 
+			
+			<video class="video-hero" muted autoplay="autoplay" loop preload="auto">
+				<source src="<c:out value="${sC.video }" />" type="video/mp4">
+			</video>
+			<div class="container-hero-infos">
+				<img class="icon-sound" alt="Icone son" src="assets/icon/sound.svg">
+			</div>
+		
+		</c:if>
+		
+		<c:if test="${fn:contains(url,'webp')}">
+		<div class="image-hero">
+			<img alt="image hero" src="<c:out value="${sC.video }" />">
+		</div>
+		</c:if>
+		
+	
+		
+	</div>
 	
 
 	
