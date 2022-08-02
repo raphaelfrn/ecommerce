@@ -106,6 +106,78 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 		return false;
 	}
 	
+	public boolean updateTel(UtilisateursM utilisateur, int id) {
+		try {
+			PreparedStatement req = connect.prepareStatement("UPDATE utilisateurs SET tetephone=? WHERE id_utilisateur=?");
+			
+			req.setString(1, utilisateur.getTelephone());
+			req.setInt(2, id);
+			req.executeUpdate();
+			
+			return true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
+	public boolean updateMail(UtilisateursM utilisateur, int id) {
+		try {
+			PreparedStatement req = connect.prepareStatement("UPDATE utilisateurs SET email=? WHERE id_utilisateur=?");
+			
+			req.setString(1, utilisateur.getEmail());
+			req.setInt(2, id);
+			req.executeUpdate();
+			
+			return true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
+	public boolean updateName(UtilisateursM utilisateur, int id) {
+		try {
+			PreparedStatement req = connect.prepareStatement("UPDATE utilisateurs SET nom=?, prenom=? WHERE id_utilisateur=?");
+			
+			req.setString(1, utilisateur.getNom());
+			req.setString(2, utilisateur.getPrenom());
+			req.setInt(3, id);
+			req.executeUpdate();
+			
+			return true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
+	public boolean updatePwd(UtilisateursM utilisateur, int id) {
+		try {
+			PreparedStatement req = connect.prepareStatement("UPDATE utilisateurs SET mot_de_passe=? WHERE id_utilisateur=?");
+			
+			req.setString(1, utilisateur.getMot_de_passe());
+			req.setInt(2, id);
+			req.executeUpdate();
+			
+			return true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 	
 	// Delete
 

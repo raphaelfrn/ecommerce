@@ -20,7 +20,6 @@ public class DatabaseConnection {
 
 					try {
 						connect = (Connection) DriverManager.getConnection(url+dbName,user,pwd);
-						System.out.println("Connexion Ok");
 		
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
