@@ -39,40 +39,33 @@
 					<h1 class="address-title">Votre adresse de livraison</h1>
 				</div>
 				
-				<c:forEach items="${listAddress }" var="addressUser">	
-					<div class="container-address">
-						<h1>Adresse par default</h1>
-						<p>${addressUser.adresse}</p>
-						<p>${addressUser.code_postal} ${addressUser.ville}, ${addressUser.pays}</p>
-					</div>
+				<c:forEach items="${listAddress }" var="addressUser" varStatus="status">	
+					<c:if test="${status.first }">
+						<div class="container-address">
+							<h1>Adresse par default</h1>
+							<p>${addressUser.adresse}</p>
+							<p>${addressUser.code_postal} ${addressUser.ville}, ${addressUser.pays}</p>
+						</div>
+			   		</c:if>	
 				</c:forEach>
-				
-				
+
 				<div class="overflow-address">
-					<div class="container-address container-address-modifier">
-						<h1>Adresse</h1>
-						<p>22 Boulevard Kellermann</p>
-						<p>75006 Paris</p>
-						<div class="container-address-choice">
-							<p>France</p>
-							<a href="" >Chosir comme adresse par default</a>
-						</div>
-						<div class="container-delete-address">
-							<a class="delete-address"  href="">Supprimer</a>
-						</div>
-					</div>
-					<div class="container-address container-address-modifier">
-					<h1>Adresse</h1>
-					<p>22 Boulevard Kellermann</p>
-					<p>75006 Paris</p>
-					<div class="container-address-choice">
-						<p>France</p>
-						<a href="" >Chosir comme adresse par default</a>
-					</div>
-					<div class="container-delete-address">
-						<a class="delete-address"  href="">Supprimer</a>
-					</div>
-				</div>
+					<c:forEach items="${listAddress }" var="addressUser" varStatus="status">	
+						<c:if test="${!status.first }">
+							<div class="container-address container-address-modifier">
+								<h1>Adresse</h1>
+								<p>${addressUser.adresse}</p>
+								<p>${addressUser.code_postal} ${addressUser.ville}</p>
+								<div class="container-address-choice">
+									<p>${addressUser.pays}</p>
+									<a href="">Chosir comme adresse par default</a>
+								</div>
+								<div class="container-delete-address">
+									<a class="delete-address" href="">Supprimer</a>
+								</div>
+							</div>
+				   		</c:if>	
+					</c:forEach>	
 				</div>
 			</div>
 			

@@ -49,16 +49,18 @@
 						<span class="update-mail">Modifier</span>
 					</div>
 				</div>
-							
-				<c:forEach items="${listAddress }" var="addressUser">	
-					<div class="container-client">
-						<h1>Adresse</h1>
-						<div class="container-infos-client">
-							<p>${addressUser.adresse}</p>
-							<a href="${address}"><img class="icon-arrow update-address" alt="Icon flêche" src="assets/icon/arrow.svg"></a>
+						
+				<c:forEach items="${listAddress }" var="addressUser" varStatus="status">	
+					<c:if test="${status.first }">
+						<div class="container-client">
+							<h1>Adresse</h1>
+							<div class="container-infos-client">
+								<p>${addressUser.adresse}</p>
+								<a href="${address}"><img class="icon-arrow update-address" alt="Icon flêche" src="assets/icon/arrow.svg"></a>
+							</div>
+							<p>${addressUser.code_postal} ${addressUser.ville}, ${addressUser.pays}</p>
 						</div>
-						<p>${addressUser.code_postal} ${addressUser.ville}, ${addressUser.pays}</p>
-					</div>
+					</c:if>	
 				</c:forEach>
 				
 				<div class="container-client">
