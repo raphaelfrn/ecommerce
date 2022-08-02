@@ -163,7 +163,6 @@ ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 		return produit;
 	}
 	
-	
 	public ArrayList<ProduitsM> readBySousCat(int idSousCat) {
 		ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 				
