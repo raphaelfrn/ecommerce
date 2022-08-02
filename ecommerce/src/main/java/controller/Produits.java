@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.ProduitsDao;
 import dao.Sous_categoriesDao;
+import model.Sous_categoriesM;
 
 /**
  * Servlet implementation class Produits
@@ -37,6 +38,12 @@ public class Produits extends HttpServlet {
 		
 		int idSousCat= Integer.valueOf(request.getParameter("idSousCat"));
 		 request.setAttribute("listProduits", produitsDao.produitByIdSousCat(idSousCat));
+		 
+		 Sous_categoriesM sousCat = sousCatDao.findById(idSousCat);
+			
+			request.setAttribute("sousCat", sousCat);
+			
+			System.out.println(sousCat);
 		
 		request.getRequestDispatcher("/view/pages/produits.jsp").forward(request, response);
 	}

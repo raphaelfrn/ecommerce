@@ -7,6 +7,7 @@ public class Sous_categoriesM {
 	private String titre;
 	private CategorieM id_categorie;
 	private String image;
+	private String video;
 	
 	
 	// Constructors
@@ -19,11 +20,12 @@ public class Sous_categoriesM {
 	}
 
 
-	public Sous_categoriesM(int id_sous_categorie, String titre, CategorieM id_categorie, String image) {	
+	public Sous_categoriesM(int id_sous_categorie, String titre, CategorieM id_categorie, String image, String video) {	
 		this.id_sous_categorie = id_sous_categorie;
 		this.titre = titre;
 		this.id_categorie = id_categorie;
 		this.image = image;
+		this.video= video;
 	}
 
 	// Getters and Setters
@@ -67,11 +69,20 @@ public class Sous_categoriesM {
 		this.image = image;
 	}
 
+	public String getVideo() {
+		return video;
+	}
+
+	public void setVideo(String video) {
+		this.video = video;
+	}
+
 	@Override
 	public String toString() {
 		return "Sous_categoriesM [id_sous_categorie=" + id_sous_categorie + ", titre=" + titre + ", id_categorie="
-				+ id_categorie + ", image=" + image + "]";
+				+ id_categorie + ", image=" + image + ", video=" + video + "]";
 	}
+
 
 	
 	

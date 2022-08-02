@@ -55,7 +55,8 @@ ArrayList<Sous_categoriesM> listeSousCat = new ArrayList<>();
 						rs.getInt("id_sous_categorie"),
 						rs.getString("titre"),
 						new CategorieM(rs.getInt("id_categorie")),
-						rs.getString("image")
+						rs.getString("image"),
+						rs.getString("video")
 						
 								
 						);
@@ -135,7 +136,8 @@ ArrayList<Sous_categoriesM> listeSousCat = new ArrayList<>();
 						rs.getInt("id_sous_categorie"),
 						rs.getString("titre"),
 						new CategorieM(rs.getInt("id_categorie")),
-						rs.getString("image")
+						rs.getString("image"),
+						rs.getString("video")
 						
 									
 						);
@@ -165,7 +167,8 @@ ArrayList<Sous_categoriesM> listeSousCat = new ArrayList<>();
 						rs.getInt("id_sous_categorie"),
 						rs.getString("titre"),
 						new CategorieM(rs.getInt("id_categorie")),
-						rs.getString("image")
+						rs.getString("image"),
+						rs.getString("video")
 						
 								
 						);
