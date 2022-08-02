@@ -50,12 +50,8 @@ public class DetailsProduit extends HttpServlet {
 			
 			
 			request.setAttribute("produit", produit);
-			request.setAttribute("image", image);
-			
-			System.out.println(image);
-			
+			request.setAttribute("image", image);			
 				}
-		
 		
 		
 		request.getRequestDispatcher("/view/pages/details-produit.jsp").forward(request, response);
@@ -63,10 +59,7 @@ public class DetailsProduit extends HttpServlet {
 		
 }
 		
-		
-		
-		
-
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

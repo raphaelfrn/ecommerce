@@ -12,6 +12,8 @@
 	margin-right:3%;
 }
 
+
+
 @media screen and (min-width:1200px){
 	.container-slider-description{
 	display:flex;
@@ -51,12 +53,13 @@
 	}
 	
 	.container-slider .carousel-item{
-	height:50vh;
-	width:50vw;
+	width:20vw;
 
 	}
 	
 }
+
+
 
 
 /* The container with the description of the product */

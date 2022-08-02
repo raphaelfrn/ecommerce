@@ -51,7 +51,8 @@ ArrayList<CategorieM> listeCategorie = new ArrayList<>();
 			while (rs.next()) {
 				CategorieM categorie = new CategorieM(
 						rs.getInt("id_categorie"),
-						rs.getString("titre")
+						rs.getString("titre"),
+						rs.getString("video")
 						);
 				listeCategorie.add(categorie);
 			}
@@ -69,7 +70,7 @@ ArrayList<CategorieM> listeCategorie = new ArrayList<>();
 	@Override
 	public boolean update(CategorieM categorie, int id) {
 		try {
-			PreparedStatement req = connect.prepareStatement("UPDATE categories SET titrer=? "
+			PreparedStatement req = connect.prepareStatement("UPDATE categories SET titre=? "
 					+" WHERE id_categorie=?");
 			
 			
@@ -126,7 +127,8 @@ ArrayList<CategorieM> listeCategorie = new ArrayList<>();
 			if(rs.next()) {
 				categorie = new CategorieM(
 						rs.getInt("id_categorie"),
-						rs.getString("titre")
+						rs.getString("titre"),
+						rs.getString("video")
 						);
 						
 					

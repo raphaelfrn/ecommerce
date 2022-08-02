@@ -4,6 +4,7 @@ public class CategorieM {
 
 	private int id_categorie;
 	private String titre;
+	private String video;
 
 	
 	// Constructors
@@ -15,9 +16,10 @@ public class CategorieM {
 		this.id_categorie = id_categorie;
 	}
 	
-	public CategorieM(int id_categorie, String titre) {
+	public CategorieM(int id_categorie, String titre, String video) {
 		this.id_categorie = id_categorie;
 		this.titre = titre;
+		this.video=video;
 	}
 
 	
@@ -36,8 +38,18 @@ public class CategorieM {
 		this.titre = titre;
 	}
 
+	public String getVideo() {
+		return video;
+	}
+
+	public void setVideo(String video) {
+		this.video = video;
+	}
+
 	@Override
 	public String toString() {
-		return "CategorieM [id_categorie=" + id_categorie + ", titre=" + titre + "]";
+		return "CategorieM [id_categorie=" + id_categorie + ", titre=" + titre + ", video=" + video + "]";
 	}
+
+	
 }
