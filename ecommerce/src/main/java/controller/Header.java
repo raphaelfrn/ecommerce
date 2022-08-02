@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.CategorieDao;
 import dao.ProduitsDao;
-import model.ProduitsM;
+
 
 /**
  * Servlet implementation class Header
@@ -45,15 +45,14 @@ public class Header extends HttpServlet {
 		
 		// search
 		ProduitsDao produitDao = new ProduitsDao();
-		ArrayList<ProduitsM> listeP = new ArrayList<ProduitsM>();
+		String search = request.getParameter("search");
 		
-		String mot = request.getParameter("mot");
-		listeP = produitDao.search(mot);
-		
-		request.setAttribute("mot", mot);
-		request.setAttribute("listeP", listeP);
-		
-		System.out.println(mot);
+	 
+	        request.setAttribute("listSearch", produitDao.search(search));
+	        
+	        System.out.println(search);
+
+	        System.out.println(produitDao.search(search));
 		
 		// categories 
 		request.setAttribute("listCat", catDao.read());

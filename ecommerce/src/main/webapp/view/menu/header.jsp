@@ -16,9 +16,15 @@
 
 		<a href="${home}"> <img class="logo-dione" alt="logo Dione" src="assets/logo/logo-dione-black.svg"> </a>
 		
+			<c:forEach items="${listSearch }" var="search"> 
+							<li>
+								   <a href="details?id=${search.id_produit}&param=findById">${search.titre} ${search.id_produit}</a> 
+
+							</li>
+							</c:forEach>
 							
 		<div class="container-icon">
-			<form method="get" class="form-search"> <input class="input-search" type="text" placeholder="Rechercher" name="search"> <button type="button">Ok</button>  </form>
+			<form class="form-search" > <input class="input-search" type="text" placeholder="Rechercher" name="search"> </form>
 					 <div class="container-header-search">
 						<div class="container-icon-close-search">
 						<img class="icon-close-search" alt="Icon fermer" src="assets/icon/close.svg">	
@@ -26,9 +32,10 @@
 						
 						<ul> 
 						
-							<c:forEach items="${listeP }" var="listeP"> 
+							<c:forEach items="${listSearch }" var="search"> 
 							<li>
-								<a href="${produits}?id=${produits.id_produit}&param=findById"><c:out value="${produits.titre }" /> </a>
+								   <a href="details?id=${search.id_produit}&param=findById">${search.titre} ${search.id_produit}</a> 
+
 							</li>
 							</c:forEach>
 						</ul>
