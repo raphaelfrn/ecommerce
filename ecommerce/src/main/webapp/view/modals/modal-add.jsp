@@ -5,7 +5,7 @@
 		</div>
 		<div class="content-modal">
 			<h1 class="title-modal-add">Ajouter une nouvelle adresse de livraison</h1>
-			<form method="post" onsubmit="return verifAddress()">
+			<form method="post" onsubmit="return verifAddressModal()">
 				<div class="container-input-modal-add ">
 					<input type="text" id="modalAddressStreet" name="address" placeholder="Adresse" >
 					<input class="address-input-txt-only" type="text" id="modalCity" name="city" placeholder="Ville" >
