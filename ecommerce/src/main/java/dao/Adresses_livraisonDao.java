@@ -30,7 +30,6 @@ public class Adresses_livraisonDao implements IDao<Adresses_livraisonM> {
 			req.setString(5, adresse.getPays());
 			
 			req.executeUpdate();
-			
 			return true;
 			
 		} catch (SQLException e) {

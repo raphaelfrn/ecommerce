@@ -14,7 +14,7 @@
 					<div class="container-alerty-modal-address"><p class="alerty-modal-address"></p></div>
 				</div>
 				<div class="container-btn-modal-add">
-					<a><button class="btn-modal-add">Ajouter</button></a>
+					<a><button class="btn-modal-add" name="btnAddModalAddress">Ajouter</button></a>
 				</div>
 			</form>
 		</div>
