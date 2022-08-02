@@ -80,10 +80,10 @@
 					<div class="container-first-title-adress"><h1 class="first-title-adress">Ajouter une nouvelle adresse de livraison</h1></div>					
 					<form action="">
 						<div class="container-input-add-address">
-							<input type="text" id="address" name="address" placeholder="Adresse" required>
-							<input type="text" id="city" name="city" placeholder="Ville" required>
-							<input type="text" id="address" name="zipCode" placeholder="Code Postal" required>
-							<input type="text" id="country" name="country" placeholder="Pays" required>
+							<input type="text" id="addressAdd" name="address" placeholder="Adresse" >
+							<input type="text" id="cityAdd" name="city" placeholder="Ville" >
+							<input class="addressZipCode" type="text" id="zipCodeAdd" name="zipCode" placeholder="Code Postal" >
+							<input type="text" id="countryAdd" name="country" placeholder="Pays" >
 						</div>
 						<div class="container-btn-add-address">
 							<button class="btn-add-address">Ajouter</button>
