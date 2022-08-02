@@ -15,10 +15,26 @@
 		<div data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img class="icon-menu" alt="icon menu" src="assets/icon/menu.svg"></div>
 
 		<a href="${home}"> <img class="logo-dione" alt="logo Dione" src="assets/logo/logo-dione-black.svg"> </a>
-
+		
 							
 		<div class="container-icon">
-			<form class="form-search" > <input class="input-search" type="text" placeholder="Rechercher" name="search"> </form>
+			<form method="get" class="form-search"> <input class="input-search" type="text" placeholder="Rechercher" name="search"> <button type="button">Ok</button>  </form>
+					 <div class="container-header-search">
+						<div class="container-icon-close-search">
+						<img class="icon-close-search" alt="Icon fermer" src="assets/icon/close.svg">	
+						</div>
+						
+						<ul> 
+						
+							<c:forEach items="${listeP }" var="listeP"> 
+							<li>
+								<a href="${produits}?id=${produits.id_produit}&param=findById"><c:out value="${produits.titre }" /> </a>
+							</li>
+							</c:forEach>
+						</ul>
+					</div>
+
+			
 			<a href=""><img class="icon icon-search" alt="Icon compte" src="assets/icon/search.svg"></a> 
 			<% if((boolean)session.getAttribute("isConnected")==false){ %>
             	<a><img class="icon icon-connexion" alt="Icon compte" src="assets/icon/account.svg"></a> 

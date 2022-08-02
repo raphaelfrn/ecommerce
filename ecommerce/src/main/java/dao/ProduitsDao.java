@@ -232,5 +232,40 @@ ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 				}
 				return listeProduit;
 			}
+	
+
+	public ArrayList<ProduitsM> search(String mot) {
+		ArrayList<ProduitsM> listeProduit = new ArrayList<>();
+				
+				try {
+					PreparedStatement req = connect.prepareStatement("SELECT * FROM produits INNER JOIN sous_categories On produits.id_sous_categorie=sous_categories.id_sous_categorie INNER JOIN categories ON categories.id_categorie = sous_categories.id_categorie WHERE produits.titre = ?");
+					req.setString(1, mot);
+					
+					ResultSet rs = req.executeQuery();
+					
+					while (rs.next()) {
+						ProduitsM produit = new ProduitsM(
+								rs.getInt("id_produit"),
+								rs.getString("titre"),
+								rs.getString("description"),
+								rs.getFloat("prix"),
+								rs.getString("image"),
+								new Sous_categoriesM(rs.getInt("id_sous_categorie")),
+								rs.getInt("stock"),
+								rs.getInt("stock_minimum")
+										
+								);
+						listeProduit.add(produit);
+						
+					}
+					
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return listeProduit;
+			}
+	
 
 }

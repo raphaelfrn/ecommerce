@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.CategorieDao;
+import dao.ProduitsDao;
+import model.ProduitsM;
 
 /**
  * Servlet implementation class Header
@@ -32,14 +36,29 @@ public class Header extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		// session
 		HttpSession session = request.getSession(true);
 		if(session.getAttribute("isConnected")==null) {
 			session.setAttribute( "isConnected", false );
 		}
 		
+		// search
+		ProduitsDao produitDao = new ProduitsDao();
+		ArrayList<ProduitsM> listeP = new ArrayList<ProduitsM>();
 		
+		String mot = request.getParameter("mot");
+		listeP = produitDao.search(mot);
+		
+		request.setAttribute("mot", mot);
+		request.setAttribute("listeP", listeP);
+		
+		System.out.println(mot);
+		
+		// categories 
 		request.setAttribute("listCat", catDao.read());
-
+		
+		
 		request.getRequestDispatcher("/view/menu/header.jsp").forward(request, response);
 		
 
