@@ -41,30 +41,32 @@
 				
 				<div class="container-client">
 					<div class="container-infos-client">
-						<p>Nom Prénom</p>
+						<p>${userNom} ${userPrenom}</p>
 						<span class="update-fullname">Modifier</span>
 					</div>
 					<div class="container-infos-client">
-						<p>email@gmail.com</p>
+						<p>${userEmail}</p>
 						<span class="update-mail">Modifier</span>
 					</div>
 				</div>
-				
-				<div class="container-client">
-					<h1>Adresse</h1>
-					<div class="container-infos-client">
-						<p>14 Avenue du Marachal Fosch</p>
-						<a href="${address}"><img class="icon-arrow update-address" alt="Icon flêche" src="assets/icon/arrow.svg"></a>
+							
+				<c:forEach items="${listAddress }" var="addressUser">	
+					<div class="container-client">
+						<h1>Adresse</h1>
+						<div class="container-infos-client">
+							<p>${addressUser.adresse}</p>
+							<a href="${address}"><img class="icon-arrow update-address" alt="Icon flêche" src="assets/icon/arrow.svg"></a>
+						</div>
+						<p>${addressUser.code_postal} ${addressUser.ville}, ${addressUser.pays}</p>
 					</div>
-					<p>75000 Paris, France</p>
-				</div>
+				</c:forEach>
 				
 				<div class="container-client">
 					<div class="container-infos-client">
 						<h1>Téléphone</h1>
 						<span class="update-phone">Modifier</span>
 					</div>
-					<p>07 00 64 00 18</p>
+					<p>${userTelephone}</p>
 				</div>
 				
 				<div class="container-infos-client">

@@ -14,9 +14,9 @@
 						<div class="container-modal-inscription-input">
 						
 						<div class="row-input-inscription">
-							<input  type="text" id="name" name="name" value=""  placeholder="Nom *" >
+							<input class="register-input-txt" type="text" id="name" name="name" value=""  placeholder="Nom *" >
 						
-							<input  type="text" id="firstname" name="firstname" value="" placeholder="Prénom *" > 
+							<input class="register-input-txt"  type="text" id="firstname" name="firstname" value="" placeholder="Prénom *" > 
 						</div>
 						
 							<div><input type="text" id="email" name="email" value="" placeholder="Email *" ></div>
@@ -24,12 +24,12 @@
 							<div><input type="text" id="address" name="address" value="" placeholder="Adresse *" ></div>
 						
 						<div class="row-input-inscription">
-							<input type="text" id="city" name="city" value="" placeholder="Ville *" >
+							<input class="register-input-txt" type="text" id="city" name="city" value="" placeholder="Ville *" >
 							<input type="number" id="zipCode" name="zipCode" value="" placeholder="Code Postal *" >
 						</div>
 						
 						<div class="row-input-inscription">
-							<input type="text" id="country" name="country" value="" placeholder="Pays *" >
+							<input class="register-input-txt" type="text" id="country" name="country" value="" placeholder="Pays *" >
 							<input type="number" id="phone" name="phone" value="" placeholder="Téléphone *" >
 						</div>
 						

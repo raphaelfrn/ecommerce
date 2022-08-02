@@ -71,9 +71,7 @@ public class ModalConnexion extends HttpServlet {
 					connected=true;
 					response.sendRedirect("panier");
 					System.out.println("connected " +connected);
-					
-					
-					
+	
 				}
 			}
 			
