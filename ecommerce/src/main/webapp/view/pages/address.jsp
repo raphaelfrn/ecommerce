@@ -88,7 +88,7 @@
 							<div class="container-alerty-address"><p class="alerty-address"></p></div>
 						</div>
 						<div class="container-btn-add-address">
-							<button class="btn-add-address">Ajouter</button>
+							<button class="btn-add-address" name="btnAddPageAddress">Ajouter</button>
 						</div>
 					</form>
 				</div>
