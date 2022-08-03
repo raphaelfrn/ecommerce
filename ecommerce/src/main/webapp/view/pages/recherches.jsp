@@ -42,6 +42,16 @@
 	<div class="container-produits scrolling-wrapper">
 	
 	
+	
+	
+	<c:if test="${empty listSearch}">
+	
+	<h1>Aucun produit ne correspond à votre recherche !</h1>
+	
+	
+	</c:if>
+	
+	<c:if test="${!empty listSearch}">
 		<c:forEach items="${listSearch }" var="search"> 
 			
 			<div class="container-card-produit">
@@ -68,7 +78,7 @@
 		</div>
 			
 		</c:forEach>
-							
+	</c:if>				
 	
 
 		
