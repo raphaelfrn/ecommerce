@@ -18,8 +18,9 @@ import javax.servlet.http.HttpSession;
 import dao.Adresses_livraisonDao;
 import dao.CategorieDao;
 
-import dao.ProduitsDao;
+
 import dao.UtilisateursDao;
+
 import model.UtilisateursM;
 
 
@@ -56,16 +57,10 @@ public class Header extends HttpServlet {
 			session.setAttribute( "isConnected", false );
 		}
 		
-		// search
-		ProduitsDao produitDao = new ProduitsDao();
-		String search = request.getParameter("search");
-		String query = request.getQueryString();
-		
-		request.setAttribute("query", query);
-	  request.setAttribute("listSearch", produitDao.search(search));
-		
 		// categories 
 		request.setAttribute("listCat", catDao.read());	
+		
+		// session
 		
 		try {
 			if(request.getParameter("btnConnexion")!=null ) {
@@ -111,6 +106,8 @@ public class Header extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
