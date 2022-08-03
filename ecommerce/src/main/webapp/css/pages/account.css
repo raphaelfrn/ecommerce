@@ -63,6 +63,11 @@
 	}
 }
 
+.container-infos-client-first a {
+		color: black !important;
+	    -webkit-text-fill-color: black !important;
+}
+
 .infos-client-title {
 	font-family: 'Avenir-black';
 	font-size: 16px !important;
@@ -77,6 +82,8 @@
 .infos-client-span {
 	font-family: 'Avenir-black';
     text-decoration: underline;
+    -webkit-text-fill-color: black !important;
+    color: black !important;
     cursor: pointer;
 }
 

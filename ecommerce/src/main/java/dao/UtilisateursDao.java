@@ -108,7 +108,7 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 	
 	public boolean updateTel(UtilisateursM utilisateur, int id) {
 		try {
-			PreparedStatement req = connect.prepareStatement("UPDATE utilisateurs SET tetephone=? WHERE id_utilisateur=?");
+			PreparedStatement req = connect.prepareStatement("UPDATE utilisateurs SET telephone=? WHERE id_utilisateur=?");
 			
 			req.setString(1, utilisateur.getTelephone());
 			req.setInt(2, id);

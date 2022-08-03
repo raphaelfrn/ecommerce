@@ -311,6 +311,7 @@ icon-co {
 }
 
 .confirm-register {
+	z-index: 1;
     position: absolute; 
     top: 6vh;
     width: 100%;
