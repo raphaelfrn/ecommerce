@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.Adresses_livraisonDao;
+import model.Adresses_livraisonM;
+import model.UtilisateursM;
 
 /**
  * Servlet implementation class Address
@@ -42,7 +44,27 @@ public class Address extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		int userId = (int)session.getAttribute("userid");
+		
+		if (request.getParameter("btnAddPageAddress") != null) {
+			
+			String adresse = request.getParameter("address");
+			String city = request.getParameter("city");
+			int zipCode = Integer.valueOf(request.getParameter("zipCode"));
+			String country = request.getParameter("country");
+			
+			Adresses_livraisonDao  addressDao = new Adresses_livraisonDao();
+			Adresses_livraisonM address = new Adresses_livraisonM();
+			address.setUtilisateur(new UtilisateursM((userId)));
+			address.setAdresse(adresse);
+			address.setVille(city);
+			address.setCode_postal(zipCode);
+			address.setPays(country);
+			
+			addressDao.create(address);
+		}
+		
 		doGet(request, response);
 	}
 

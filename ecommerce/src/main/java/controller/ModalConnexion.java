@@ -43,46 +43,42 @@ public class ModalConnexion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		try {
-			boolean connected=false;
+//		boolean connected=false;
+//		try {
+//			if(request.getParameter("btnConnexion")!=null ) {
+//				System.out.println("btnConnexion");
+//				String email=request.getParameter("emailCo");
+//				String password=request.getParameter("passwordCo");
+//				String pwd = encode(password);
+//
+//				UtilisateursM user = userDao.connexion(email, pwd);
+//				if(user==null) {
+//					System.out.println("pas encore connecté");
+//				} else {
+//					HttpSession session = request.getSession( true );
+//			        session.setAttribute( "userid", user.getId_utilisateur());
+//			        session.setAttribute( "userid", user.getId_utilisateur());
+//			        session.setAttribute( "userEmail", user.getEmail());
+//			        session.setAttribute( "userNom", user.getNom());
+//			        session.setAttribute( "userPrenom", user.getPrenom());
+//			        session.setAttribute( "userTelephone", user.getTelephone());
+//			        session.setAttribute( "isConnected", true );
+//					connected=true;
+//					response.sendRedirect("home");  	
+//				}
+//			}
+//			System.out.println(connected);
+//			if(!connected) {
+//				request.getRequestDispatcher("view/modals/modal-connexion.jsp").forward(request, response);
+//			}
+//	
+//		} catch (NoSuchAlgorithmException e) {
+//			System.out.println(e.getMessage());
+//			e.printStackTrace();
+//		}
 		
-			if(request.getParameter("btnConnexion")!=null ) {
-				String email=request.getParameter("emailCo");
-				String password=request.getParameter("passwordCo");
-				String pwd = encode(password);
-
-				UtilisateursM user = userDao.connexion(email, pwd);
-				
-				if(user==null) {
-					System.out.println("pas encore connecté");
-				
-				} else {
 		
-					HttpSession session = request.getSession( true );
-			        session.setAttribute( "userid", user.getId_utilisateur());
-			        session.setAttribute( "userid", user.getId_utilisateur());
-			        session.setAttribute( "userEmail", user.getEmail());
-			        session.setAttribute( "userNom", user.getNom());
-			        session.setAttribute( "userPrenom", user.getPrenom());
-			        session.setAttribute( "userTelephone", user.getTelephone());
-			        System.out.println("top connecté");
-			        
-			        session.setAttribute( "isConnected", true );
-					connected=true;
-					response.sendRedirect("panier");
-					System.out.println("connected " +connected);
-	
-				}
-			}
-			
-			if(connected==false) {
-				System.out.println("connected " + connected);
-				request.getRequestDispatcher("view/modals/modal-connexion.jsp").forward(request, response);
-			}
-	
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
+		request.getRequestDispatcher("view/modals/modal-connexion.jsp").forward(request, response);
 		
 	}
 
@@ -94,10 +90,10 @@ public class ModalConnexion extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	public static String encode(String value) throws NoSuchAlgorithmException {
-		MessageDigest md = MessageDigest.getInstance("SHA-256");
-		byte[] hash = md.digest(value.getBytes(StandardCharsets.UTF_8)); String encoded = Base64.getEncoder().encodeToString(hash);
-		return encoded;
-	}
+//	public static String encode(String value) throws NoSuchAlgorithmException {
+//		MessageDigest md = MessageDigest.getInstance("SHA-256");
+//		byte[] hash = md.digest(value.getBytes(StandardCharsets.UTF_8)); String encoded = Base64.getEncoder().encodeToString(hash);
+//		return encoded;
+//	}
 	
 }
