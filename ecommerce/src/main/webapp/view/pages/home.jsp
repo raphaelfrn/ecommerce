@@ -46,40 +46,22 @@
 	
 	
 	<div class="container-categorie">
-		<div class="categorie">
-			<div class="container-categorie-infos">
-				<h1>Le son pur.</h1>
-				<h1>Résolument nomade.</h1>
-				<button> <span>Écouteurs</span> </button>
-			</div>
-			<img alt="Image écouteurs" src="assets/img/ecouteurs/ecouteurHome.png">
-		</div>
 		
-		<div class="categorie-modifier">
+ 		<div class="categorie-modifier">
+ 	<c:forEach items="${ListCat }" var="ListCat">
+		
 			<div class="categories-modifier">
 				<div class="container-categorie-infos container-categorie-infos-modifier">
-					<h1>Une classe à part.</h1>
-					<button> <span>Enceintes</span> </button>
+					<h1><c:out value="${ListCat.description }" /></h1>
+			<a href="sous-categories?idCat=${ListCat.id_categorie }" >	<button> <span><c:out value="${ListCat.titre }" /></span> </button>  </a>	
 				</div>
-				<img alt="Image enceinte" src="assets/img/enceintes/enceinteHome.png">
+				<img alt="Image categorie" src="<c:out value="${ListCat.image }" /> ">
 			</div>
-			
-			<div class="categories-modifier">
-				<div class="container-categorie-infos container-categorie-infos-modifier">
-					<h1>Intensément immersive.</h1>
-					<button> <span>Barre de son</span> </button>
-				</div>
-				<img alt="Image barre de son" src="assets/img/barre_de_son/barreHome.png">
-			</div>
+		
+	</c:forEach>	
 		</div>
 		
-		<div class="categorie">
-			<div class="container-categorie-infos">
-				<h1>Le système audiophile absolue.</h1>
-				<button> <span>Amplificateur</span></button>
-			</div>
-			<img alt="Image amplificateur" src="assets/img/amplificateurs/amplificateurHome.png">
-		</div>
+		
 	</div>
 	
 	<div class="container-infos-dione">

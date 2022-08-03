@@ -52,7 +52,9 @@ ArrayList<CategorieM> listeCategorie = new ArrayList<>();
 				CategorieM categorie = new CategorieM(
 						rs.getInt("id_categorie"),
 						rs.getString("titre"),
-						rs.getString("video")
+						rs.getString("video"),
+						rs.getString("description"),
+						rs.getString("image")
 						);
 				listeCategorie.add(categorie);
 			}
@@ -128,7 +130,9 @@ ArrayList<CategorieM> listeCategorie = new ArrayList<>();
 				categorie = new CategorieM(
 						rs.getInt("id_categorie"),
 						rs.getString("titre"),
-						rs.getString("video")
+						rs.getString("video"),
+						rs.getString("description"),
+						rs.getString("image")
 						);
 						
 					
