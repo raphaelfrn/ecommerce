@@ -50,7 +50,6 @@ public class Header extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean connected=false;
 		
-		
 		// session
 		HttpSession session = request.getSession(true);
 		if(session.getAttribute("isConnected")==null) {
@@ -61,7 +60,6 @@ public class Header extends HttpServlet {
 		request.setAttribute("listCat", catDao.read());	
 		
 		// session
-		
 		try {
 			if(request.getParameter("btnConnexion")!=null ) {
 				String email=request.getParameter("emailCo");
@@ -97,9 +95,7 @@ public class Header extends HttpServlet {
 		} else {	
 			request.getRequestDispatcher("/view/menu/header.jsp").forward(request, response);
 		}
-
-		
-		
+	
 	}
 
 	/**
