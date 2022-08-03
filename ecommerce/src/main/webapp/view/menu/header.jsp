@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+     <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+    
  <script type="text/javascript" defer src="js/header.js"></script>
     
 <header class="container-header">
@@ -14,17 +16,14 @@
 	<nav class="container-nav-header">	
 		<div data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img class="icon-menu" alt="icon menu" src="assets/icon/menu.svg"></div>
 
-		<a href="${home}"> <img class="logo-dione" alt="logo Dione" src="assets/logo/logo-dione-black.svg"> </a>
-		
-			<c:forEach items="${listSearch }" var="search"> 
-							<li>
-								   <a href="details?id=${search.id_produit}&param=findById">${search.titre} ${search.id_produit}</a> 
-
-							</li>
-							</c:forEach>
-							
+		<a href="${home}"> <img class="logo-dione" alt="logo Dione" src="assets/logo/logo-dione-black.svg"> </a>					
 		<div class="container-icon">
 			<form class="form-search" > <input class="input-search" type="text" placeholder="Rechercher" name="search"> </form>
+			
+			<c:set var="query" value="${query}"/>
+			
+			<c:if test="${ fn:contains(query, 'search')}"> 
+			
 					 <div class="container-header-search">
 						<div class="container-icon-close-search">
 						<img class="icon-close-search" alt="Icon fermer" src="assets/icon/close.svg">	
@@ -40,7 +39,7 @@
 							</c:forEach>
 						</ul>
 					</div>
-
+			</c:if>
 			
 			<a href=""><img class="icon icon-search" alt="Icon compte" src="assets/icon/search.svg"></a> 
 			<% if((boolean)session.getAttribute("isConnected")==false){ %>

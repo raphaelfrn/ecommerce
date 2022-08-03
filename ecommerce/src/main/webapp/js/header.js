@@ -20,24 +20,17 @@ account_icon_user.forEach(function(element, index, arr){
 	});
 })
 
-input_search.addEventListener("keyup", (event) => {
-	input_search.value
-	
-	}
-);
 
 
-function search(){
+
+
 	
-	
-	container_search.style.display="block";
-	
-	icon_close_search.addEventListener("click", () => {
+icon_close_search.addEventListener("click", () => {
 			
 			container_search.style.display = "none";
 		});
 		
-}
+
 
 
 

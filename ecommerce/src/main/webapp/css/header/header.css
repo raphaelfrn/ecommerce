@@ -59,11 +59,10 @@
 
 
 .container-header-search {
-	display: none;
+	display: block;
 	border-top: 1px solid #e7e4e4;
     position: absolute;
     top: 0;
-    right: 26px;
     margin-top: 6vh;
     background: white;
     padding: 3% 0 2%;

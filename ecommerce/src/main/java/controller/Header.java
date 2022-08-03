@@ -1,7 +1,7 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,11 +46,15 @@ public class Header extends HttpServlet {
 		// search
 		ProduitsDao produitDao = new ProduitsDao();
 		String search = request.getParameter("search");
+		String query = request.getQueryString();
 		
-	 
-	        request.setAttribute("listSearch", produitDao.search(search));
+		System.out.println(query);
+		
+		
+		request.setAttribute("query", query);
+	    request.setAttribute("listSearch", produitDao.search(search));
 	        
-	        System.out.println(search);
+	        
 
 	        System.out.println(produitDao.search(search));
 		
