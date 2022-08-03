@@ -237,8 +237,11 @@ ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 		ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 				
 				try {
-					PreparedStatement req = connect.prepareStatement("SELECT * FROM produits INNER JOIN sous_categories ON sous_categories.id_sous_categorie = produits.id_sous_categorie INNER JOIN categories ON categories.id_categorie = sous_categories.id_categorie WHERE produits.titre OR produits.description OR sous_categories.titre OR categories.titre LIKE ? ");
+					PreparedStatement req = connect.prepareStatement("SELECT * FROM produits INNER JOIN sous_categories ON sous_categories.id_sous_categorie = produits.id_sous_categorie INNER JOIN categories ON categories.id_categorie = sous_categories.id_categorie WHERE produits.titre LIKE ? OR produits.description LIKE ? OR sous_categories.titre  LIKE ? OR categories.titre LIKE ?");
 					req.setString(1, "%" + mot + "%");
+					req.setString(2, "%" + mot + "%");
+					req.setString(3, "%" + mot + "%");
+					req.setString(4, "%" + mot + "%");
 					
 					ResultSet rs = req.executeQuery();
 					

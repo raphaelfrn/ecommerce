@@ -48,8 +48,6 @@ public class Recherches extends HttpServlet {
 				
 			  request.setAttribute("listSearch", produitDao.search(search));
 			  
-			
-			  System.out.println(search);
 			  
 			  
 			 // stocker dans la table recherche
@@ -65,11 +63,7 @@ public class Recherches extends HttpServlet {
 			  
 			  recherche.setId_utilisateur(new UtilisateursM((userId)));
 			  recherche.setMot_cle(search);
-			  System.out.println(recherche);
 			  rechercheDao.create(recherche);
-			  
-			  
-			  System.out.println(rechercheDao.create(recherche));
 			  
 			  }
 			
@@ -85,9 +79,8 @@ public class Recherches extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
-		int userId = (int)session.getAttribute("userid");
 		doGet(request, response);
+		
 	}
 
 }
