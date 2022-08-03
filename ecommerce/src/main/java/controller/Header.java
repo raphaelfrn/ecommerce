@@ -1,10 +1,12 @@
 package controller;
 
 import java.io.IOException;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,8 +17,11 @@ import javax.servlet.http.HttpSession;
 
 import dao.Adresses_livraisonDao;
 import dao.CategorieDao;
+
+import dao.ProduitsDao;
 import dao.UtilisateursDao;
 import model.UtilisateursM;
+
 
 /**
  * Servlet implementation class Header
@@ -44,13 +49,23 @@ public class Header extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean connected=false;
 		
+		
+		// session
 		HttpSession session = request.getSession(true);
 		if(session.getAttribute("isConnected")==null) {
 			session.setAttribute( "isConnected", false );
 		}
 		
-		request.setAttribute("listCat", catDao.read());
+		// search
+		ProduitsDao produitDao = new ProduitsDao();
+		String search = request.getParameter("search");
+		String query = request.getQueryString();
 		
+		request.setAttribute("query", query);
+	  request.setAttribute("listSearch", produitDao.search(search));
+		
+		// categories 
+		request.setAttribute("listCat", catDao.read());	
 		
 		try {
 			if(request.getParameter("btnConnexion")!=null ) {
@@ -82,7 +97,6 @@ public class Header extends HttpServlet {
 		} else {	
 			request.getRequestDispatcher("/view/menu/header.jsp").forward(request, response);
 		}
-		
 
 		
 		
