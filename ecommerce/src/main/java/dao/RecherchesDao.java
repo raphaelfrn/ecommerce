@@ -28,13 +28,14 @@ public class RecherchesDao implements IDao<RecherchesM>{
 	
 			
 			req.executeUpdate();
-			
+			System.out.println("créer");
 			return true;
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("pas créer");
 		return false;
 	}
 
