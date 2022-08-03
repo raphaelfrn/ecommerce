@@ -3,9 +3,10 @@ let close_update = document.querySelector(".icon-close-update");
 let title = document.querySelector(".title-modal-update");
 let containerInput = document.querySelector(".container-input-modal-update");
 let fullname = document.querySelector(".update-fullname");
-let mail = document.querySelector(".update-mail");
+let mail_Update = document.querySelector(".update-mail");
 let phone = document.querySelector(".update-phone");
 let pwd = document.querySelector(".update-pwd");
+let headerModalUpdate = document.querySelector(".container-header");
 
 fullname.addEventListener("click", () => {
 	modal.style.display = "flex";
@@ -34,32 +35,51 @@ fullname.addEventListener("click", () => {
 	});
 });
 
-mail.addEventListener("click", () => {
+	let input_new_mail= document.createElement('input');
+	input_new_mail.id = 'newMail';
+	let input_repeat_email= document.createElement('input');
+	
+mail_Update.addEventListener("click", () => {
 	modal.style.display = "flex";
+	headerModalUpdate.style.display = "none";
 	
 	title.innerHTML="Modifier votre adresse mail";
-	let input_new_mail= document.createElement('input');
-	let input_repeat_mail= document.createElement('input');
+	
 
-	input_new_mail.id = 'newMail';
+
+	
 	input_new_mail.setAttribute('name','newMail');
 	input_new_mail.setAttribute('type','text');
 	input_new_mail.setAttribute('placeholder','Nouveau Mail');
 	
-	input_repeat_mail.id = 'repeatMail';
-	input_repeat_mail.setAttribute('name','repeatMail');
-	input_repeat_mail.setAttribute('type','text');
-	input_repeat_mail.setAttribute('placeholder','Répéter l’email');
+	input_repeat_email.id = 'repeatEMail';
+	input_repeat_email.setAttribute('name','repeatEMail');
+	input_repeat_email.setAttribute('type','text');
+	input_repeat_email.setAttribute('placeholder','Répéter l’email');
 	 
 	containerInput.appendChild(input_new_mail);
-	containerInput.appendChild(input_repeat_mail);
+	containerInput.appendChild(input_repeat_email);
+	
 	
 	close_update.addEventListener("click", () => {
 		modal.style.display = "none";
+		headerModalUpdate.style.display = "block";
 		input_new_mail.remove();
-		input_repeat_mail.remove();
+		input_repeat_email.remove();
 	});
 });
+
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
 
 phone.addEventListener("click", () => {
 	modal.style.display = "flex";
@@ -73,8 +93,8 @@ phone.addEventListener("click", () => {
 	input_new_phone.setAttribute('type','text');
 	input_new_phone.setAttribute('placeholder','Nouveau numéro');
 	
-	input_repeat_phone.id = 'repeatMail';
-	input_repeat_phone.setAttribute('name','repeatMail');
+	input_repeat_phone.id = 'repeatPhone';
+	input_repeat_phone.setAttribute('name','repeatPhone');
 	input_repeat_phone.setAttribute('type','text');
 	input_repeat_phone.setAttribute('placeholder','Répéter votre numéro');
 	 
@@ -124,4 +144,5 @@ pwd.addEventListener("click", () => {
 	});
 });
 
+console.log(input_new_mail.value)
 

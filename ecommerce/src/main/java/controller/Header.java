@@ -78,7 +78,6 @@ public class Header extends HttpServlet {
 				} else {
 					request.getSession( true );
 			        session.setAttribute( "userid", user.getId_utilisateur());
-			        session.setAttribute( "userid", user.getId_utilisateur());
 			        session.setAttribute( "userEmail", user.getEmail());
 			        session.setAttribute( "userNom", user.getNom());
 			        session.setAttribute( "userPrenom", user.getPrenom());
@@ -88,12 +87,18 @@ public class Header extends HttpServlet {
 					System.out.println("Vous êtes connecté");
 				}
 			}	
+			if((boolean)session.getAttribute("isConnected")!=false) {
+				System.out.println("connecter");
+				int userId = (int)session.getAttribute("userid");
+				UtilisateursDao userDao = new UtilisateursDao();
+				request.setAttribute("InfosUser", userDao.findById(userId));
+			} 
+
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}
 		if(!connected) {
 			request.getRequestDispatcher("/view/menu/header.jsp").forward(request, response);
-			System.out.println("Vous n'êtes plus connecté");
 		} else {	
 			request.getRequestDispatcher("/view/menu/header.jsp").forward(request, response);
 		}

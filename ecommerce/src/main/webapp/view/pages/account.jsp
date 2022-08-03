@@ -28,6 +28,7 @@
 <body>
 	<c:url value="/address" var="address"/>
 	<c:url value="/historique" var="historique"/>
+	<c:url value="/deconnexion" var="deconnexion"/>
 	
 		<c:import url="/modalUpdate"></c:import>
 		<c:import url="/header"></c:import>
@@ -36,16 +37,16 @@
 			<div class="container-clients">
 				<div class="container-infos-client-first">
 					<h1 class="infos-client-title">Vos informations</h1>
-					<span class="infos-client-span">Me déconnecter</span>
+					<a href="${deconnexion}"> <span class="infos-client-span">Me déconnecter</span></a>
 				</div>
 				
 				<div class="container-client">
 					<div class="container-infos-client">
-						<p>${userNom} ${userPrenom}</p>
+						<p>${InfosUser.nom} ${InfosUser.prenom}</p>
 						<span class="update-fullname">Modifier</span>
 					</div>
 					<div class="container-infos-client">
-						<p>${userEmail}</p>
+						<p>${InfosUser.email}</p>
 						<span class="update-mail">Modifier</span>
 					</div>
 				</div>
@@ -68,7 +69,7 @@
 						<h1>Téléphone</h1>
 						<span class="update-phone">Modifier</span>
 					</div>
-					<p>${userTelephone}</p>
+					<p>${InfosUser.telephone}</p>
 				</div>
 				
 				<div class="container-infos-client">

@@ -45,7 +45,7 @@
             	<a><img class="icon icon-connexion" alt="Icon compte" src="assets/icon/account.svg"></a> 
 			<% }else{ %>
 				<a><img class="icon header-account-click" alt="Icon compte" src="assets/icon/account.svg"></a>
-				<p class="content-header-name-user header-account-click">Hello, ${userPrenom}</p> 
+				<p class="content-header-name-user header-account-click">Hello, ${InfosUser.prenom}</p> 
 					<div class="container-header-account-choice">
 						<div class="container-icon-close-user-choice">
 						<img class="icon-close-user-choice" alt="Icon fermer" src="assets/icon/close.svg">	

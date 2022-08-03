@@ -5,11 +5,12 @@
 		</div>
 		<div class="content-modal">
 			<h1 class="title-modal-update">Modifier votre nom et prénom</h1>
-			<form action="">
+			<form method="post" >
 				<div class="container-input-modal-update">
 				</div>
+				<div class="container-alerty-update-user"><p class="alerty-update-user"></p></div>
 				<div class="container-btn-modal-update">
-					<a><button class="btn-modal-update">Modifier</button></a>
+					<input class="btn-modal-update" type="submit" name="btnUpdateUser" placeholder="Modifier">
 				</div>
 			</form>
 		</div>
