@@ -7,19 +7,23 @@ let mail_Update = document.querySelector(".update-mail");
 let phone = document.querySelector(".update-phone");
 let pwd = document.querySelector(".update-pwd");
 let headerModalUpdate = document.querySelector(".container-header");
+let form_update_user = document.querySelector(".verif-update-user");
+let alerty_update_user = document.querySelector(".alerty-update-user");
+
 
 fullname.addEventListener("click", () => {
 	modal.style.display = "flex";
+	headerModalUpdate.style.display = "none";
 	
 	title.innerHTML="Modifier votre nom et prénom";
+
 	let input_lastname = document.createElement('input');
-	let input_firstname = document.createElement('input');
-	
 	input_lastname.id = 'newLastname';
 	input_lastname.setAttribute('name','newLastname');
 	input_lastname.setAttribute('type','text');
 	input_lastname.setAttribute('placeholder','Nouveau Nom');
 	
+	let input_firstname = document.createElement('input');
 	input_firstname.id = 'newFirstname';
 	input_firstname.setAttribute('name','newFirstname');
 	input_firstname.setAttribute('type','text');
@@ -30,24 +34,53 @@ fullname.addEventListener("click", () => {
 	
 	close_update.addEventListener("click", () => {
 		modal.style.display = "none";
+		headerModalUpdate.style.display = "block";
 		input_lastname.remove();
 		input_firstname.remove();
 	});
-});
-
-	let input_new_mail= document.createElement('input');
-	input_new_mail.id = 'newMail';
-	let input_repeat_email= document.createElement('input');
 	
+	
+	// Verif Name
+	let arrayInputsupdate= [];
+	arrayInputsupdate.push(input_lastname);
+	arrayInputsupdate.push(input_firstname);
+
+	function keyupInputCo() {
+		arrayInputsupdate.forEach(function(element, index, arr){
+			arr[index].addEventListener('keyup', () => {
+				arr[index].classList.remove('error');
+			} )
+		})
+	} keyupInputCo();
+		
+	form_update_user.addEventListener('submit',  (event) => {
+		let error = 0;
+		arrayInputsupdate.forEach(function(element, index, arr){
+			let min = /^[a-zA-Z].{2,}$/;
+			let regexNbr =/^[^0-9]+$/;	
+			
+			!regexNbr.test(arr[index].value) ? alerty_update_user.innerHTML="Vous ne pouvez pas entrer de chiffre" : ""; 
+			!min.test(arr[index].value) ? alerty_update_user.innerHTML="3 caractères minimum requis" : "";
+			
+			return !regexNbr.test(arr[index].value) || !min.test(arr[index].value)  ? 
+			(arr[index].className = "error", arr[index].focus(), error ++) : error ;
+		})
+	
+		return error >= 1 ? (event.preventDefault(), false) : true;
+	}, false)
+				
+});
+ 
+  	
 mail_Update.addEventListener("click", () => {
 	modal.style.display = "flex";
 	headerModalUpdate.style.display = "none";
 	
 	title.innerHTML="Modifier votre adresse mail";
-	
+	let input_new_mail= document.createElement('input');
+	let input_repeat_email= document.createElement('input');
 
-
-	
+	input_new_mail.id = 'newMail';
 	input_new_mail.setAttribute('name','newMail');
 	input_new_mail.setAttribute('type','text');
 	input_new_mail.setAttribute('placeholder','Nouveau Mail');
@@ -67,22 +100,43 @@ mail_Update.addEventListener("click", () => {
 		input_new_mail.remove();
 		input_repeat_email.remove();
 	});
+	
+	
+	// Verif Mail
+	let arrayInputsupdate= [];
+	arrayInputsupdate.push(input_new_mail);
+	arrayInputsupdate.push(input_repeat_email);
+
+	function keyupInputCo() {
+		arrayInputsupdate.forEach(function(element, index, arr){
+			arr[index].addEventListener('keyup', () => {
+				arr[index].classList.remove('error');
+			} )
+		})
+	} keyupInputCo();
+		
+	form_update_user.addEventListener('submit',  (event) => {
+		let error = 0;
+		
+		arrayInputsupdate.forEach(function(element, index, arr){
+			let regexMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			
+			!arr[index].value.match(regexMail) ?  alerty_update_user.innerHTML="L'email n'est pas valide" : true;
+			input_new_mail.value != input_repeat_email.value ? alerty_update_user.innerHTML="Les emails ne sont pas identique" : true;
+		
+			return !arr[index].value.match(regexMail) || input_new_mail.value  != input_repeat_email.value ? 
+			(arr[index].focus(), arr[index].className = "error",  error ++, false) :
+			(error, true ) 		
+		})
+	
+		return error >= 1 ? (event.preventDefault(), false) : true;
+	}, false)
 });
 
 	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
 phone.addEventListener("click", () => {
 	modal.style.display = "flex";
+	headerModalUpdate.style.display = "none";
 	
 	title.innerHTML="Modifier votre numéro de téléphone";
 	let input_new_phone = document.createElement('input');
@@ -103,13 +157,47 @@ phone.addEventListener("click", () => {
 	
 	close_update.addEventListener("click", () => {
 		modal.style.display = "none";
+		headerModalUpdate.style.display = "block";
 		input_new_phone.remove();
 		input_repeat_phone.remove();
 	});
+	
+	
+	// Verif Phone
+	let arrayInputsupdate= [];
+	arrayInputsupdate.push(input_new_phone);
+	arrayInputsupdate.push(input_repeat_phone);
+
+	function keyupInputCo() {
+		arrayInputsupdate.forEach(function(element, index, arr){
+			arr[index].addEventListener('keyup', () => {
+				arr[index].classList.remove('error');
+			} )
+		})
+	} keyupInputCo();
+		
+	form_update_user.addEventListener('submit',  (event) => {
+		let error = 0;
+		
+		arrayInputsupdate.forEach(function(element, index, arr){
+			let regexPhone = /^(01|02|03|04|05|06|07|08|09)[0-9]{8}$/;
+			
+			!regexPhone.test(arr[index].value) ||  Number.isNaN(Number(arr[index].value)) ?  alerty_update_user.innerHTML="Le numéro de téléphone n'est pas valide" : true;
+			input_new_phone.value != input_repeat_phone.value ? alerty_update_user.innerHTML="Les numéros de téléphone saisie ne sont pas identique" : true;
+		
+			return !regexPhone.test(arr[index].value) ||  Number.isNaN(Number(arr[index].value)) || input_new_phone.value  != input_repeat_phone.value ? 
+			(arr[index].focus(), arr[index].className = "error",  error ++, false) :
+			(error, true ) 	
+		})
+	
+		return error >= 1 ? (event.preventDefault(), false) : true;
+	}, false)
 });
+
 
 pwd.addEventListener("click", () => {
 	modal.style.display = "flex";
+	headerModalUpdate.style.display = "none";
 	
 	title.innerHTML="Modifier votre mot de passe ";
 	let input_last_pwd = document.createElement('input');
@@ -138,11 +226,37 @@ pwd.addEventListener("click", () => {
 	
 	close_update.addEventListener("click", () => {
 		modal.style.display = "none";
+		headerModalUpdate.style.display = "block";
 		input_last_pwd.remove();
 		input_new_pwd.remove();
 		input_repeat_pwd.remove();
 	});
-});
+	
+	//Verif Password
+	
+	let arrayInputsupdate= [];
+	arrayInputsupdate.push(input_last_pwd);
+	arrayInputsupdate.push(input_new_pwd);
+	arrayInputsupdate.push(input_repeat_pwd);
 
-console.log(input_new_mail.value)
+	function keyupInputCo() {
+		arrayInputsupdate.forEach(function(element, index, arr){
+			arr[index].addEventListener('keyup', () => {
+				arr[index].classList.remove('error');
+			} )
+		})
+	} keyupInputCo();
+		
+	form_update_user.addEventListener('submit',  (event) => {
+		let error = 0;
+		
+		arrayInputsupdate.forEach(function(element, index, arr){
+			return input_last_pwd.value != input_new_pwd.value ||  input_last_pwd.value != input_repeat_pwd.value  ? 
+			(arr[index].focus(), arr[index].className = "error", alerty_update_user.innerHTML="Les mots de passe ne sont pas identique",  error ++, false) :
+			(error, true ) 	
+		})
+	
+		return error >= 1 ? (event.preventDefault(), false) : true;
+	}, false)
+});
 

@@ -88,21 +88,21 @@
 }
 
 .container-input-modal-update {
-	margin-bottom: 16%;
+/* 	margin-bottom: 16%; */
 	text-align: center;
 }
- @media screen and (min-width: 604px) 
-{
-	.container-input-modal-update {
-		margin-bottom: 12%;
-	}
-}
- @media screen and (min-width: 820px) 
-{
-	.container-input-modal-update {
-		margin-bottom: 6%;
-	}
-}
+/*  @media screen and (min-width: 604px)  */
+/* { */
+/* 	.container-input-modal-update { */
+/* 		margin-bottom: 12%; */
+/* 	} */
+/* } */
+/*  @media screen and (min-width: 820px)  */
+/* { */
+/* 	.container-input-modal-update { */
+/* 		margin-bottom: 6%; */
+/* 	} */
+/* } */
 
 .container-input-modal-update input {
     width: 90vw;
@@ -142,8 +142,22 @@
 }
 
 .container-btn-modal-update {
+	margin-top: 16%;
 	display: flex;
     justify-content: center;
+}
+
+ @media screen and (min-width: 604px) 
+{
+	.container-btn-modal-update {
+		margin-top: 12%;
+	}
+}
+ @media screen and (min-width: 820px) 
+{
+	.container-btn-modal-update {
+		margin-top: 6%;
+	}
 }
 
 .btn-modal-update  {
@@ -185,3 +199,62 @@
 		width: 38vw;
 	}
 }
+
+.error{
+	-webkit-text-fill-color: #963030!important; 
+	background: #FFF2F2!important;
+}
+
+.error::placeholder{
+	-webkit-text-fill-color: #963030!important; 
+	background: #FFF2F2!important;
+}
+.container-alerty-update-user {
+	display: flex;
+    justify-content: center;
+/*     margin-bottom: 4%; */
+}
+
+.content-alerty-update-user {
+	width: 90vw;
+	text-align: center;
+    margin-top: 2%;
+    background: #963030;
+    margin-bottom: 0;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.content-alerty-update-user {
+		width: 54vw;
+	}
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.content-alerty-update-user {
+		width: 38vw;
+	}
+}
+
+.alerty-update-user  {
+	margin-bottom: 0;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-family: 'Avenir-heavy';
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.alerty-update-user   {
+		 font-size: 12px;
+	}
+}
+ @media screen and (min-width: 1200px) 
+{
+	.alerty-update-user   {
+		 font-size: 14px;
+	}
+}
+
