@@ -168,7 +168,13 @@
 }
 
 .logo-dione {
-	 width: 88px;
+	 width: 78px;
+}
+ @media screen and (min-width: 604px) 
+{
+	.logo-dione {
+		 width: 88px;
+	}
 }
 
 .container-icon {

@@ -10,6 +10,11 @@ let headerModalUpdate = document.querySelector(".container-header");
 let form_update_user = document.querySelector(".verif-update-user");
 let alerty_update_user = document.querySelector(".alerty-update-user");
 
+let form_update_user_js = document.createElement('form');
+form_update_user_js.id = 'verif-update-user';
+form_update_user_js.setAttribute('method','post');
+console.log(form_update_user_js)
+
 
 fullname.addEventListener("click", () => {
 	modal.style.display = "flex";
@@ -206,17 +211,17 @@ pwd.addEventListener("click", () => {
 	
 	input_last_pwd.id = 'lastPwd';
 	input_last_pwd.setAttribute('name','lastPwd');
-	input_last_pwd.setAttribute('type','text');
+	input_last_pwd.setAttribute('type','password');
 	input_last_pwd.setAttribute('placeholder','Mot de passe actuel');
 	
 	input_new_pwd.id = 'newPwd';
 	input_new_pwd.setAttribute('name','newPwd');
-	input_new_pwd.setAttribute('type','text');
+	input_new_pwd.setAttribute('type','password');
 	input_new_pwd.setAttribute('placeholder','Nouveau mot de passe ');
 	
 	input_repeat_pwd.id = 'repeatPwd';
 	input_repeat_pwd.setAttribute('name','repeatPwd');
-	input_repeat_pwd.setAttribute('type','text');
+	input_repeat_pwd.setAttribute('type','password');
 	input_repeat_pwd.setAttribute('placeholder','Répéter votre mot de passe ');
 
 	 
@@ -251,7 +256,7 @@ pwd.addEventListener("click", () => {
 		let error = 0;
 		
 		arrayInputsupdate.forEach(function(element, index, arr){
-			return input_last_pwd.value != input_new_pwd.value ||  input_last_pwd.value != input_repeat_pwd.value  ? 
+			return input_new_pwd.value != input_repeat_pwd.value  ? 
 			(arr[index].focus(), arr[index].className = "error", alerty_update_user.innerHTML="Les mots de passe ne sont pas identique",  error ++, false) :
 			(error, true ) 	
 		})
