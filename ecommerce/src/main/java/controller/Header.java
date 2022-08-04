@@ -20,7 +20,7 @@ import dao.CategorieDao;
 
 
 import dao.UtilisateursDao;
-
+import model.PanierM;
 import model.UtilisateursM;
 
 
@@ -95,6 +95,12 @@ public class Header extends HttpServlet {
 		} else {	
 			request.getRequestDispatcher("/view/menu/header.jsp").forward(request, response);
 		}
+		
+		// session Panier
+		if((PanierM) session.getAttribute("panier") == null){
+			PanierM panier_temp = new PanierM();
+			session.setAttribute("panier", panier_temp);
+			}
 	
 	}
 

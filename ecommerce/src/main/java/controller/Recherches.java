@@ -65,7 +65,11 @@ public class Recherches extends HttpServlet {
 			  recherche.setMot_cle(search);
 			  rechercheDao.create(recherche);
 			  
-			  }
+			  } else {
+                  recherche.setId_utilisateur(new UtilisateursM((1)));
+                  recherche.setMot_cle(search);
+                rechercheDao.create(recherche) ; 
+              }
 			
 			 
 			

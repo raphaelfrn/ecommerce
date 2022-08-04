@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@page import="model.CategorieM"%> 
+<%@page import="model.ProduitsM"%> 
+<%@page import="model.PanierM"%> 
+<%@page import="model.PanierDetailsM"%> 
+<%@page import="java.util.ArrayList"%>  
+    
 <!DOCTYPE html>
 <html> 
 <head>
@@ -40,17 +47,24 @@
 							<h1>Votre Panier</h1>
 						</div>
 						<div class="container-basket-product-overflow">
+						
+						<!--  Produits dans le panier -->
+						
+					 <% PanierM paniers=(PanierM)session.getAttribute("panier");
+            						for(PanierDetailsM pa:paniers.articles){ 
+            					%>
+						
 							<article class="container-basket-product">
-								<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
+								<img alt="Image produit" src="<c:out value="${panier.articles.image }" />">
 								<div class="content-basket-product">
 									<div class="container-basket-product-infos">
 										<div class="content-basket-product-infos">
-											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-											<p>Feuille d'or</p>
+											<h1> <c:out value="${panier.articles.titre }" /></h1>
+											<p><c:out value="${panier.articles.description }" /></p>
 										</div>
 										<div class="content-basket-quantity-price">
 											<input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0">
-											<p>1335 €</p>
+											<p><c:out value="${panier.articles.prix }" /></p>
 										</div>
 									</div>
 									<div class="container-delivery-and-supr">
@@ -59,90 +73,11 @@
 									</div>
 								</div>
 							</article>
-							<article class="container-basket-product">
-								<img alt="Image produit"
-									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-								<div class="content-basket-product">
-									<div class="container-basket-product-infos">
-										<div class="content-basket-product-infos">
-											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-											<p>Feuille d'or</p>
-										</div>
-										<div class="content-basket-quantity-price">
-											<input type="number" id="quantity" name="quantity" min="1"
-												max="10" placeholder="0">
-											<p>1335 €</p>
-										</div>
-									</div>
-									<div class="container-delivery-and-supr">
-										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="">Supprimer</a>
-									</div>
-								</div>
-							</article>		
-							<article class="container-basket-product">
-								<img alt="Image produit"
-									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-								<div class="content-basket-product">
-									<div class="container-basket-product-infos">
-										<div class="content-basket-product-infos">
-											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-											<p>Feuille d'or</p>
-										</div>
-										<div class="content-basket-quantity-price">
-											<input type="number" id="quantity" name="quantity" min="1"
-												max="10" placeholder="0">
-											<p>1335 €</p>
-										</div>
-									</div>
-									<div class="container-delivery-and-supr">
-										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="">Supprimer</a>
-									</div>
-								</div>
-							</article>
-							<article class="container-basket-product">
-								<img alt="Image produit"
-									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-								<div class="content-basket-product">
-									<div class="container-basket-product-infos">
-										<div class="content-basket-product-infos">
-											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-											<p>Feuille d'or</p>
-										</div>
-										<div class="content-basket-quantity-price">
-											<input type="number" id="quantity" name="quantity" min="1"
-												max="10" placeholder="0">
-											<p>1335 €</p>
-										</div>
-									</div>
-									<div class="container-delivery-and-supr">
-										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="">Supprimer</a>
-									</div>
-								</div>
-							</article>
-							<article class="container-basket-product">
-								<img alt="Image produit"
-									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-								<div class="content-basket-product">
-									<div class="container-basket-product-infos">
-										<div class="content-basket-product-infos">
-											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-											<p>Feuille d'or</p>
-										</div>
-										<div class="content-basket-quantity-price">
-											<input type="number" id="quantity" name="quantity" min="1"
-												max="10" placeholder="0">
-											<p>1335 €</p>
-										</div>
-									</div>
-									<div class="container-delivery-and-supr">
-										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="">Supprimer</a>
-									</div>
-								</div>
-							</article>
+							<% } %>
+					
+						
+							<!--  Prix et adresse de livraison -->
+					
 						</div>
 					</div>
 					<section class="container-total">
@@ -174,6 +109,8 @@
 					</section>
 				</form>
 			</section>
+			
+			<!-- Wish list Page -->
 
 			<section class="container-wishlist">
 				<div class="content-wishlist">
