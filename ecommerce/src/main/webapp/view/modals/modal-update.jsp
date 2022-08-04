@@ -1,7 +1,9 @@
+<c:url value="/account" var="account"/>
+
 <div class="background-modal">
 	<div class="container-modal-update">
 		<div class="container-icon-close">
-			<img class="icon-close-update" alt="Icon fermer" src="assets/icon/close.svg">
+			<a href="${account }"><img class="icon-close-update" alt="Icon fermer" src="assets/icon/close.svg"></a> 
 		</div>
 		<div class="content-modal">
 			<h1 class="title-modal-update">Modifier votre nom et prénom</h1>
