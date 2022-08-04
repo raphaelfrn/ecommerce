@@ -184,16 +184,12 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 	@Override
 	public boolean delete(int id) {
 		try {
-			PreparedStatement req = connect.prepareStatement("DELETE FROM utilisateurs WHERE "
-					+ "id_utilisateur = ?");
-			
-			req.setInt(1,id);
-			req.executeUpdate();
-			
-			return true;
-			
+			String queryDelete = "DELETE FROM utilisateurs WHERE id_utilisateur = ?";
+		    PreparedStatement req = connect.prepareStatement(queryDelete);
+		    req.setInt(1, id);
+		    req.execute(); 
+		    return true;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return false;
