@@ -51,25 +51,25 @@
 						<!--  Produits dans le panier -->
 						
 					 <% PanierM paniers=(PanierM)session.getAttribute("panier");
-            						for(PanierDetailsM pa:paniers.articles){ 
+            						for(PanierDetailsM pa:paniers.getArticles()){ 
             					%>
 						
 							<article class="container-basket-product">
-								<img alt="Image produit" src="<c:out value="${panier.articles.image }" />">
+								<img alt="Image produit" src="<%=pa.getProduit().getImage() %>" />">
 								<div class="content-basket-product">
 									<div class="container-basket-product-infos">
 										<div class="content-basket-product-infos">
-											<h1> <c:out value="${panier.articles.titre }" /></h1>
-											<p><c:out value="${panier.articles.description }" /></p>
+											<h1><%=pa.getProduit().getTitre() %></h1>
+											<p><%=pa.getProduit().getDescription() %></p>
 										</div>
 										<div class="content-basket-quantity-price">
 											<input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0">
-											<p><c:out value="${panier.articles.prix }" /></p>
+											<p> <%=pa.getProduit().getPrix() %> €</p>
 										</div>
 									</div>
 									<div class="container-delivery-and-supr">
 										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="">Supprimer</a>
+										<a href="panier?idtodelete=<%=pa.getProduit().getId_produit() %>">Supprimer</a>
 									</div>
 								</div>
 							</article>

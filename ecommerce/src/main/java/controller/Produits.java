@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.ProduitsDao;
 import dao.Sous_categoriesDao;
+import model.PanierDetailsM;
 import model.Sous_categoriesM;
 
 /**
@@ -22,6 +25,8 @@ public class Produits extends HttpServlet {
 	ProduitsDao produitsDao = new ProduitsDao();
 	
 	Sous_categoriesDao sousCatDao = new Sous_categoriesDao();
+	
+	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -44,6 +49,13 @@ public class Produits extends HttpServlet {
 			request.setAttribute("sC", sousCat);
 			
 			
+			// ajouter au panier
+			
+			PanierDetailsM panierDetails = new PanierDetailsM();
+			Panier panier = new Panier();
+		//	panierDetails.setProduit();
+		//	panierDetails.setQte(Integer.parseInt(request.getAttribute("quantity")));
+			panier.add(panierDetails);
 		
 		request.getRequestDispatcher("/view/pages/produits.jsp").forward(request, response);
 	}
