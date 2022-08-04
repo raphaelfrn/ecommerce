@@ -1,5 +1,4 @@
 let modal = document.querySelector(".background-modal");
-let close_update = document.querySelector(".icon-close-update");
 let title = document.querySelector(".title-modal-update");
 let containerInput = document.querySelector(".container-input-modal-update");
 let fullname = document.querySelector(".update-fullname");
@@ -10,17 +9,10 @@ let headerModalUpdate = document.querySelector(".container-header");
 let form_update_user = document.querySelector(".verif-update-user");
 let alerty_update_user = document.querySelector(".alerty-update-user");
 
-let form_update_user_js = document.createElement('form');
-form_update_user_js.id = 'verif-update-user';
-form_update_user_js.setAttribute('method','post');
-console.log(form_update_user_js)
-
 
 fullname.addEventListener("click", () => {
 	modal.style.display = "flex";
 	headerModalUpdate.style.display = "none";
-	
-	title.innerHTML="Modifier votre nom et prénom";
 
 	let input_lastname = document.createElement('input');
 	input_lastname.id = 'newLastname';
@@ -36,13 +28,6 @@ fullname.addEventListener("click", () => {
 	 
 	containerInput.appendChild(input_lastname);
 	containerInput.appendChild(input_firstname);
-	
-	close_update.addEventListener("click", () => {
-		modal.style.display = "none";
-		headerModalUpdate.style.display = "block";
-		input_lastname.remove();
-		input_firstname.remove();
-	});
 	
 	
 	// Verif Name
@@ -99,14 +84,6 @@ mail_Update.addEventListener("click", () => {
 	containerInput.appendChild(input_repeat_email);
 	
 	
-	close_update.addEventListener("click", () => {
-		modal.style.display = "none";
-		headerModalUpdate.style.display = "block";
-		input_new_mail.remove();
-		input_repeat_email.remove();
-	});
-	
-	
 	// Verif Mail
 	let arrayInputsupdate= [];
 	arrayInputsupdate.push(input_new_mail);
@@ -159,13 +136,6 @@ phone.addEventListener("click", () => {
 	 
 	containerInput.appendChild(input_new_phone);
 	containerInput.appendChild(input_repeat_phone);
-	
-	close_update.addEventListener("click", () => {
-		modal.style.display = "none";
-		headerModalUpdate.style.display = "block";
-		input_new_phone.remove();
-		input_repeat_phone.remove();
-	});
 	
 	
 	// Verif Phone
@@ -228,14 +198,7 @@ pwd.addEventListener("click", () => {
 	containerInput.appendChild(input_last_pwd);
 	containerInput.appendChild(input_new_pwd);
 	containerInput.appendChild(input_repeat_pwd);
-	
-	close_update.addEventListener("click", () => {
-		modal.style.display = "none";
-		headerModalUpdate.style.display = "block";
-		input_last_pwd.remove();
-		input_new_pwd.remove();
-		input_repeat_pwd.remove();
-	});
+
 	
 	//Verif Password
 	
