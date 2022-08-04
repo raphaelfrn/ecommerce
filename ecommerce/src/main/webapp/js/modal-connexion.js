@@ -10,56 +10,58 @@ let input_password = document.createElement('input');
 	
 
 // Creation des inputs
-IconConnexion.addEventListener("click", () => {
-	modalConnexion.style.display = "flex";
+if (IconConnexion != null) {
+	IconConnexion.addEventListener("click", () => {
 	
-	let icon_email = document.createElement("img");
-	let icon_pwd = document.createElement("img");
-	icon_pwd.className='iconPwd';
-	
-	input_email.id = 'emailCo';
-	input_email.setAttribute('name','emailCo');
-	input_email.setAttribute('type','text');
-	input_email.setAttribute('placeholder','Email');
-	icon_email.src = "assets/icon/mail.svg";
-	
-	input_password.id = 'passwordCo';
-	input_password.setAttribute('name','passwordCo');
-	input_password.setAttribute('type','password');
-	input_password.setAttribute('placeholder','Mot de passe');
-	icon_pwd.src = "assets/icon/pwd.svg";
-	 
-	containerInput1.appendChild(icon_email); 
-	containerInput1.appendChild(input_email);
-	
-	containerInput2.appendChild(icon_pwd);
-	containerInput2.appendChild(input_password);
-
-	
-	close.addEventListener("click", () => {
-		modalConnexion.style.display = "none";
-		input_email.remove();
-		input_password.remove();
-		icon_email.remove();
-		icon_pwd.remove();
-	});
-	
-	
-	InscriptionBtn.addEventListener("click", () => {
-		input_email.remove();
-		input_password.remove();
-		icon_email.remove();
-		icon_pwd.remove();	
+		modalConnexion.style.display = "flex";	
 		
-		modalConnexion.style.display = "none";
-		modalInscription.style.display = "flex";
-
-		closeInscription.addEventListener("click", () => {
-		modalInscription.style.display = "none";
+		let icon_email = document.createElement("img");
+		let icon_pwd = document.createElement("img");
+		icon_pwd.className='iconPwd';
+		
+		input_email.id = 'emailCo';
+		input_email.setAttribute('name','emailCo');
+		input_email.setAttribute('type','text');
+		input_email.setAttribute('placeholder','Email');
+		icon_email.src = "assets/icon/mail.svg";
+		
+		input_password.id = 'passwordCo';
+		input_password.setAttribute('name','passwordCo');
+		input_password.setAttribute('type','password');
+		input_password.setAttribute('placeholder','Mot de passe');
+		icon_pwd.src = "assets/icon/pwd.svg";
+		 
+		containerInput1.appendChild(icon_email); 
+		containerInput1.appendChild(input_email);
+		
+		containerInput2.appendChild(icon_pwd);
+		containerInput2.appendChild(input_password);
+	
+		
+		close.addEventListener("click", () => {
+			modalConnexion.style.display = "none";
+			input_email.remove();
+			input_password.remove();
+			icon_email.remove();
+			icon_pwd.remove();
 		});
-	})
-});
-
+		
+		
+		InscriptionBtn.addEventListener("click", () => {
+			input_email.remove();
+			input_password.remove();
+			icon_email.remove();
+			icon_pwd.remove();	
+			
+			modalConnexion.style.display = "none";
+			modalInscription.style.display = "flex";
+	
+			closeInscription.addEventListener("click", () => {
+			modalInscription.style.display = "none";
+			});
+		})
+	});
+}
 
 // Verification formulaire
 
@@ -73,7 +75,6 @@ function keyupInputCo() {
 	arrayInputsCo.forEach(function(element, index, arr){
 		arr[index].addEventListener('keyup', () => {
 			arr[index].classList.remove('errorCo');
-			console.log(arr[index])
 		} )
 	})
 } keyupInputCo();

@@ -17,7 +17,6 @@
 <link href="css/modals/modal-inscription.css" rel="stylesheet">
 
 <script type="text/javascript" defer src="js/slider-hero-home.js"></script>
-<script type="text/javascript" defer src="js/muted-video.js"></script>
 <script type="text/javascript" defer src="js/modal-connexion.js"></script>
 <script type="text/javascript" defer src="js/modal-inscription.js"></script>
 
