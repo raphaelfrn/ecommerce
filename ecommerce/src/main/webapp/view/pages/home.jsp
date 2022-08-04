@@ -16,6 +16,7 @@
 <link href="css/modals/modal-connexion.css" rel="stylesheet">
 <link href="css/modals/modal-inscription.css" rel="stylesheet">
 
+<script type="text/javascript" defer src="js/slider-hero-home.js"></script>
 <script type="text/javascript" defer src="js/muted-video.js"></script>
 <script type="text/javascript" defer src="js/modal-connexion.js"></script>
 <script type="text/javascript" defer src="js/modal-inscription.js"></script>
@@ -27,41 +28,42 @@
 </head>
 <body>
 	<c:import url="/header"></c:import>
-
-	<div class="container-hero"> 
-		<video class="video-hero" muted autoplay="autoplay" loop preload="auto">
-	          <source src="assets/video/phantom-gold.mp4" type="video/mp4">
-        </video>
-		<div class="container-hero-infos">
-			<img class="icon-sound" alt="Icon son" src="assets/icon/sound.svg">
-			<div class="container-hero-title">
-			 	<h2>Phantom</h2>
-        		<h1>Le son libéré</h1>
+	<c:forEach items="${ListSlides}" var="ListSlides">
+		<div class="container-hero">
+			<video class="video-hero" muted autoplay="autoplay" loop preload="auto">
+				<source src="${ListSlides.image}" type="video/mp4">
+			</video>
+			<div class="container-icon-slides-home">
+				<img class="icon-slides-home-left" alt="Icon left"
+					src="assets/icon/arrow-left.svg" onclick="plusSlides(-1)"> <img
+					class="icon-slides-home-right" alt="Icon right"
+					src="assets/icon/arrow-right.svg" onclick="plusSlides(1)">
 			</div>
-        		<button class="btn-hero">Découvrir</button>
-		</div>
-	</div>
-	
-	
-	
-	
-	<div class="container-categorie">
-		
- 		<div class="categorie-modifier">
- 	<c:forEach items="${ListCat }" var="ListCat">
-		
-			<div class="categories-modifier">
-				<div class="container-categorie-infos container-categorie-infos-modifier">
-					<h1><c:out value="${ListCat.description }" /></h1>
-			<a href="sous-categories?idCat=${ListCat.id_categorie }" >	<button> <span><c:out value="${ListCat.titre }" /></span> </button>  </a>	
+			<div class="container-hero-infos">
+				<img class="icon-sound" alt="Icon son" src="assets/icon/sound.svg">
+				<div class="container-hero-title">
+					<h2>${ListSlides.sous_titre}</h2>
+					<h1>${ListSlides.titre}</h1>
 				</div>
-				<img alt="Image categorie" src="<c:out value="${ListCat.image }" /> ">
+				<a href="${ListSlides.url}"><button class="btn-hero">Découvrir</button></a>
 			</div>
-		
-	</c:forEach>	
 		</div>
-		
-		
+	</c:forEach>
+
+	<div class="container-categorie">
+ 		<div class="categorie-modifier">
+	 		<c:forEach items="${ListCat }" var="ListCat">
+				<div class="categories-modifier">
+					<div class="container-categorie-infos container-categorie-infos-modifier">
+						<h1><c:out value="${ListCat.description }" /></h1>
+						<a href="sous-categories?idCat=${ListCat.id_categorie }" >	
+							<button> <span><c:out value="${ListCat.titre }" /></span></button>  
+						</a>	
+					</div>
+					<img alt="Image categorie" src="<c:out value="${ListCat.image }" /> ">
+				</div>
+			</c:forEach>	
+		</div>
 	</div>
 	
 	<div class="container-infos-dione">
@@ -74,7 +76,6 @@
 		 les ingénieurs de Dione sont engagés dans la poursuite d'une exigence d'innovation hors du commun pour
 		  repousser les limites de l'ingénierie du son.</p>
 	</div>
-	
 	
 	<c:import url="/view/footer/footer.jsp"></c:import>
 </body>

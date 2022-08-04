@@ -19,12 +19,13 @@ public class SlidesDao implements IDao<SlidesM> {
 	@Override
 	public boolean create(SlidesM slide) {
 		try {
-			PreparedStatement req = connect.prepareStatement("INSERT INTO slides (titre, image, url)"
-					+ "VALUES (?,?,?)");
+			PreparedStatement req = connect.prepareStatement("INSERT INTO slides (titre, sous_titre, image, url)"
+					+ "VALUES (?,?,?,?)");
 			
 			req.setString(1, slide.getTitre());
-			req.setString(2, slide.getImage());
-			req.setString(3, slide.getUrl());
+			req.setString(2, slide.getSous_titre());
+			req.setString(3, slide.getImage());
+			req.setString(4, slide.getUrl());
 			
 			req.executeUpdate();
 			
@@ -41,7 +42,7 @@ public class SlidesDao implements IDao<SlidesM> {
 	
 	@Override
 	public ArrayList<SlidesM> read() {
-ArrayList<SlidesM> listeSlide = new ArrayList<>();
+		ArrayList<SlidesM> listeSlide = new ArrayList<>();
 		
 		try {
 			PreparedStatement req = connect.prepareStatement("SELECT * FROM slides");
@@ -52,9 +53,9 @@ ArrayList<SlidesM> listeSlide = new ArrayList<>();
 				SlidesM slide = new SlidesM(
 						rs.getInt("id_slides"),
 						rs.getString("titre"),
+						rs.getString("sous_titre"),
 						rs.getString("image"),
-						rs.getString("url")
-								
+						rs.getString("url")		
 						);
 				listeSlide.add(slide);
 			}
@@ -72,13 +73,14 @@ ArrayList<SlidesM> listeSlide = new ArrayList<>();
 	@Override
 	public boolean update(SlidesM slide, int id) {
 		try {
-			PreparedStatement req = connect.prepareStatement("UPDATE slides SET titre=?, "
+			PreparedStatement req = connect.prepareStatement("UPDATE slides SET titre=?, sous_titre=? "
 					+ "image=?, url=? WHERE id_slides=?");
 			
 			req.setString(1, slide.getTitre());
-			req.setString(2, slide.getImage());
-			req.setString(3, slide.getUrl());
-			req.setInt(4, id);
+			req.setString(2, slide.getSous_titre());
+			req.setString(3, slide.getImage());
+			req.setString(4, slide.getUrl());
+			req.setInt(5, id);
 			
 			req.executeUpdate();
 			
@@ -131,11 +133,10 @@ ArrayList<SlidesM> listeSlide = new ArrayList<>();
 				slide = new SlidesM(
 						rs.getInt("id_slides"),
 						rs.getString("titre"),
+						rs.getString("sous_titre"),
 						rs.getString("image"),
-						rs.getString("url")
-								
+						rs.getString("url")		
 						);
-						
 			}
 			
 		} catch (SQLException e) {
@@ -145,5 +146,4 @@ ArrayList<SlidesM> listeSlide = new ArrayList<>();
 		return slide;
 	}
 
-	
 }
