@@ -4,6 +4,7 @@ public class SlidesM {
 	
 	private int id_slides;
 	private String titre;
+	private String sous_titre;
 	private String image;
 	private String url;
 	
@@ -13,13 +14,15 @@ public class SlidesM {
 	public SlidesM() {	
 	}
 
-
-	public SlidesM(int id_slides, String titre, String image, String url) {
+	public SlidesM(int id_slides, String titre, String sous_titre, String image, String url) {
 		this.id_slides = id_slides;
 		this.titre = titre;
+		this.sous_titre = sous_titre;
 		this.image = image;
 		this.url = url;
 	}
+
+
 
 	// Getters and Setters
 
@@ -42,7 +45,15 @@ public class SlidesM {
 	public void setTitre(String titre) {
 		this.titre = titre;
 	}
+	
+	
+	public String getSous_titre() {
+		return sous_titre;
+	}
 
+	public void setSous_titre(String sous_titre) {
+		this.sous_titre = sous_titre;
+	}
 
 	public String getImage() {
 		return image;
@@ -63,12 +74,10 @@ public class SlidesM {
 		this.url = url;
 	}
 
-
 	@Override
 	public String toString() {
-		return "SlidesM [id_slides=" + id_slides + ", titre=" + titre + ", image=" + image + ", url=" + url + "]";
+		return "Slides id " + id_slides + " titre " + titre + " subtitle " + sous_titre + " image " + image
+				+ " url " + url;
 	}
-	
-	
 
 }

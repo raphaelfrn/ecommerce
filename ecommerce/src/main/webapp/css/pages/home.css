@@ -1,10 +1,24 @@
 @charset "UTF-8";
 
+/* Slider */
+
 .container-hero{
 	width: 100vw;	
 	overflow:hidden;
 	position: relative;
+	display: none;
 }
+
+.container-icon-slides-home {
+	display: flex;
+	position: absolute;
+    top: 41%;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    margin: 0 4%;	
+}
+
 
 .icon-sound {
 	display: none;
@@ -106,6 +120,9 @@
 	border: none;
 	font-family: "Avenir-roman";
 }
+
+
+/* page */
 
 .categorie, .categories-modifier {
 	width: 100vw;

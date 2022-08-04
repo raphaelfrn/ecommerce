@@ -94,6 +94,15 @@ public class MyAccount extends HttpServlet {
 		}
 		
 		request.setAttribute("InfosUser", userDao.findById(userId));
+		
+//		Suppresion compte client
+//		String actionDelete = request.getParameter("action");
+//		System.out.println(actionDelete);
+//		if (actionDelete != null || actionDelete=="deleteUser") {
+//			request.setAttribute("msgDeleteUser", userDao.delete(userId));
+//		}
+			
+		
 		request.getRequestDispatcher("view/pages/account.jsp").forward(request, response);
 	}
 

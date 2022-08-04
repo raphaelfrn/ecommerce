@@ -28,6 +28,7 @@
 <body>
 	<c:url value="/address" var="address"/>
 	<c:url value="/historique" var="historique"/>
+	<c:url value="/account" var="account"/>
 	<c:url value="/deconnexion" var="deconnexion"/>
 	
 		<c:import url="/modalUpdate"></c:import>
