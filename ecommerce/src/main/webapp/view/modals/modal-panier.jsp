@@ -23,7 +23,7 @@
 	   					<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
 	   					<p>Feuille d'or</p>
 	   				</div>
-	   				<div><input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0"></div>
+	   				<div><input type="number" id="quantity1" name="quantity" min="1" max="10" placeholder="0"></div>
 	   			</div>
 	   			<div class="modal-panier-product-price">
 	   				<a>Supprimer</a>
@@ -37,7 +37,7 @@
 	   					<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
 	   					<p>Feuille d'or</p>
 	   				</div>
-	   				<div><input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0"></div>
+	   				<div><input type="number" id="quantity2" name="quantity" min="1" max="10" placeholder="0"></div>
 	   			</div>
 	   			<div class="modal-panier-product-price">
 	   				<a>Supprimer</a>
@@ -51,7 +51,7 @@
 	   					<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
 	   					<p>Feuille d'or</p>
 	   				</div>
-	   				<div><input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0"></div>
+	   				<div><input type="number" id="quantity3" name="quantity" min="1" max="10" placeholder="0"></div>
 	   			</div>
 	   			<div class="modal-panier-product-price">
 	   				<a>Supprimer</a>
@@ -65,7 +65,7 @@
 	   					<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
 	   					<p>Feuille d'or</p>
 	   				</div>
-	   				<div><input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0"></div>
+	   				<div><input type="number" id="quantity4" name="quantity" min="1" max="10" placeholder="0"></div>
 	   			</div>
 	   			<div class="modal-panier-product-price">
 	   				<a>Supprimer</a>
@@ -79,7 +79,7 @@
 	   					<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
 	   					<p>Feuille d'or</p>
 	   				</div>
-	   				<div><input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0"></div>
+	   				<div><input type="number" id="quantity5" name="quantity" min="1" max="10" placeholder="0"></div>
 	   			</div>
 	   			<div class="modal-panier-product-price">
 	   				<a>Supprimer</a>
@@ -93,7 +93,7 @@
 	   					<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
 	   					<p>Feuille d'or</p>
 	   				</div>
-	   				<div><input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0"></div>
+	   				<div><input type="number" id="quantity6" name="quantity" min="1" max="10" placeholder="0"></div>
 	   			</div>
 	   			<div class="modal-panier-product-price">
 	   				<a>Supprimer</a>
