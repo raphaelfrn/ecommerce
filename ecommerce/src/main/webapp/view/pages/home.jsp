@@ -28,27 +28,29 @@
 </head>
 <body>
 	<c:import url="/header"></c:import>
-	<c:forEach items="${ListSlides}" var="ListSlides">
-		<div class="container-hero">
-			<video class="video-hero" muted autoplay="autoplay" loop preload="auto">
-				<source src="${ListSlides.image}" type="video/mp4">
-			</video>
-			<div class="container-icon-slides-home">
-				<img class="icon-slides-home-left" alt="Icon left"
-					src="assets/icon/arrow-left.svg" onclick="plusSlides(-1)"> <img
-					class="icon-slides-home-right" alt="Icon right"
-					src="assets/icon/arrow-right.svg" onclick="plusSlides(1)">
-			</div>
-			<div class="container-hero-infos">
-				<img class="icon-sound" alt="Icon son" src="assets/icon/sound.svg">
-				<div class="container-hero-title">
-					<h2>${ListSlides.sous_titre}</h2>
-					<h1>${ListSlides.titre}</h1>
+	<div class="container-hero-sildes">
+		<c:forEach items="${ListSlides}" var="ListSlides">
+			<div class="container-hero">
+				<video class="video-hero" muted autoplay="autoplay" loop preload="auto">
+					<source src="${ListSlides.image}" type="video/mp4">
+				</video>
+				
+				<div class="container-hero-infos">
+					<img class="icon-sound" alt="Icon son" src="assets/icon/sound.svg">
+					<div class="container-hero-title">
+						<h2>${ListSlides.sous_titre}</h2>
+						<h1>${ListSlides.titre}</h1>
+					</div>
+					<a href="${ListSlides.url}"><button class="btn-hero">Découvrir</button></a>
 				</div>
-				<a href="${ListSlides.url}"><button class="btn-hero">Découvrir</button></a>
 			</div>
+		</c:forEach>
+		<div class="container-icon-slides-home">
+					<img class="icon-slides-home-left" alt="Icon left" src="assets/icon/arrow-left.svg" onclick="plusSlides(-1)">
+					<img class="icon-slides-home-right" alt="Icon right" src="assets/icon/arrow-right.svg" onclick="plusSlides(1)">
 		</div>
-	</c:forEach>
+	</div>
+	
 
 	<div class="container-categorie">
  		<div class="categorie-modifier">

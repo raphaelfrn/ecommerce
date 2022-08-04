@@ -42,7 +42,6 @@ public class Home extends HttpServlet {
 		
 		request.setAttribute("ListCat", ListCat);
 		request.setAttribute("ListSlides", ListSlides);
-		System.out.println(ListSlides);
 		
 		request.getRequestDispatcher("/view/pages/home.jsp").forward(request, response);
 	}
