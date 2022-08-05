@@ -10,6 +10,9 @@ import javax.servlet.http.HttpSession;
 
 import dao.ProduitsDao;
 import dao.RecherchesDao;
+import model.PanierDetailsM;
+import model.PanierM;
+import model.ProduitsM;
 import model.RecherchesM;
 import model.UtilisateursM;
 
@@ -20,6 +23,7 @@ import model.UtilisateursM;
 public class Recherches extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	ProduitsDao produitsDao = new ProduitsDao();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -48,9 +52,23 @@ public class Recherches extends HttpServlet {
 				
 			  request.setAttribute("listSearch", produitDao.search(search));
 			  
+		// add to cart
+			  
+			  if(request.getParameter("param")!=null && request.getParameter("param") == String.valueOf(request.getParameter("param")) ) {
+						
+					int id = Integer.valueOf(request.getParameter("param"));
+					ProduitsM produit = produitsDao.findById(id);
+					PanierDetailsM panieradd=new PanierDetailsM(produit,1);	
+		
+					PanierM panier=(PanierM) session.getAttribute("panier");
+					panier.add(panieradd);
+					session.setAttribute( "panier", panier );  
+					
+				}		
 			  
 			  
-			 // stocker dans la table recherche
+			  
+		// stocker dans la table recherche
 			  
 		
 		 RecherchesDao rechercheDao = new RecherchesDao();

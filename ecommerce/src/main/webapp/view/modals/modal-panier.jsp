@@ -27,8 +27,8 @@
    		<div class="container-overflow">
 
    		
-   		 <% PanierM panierM=(PanierM)session.getAttribute("panier");
-         for(PanierDetailsM pa:panierM.getArticles()){ 
+   	 <% PanierM paniers=(PanierM)session.getAttribute("panier");
+            for(PanierDetailsM pa:paniers.getArticles()){ 
             					%>
    		
 		   		<div class="container-modal-panier-product">
@@ -37,24 +37,29 @@
 		   					<h1><%=pa.getProduit().getTitre() %></h1>
 		   					<p>Feuille d'or</p>
 		   				</div>
-		   				<div><input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0"></div>
+		   				<div><input type="number" id="quantity<%=pa.getProduit().getId_produit() %>" name="inputQuantity" min="1" max="10" placeholder="0" value="<%=pa.getQte() %>"  readonly></div>
 		   			</div>
 		   			<div class="modal-panier-product-price">
-		   				<a>Supprimer</a>
+		   				<a href="panier?idtodelete=<%=pa.getProduit().getId_produit() %>">Supprimer</a>
 		   				<p><%=pa.getProduit().getPrix() %> €</p>
 		   			</div>
 		   		</div>
 		   		
 	   		<% } %>
-	   		
 
    		</div>
    		
+   		<%-- <c:if test="${empty panierM}">
+   		<h1>Votre panier est vide</h1>
+   		</c:if>
+   		
+   		<c:if test="${!empty panierM}"> --%>
    		<div>
    			<div class="container-modal-total">
 	   			<p>Total :</p>
-	   			<p>3724 €</p>
-   			</div>
+	   			 <p>${panierM.total()} €</p>  
+   			</div> 
+   			
    			<div class="container-modal-panier-btn">
    			<button class="modal-panier-btn-validate"><span>Valider</span></button>
    			</div>
@@ -62,6 +67,7 @@
    				<button class="modal-panier-btn-shop"><span>Continuer mon shopping</span></button>
    			</div>
    		</div>
+   		<%-- </c:if> --%>
    	</form>
 
   </div>

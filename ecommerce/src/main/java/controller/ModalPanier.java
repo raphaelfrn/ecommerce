@@ -1,11 +1,15 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.PanierM;
 
 /**
  * Servlet implementation class ModalPanier
@@ -26,6 +30,34 @@ public class ModalPanier extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
+//		if(request.getParameter("inputQuantity") != null) {
+//			ProduitsDao produitsDao = new ProduitsDao();
+//			
+//			HttpSession session = request.getSession( true );
+//			int id = Integer.valueOf(request.getParameter("id"));
+//			int qte=Integer.valueOf(request.getParameter("quantity"));
+//			ProduitsM produit = produitsDao.findById(id);
+//			PanierDetailsM panieradd=new PanierDetailsM(produit,qte);	
+//		
+//			
+//			PanierM panier=(PanierM) session.getAttribute("panier");
+//			panier.add(panieradd);
+//			session.setAttribute( "panier", panier );
+//		}
+		
+		
+		// delete
+		if(request.getParameter("idtodelete")!=null ) {
+			HttpSession session = request.getSession( true );
+			int idproduit=Integer.valueOf(request.getParameter("idtodelete"));
+			PanierM panier=(PanierM) session.getAttribute("panier");
+			panier.delete(idproduit);
+			session.setAttribute( "panier", panier );
+		}
+				
 		request.getRequestDispatcher("view/modals/modal-panier.jsp").forward(request, response);
 	}
 

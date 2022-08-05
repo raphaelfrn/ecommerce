@@ -8,10 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.ImagesDao;
 import dao.ProduitsDao;
 import model.ImagesM;
+import model.PanierDetailsM;
+import model.PanierM;
 import model.ProduitsM;
 
 /**
@@ -52,6 +55,26 @@ public class DetailsProduit extends HttpServlet {
 			request.setAttribute("produit", produit);
 			request.setAttribute("image", image);			
 				}
+		
+	
+		
+		// add to cart
+		
+	if(request.getParameter("btnAdd")!=null ) {
+			
+			HttpSession session = request.getSession( true );
+			
+			int qte=Integer.valueOf(request.getParameter("quantity"));
+			ProduitsM produit = produitsDao.findById(id);
+			PanierDetailsM panieradd=new PanierDetailsM(produit,qte);	
+		
+			
+			PanierM panier=(PanierM) session.getAttribute("panier");
+			panier.add(panieradd);
+			session.setAttribute( "panier", panier );
+	
+			
+		}	
 		
 		
 		request.getRequestDispatcher("/view/pages/details-produit.jsp").forward(request, response);

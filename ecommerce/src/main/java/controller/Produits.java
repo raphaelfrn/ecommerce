@@ -8,11 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession;
 
 import dao.ProduitsDao;
 import dao.Sous_categoriesDao;
 import model.PanierDetailsM;
+import model.PanierM;
+import model.ProduitsM;
 import model.Sous_categoriesM;
 
 /**
@@ -42,20 +44,31 @@ public class Produits extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int idSousCat= Integer.valueOf(request.getParameter("idSousCat"));
+		 
 		 request.setAttribute("listProduits", produitsDao.produitByIdSousCat(idSousCat));
 		 
 		 Sous_categoriesM sousCat = sousCatDao.findById(idSousCat);
 			
-			request.setAttribute("sC", sousCat);
+			request.setAttribute("sC", sousCat);			
+		
 			
+			if(request.getParameter("param")!=null ) {
+				
+				HttpSession session = request.getSession( true );
+				int id = Integer.valueOf(request.getParameter("param"));
+				ProduitsM produit = produitsDao.findById(id);
+				PanierDetailsM panieradd=new PanierDetailsM(produit,1);	
 			
-			// ajouter au panier
+				
+				PanierM panier=(PanierM) session.getAttribute("panier");
+				panier.add(panieradd);
+				session.setAttribute( "panier", panier );
+		
+				
+			}	
+	
+	
 			
-			PanierDetailsM panierDetails = new PanierDetailsM();
-			Panier panier = new Panier();
-		//	panierDetails.setProduit();
-		//	panierDetails.setQte(Integer.parseInt(request.getAttribute("quantity")));
-			panier.add(panierDetails);
 		
 		request.getRequestDispatcher("/view/pages/produits.jsp").forward(request, response);
 	}
@@ -66,7 +79,7 @@ public class Produits extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		System.out.println(Integer.valueOf(request.getParameter("btn-sous-cat")+" dopost"));
+		
 		doGet(request, response);
 	}
 

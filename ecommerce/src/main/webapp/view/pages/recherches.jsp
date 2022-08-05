@@ -35,6 +35,7 @@
 	<c:url value="/details" var="details"/>
 	<c:url value="/sous-categories" var="sousCat"/>
 	<c:import url="/header"></c:import>	
+	<c:url value="/recherche" var="pageRecherche"/>
 
 	
 
@@ -72,7 +73,13 @@
 	
 				<div class="card-produit-icons-add">
 					<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg">
-					<img alt="Icon ajout panier" src="assets/icon/basket-add.svg">
+					
+						<c:set var="url" value="param=${search.id_produit }"/>
+						<c:set var="variable" value="${search.id_produit }"/>
+						
+					<c:if test="${fn:contains(url,variable)}">
+					<a href="${pageRecherche}?${query}">	<img alt="Icon ajout panier" src="assets/icon/basket-add.svg" > </a>
+					</c:if>
 				</div>
 			</div>
 		</div>

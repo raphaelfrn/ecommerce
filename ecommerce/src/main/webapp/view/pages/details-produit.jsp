@@ -27,6 +27,8 @@
 </head>
 <body>
 	<c:import url="/header"></c:import>
+	<c:url value="/panier" var="panier"/>
+	
 	
 	
 	<div class="container-slider-description">
@@ -34,9 +36,7 @@
 	<!-- Image -->
 	 
 	<div class="container-slider">
-	
-	
-				
+					
 				<div id="carouselDetailsProduct" class="carousel slide" data-bs-ride="carousel">
 			  <div class="carousel-indicators">
 			  
@@ -85,14 +85,25 @@
 		
 		<div class="container-title-icon"><p class="title">  <c:out value="${produit.titre }"/></p>  <img class="icon-bookmark"alt="bookmark" src="assets/icon/bookmark.svg"> </div>
 		<p class="text-description"> <c:out value="${produit.description }"/></p>
-	
-		
-		<div class="quantity-form">
-		<form> <label for="quantity">Quantité : </label>	<input type="number" name="quantity"></form>
-		</div> 
-		<div class="container-button-price"><button type="submit"> <span>Ajouter au panier</span> </button> <h5><c:out value="${produit.prix }"/> €</h5> </div>	
-	
-	<br>
+
+
+			<div class="quantity-form">
+				<form method="post">
+					<label for="quantity">Quantité : </label> <input type="number" min="1" max="10" name="quantity" value="1">
+
+					<div class="container-button-price">
+						<button type="submit" name="btnAdd">
+								<span>Ajouter au panier</span>
+							</button>
+						<h5>
+							<c:out value="${produit.prix }" />
+							€
+						</h5>
+					</div>
+				</form>
+			</div>
+
+			<br>
 	
 	<p class="text-paiement">Paiement sécurisé</p>
 	<p class="text-delivery">Livraison offerte - Expédié sous 3 jours</p>

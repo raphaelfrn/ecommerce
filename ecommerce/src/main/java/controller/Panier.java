@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.CommandesDao;
-import dao.Details_commandeDao;
-import model.CommandesM;
-import model.Details_commandeM;
+import dao.Adresses_livraisonDao;
+import dao.UtilisateursDao;
 import model.PanierDetailsM;
 import model.PanierM;
 
@@ -28,6 +25,7 @@ public class Panier extends HttpServlet {
 	
        
 	ArrayList<PanierDetailsM> articles = new ArrayList<>();
+	UtilisateursDao userDao = new UtilisateursDao();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -41,22 +39,33 @@ public class Panier extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		 
+		HttpSession session = request.getSession();
+		
+		// adresse
+		
+		if((boolean)session.getAttribute("isConnected")!=false) {
+			int userId = (int)session.getAttribute("userid");
+			Adresses_livraisonDao addressDao = new Adresses_livraisonDao();
+			request.setAttribute("InfosUser", userDao.findById(userId));
+			request.setAttribute("listAddress", addressDao.addressUser(userId));
+			
+		} 
 		
 		
-//		// delete
-//		if(request.getParameter("idtodelete")!=null ) {
-//			HttpSession session = request.getSession( true );
-//			int idproduit=Integer.valueOf(request.getParameter("idtodelete"));
-//			PanierM panier=(PanierM) session.getAttribute("panier");
-//			panier.delete(idproduit);
-//			session.setAttribute( "panier", panier );
-//		}
-//		
-//		
+	
+
+	// delete
+		if(request.getParameter("idtodelete")!=null ) {
+			 request.getSession( true );
+			int idproduit=Integer.valueOf(request.getParameter("idtodelete"));
+			PanierM panier=(PanierM) session.getAttribute("panier");
+			panier.delete(idproduit);
+			session.setAttribute( "panier", panier );
+		}
+		
 //		boolean commandeok=false;
-//		
-//		
+		
+		
 //		// Validate command
 //		if(request.getParameter("valider")!=null ) {
 //			HttpSession session = request.getSession( true );
@@ -76,18 +85,18 @@ public class Panier extends HttpServlet {
 //	     
 //	        CommandesM commande=new CommandesM(InscriptionId,total,date);
 //	        int commandeid=commandedao.create(commande);
-//	        
+//      
 //	      // detail command
 //	        for(PanierDetailsM pd:panier.articles) {
 //	        	Details_commandeM d = new Details_commandeM();
 //	        	d.setQuantite(pd.getQte());
-//	        	d.setId_commande(commandeid));
+//        	d.setId_commande(commandeid));
 //	        	d.setPrix(pd.getProduit().getPrix());
 //	        	d.setId_produit(pd.getProduit().getId_produit());
 //	        	detaildao.create(d);
 //	        }
 //	        panier.empty();
-//			session.setAttribute( "panier", panier );
+//		session.setAttribute( "panier", panier );
 //			commandeok=true;
 //			response.sendRedirect("Commandeok"); 
 //		}	
@@ -108,47 +117,14 @@ public class Panier extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	public int count() {
-		
-		return articles.size();
-	}
 	
-	public void add(PanierDetailsM panierDetails) {
-		boolean exist=false;
-		
-		for(PanierDetailsM dp:articles){
-			if(dp.getProduit().getId_produit() == panierDetails.getProduit().getId_produit()){
-			exist= true;
-			dp.setQte(dp.getQte()+panierDetails.getQte());
-			  }
-			}
-			if(exist==false) {
-			articles.add(panierDetails);
-			}
-		}
-	
-	public float total() {
-		float total=0;
+	public double total() {
+		double total=0;
 		for(PanierDetailsM dp:articles) {
 			total+=dp.getProduit().getPrix()*dp.getQte();
 		}
-		
 		return total;
 	}
-	
-	public void delete(int idProduit) {
-		PanierDetailsM detail= new PanierDetailsM();
-		for(PanierDetailsM pp:articles) {
-			if(pp.getProduit().getId_produit()==idProduit) {
-				detail=pp;
-			}
-		}
-		articles.remove(detail);
-	}
-	
-	public void empty() {
-		articles= new ArrayList<PanierDetailsM>();
-	}
-	
+		
 	
 }
