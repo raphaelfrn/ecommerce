@@ -71,6 +71,51 @@
     cursor: pointer
 }
 
+.container-need-user {
+	width: 100vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #181818;
+}
+
+.container-need-user h1{
+	color: white;
+	font-size: 14px;
+	margin-bottom: 0;
+}
+
+
+.alerty-contact {
+	color: #e22727;
+    margin-top: 2%;	
+}
+
+.alertValidateContact {
+	height: 5vh;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alertValidateContact p{
+	color: white;
+	font-size: 12px;
+    text-align: center;
+	margin-bottom: 0;
+}
+
+.alertValidateContactYes {
+	background: #314831;
+}
+
+.alertValidateContactNo {
+	background: #4d0f0f;
+}
+
+
  @media screen and (min-width: 450px) 
 {
 	.contact-form {
@@ -101,13 +146,25 @@
     	font-size: 16px;
     }
     
-    	.container-video-contact {
+    .container-video-contact {
 			margin-bottom: 2%;
 	}
 	
 	.video-contact{
 		width: 60vw;
 		border: 1px solid white;
+	}
+
+	.container-need-user h1{
+		font-size: 22px;
+	}
+	
+	.alertValidateContact {
+		height: 3vh;
+    }
+    
+    .alertValidateContact p{
+	font-size: 16px;
 	}
 }
 
@@ -120,11 +177,19 @@
 	.contact-form {
 		margin: 0 34%;
 	}
+	
+	.container-need-user {
+	width: 100vw;
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #181818;
 }
 
-.alerty-contact {
-	color: #e22727;
-    margin-top: 2%;	
+	.container-need-user h1{
+		font-size: 26px;
+	}
 }
 
 
