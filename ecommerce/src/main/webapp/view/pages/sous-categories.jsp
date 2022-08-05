@@ -22,7 +22,6 @@
 
 <script type="text/javascript" defer src="js/modal-connexion.js"></script>
 <script type="text/javascript" defer src="js/modal-inscription.js"></script>
-
 <script type="text/javascript" defer src="js/muted-video.js"></script>
 
 

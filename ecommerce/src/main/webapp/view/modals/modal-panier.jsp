@@ -4,7 +4,7 @@
 <%@page import="model.CategorieM"%> 
 <%@page import="model.ProduitsM"%> 
 <%@page import="model.PanierM"%> 
-<%@page import="model.PanierDetailsM"%> 
+<%@page import="model.PanierDetailsM"%>
 <%@page import="java.util.ArrayList"%>     
     
 <!DOCTYPE html>

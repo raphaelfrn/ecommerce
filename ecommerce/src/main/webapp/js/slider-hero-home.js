@@ -19,7 +19,7 @@ function showSlides(n) {
   if (n < 1) {slideIndex = slidesHome.length}
   for (i = 0; i < slidesHome.length; i++) {
     slidesHome[i].style.display = "none";
-    video[i].muted
+    video[i].muted = true;
   }
   slidesHome[slideIndex-1].style.display = "block";
   

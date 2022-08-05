@@ -31,6 +31,4 @@ public class PanierDetailsM {
 	public String toString() {
 		return "PanierDetails [produit=" + produit + ", qte=" + qte + "]";
 	}
-	
-	
 }
