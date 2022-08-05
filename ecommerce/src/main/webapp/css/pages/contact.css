@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container-video-contact {
+	display: flex;
+    justify-content: center;
+    background: #181818;
+    padding-bottom: 4%;
+   	margin-bottom: 4%;
+}
+
+.video-contact{
+	width: 90vw;
+	border: 1px solid white;
+}
+
+.container-contact {
+	background: #181818;
+    height: 81vh;
+}
+
+.container-contact-form input:focus {
+     outline: none;
+}
+
+.contact-form {
+	height: 81vh;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0 6%;
+}
+
+.contact-sujet {
+	font-size: 16px;
+    letter-spacing: 1px;
+	color: white;
+	-webkit-text-fill-color: white; 
+	caret-color: white;
+    cursor: pointer;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	margin-bottom: 8%;
+}
+
+.contact-msg {
+	height: 40vh;
+	-webkit-text-fill-color: black; 
+	caret-color: black;
+	border-radius: 6px;
+	padding: 4%;
+	margin-bottom: 12%;
+	cursor: pointer
+}
+
+.btn-contact {
+	font-size: 14px;
+	border: 1.6px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer
+}
+
+ @media screen and (min-width: 450px) 
+{
+	.contact-form {
+		margin: 0 12%;
+	}
+}
+    
+ @media screen and (min-width: 604px) 
+{
+	.container-contact {
+		height: 88vh;
+	}
+	
+	.contact-form {
+		margin: 0 21%;
+	}
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.contact-sujet {
+		font-size: 20px;
+	    letter-spacing: 1px;
+	}
+	
+	.btn-contact {
+		height: 36px;
+    	font-size: 16px;
+    }
+    
+    	.container-video-contact {
+			margin-bottom: 2%;
+	}
+	
+	.video-contact{
+		width: 60vw;
+		border: 1px solid white;
+	}
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.container-video-contact {
+			margin-bottom: 1%;
+	}
+	
+	.contact-form {
+		margin: 0 34%;
+	}
+}
+

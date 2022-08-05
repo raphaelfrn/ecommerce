@@ -1,8 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <footer class="container-footer">
+	 <c:url value="/contact" var="contact"/>
+	 
 	<div class="container-footer-top">
 		<p>Contacter nos conseillers <span>Lun au sam, 10.00-20.00</span></p>
 		<button class="btn-phone">
-			<img alt="icon téléphone" src="assets/icon/phone.svg">
+			<img alt="icon tÃ©lÃ©phone" src="assets/icon/phone.svg">
 			<p>+33  9 75 00 00 00</p>
 		</button>
 	</div>
@@ -10,7 +15,7 @@
 	<div class="container-footer-body">
 		<ul>
 			<li><a href="">A propos</a></li>
-			<li><a href="">Contact</a></li>
+			<li><a href="${contact}">Contact</a></li>
 			<li><a href="">Assistance</a></li>
 			<li><a href="">Boutique</a></li>
 		</ul>
@@ -27,6 +32,6 @@
 	</div>
 	
 	<div class="container-footer-bottom">
-		<p>Copyright � 2022 Dione - Student project based on Devialet website</p>
+		<p>Copyright © 2022 Dione - Student project based on Devialet website</p>
 	</div>
 </footer>
