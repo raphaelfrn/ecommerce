@@ -34,6 +34,8 @@
 <body>
 	<c:url value="/details" var="details"/>
 	<c:url value="/sous-categories" var="sousCat"/>
+	<c:url value="/produits" var="pageProduit"/>
+	
 	<c:import url="/header"></c:import>	
 	
 	
@@ -84,12 +86,14 @@
 					<img alt="Icon étoile" src="assets/icon/star.svg">
 					<span>4,5</span>
 				</div>
-	
-				<div class="card-produit-icons-add">
-					<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg">
-					<img alt="Icon ajout panier" src="assets/icon/basket-add.svg">
+
+					<div class="card-produit-icons-add">
+						<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg"> 
+							<a href="${pageProduit}?idSousCat=${produits.id_sous_categorie.id_sous_categorie}&param=${produits.id_produit}">
+						<img alt="Icon ajout panier" src="assets/icon/basket-add.svg">
+							</a>
+					</div>
 				</div>
-			</div>
 		</div>
 		
 		</c:forEach>

@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@page import="model.CategorieM"%> 
+<%@page import="model.ProduitsM"%> 
+<%@page import="model.PanierM"%> 
+<%@page import="model.PanierDetailsM"%> 
+<%@page import="java.util.ArrayList"%>  
+    
 <!DOCTYPE html>
 <html> 
 <head>
@@ -26,6 +33,7 @@
 </head>
 <body>
 	<c:import url="/header"></c:import>
+	<c:url value="/address" var="adresse"/>
 	
 	<div class="container-page-basket">
 		<div class="container-basket-header">
@@ -40,109 +48,44 @@
 							<h1>Votre Panier</h1>
 						</div>
 						<div class="container-basket-product-overflow">
+						
+						<!--  Produits dans le panier -->
+						
+					 <% PanierM paniers=(PanierM)session.getAttribute("panier");
+            						for(PanierDetailsM pa:paniers.getArticles()){ 
+            					%>
+            					
+            				<%-- 	<% if(paniers == empty ){  %>
+								<article class="container-basket-product">
+								<h1>Votre panier est vide !</h1>
+									</article>
+	
+								<% }else{ %> --%>
 							<article class="container-basket-product">
-								<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
+								<img alt="Image produit" src="<%=pa.getProduit().getImage() %>" />
 								<div class="content-basket-product">
 									<div class="container-basket-product-infos">
 										<div class="content-basket-product-infos">
-											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-											<p>Feuille d'or</p>
+											<h1><%=pa.getProduit().getTitre() %></h1>
+											<p><%=pa.getProduit().getDescription() %></p>
 										</div>
 										<div class="content-basket-quantity-price">
-											<input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0">
-											<p>1335 €</p>
+											<input type="number" id="quantity" name="quantity" min="1" max="10" placeholder="0" value="<%=pa.getQte() %>">
+											<p> <%=pa.getProduit().getPrix() %> €</p>
 										</div>
 									</div>
 									<div class="container-delivery-and-supr">
 										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="">Supprimer</a>
+										<a href="panier?idtodelete=<%=pa.getProduit().getId_produit() %>">Supprimer</a>
 									</div>
 								</div>
 							</article>
-							<article class="container-basket-product">
-								<img alt="Image produit"
-									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-								<div class="content-basket-product">
-									<div class="container-basket-product-infos">
-										<div class="content-basket-product-infos">
-											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-											<p>Feuille d'or</p>
-										</div>
-										<div class="content-basket-quantity-price">
-											<input type="number" id="quantity" name="quantity" min="1"
-												max="10" placeholder="0">
-											<p>1335 €</p>
-										</div>
-									</div>
-									<div class="container-delivery-and-supr">
-										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="">Supprimer</a>
-									</div>
-								</div>
-							</article>		
-							<article class="container-basket-product">
-								<img alt="Image produit"
-									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-								<div class="content-basket-product">
-									<div class="container-basket-product-infos">
-										<div class="content-basket-product-infos">
-											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-											<p>Feuille d'or</p>
-										</div>
-										<div class="content-basket-quantity-price">
-											<input type="number" id="quantity" name="quantity" min="1"
-												max="10" placeholder="0">
-											<p>1335 €</p>
-										</div>
-									</div>
-									<div class="container-delivery-and-supr">
-										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="">Supprimer</a>
-									</div>
-								</div>
-							</article>
-							<article class="container-basket-product">
-								<img alt="Image produit"
-									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-								<div class="content-basket-product">
-									<div class="container-basket-product-infos">
-										<div class="content-basket-product-infos">
-											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-											<p>Feuille d'or</p>
-										</div>
-										<div class="content-basket-quantity-price">
-											<input type="number" id="quantity" name="quantity" min="1"
-												max="10" placeholder="0">
-											<p>1335 €</p>
-										</div>
-									</div>
-									<div class="container-delivery-and-supr">
-										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="">Supprimer</a>
-									</div>
-								</div>
-							</article>
-							<article class="container-basket-product">
-								<img alt="Image produit"
-									src="assets/img/enceintes/Phantom-1/Phantom-1-Orange1.webp">
-								<div class="content-basket-product">
-									<div class="container-basket-product-infos">
-										<div class="content-basket-product-infos">
-											<h1>PHANTOM II 98 DB OPÉRA DE PARIS</h1>
-											<p>Feuille d'or</p>
-										</div>
-										<div class="content-basket-quantity-price">
-											<input type="number" id="quantity" name="quantity" min="1"
-												max="10" placeholder="0">
-											<p>1335 €</p>
-										</div>
-									</div>
-									<div class="container-delivery-and-supr">
-										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="">Supprimer</a>
-									</div>
-								</div>
-							</article>
+								<% } %>	
+						<%-- 	<% } %> --%>
+					
+						
+							<!--  Prix et adresse de livraison -->
+					
 						</div>
 					</div>
 					<section class="container-total">
@@ -150,21 +93,41 @@
 							<div class="container-total-title">
 								<h1>Total</h1>
 							</div>
+							
+							
 							<div class="container-total-infos-command">
-								<p class="total-nbr-articles" >Nombre d’articles :  2</p>
+								<p class="total-nbr-articles" >Nombre d’articles : ${panier.count() } </p>
+								
+								
+								<% if((boolean)session.getAttribute("isConnected")==false){ %>
+									<div class="container-total-infos-command-client">
+	            						<p>Adresse : Veuillez vous connecter et raffraîchir la page (F5)  </p>
+	            					</div>
+            					
+								<% }else{ %>
+				
 								<div class="container-total-infos-command-client">
-									<p>Marc Roux</p>
-									<p>10 rue Victor Hugo, 75006 Paris</p>
-									<p>0768121315</p>
-									<a>Changer d’adresse de livraison</a>
+								
+									<c:forEach items="${listAddress }" var="addressUser" varStatus="status">	
+										<c:if test="${status.first }">
+										
+												<p>${InfosUser.prenom } ${InfosUser.nom}</p>
+												<p>${addressUser.adresse} ${addressUser.code_postal} ${addressUser.ville}</p>
+												<p>${InfosUser.telephone }</p>
+												
+												<a href="${adresse }">Changer d’adresse de livraison</a>
+								   		</c:if>	
+							</c:forEach>
 								</div>
-								<p class="total-infos-command-delivery">Date de livraison</p>
+							<% } %>	
+									
+							<a href="">	<p class="total-infos-command-delivery"> Vider le panier ${panier.vider()} </p></a>
 							</div>
 						</div>
 						<div class="container-basket-total-validate">
 							<div class="container-basket-total-price">
 								<p>Total</p>
-								<p>3724 €</p>
+								 <p>${panier.total()} €</p> 
 							</div>
 							<p class="basket-secure-payment">Paiement sécurisé</p>
 							<div class="container-basket-btn">
@@ -174,6 +137,8 @@
 					</section>
 				</form>
 			</section>
+			
+			<!-- Wish list Page -->
 
 			<section class="container-wishlist">
 				<div class="content-wishlist">

@@ -1,12 +1,10 @@
 package controller;
 
 import java.io.IOException;
-
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
-
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,10 +15,8 @@ import javax.servlet.http.HttpSession;
 
 import dao.Adresses_livraisonDao;
 import dao.CategorieDao;
-
-
 import dao.UtilisateursDao;
-
+import model.PanierM;
 import model.UtilisateursM;
 
 
@@ -55,6 +51,15 @@ public class Header extends HttpServlet {
 		if(session.getAttribute("isConnected")==null) {
 			session.setAttribute( "isConnected", false );
 		}
+		
+		// session Panier
+		if((PanierM) session.getAttribute("panier") == null){
+			PanierM panier_temp = new PanierM();
+			
+			session.setAttribute("panier", panier_temp);
+			
+			
+			}
 		
 		// categories 
 		request.setAttribute("listCat", catDao.read());	
@@ -95,6 +100,8 @@ public class Header extends HttpServlet {
 		} else {	
 			request.getRequestDispatcher("/view/menu/header.jsp").forward(request, response);
 		}
+		
+	
 	
 	}
 

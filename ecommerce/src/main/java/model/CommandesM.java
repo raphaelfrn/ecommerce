@@ -20,6 +20,15 @@ public class CommandesM {
 	}
 		
 	
+	public CommandesM(UtilisateursM id_utilisateur, Date dateC, float total) {
+		super();
+		this.id_utilisateur = id_utilisateur;
+		this.dateC = dateC;
+		this.total = total;
+	}
+	
+	
+
 	public CommandesM(int id_commande, UtilisateursM id_utilisateur, Date dateC, float total,
 			Adresses_livraisonM id_adresse_livraison, int etat) {
 		this.id_commande = id_commande;
