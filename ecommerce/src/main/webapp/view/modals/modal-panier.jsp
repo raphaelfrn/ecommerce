@@ -25,6 +25,7 @@
    	
    	<form action="${panier}">
    		<div class="container-overflow">
+
    		
    		 <% PanierM panierM=(PanierM)session.getAttribute("panier");
          for(PanierDetailsM pa:panierM.getArticles()){ 
@@ -46,6 +47,7 @@
 		   		
 	   		<% } %>
 	   		
+
    		</div>
    		
    		<div>
