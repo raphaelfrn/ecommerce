@@ -52,9 +52,12 @@
 	
 
 	<div class="container-categorie">
- 		<div class="categorie-modifier">
-	 		<c:forEach items="${ListCat }" var="ListCat">
-				<div class="categories-modifier">
+		<div class="container-title-categorie">
+			<h1>Vivez l'expérience audio ultime.</h1>
+		</div>
+	 	<c:forEach items="${ListCat }" var="ListCat">
+			<div class="categories-modifier">
+				<div class="categorie-modifier">
 					<div class="container-categorie-infos container-categorie-infos-modifier">
 						<h1><c:out value="${ListCat.description }" /></h1>
 						<a href="sous-categories?idCat=${ListCat.id_categorie }" >	
@@ -63,8 +66,8 @@
 					</div>
 					<img alt="Image categorie" src="<c:out value="${ListCat.image }" /> ">
 				</div>
-			</c:forEach>	
-		</div>
+			</div>
+		</c:forEach>	
 	</div>
 	
 	<div class="container-infos-dione">
