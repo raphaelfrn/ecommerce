@@ -21,6 +21,7 @@
 
 <script type="text/javascript" defer src="js/modal-connexion.js"></script>
 <script type="text/javascript" defer src="js/modal-inscription.js"></script>
+<script type="text/javascript" defer src="js/contact.js"></script>
 
 <title>Contact</title>
 </head>
@@ -29,10 +30,11 @@
 	
 	<section class="container-contact">
 		<article class="container-contact-form">
-		  	<form method="post" action="" class="contact-form">
+		  	<form method="post" action="" class="contact-form" onsubmit="return verifContact()">
 				<input class="contact-sujet" type="text" id="sujet" name="sujet" value=""  placeholder="Sujet *" >
-		   		<textarea class="contact-msg"  id="subject" name="msgContact" placeholder="Entrer votre message ..."></textarea>
+		   		<textarea class="contact-msg"  id="subject" name="msgContact" placeholder="Entrer votre message ..." minlength="10" maxlength="900" ></textarea>
 				<input class="btn-contact" name="btnContact" type="submit" value="Valider" > 
+				<p class="alerty-contact"></p>
 		 	 </form>
 		</article>
 	</section>
