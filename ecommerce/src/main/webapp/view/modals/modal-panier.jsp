@@ -23,8 +23,6 @@
    		<a href="${panier}">Voir mon panier</a>
    	</div>
    	
-   	
-   	
    	<form action="${panier}">
    		<div class="container-overflow">
    		
@@ -42,7 +40,7 @@
 		   			</div>
 		   			<div class="modal-panier-product-price">
 		   				<a>Supprimer</a>
-		   				<p>1709 €</p>
+		   				<p><%=pa.getProduit().getPrix() %> €</p>
 		   			</div>
 		   		</div>
 		   		
