@@ -1,4 +1,5 @@
 let alertValidatePwd = document.querySelectorAll(".alertValidatePwd");
+let confirmConnexion = document.querySelector(".confirm-connexion");
 
 //Timeout alert msg
 var myTimeout = setTimeout(() => {
@@ -7,6 +8,11 @@ var myTimeout = setTimeout(() => {
 			arr[index].style.display = "none";
 		}
 	})
+	
+	if (confirmConnexion != null) {
+		confirmConnexion.style.display = "none";
+	}
+
 }, 6000) 
 
 function myStopFunction() {

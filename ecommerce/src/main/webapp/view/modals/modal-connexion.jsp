@@ -25,7 +25,6 @@
 				<div class="container-btn-modal-inscription">
 					<a><button  class="btn-modal-inscription">S'inscrire</button></a>
 				</div>
-
 			</div>
 		</div>
 	</div>
