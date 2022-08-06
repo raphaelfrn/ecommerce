@@ -61,9 +61,6 @@ public class Contact extends HttpServlet {
 				String sujet = request.getParameter("sujet");
 				String msgContact = request.getParameter("msgContact");
 				
-				System.out.println(sujet);
-				System.out.println(msgContact);
-				
 				ContactM contact = new ContactM();
 				contact.setId_utilisateur(new UtilisateursM((userId)));
 				contact.setSujet(sujet);

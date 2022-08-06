@@ -277,3 +277,37 @@
 	color: #C29318;
 	
 }
+
+.alertValidatePwd {
+	height: 5vh;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alertValidatePwd p{
+	color: white;
+	font-size: 12px;
+	letter-spacing: 1px;
+    text-align: center;
+	margin-bottom: 0;
+}
+
+.alertValidatePwdYes {
+	background: #314831;
+}
+
+.alertValidatePwdNo {
+	background: #780606;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.alertValidatePwd {
+		height: 3vh;
+	}
+	
+	.alertValidatePwd p{
+		font-size: 14px;
+	}
+}

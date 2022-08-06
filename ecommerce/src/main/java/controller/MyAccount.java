@@ -78,6 +78,7 @@ public class MyAccount extends HttpServlet {
 					request.setAttribute("msgUpdatEmail", userDao.updateMail(userUpdate, userId));
 				}
 				
+				boolean msgPwdNo=false;
 				if( lastPwd !=null && newPwd !=null && repeatPwd !=null ) {
 					String lastPwdUser = userDao.findById(userId).getMot_de_passe();
 					String saisielastPwdUser = encode(lastPwd);
@@ -85,6 +86,9 @@ public class MyAccount extends HttpServlet {
 						String newPwdUser = encode(newPwd);
 						userUpdate.setMot_de_passe(newPwdUser);
 						request.setAttribute("msgUpdatPwd", userDao.updatePwd(userUpdate, userId));
+					} else {
+						msgPwdNo=true;
+						request.setAttribute("msgPwdNo", msgPwdNo);
 					}
 				 }
 			}
