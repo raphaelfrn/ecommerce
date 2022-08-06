@@ -30,7 +30,7 @@
 		<h1>Commande n° ....., Le JJ/MM/AAAA</h1>
 	</div>
 	<div class="container-page">
-		<div class="container-overflow">
+		<div class="container-overflow-details-command">
 		
 			<div class="container-row-details-command">
 			<img alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Black1.webp">
