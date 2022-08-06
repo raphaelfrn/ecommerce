@@ -4,6 +4,7 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
     
  <script type="text/javascript" defer src="js/header.js"></script>
+  <script type="text/javascript" defer src="js/alert-timeout.js"></script>
     
 <header class="container-header">
 
@@ -68,10 +69,12 @@
 			</nav>
 	 	</div>
 	</div>
-	
+	<c:if test="${msgConnexionNoo}">
+	<div class="confirm-connexion ">
+		<p>Vos identifiants ne sont pas corrects, veuillez réessayer</p>
+	</div>
+</c:if>
 	<c:import url="/modalConnexion"></c:import>
 	<c:import url="/modalInscription"></c:import>
 	<c:import url="/modalPanier"></c:import>
 </header>
-
-

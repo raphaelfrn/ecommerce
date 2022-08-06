@@ -34,7 +34,6 @@ public class ModalUpdate extends HttpServlet {
 		HttpSession session = request.getSession();
 		int userId = (int)session.getAttribute("userid");
 		
-		System.out.println(userId);
 		request.getRequestDispatcher("view/modals/modal-update.jsp").forward(request, response);
 	}
 

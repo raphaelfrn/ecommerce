@@ -41,7 +41,7 @@ public class Recherches extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 	
-		
+	
 		
 		// search
 				ProduitsDao produitDao = new ProduitsDao();
