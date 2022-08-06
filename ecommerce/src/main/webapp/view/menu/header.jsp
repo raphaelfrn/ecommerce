@@ -4,6 +4,7 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
     
  <script type="text/javascript" defer src="js/header.js"></script>
+  <script type="text/javascript" defer src="js/alert-timeout.js"></script>
     
 <header class="container-header">
 
@@ -28,7 +29,7 @@
 				<p class="content-header-name-user header-account-click">Hello, ${InfosUser.prenom}</p> 
 					<div class="container-header-account-choice">
 						<div class="container-icon-close-user-choice">
-						<img class="icon-close-user-choice" alt="Icon fermer" src="assets/icon/close.svg">	
+							<img class="icon-close-user-choice" alt="Icon fermer" src="assets/icon/close.svg">	
 						</div>
 						<ul> 
 							<li>
@@ -61,17 +62,23 @@
 					<a href="${sousCat}?idCat=${categorie.id_categorie}"><c:out value="${categorie.titre }"/></a> 
 					</c:forEach>
 				</div>
-				<div class="content-account">
-					<a href="${account}">Mes informations</a> 
-					<a href="${historique}">Mon historique de commandes</a>
-				</div>
+				<% if((boolean)session.getAttribute("isConnected")==true){ %>
+	            	<div class="content-account">
+						<a href="${account}">Mes informations</a> 
+						<a href="${historique}">Mon historique de commandes</a>
+					</div>
+				<% } %>
 			</nav>
 	 	</div>
 	</div>
+	
+	<c:if test="${msgConnexionNoo}">
+		<div class="confirm-connexion ">
+			<p>Vos identifiants ne sont pas corrects, veuillez réessayer</p>
+		</div>
+	</c:if>
 	
 	<c:import url="/modalConnexion"></c:import>
 	<c:import url="/modalInscription"></c:import>
 	<c:import url="/modalPanier"></c:import>
 </header>
-
-

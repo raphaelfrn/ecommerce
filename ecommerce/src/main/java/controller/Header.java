@@ -45,6 +45,7 @@ public class Header extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		boolean connected=false;
+		boolean msgConnexionNo=false;
 		
 		// session
 		HttpSession session = request.getSession(true);
@@ -66,13 +67,16 @@ public class Header extends HttpServlet {
 		
 		// session
 		try {
+	
 			if(request.getParameter("btnConnexion")!=null ) {
 				String email=request.getParameter("emailCo");
 				String password=request.getParameter("passwordCo");
 				String pwd = encode(password);
 				UtilisateursM user = userDao.connexion(email, pwd);
+			
 				if(user==null) {
 					System.out.println("Pas encore connecté");
+					msgConnexionNo=true;
 				} else {
 					request.getSession( true );
 			        session.setAttribute( "userid", user.getId_utilisateur());
@@ -84,6 +88,7 @@ public class Header extends HttpServlet {
 					connected=true;	
 					System.out.println("Vous êtes connecté");
 				}
+				
 			}	
 			if((boolean)session.getAttribute("isConnected")!=false) {
 				System.out.println("connecter");
@@ -91,10 +96,14 @@ public class Header extends HttpServlet {
 				UtilisateursDao userDao = new UtilisateursDao();
 				request.setAttribute("InfosUser", userDao.findById(userId));
 			} 
+		
 
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}
+		
+		request.setAttribute("msgConnexionNoo", msgConnexionNo);
+
 		if(!connected) {
 			request.getRequestDispatcher("/view/menu/header.jsp").forward(request, response);
 		} else {	

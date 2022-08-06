@@ -14,15 +14,18 @@ let password = document.querySelector(".container-modal-inscription-input input#
 let passwordConfirm = document.querySelector(".container-modal-inscription-input input#passwordConfirm");
 
 //Display Inscription
-BtnInscription.addEventListener("click", () => {
-	
-	modalConnexion.style.display = "none";
-	modalInscription.style.display = "flex";
 
-	closeInscription.addEventListener("click", () => {
-		modalInscription.style.display = "none";
-	});
-});
+if (BtnInscription != null) {
+	BtnInscription.addEventListener("click", () => {
+		
+		modalConnexion.style.display = "none";
+		modalInscription.style.display = "flex";
+	
+		closeInscription.addEventListener("click", () => {
+			modalInscription.style.display = "none";
+		});
+	});	
+}
 
 //Timeout Confirmation Inscription
 var myTimeout = setTimeout(() => {

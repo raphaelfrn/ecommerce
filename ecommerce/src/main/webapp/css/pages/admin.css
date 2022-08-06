@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+
+.container-page-admin {
+	display: flex;
+    flex-direction: row;
+}
+
+.container-admin-menu {
+	height: 100vh;
+    width: 15vw;
+    background: white;
+    padding: 2% 2%;
+}
+
+.logo-dione-admin {
+	margin-bottom : 26%;
+}
+
+.container-admin-menu-ul{
+	padding: 0;
+	margin:0;
+}
+
+.container-admin-menu-ul li{
+	display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+	margin-bottom: 18%;
+	font-family: "Avenir-heavy";
+	cursor: pointer;
+}
+
+.container-admin-menu-ul img{
+    margin-right: 4%;
+}
+
+.container-admin-dashbord {
+    width: 85vw;
+    height: 100vh;
+    background: #fef6ed;
+    overflow: scroll;
+}

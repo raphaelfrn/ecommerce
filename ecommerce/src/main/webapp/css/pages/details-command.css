@@ -62,24 +62,24 @@ body {
 	}
 }
 
-.container-overflow {
+.container-overflow-details-command {
     max-height: 60vh;
 	overflow: scroll;
 }
 
-.container-overflow::-webkit-scrollbar {
+.container-overflow-details-command::-webkit-scrollbar {
 	display: none;
 }
  @media screen and (min-width: 430px) 
 {
-	.container-overflow {
+	.container-overflow-details-command {
 	    max-height: 63vh;
 		overflow: scroll;
 	}
 }
  @media screen and (min-width: 820px) 
 {
-	.container-overflow {
+	.container-overflow-details-command {
     	max-height: 72vh;
 	}
 }

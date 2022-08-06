@@ -48,7 +48,13 @@
 </div>
 
 <c:if test="${msgUser}">
-	<div class="confirm-register">
+	<div class="confirm-register confirm-registerOK">
 		<p>Votre compte à bien été créer, merci de vous connecter</p>
+	</div>
+</c:if>
+
+<c:if test="${msgRegisterNo}">
+	<div class="confirm-register confirm-registerNo">
+		<p>Votre compte existe déjà, veuillez vous connecter ou créer un nouveau compte.</p>
 	</div>
 </c:if>

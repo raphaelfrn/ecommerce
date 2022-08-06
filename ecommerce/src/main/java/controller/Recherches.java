@@ -41,7 +41,7 @@ public class Recherches extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 	
-		
+	
 		
 		// search
 				ProduitsDao produitDao = new ProduitsDao();
@@ -58,7 +58,7 @@ public class Recherches extends HttpServlet {
 						
 					int id = Integer.valueOf(request.getParameter("param"));
 					ProduitsM produit = produitsDao.findById(id);
-					PanierDetailsM panieradd=new PanierDetailsM(produit,1);	
+					PanierDetailsM panieradd=new PanierDetailsM(produit,1);
 		
 					PanierM panier=(PanierM) session.getAttribute("panier");
 					panier.add(panieradd);
