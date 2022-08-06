@@ -47,7 +47,6 @@ public class ModalInscription extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
 		if(request.getParameter("btnInscription")!=null ) {	
 			String name = request.getParameter("name");
 			String firstname = request.getParameter("firstname");
@@ -61,11 +60,12 @@ public class ModalInscription extends HttpServlet {
 			user.setEmail(mail);
 			user.setTelephone(phone);
 			user.setMot_de_passe(password);
-			
+		
 			if (!userDao.verifMail(mail)) {
 				request.setAttribute("msgUser", userDao.create(user));	
 			} else {
-				request.setAttribute("msgUser", "Votre compte existe déjà.");
+				boolean registerNo =true;
+				request.setAttribute("msgRegisterNo", registerNo);
 			}
 			
 			String adresse = request.getParameter("address");

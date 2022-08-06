@@ -14,14 +14,15 @@ account_icon_user.forEach(function(element, index, arr){
 	});
 })
 
-container_acount_choice.addEventListener("mouseover", () => {
+if (container_acount_choice != null) {
+	
+	container_acount_choice.addEventListener("mouseover", () => {
+		container_acount_choice.style.display = "block";
+	});
 
-	container_acount_choice.style.display = "block";
+	container_acount_choice.addEventListener("mouseout", () => {
+		container_acount_choice.style.display = "none";
+	});	
+}
 
-});
 
-container_acount_choice.addEventListener("mouseout", () => {
-
-	container_acount_choice.style.display = "none";
-
-});
