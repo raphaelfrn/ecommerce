@@ -19,6 +19,8 @@
 <script type="text/javascript" defer src="js/modal-connexion.js"></script>
 <script type="text/javascript" defer src="js/modal-update.js"></script>
 <script type="text/javascript" defer src="js/modal-inscription.js"></script>
+<script type="text/javascript" defer src="js/alert-timeout.js"></script>
+
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -33,6 +35,23 @@
 	
 		<c:import url="/modalUpdate"></c:import>
 		<c:import url="/header"></c:import>
+		<c:if test="${msgUpdatPwd}">
+			<div class="alertValidatePwd alertValidatePwdYes alertTimePwd ">
+			 		<p>Votre mot de passe a été modifier</p>
+			</div>
+		</c:if>
+			
+		<c:if test="${msgUpdatPwd == false}">
+			<div class="alertValidatePwd alertValidatePwdNo alertTimePwd ">
+		  		<p>Votre mot de passe n'a pas pu être modifier, veuillez réessayer</p>
+			</div>
+		</c:if>
+				
+		<c:if test="${msgPwdNo}">
+			<div class="alertValidatePwd alertValidatePwdNo alertTimePwd ">
+				 <p>Votre mot de passe n'a pas pu être modifier, veuillez réessayer</p>
+			</div>
+		</c:if>
 	
 		<div class="container-account">
 			<div class="container-clients">
@@ -78,6 +97,8 @@
 					<span class="update-pwd">Modifier</span>
 				</div>
 			</div>
+			
+
 			
 			<div class="container-command">
 				<div class="container-last-order">
