@@ -38,7 +38,12 @@
 	<div class="container-page-basket">
 		<div class="container-basket-header">
 			<h1 class="title-basket">Panier</h1>
-			<h1 class="title-wishlist">Wishlist</h1>
+			
+		<% if((boolean)session.getAttribute("isConnected")==true){ %>
+			<h1 class="title-wishlist">Wishlist</h1>           					
+		<% } %>
+			
+			
 		</div>
 		<div class="container-basket-wislist">
 			<section class="container-basket">
@@ -96,12 +101,12 @@
 							
 							
 							<div class="container-total-infos-command">
-								<p class="total-nbr-articles" >Nombre d’articles : ${panier.count() } </p>
+								<p class="total-nbr-articles" >Nombre d’articles différents : ${panier.count() } </p>
 								
 								
 								<% if((boolean)session.getAttribute("isConnected")==false){ %>
 									<div class="container-total-infos-command-client">
-	            						<p>Adresse : Veuillez vous connecter et raffraîchir la page (F5)  </p>
+	            						<p>Adresse : Veuillez vous connecter et rafraîchir la page (F5)  </p>
 	            					</div>
             					
 								<% }else{ %>
@@ -121,7 +126,7 @@
 								</div>
 							<% } %>	
 									
-							<a href="">	<p class="total-infos-command-delivery"> Vider le panier ${panier.vider()} </p></a>
+						<%-- 	<a href="">	<p class="total-infos-command-delivery"> Vider le panier ${panier.vider()} </p></a> --%>
 							</div>
 						</div>
 						<div class="container-basket-total-validate">

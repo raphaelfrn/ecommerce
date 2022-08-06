@@ -78,7 +78,7 @@
 						<c:set var="variable" value="${search.id_produit }"/>
 						
 					<c:if test="${fn:contains(url,variable)}">
-					<a href="${pageRecherche}?${query}">	<img alt="Icon ajout panier" src="assets/icon/basket-add.svg" > </a>
+					<%-- <a href="${pageRecherche}?${query}">	<img alt="Icon ajout panier" src="assets/icon/basket-add.svg" > </a> --%>
 					</c:if>
 				</div>
 			</div>
