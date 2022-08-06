@@ -4,8 +4,6 @@ let wishlist = document.querySelector(".title-wishlist");
 let containerBasket = document.querySelector(".container-basket");
 let containerWishlist = document.querySelector(".container-wishlist");
 
-console.log(basket);
-console.log(wishlist);
 
 wishlist.addEventListener('click', () => {
 	containerBasket.style.display="none";
