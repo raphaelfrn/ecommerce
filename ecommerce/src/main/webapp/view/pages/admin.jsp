@@ -29,11 +29,11 @@ pageEncoding="UTF-8"%>
 	
 	<div class="container-page-admin">
 		<section class="container-admin-menu" >
-			 <img class="logo-dione-admin" alt="logo Dione" src="assets/logo/logo-dione-black.svg"> 
-			<ul>
-				<li>Tableau de bord</li>
-				<li>Clients</li>
-				<li>Ajout</li>
+			<img class="logo-dione-admin" alt="logo Dione" src="assets/logo/logo-dione-admin.svg">
+			<ul class="container-admin-menu-ul">
+				<li> <img alt="Icon tableau de bord" src="assets/icon/icon-admin-dashbord.svg">Tableau de bord</li>
+				<li> <img alt="Icon clients" src="assets/icon/icon-admin-users.svg"> Clients</li>
+				<li> <img alt="Icon ajouter" src="assets/icon/icon-admin-add.svg"> Ajout</li>
 			</ul>
 		</section>
 		
