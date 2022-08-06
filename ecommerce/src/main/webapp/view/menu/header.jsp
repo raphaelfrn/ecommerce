@@ -29,7 +29,7 @@
 				<p class="content-header-name-user header-account-click">Hello, ${InfosUser.prenom}</p> 
 					<div class="container-header-account-choice">
 						<div class="container-icon-close-user-choice">
-						<img class="icon-close-user-choice" alt="Icon fermer" src="assets/icon/close.svg">	
+							<img class="icon-close-user-choice" alt="Icon fermer" src="assets/icon/close.svg">	
 						</div>
 						<ul> 
 							<li>
