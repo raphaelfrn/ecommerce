@@ -12,4 +12,3 @@ if (sound != null ) {
 	disableMute();
 	})
 }
-

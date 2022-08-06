@@ -90,7 +90,7 @@
 					<div class="card-produit-icons-add">
 						<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg"> 
 							<a href="${pageProduit}?idSousCat=${produits.id_sous_categorie.id_sous_categorie}&param=${produits.id_produit}">
-						<img alt="Icon ajout panier" src="assets/icon/basket-add.svg">
+						<!-- <img alt="Icon ajout panier" src="assets/icon/basket-add.svg"> -->
 							</a>
 					</div>
 				</div>
