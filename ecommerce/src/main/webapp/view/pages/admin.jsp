@@ -26,8 +26,21 @@ pageEncoding="UTF-8"%>
 <title>Admin</title>
 </head>
 <body>
-	<c:import url="/header"></c:import>
 	
-	<c:import url="/view/footer/footer.jsp"></c:import>
+	<div class="container-page-admin">
+		<section class="container-admin-menu" >
+			 <img class="logo-dione-admin" alt="logo Dione" src="assets/logo/logo-dione-black.svg"> 
+			<ul>
+				<li>Tableau de bord</li>
+				<li>Clients</li>
+				<li>Ajout</li>
+			</ul>
+		</section>
+		
+		<section class="container-admin-dashbord">
+		
+		</section>
+	</div>
+	
 </body>
 </html>
