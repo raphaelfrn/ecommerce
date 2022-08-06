@@ -70,16 +70,10 @@
 			<a href="${produits}?idSousCat=${sousCat.id_sous_categorie}"><button name="btn-sous-cat"  class="btn-categorie-show">Découvrir</button></a>	
 			</div>	
 		</div>
-	
-		
+
 	</c:forEach>
 	</div>
-	
-	
-		
-		
 
-	
 	<c:import url="/view/footer/footer.jsp"></c:import>
 </body>
 </html>
