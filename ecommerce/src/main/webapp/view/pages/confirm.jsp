@@ -32,15 +32,18 @@
 		<div class= "container-confirm-head">
 			<h1>Commande confirmée</h1>
 		</div> 
+	<c:forEach items="${commande }" var="commande">
+	
 		<div class="container-confirm-body">	
 			<div class="container-date">
 				<p class="date"><strong>Date : </strong></p>
-				<p>22/06/2022</p>
+				<p><c:out value="${commande.dateC }" /></p>
 			</div>
-			<p class="msg-confirm"><strong>Votre commande n°</strong> NUMERO, d'un <strong>total</strong> de MONTANT€ est validée. Vous pouvez télécharger la <strong> facture</strong> de votre commande dans votre espace personnel, dans la rubrique <strong> Mon historique de commande.</strong> <br> <br> </p>
+			<p class="msg-confirm"><strong>Votre commande n°</strong> <c:out value="${commande.id_commande }" />, d'un <strong>total</strong> de <c:out value="${commande.total }" />€ est validée. Vous pouvez télécharger la <strong> facture</strong> de votre commande dans votre espace personnel, dans la rubrique <strong> Mon historique de commande.</strong> <br> <br> </p>
 			<p class="msg-end">Merci, à bientôt !</p>
 			
 		</div>
+	</c:forEach>	
 	</div>
 	</div>
 </body>

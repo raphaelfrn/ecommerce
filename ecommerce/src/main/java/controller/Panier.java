@@ -11,9 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.Adresses_livraisonDao;
+import dao.CommandesDao;
 import dao.UtilisateursDao;
+import model.Adresses_livraisonM;
+import model.CommandesM;
 import model.PanierDetailsM;
 import model.PanierM;
+import model.UtilisateursM;
 
 
 /**
@@ -26,6 +30,8 @@ public class Panier extends HttpServlet {
        
 	ArrayList<PanierDetailsM> articles = new ArrayList<>();
 	UtilisateursDao userDao = new UtilisateursDao();
+	CommandesDao cDao = new CommandesDao();
+	Adresses_livraisonDao adresse = new Adresses_livraisonDao();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -51,7 +57,7 @@ public class Panier extends HttpServlet {
 			
 		} 
 		
-		
+	
 	
 
 	// delete
@@ -114,6 +120,29 @@ public class Panier extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+	// create commande
+		
+		if("btnCommande" != null) {
+			CommandesM commande = new CommandesM();
+			HttpSession session = request.getSession();
+			int idUser = (int)session.getAttribute("userid");
+			
+			PanierM panier=(PanierM) session.getAttribute("panier");
+			float total = (float) panier.total();
+			
+		int idAdresse =	adresse.findMainAddress(idUser).getId_adresse_livraison();
+			
+		
+
+			commande.setId_utilisateur(new UtilisateursM(idUser));
+			commande.setTotal(total);
+			commande.setId_adresse_livraison(new Adresses_livraisonM(idAdresse));
+			commande.setEtat(1);
+	
+			cDao.create(commande);
+		}
+		
+		
 		doGet(request, response);
 	}
 	

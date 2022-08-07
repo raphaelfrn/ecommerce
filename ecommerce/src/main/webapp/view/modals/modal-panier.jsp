@@ -57,7 +57,7 @@
    		<div>
    			<div class="container-modal-total">
 	   			<p>Total :</p>
-	   			 <p>${panierM.total()} €</p>  
+	   			 <p>${total} €</p>  
    			</div> 
    			
    			<div class="container-modal-panier-btn">

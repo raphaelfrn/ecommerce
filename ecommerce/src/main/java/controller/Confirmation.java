@@ -7,13 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CommandesDao;
+import model.Adresses_livraisonM;
+import model.CommandesM;
+import model.UtilisateursM;
+
 /**
  * Servlet implementation class Confirmation
  */
 @WebServlet("/confirmation")
 public class Confirmation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
+	CommandesDao cDao = new CommandesDao();
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,6 +33,26 @@ public class Confirmation extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		
+		CommandesM commande = new CommandesM();
+//		int idUser =	Integer.valueOf(request.getParameter("id"));
+//		int total = Integer.valueOf(request.getParameter("total"));
+//		int adresse =	Integer.valueOf(request.getParameter("adresse"));
+//
+//		
+//			commande.setId_utilisateur(new UtilisateursM(idUser));
+//			commande.setTotal(total);
+//			commande.setId_adresse_livraison(new Adresses_livraisonM(adresse));
+//			commande.setEtat(1);
+//	
+//			cDao.create(commande);
+
+		
+	//	 cDao.findById(commande.getId_commande());
+		
+		request.setAttribute("commande", commande);
+		
+		
 		request.getRequestDispatcher("/view/pages/confirm.jsp").forward(request, response);
 	}
 

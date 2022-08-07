@@ -34,6 +34,7 @@
 <body>
 	<c:import url="/header"></c:import>
 	<c:url value="/address" var="adresse"/>
+	<c:url value="/confirmation" var="confirm"/>
 	
 	<div class="container-page-basket">
 		<div class="container-basket-header">
@@ -47,7 +48,7 @@
 		</div>
 		<div class="container-basket-wislist">
 			<section class="container-basket">
-				<form class="container-basket-form">
+				<form method="post" class="container-basket-form">
 					<div class="content-basket">
 						<div class="content-basket-title">
 							<h1>Votre Panier</h1>
@@ -136,7 +137,7 @@
 							</div>
 							<p class="basket-secure-payment">Paiement sécurisé</p>
 							<div class="container-basket-btn">
-								<button>Valider ma commande</button>
+							<button name="btnCommande">Valider ma commande</button>
 							</div>
 						</div>
 					</section>
