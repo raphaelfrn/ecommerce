@@ -6,10 +6,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.CommandesDao;
 import model.Adresses_livraisonM;
 import model.CommandesM;
+import model.PanierM;
 import model.UtilisateursM;
 
 /**
@@ -34,21 +36,15 @@ public class Confirmation extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		
-		CommandesM commande = new CommandesM();
-//		int idUser =	Integer.valueOf(request.getParameter("id"));
-//		int total = Integer.valueOf(request.getParameter("total"));
-//		int adresse =	Integer.valueOf(request.getParameter("adresse"));
-//
-//		
-//			commande.setId_utilisateur(new UtilisateursM(idUser));
-//			commande.setTotal(total);
-//			commande.setId_adresse_livraison(new Adresses_livraisonM(adresse));
-//			commande.setEtat(1);
-//	
-//			cDao.create(commande);
-
 		
-	//	 cDao.findById(commande.getId_commande());
+		HttpSession session = request.getSession();
+		CommandesM commande = new CommandesM();
+		PanierM panier=(PanierM) session.getAttribute("panier");
+		
+		
+		
+		
+		 cDao.findById(commande.getId_commande());
 		
 		request.setAttribute("commande", commande);
 		
