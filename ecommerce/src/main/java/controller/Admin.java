@@ -7,6 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CategorieDao;
+import dao.ProduitsDao;
+import dao.RecherchesDao;
+import dao.Sous_categoriesDao;
+import dao.UtilisateursDao;
+import model.UtilisateursM;
+
 /**
  * Servlet implementation class Admin
  */
@@ -26,8 +33,22 @@ public class Admin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.getRequestDispatcher("view/pages/admin.jsp").forward(request, response);
+			UtilisateursDao userDao = new UtilisateursDao();
+			CategorieDao catDao = new CategorieDao();
+			Sous_categoriesDao sousCatDao = new Sous_categoriesDao();
+			ProduitsDao productsDao = new ProduitsDao();
+			RecherchesDao searchDao = new RecherchesDao();
+		
+			request.setAttribute("listUserNnbr", userDao.read().size());
+			request.setAttribute("listUsers", userDao.read());
+			request.setAttribute("listUsersLastRegister", userDao.userLastregister());
+			request.setAttribute("listCat", catDao.read());
+			request.setAttribute("listSousCat", sousCatDao.read());
+			request.setAttribute("listProducts", productsDao.read());
+			request.setAttribute("listSearch", searchDao.groupByMotCle());
+			request.setAttribute("listSearchCount", searchDao.groupByMotCleCount());
+
+			request.getRequestDispatcher("view/pages/admin.jsp").forward(request, response);
 	}
 
 	/**

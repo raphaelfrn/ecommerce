@@ -315,4 +315,38 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
         }
 	}
 
+	// Admin
+	
+	public ArrayList<UtilisateursM> userLastregister() {
+		ArrayList<UtilisateursM> listeUtilisateur = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement(" SELECT * FROM utilisateurs ORDER BY id_utilisateur DESC limit 3");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				UtilisateursM utilisateur = new UtilisateursM(
+						rs.getInt("id_utilisateur"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getDate("date_inscription"),
+						rs.getString("email"),
+						rs.getString("telephone"),
+						rs.getString("mot_de_passe")
+								
+						);
+				listeUtilisateur.add(utilisateur);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeUtilisateur;
+	}
+	
+	
+
 }
