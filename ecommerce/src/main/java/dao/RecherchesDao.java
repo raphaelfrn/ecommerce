@@ -1,8 +1,11 @@
 package dao;
 
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.RowId;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -43,7 +46,7 @@ public class RecherchesDao implements IDao<RecherchesM>{
 	
 	@Override
 	public ArrayList<RecherchesM> read() {
-ArrayList<RecherchesM> listeRecherche = new ArrayList<>();
+		ArrayList<RecherchesM> listeRecherche = new ArrayList<>();
 		
 		try {
 			PreparedStatement req = connect.prepareStatement("SELECT * FROM recherches");
@@ -55,7 +58,7 @@ ArrayList<RecherchesM> listeRecherche = new ArrayList<>();
 						rs.getInt("id_recherche"),
 						new UtilisateursM(rs.getInt("id_utilisateur")),
 						rs.getString("mot_cle"),
-						rs.getDate("datE")
+						rs.getDate("dateR")
 								
 						);
 				listeRecherche.add(recherche);
@@ -133,7 +136,7 @@ ArrayList<RecherchesM> listeRecherche = new ArrayList<>();
 						rs.getInt("id_recherche"),
 						new UtilisateursM(rs.getInt("id_utilisateur")),
 						rs.getString("mot_cle"),
-						rs.getDate("datE")
+						rs.getDate("dateR")
 						);
 						
 			}
@@ -143,6 +146,56 @@ ArrayList<RecherchesM> listeRecherche = new ArrayList<>();
 			e.printStackTrace();
 		}
 		return recherche;
+	}
+	
+	// Mots clé par groupe
+	public ArrayList<RecherchesM> groupByMotCle() {
+		ArrayList<RecherchesM> listeRecherche = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM recherches Group by mot_cle");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				RecherchesM recherche = new RecherchesM(
+						rs.getInt("id_recherche"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getString("mot_cle"),
+						rs.getDate("dateR")
+								
+						);
+				listeRecherche.add(recherche);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeRecherche;
+	}
+	
+	// Mots clé par groupe
+	public ArrayList<Object> groupByMotCleCount() {
+		ArrayList<Object> listeRechercheCount = new ArrayList<>();
+		int count =0;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT count(*) FROM recherches Group by mot_cle");
+		
+			ResultSet rs = req.executeQuery();
+					
+			while (rs.next()) {
+				count =rs.getInt(1);	
+				listeRechercheCount.add(count);		
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeRechercheCount;
 	}
 
 }
