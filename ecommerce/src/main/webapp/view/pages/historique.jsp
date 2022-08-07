@@ -42,107 +42,18 @@
 					</tr>
 				</thead>
 				<tbody>
+				
+					<c:forEach items="${listCommand }" var="commande">
 					<tr>
-						<td>23623</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
+						<td><c:out value="${commande.id_commande }" /></td>
+						<td><c:out value="${commande.dateC }" /></td>
+						<td><c:out value="${commande.total }" /></td>
 						<td><img src="assets/icon/show.svg" alt="show"></td>
 						<td><img src="assets/icon/download.svg" alt="download"></td>
 					</tr>
+					</c:forEach>
 					<tr>
-						<td>27399</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>
-					<tr>
-						<td>27399</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>					<tr>
-						<td>23623</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>
-					<tr>
-						<td>27399</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>
-					<tr>
-						<td>27399</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>					<tr>
-						<td>23623</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>
-					<tr>
-						<td>27399</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>
-					<tr>
-						<td>27399</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>					<tr>
-						<td>23623</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>
-					<tr>
-						<td>27399</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>
-					<tr>
-						<td>27399</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>					<tr>
-						<td>23623</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>
-					<tr>
-						<td>27399</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>
-					<tr>
-						<td>27399</td>
-						<td>18/06/2022</td>
-						<td>2310€</td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
-					</tr>
+					
 				</tbody>
 			</table>
 		</div>

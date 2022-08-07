@@ -131,8 +131,6 @@ public class Panier extends HttpServlet {
 			float total = (float) panier.total();
 			
 		int idAdresse =	adresse.findMainAddress(idUser).getId_adresse_livraison();
-			
-		
 
 			commande.setId_utilisateur(new UtilisateursM(idUser));
 			commande.setTotal(total);

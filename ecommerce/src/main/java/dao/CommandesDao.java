@@ -152,6 +152,33 @@ ArrayList<CommandesM> listeCommande = new ArrayList<>();
 		}
 		return commande;
 	}
-	
+	public ArrayList<CommandesM> readByUserId(int UserId) {
+ArrayList<CommandesM> listeCommande = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM commandes WHERE id_utilisateur = ?");
+			req.setInt(1, UserId);
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				CommandesM commande = new CommandesM(
+						rs.getInt("id_commande"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getDate("dateC"),
+						rs.getFloat("total"),
+						new Adresses_livraisonM(rs.getInt("id_adresse_livraison")),
+						rs.getInt("etat")
+						);
+				listeCommande.add(commande);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeCommande;
+	}
 
 }
