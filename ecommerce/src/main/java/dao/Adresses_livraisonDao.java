@@ -207,5 +207,35 @@ public class Adresses_livraisonDao implements IDao<Adresses_livraisonM> {
 		}
 		return listeAdressesUser;
 	}
-
+	
+	
+	
+	public Adresses_livraisonM findMainAddress(int id) {
+		Adresses_livraisonM adresse = null;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM adresses_livraison"
+					+ " WHERE id_utilisateur = ?   ");
+			
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				adresse = new Adresses_livraisonM(
+						rs.getInt("id_adresse_livraison"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getString("adresse"),
+						rs.getInt("code_postal"),
+						rs.getString("ville"),
+						rs.getString("pays")
+					
+						);	
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return adresse;
+	}
 }

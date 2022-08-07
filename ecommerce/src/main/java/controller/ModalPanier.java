@@ -49,11 +49,19 @@ public class ModalPanier extends HttpServlet {
 //		}
 		
 		
+		// total panier
+		
+		HttpSession session = request.getSession();
+		PanierM panier=(PanierM) session.getAttribute("panier");
+		float total = (float) panier.total();
+		 session.setAttribute( "total", total);
+		
+		
 		// delete
 		if(request.getParameter("idtodelete")!=null ) {
-			HttpSession session = request.getSession( true );
+			 session = request.getSession( true );
 			int idproduit=Integer.valueOf(request.getParameter("idtodelete"));
-			PanierM panier=(PanierM) session.getAttribute("panier");
+			 panier=(PanierM) session.getAttribute("panier");
 			panier.delete(idproduit);
 			session.setAttribute( "panier", panier );
 		}
