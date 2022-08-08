@@ -8,6 +8,74 @@ let data_cat = document.querySelectorAll(".data-title-cat");
 let data_motCle = document.querySelectorAll(".data-mot-cle-search");
 let data_motCle_count = document.querySelectorAll(".data-mot-cle-search-count");
 
+// Icons foreach
+
+let containerClients = document.querySelectorAll(".container-clients");
+let adminIconUsers = document.querySelectorAll(".admin-icon-user");
+let adminIconMail = document.querySelectorAll(".admin-icon-mail");
+let adminIconPhone = document.querySelectorAll(".admin-icon-phone");
+let adminIconContact = document.querySelectorAll(".admin-icon-contact")
+let adminIconComment = document.querySelectorAll(".admin-icon-comment")
+
+adminIconUsers.forEach(function(element,  index, arr){
+	if (index == 0) {
+		arr[index].src = "assets/icon/user-admin1.svg";
+	} 
+	else if (index == 1) {
+		arr[index].src = "assets/icon/user-admin2.svg";
+	} 
+	else {
+		arr[index].src = "assets/icon/user-admin3.svg";
+	}	
+})
+
+adminIconMail.forEach(function(element,  index, arr){
+	if (index == 0) {
+		arr[index].src = "assets/icon/mail1.svg";
+	} 
+	else if (index == 1) {
+		arr[index].src = "assets/icon/mail2.svg";
+	} 
+	else {
+		arr[index].src = "assets/icon/mail3.svg";
+	}	
+})
+
+adminIconPhone.forEach(function(element,  index, arr){
+	if (index == 0) {
+		arr[index].src = "assets/icon/phone1.svg";
+	} 
+	else if (index == 1) {
+		arr[index].src = "assets/icon/phone2.svg";
+	} 
+	else {
+		arr[index].src = "assets/icon/phone3.svg";
+	}	
+})
+
+adminIconContact.forEach(function(element,  index, arr){
+	if (index == 0) {
+		arr[index].src = "assets/icon/contact1.svg";
+	} 
+	else if (index == 1) {
+		arr[index].src = "assets/icon/contact2.svg";
+	} else {
+		arr[index].src = "assets/icon/contact3.svg";
+	}	
+})
+
+adminIconComment.forEach(function(element,  index, arr){
+	if (index == 0) {
+		arr[index].src = "assets/icon/comment1.svg";
+	} 
+	else if (index == 1) {
+		arr[index].src = "assets/icon/comment2.svg";
+	} else {
+		arr[index].src = "assets/icon/comment3.svg";
+	}	
+})
+
+
 
 // Graphique visite
 let arrayNameUser = [];
