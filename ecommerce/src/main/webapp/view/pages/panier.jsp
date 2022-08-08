@@ -48,7 +48,7 @@
 		</div>
 		<div class="container-basket-wislist">
 			<section class="container-basket">
-				<form method="post" action="${confirm}"class="container-basket-form">
+				<form method="post" class="container-basket-form">
 					<div class="content-basket">
 						<div class="content-basket-title">
 							<h1>Votre Panier</h1>

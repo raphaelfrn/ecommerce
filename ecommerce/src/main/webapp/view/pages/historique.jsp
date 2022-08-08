@@ -47,7 +47,7 @@
 					<tr>
 						<td><c:out value="${commande.id_commande }" /></td>
 						<td><c:out value="${commande.dateC }" /></td>
-						<td><c:out value="${commande.total }" /></td>
+						<td><c:out value="${commande.total } €" /></td>
 						<td><img src="assets/icon/show.svg" alt="show"></td>
 						<td><img src="assets/icon/download.svg" alt="download"></td>
 					</tr>

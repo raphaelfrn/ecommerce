@@ -12,11 +12,14 @@ import javax.servlet.http.HttpSession;
 
 import dao.Adresses_livraisonDao;
 import dao.CommandesDao;
+import dao.Details_commandeDao;
 import dao.UtilisateursDao;
 import model.Adresses_livraisonM;
 import model.CommandesM;
+import model.Details_commandeM;
 import model.PanierDetailsM;
 import model.PanierM;
+import model.ProduitsM;
 import model.UtilisateursM;
 
 
@@ -31,6 +34,7 @@ public class Panier extends HttpServlet {
 	ArrayList<PanierDetailsM> articles = new ArrayList<>();
 	UtilisateursDao userDao = new UtilisateursDao();
 	CommandesDao cDao = new CommandesDao();
+	Details_commandeDao dcDao=new Details_commandeDao();
 	Adresses_livraisonDao adresse = new Adresses_livraisonDao();
     /**
      * @see HttpServlet#HttpServlet()
@@ -119,11 +123,14 @@ public class Panier extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		boolean commandeok=false;
+		
 	// create commande
 		
 		if("btnCommande" != null) {
 			CommandesM commande = new CommandesM();
+		
 			HttpSession session = request.getSession();
 			int idUser = (int)session.getAttribute("userid");
 			
@@ -137,11 +144,35 @@ public class Panier extends HttpServlet {
 			commande.setId_adresse_livraison(new Adresses_livraisonM(idAdresse));
 			commande.setEtat(1);
 	
-			cDao.create(commande);
+	int commandeId = cDao.createReturn(commande);
+
+			
+			   // detail command
+			
+	        for(PanierDetailsM pd:panier.getArticles()) {
+	        	Details_commandeM d = new Details_commandeM();
+	        	d.setQuantite(pd.getQte());
+	        	d.setId_commande(cDao.findById(commandeId));
+	        	d.setPrix(pd.getProduit().getPrix());
+	        	d.setId_produit(new ProduitsM (pd.getProduit().getId_produit()));
+	        	dcDao.create(d);
+	        
+	        }
+	        panier.vider();
+	        session.setAttribute("commandeId", commandeId);
+	        
+	        session.setAttribute( "panier", panier );
+			commandeok=true;
+			
+			response.sendRedirect("confirmation"); 
+			
 		}
 		
+
+		if(commandeok==false) {
+			doGet(request, response);
+			}
 		
-		doGet(request, response);
 	}
 	
 	
