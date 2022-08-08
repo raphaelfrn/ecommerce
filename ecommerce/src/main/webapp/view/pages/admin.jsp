@@ -76,15 +76,15 @@ pageEncoding="UTF-8"%>
 					<c:forEach items="${listUsersLastRegister}" var="listUsersLastRegister">
 						<div class="container-clients">
 							<div class="container-clients-infos"> 
-								<img alt="Icon client" src="assets/icon/user-admin1.svg"> 
+								<img class="admin-icon-user" alt="Icon client" src=""> 
 								<p class="clients1">${listUsersLastRegister.nom} ${listUsersLastRegister.prenom}</p>
 							</div>
 							<div class="container-clients-infos"> 
-								<img alt="Icon client" src="assets/icon/mail1.svg">  
+								<img class="admin-icon-mail" alt="Icon client" src="">  
 								<p class="clients1">${listUsersLastRegister.email}</p>
 							</div>
 							<div class="container-clients-infos"> 
-								<img alt="Icon client" src="assets/icon/phone1.svg"> 
+								<img class="admin-icon-phone"  alt="Icon client" src=""> 
 								<p class="clients1">${listUsersLastRegister.telephone}</p>
 							</div>
 							<div class="container-clients-infos"> 
@@ -104,9 +104,9 @@ pageEncoding="UTF-8"%>
 				<article class="container-contact">
 					<div class="container-infos"><h1>Contact</h1><p><span>+</span>10 demandes non lu</p></div>
 					<div class="container-admin-commments">
-						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment1.svg"> <p class="admin-comment">Dupont Marc, Demande de renseignement </p></div>
-						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment2.svg"> <p class="admin-comment">Dupont Marc, Demande de renseignement lkkldsjkldsjvkdfvkjdsjkv v, bvjdfbvjdbsfnvjd  </p></div>
-						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment3.svg"> <p class="admin-comment">Dupont Marc, Demande renseignement klnvkjfd vjhdbvjh vjhdbjhs cjhdsbcsdl cjlsd clhjds cjds </p></div>
+						<div class="container-comment-infos"> <img class="admin-icon-contact"  alt="Icon commentaire" src="assets/icon/comment1.svg"> <p class="admin-comment">Dupont Marc, Demande de renseignement </p></div>
+						<div class="container-comment-infos"> <img class="admin-icon-contact"   alt="Icon commentaire" src="assets/icon/comment2.svg"> <p class="admin-comment">Dupont Marc, Demande de renseignement lkkldsjkldsjvkdfvkjdsjkv v, bvjdfbvjdbsfnvjd  </p></div>
+						<div class="container-comment-infos"> <img class="admin-icon-contact"  alt="Icon commentaire" src="assets/icon/comment3.svg"> <p class="admin-comment">Dupont Marc, Demande renseignement klnvkjfd vjhdbvjh vjhdbjhs cjhdsbcsdl cjlsd clhjds cjds </p></div>
 					</div>
 					<button>Voir toutes les demandes</button>
 				</article>
@@ -114,9 +114,9 @@ pageEncoding="UTF-8"%>
 				<article class="container-comments">
 					<div class="container-infos"><h1>Commentaires</h1><p><span>+</span>10 commentaires</p></div>
 					<div class="container-admin-commments">
-						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment1.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement </p></div>
-						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment2.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement lkkldsjkldsjvkdfvkjdsjkv v, bvjdfbvjdbsfnvjd  </p></div>
-						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment3.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement klnvkjfd vjhdbvjh vjhdbjhs cjhdsbcsdl cjlsd clhjds cjds </p></div>
+						<div class="container-comment-infos"> <img class="admin-icon-comment" alt="Icon commentaire" src="assets/icon/comment1.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement </p></div>
+						<div class="container-comment-infos"> <img class="admin-icon-comment" alt="Icon commentaire" src="assets/icon/comment2.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement lkkldsjkldsjvkdfvkjdsjkv v, bvjdfbvjdbsfnvjd  </p></div>
+						<div class="container-comment-infos"> <img class="admin-icon-comment" alt="Icon commentaire" src="assets/icon/comment3.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement klnvkjfd vjhdbvjh vjhdbjhs cjhdsbcsdl cjlsd clhjds cjds </p></div>
 					</div>
 					<button>Voir tous les commentaires</button>
 				</article>
