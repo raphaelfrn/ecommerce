@@ -19,6 +19,12 @@ public class UtilisateursM {
 		this.id_utilisateur = id_utilisateur;
 	}
 
+	public UtilisateursM(int id_utilisateur, String nom, String prenom) {
+		this.id_utilisateur = id_utilisateur;
+		this.nom = nom;
+		this.prenom = prenom;
+	}
+
 	public UtilisateursM(int id_utilisateur, String nom, String prenom, Date date_inscription, String email,
 			String telephone) {
 		

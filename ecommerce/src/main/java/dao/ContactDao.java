@@ -43,7 +43,7 @@ public class ContactDao implements IDao<ContactM> {
 
 	@Override
 	public ArrayList<ContactM> read() {
-ArrayList<ContactM> listeContact = new ArrayList<>();
+		ArrayList<ContactM> listeContact = new ArrayList<>();
 		
 		try {
 			PreparedStatement req = connect.prepareStatement("SELECT * FROM contact");
@@ -145,5 +145,61 @@ ArrayList<ContactM> listeContact = new ArrayList<>();
 		}
 		return contact;
 	}
+	
+	// 3 Dernires demandes de contact
+	public ArrayList<ContactM> lastContact() {
+		ArrayList<ContactM> listeContact = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM contact inner join utilisateurs on contact.id_utilisateur = utilisateurs.id_utilisateur ORDER by id_contact DESC LIMIT 3");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				ContactM contact = new ContactM(
+						rs.getInt("id_contact"),
+						new UtilisateursM(rs.getInt("id_utilisateur"), rs.getString("nom"), rs.getString("prenom")),
+						rs.getString("sujet"),
+						rs.getString("message"),
+						rs.getInt("etat")					
+						);
+				listeContact.add(contact);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeContact;
+	}
+	
+	public ArrayList<ContactM> notReadContact() {
+		ArrayList<ContactM> listeContact = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM contact WHERE etat = 1");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				ContactM contact = new ContactM(
+						rs.getInt("id_contact"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getString("sujet"),
+						rs.getString("message"),
+						rs.getInt("etat")					
+						);
+				listeContact.add(contact);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeContact;
+	}
+	
 
 }
