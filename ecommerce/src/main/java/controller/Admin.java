@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,10 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.CategorieDao;
+import dao.ContactDao;
 import dao.ProduitsDao;
 import dao.RecherchesDao;
 import dao.Sous_categoriesDao;
 import dao.UtilisateursDao;
+import model.ContactM;
 import model.UtilisateursM;
 
 /**
@@ -38,6 +42,7 @@ public class Admin extends HttpServlet {
 			Sous_categoriesDao sousCatDao = new Sous_categoriesDao();
 			ProduitsDao productsDao = new ProduitsDao();
 			RecherchesDao searchDao = new RecherchesDao();
+			ContactDao contactDao = new ContactDao();
 		
 			request.setAttribute("listUserNnbr", userDao.read().size());
 			request.setAttribute("listUsers", userDao.read());
@@ -47,6 +52,15 @@ public class Admin extends HttpServlet {
 			request.setAttribute("listProducts", productsDao.read());
 			request.setAttribute("listSearch", searchDao.groupByMotCle());
 			request.setAttribute("listSearchCount", searchDao.groupByMotCleCount());
+			request.setAttribute("listLastContact", contactDao.lastContact());
+			request.setAttribute("NbrContactNotRead",contactDao.notReadContact().size());
+		
+//			ArrayList<Integer> listEtat = new ArrayList<>();
+//			contactDao.notReadContact().forEach(t -> 	
+//					listEtat.add(t.getEtat())
+//			);
+			
+			
 
 			request.getRequestDispatcher("view/pages/admin.jsp").forward(request, response);
 	}

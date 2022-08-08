@@ -39,7 +39,7 @@
 
 
 /* Container admin interface */
-.container-admin-dashbord {
+.container-admin {
     width: 85vw;
     height: 100vh;
     background: #363535;
@@ -321,5 +321,10 @@
 
 /* Container data */
 .container-data-admin {
+	display: none;
+}
+
+.container-admin-add,
+.container-admin-users {
 	display: none;
 }
