@@ -25,6 +25,7 @@
 </head>
 <body>
 	<c:import url="/header"></c:import>
+	<c:url value="/detailsCommand" var="details"/>
 
 	<div class="container-table">
 		<div class="container-title">
@@ -47,8 +48,8 @@
 					<tr>
 						<td><c:out value="${commande.id_commande }" /></td>
 						<td><c:out value="${commande.dateC }" /></td>
-						<td><c:out value="${commande.total }" /></td>
-						<td><img src="assets/icon/show.svg" alt="show"></td>
+						<td><c:out value="${commande.total } €" /></td>
+						<td><a href="${details}?idC=${commande.id_commande }"><img src="assets/icon/show.svg" alt="show"> </a></td>
 						<td><img src="assets/icon/download.svg" alt="download"></td>
 					</tr>
 					</c:forEach>

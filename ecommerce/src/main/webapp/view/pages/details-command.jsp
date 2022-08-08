@@ -27,126 +27,31 @@
 	<c:import url="/header"></c:import>
 	
 	<div class="container-title">
-		<h1>Commande n° ....., Le JJ/MM/AAAA</h1>
+		<h1>Commande n° <c:out value="${commande.id_commande }" />  , Le <c:out value="${commande.dateC }" /> </h1>
 	</div>
 	<div class="container-page">
 		<div class="container-overflow-details-command">
 		
+		<c:forEach items="${listDC }" var="DC">
 			<div class="container-row-details-command">
-			<img alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Black1.webp">
+			<img alt="Image produit" src="<c:out value="${DC.id_produit.image }" />">
 				<div class="container-details-command">
 					<div class="container-infos-product">
-						<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
+						<h1> <c:out value="${DC.id_produit.titre }" /> </h1>
 						<p>Feuille d'or</p>
 					</div>
 					<div class="container-price">
-						<span>1</span>
-						<p>1899 €</p>
+						<span><c:out value="${DC.quantite }" /></span>
+						<p><c:out value="${DC.prix }" /> €</p>
 					</div>
 				</div>
 			</div>
-			<div class="container-row-details-command">
-			<img alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Black1.webp">
-				<div class="container-details-command">
-					
-					<div class="container-infos-product">
-						<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-						<p>Feuille d'or</p>
-					</div>
-					<div class="container-price">
-						<span>1</span>
-						<p>1899 €</p>
-					</div>
-				</div>
-			</div>
-			<div class="container-row-details-command">
-			<img alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Black1.webp">
-				<div class="container-details-command">
-					
-					<div class="container-infos-product">
-						<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-						<p>Feuille d'or</p>
-					</div>
-					<div class="container-price">
-						<span>1</span>
-						<p>1899 €</p>
-					</div>
-				</div>
-			</div>
-			<div class="container-row-details-command">
-			<img alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Black1.webp">
-				<div class="container-details-command">
-					
-					<div class="container-infos-product">
-						<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-						<p>Feuille d'or</p>
-					</div>
-					<div class="container-price">
-						<span>1</span>
-						<p>1899 €</p>
-					</div>
-				</div>
-			</div>
-			<div class="container-row-details-command">
-			<img alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Black1.webp">
-				<div class="container-details-command">
-					
-					<div class="container-infos-product">
-						<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-						<p>Feuille d'or</p>
-					</div>
-					<div class="container-price">
-						<span>1</span>
-						<p>1899 €</p>
-					</div>
-				</div>
-			</div>
-			<div class="container-row-details-command">
-			<img alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Black1.webp">
-				<div class="container-details-command">
-					
-					<div class="container-infos-product">
-						<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-						<p>Feuille d'or</p>
-					</div>
-					<div class="container-price">
-						<span>1</span>
-						<p>1899 €</p>
-					</div>
-				</div>
-			</div>
-			<div class="container-row-details-command">
-			<img alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Black1.webp">
-				<div class="container-details-command">
-					
-					<div class="container-infos-product">
-						<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-						<p>Feuille d'or</p>
-					</div>
-					<div class="container-price">
-						<span>1</span>
-						<p>1899 €</p>
-					</div>
-				</div>
-			</div>
-			<div class="container-row-details-command">
-			<img alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Black1.webp">
-				<div class="container-details-command">
-					
-					<div class="container-infos-product">
-						<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-						<p>Feuille d'or</p>
-					</div>
-					<div class="container-price">
-						<span>1</span>
-						<p>1899 €</p>
-					</div>
-				</div>
-			</div>
+		</c:forEach>
+	
 		</div>
 		
 		<div class="container-total">
-			<p class="price-product">Total: 8985 €</p>
+			<p class="price-product">Total: <c:out value="${commande.total }" /> €</p>
 			<div class="container-download">
 				<p>Telecharger ma facture</p>
 				<img class="icon-download" alt="Icon de téléchargement" src="assets/icon/download-white.svg">

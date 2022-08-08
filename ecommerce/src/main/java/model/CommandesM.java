@@ -38,6 +38,16 @@ public class CommandesM {
 		this.id_adresse_livraison = id_adresse_livraison;
 		this.etat = etat;
 	}
+	
+	
+
+	public CommandesM(int id_commande, UtilisateursM id_utilisateur, Date dateC, float total) {
+		super();
+		this.id_commande = id_commande;
+		this.id_utilisateur = id_utilisateur;
+		this.dateC = dateC;
+		this.total = total;
+	}
 
 	// Getters and Setters
 

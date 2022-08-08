@@ -38,13 +38,14 @@ public class Confirmation extends HttpServlet {
 //		
 		
 		HttpSession session = request.getSession();
-		CommandesM commande = new CommandesM();
-		PanierM panier=(PanierM) session.getAttribute("panier");
+		System.out.println(session.getAttribute("commandeId"));
+	
 		
+CommandesM commande = cDao.findById((int) session.getAttribute("commandeId")); 
+
+
+	
 		
-		
-		
-		 cDao.findById(commande.getId_commande());
 		
 		request.setAttribute("commande", commande);
 		

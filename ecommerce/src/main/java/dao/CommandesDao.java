@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import model.Adresses_livraisonM;
@@ -181,4 +182,34 @@ ArrayList<CommandesM> listeCommande = new ArrayList<>();
 		return listeCommande;
 	}
 
+	
+	public int createReturn(CommandesM commande) {
+		int newid = 0;
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("INSERT INTO commandes (id_utilisateur, dateC, total, id_adresse_livraison, etat)"
+					+ "VALUES (?,now(),?,?,?)", PreparedStatement.RETURN_GENERATED_KEYS);
+			
+			req.setInt(1, commande.getId_utilisateur().getId_utilisateur());
+			req.setFloat(2, commande.getTotal());
+			req.setInt(3, commande.getId_adresse_livraison().getId_adresse_livraison());
+			req.setInt(4, commande.getEtat());
+			
+			req.executeUpdate();
+
+			ResultSet rs = req.getGeneratedKeys();
+			
+			rs.next();
+			
+		 newid = rs.getInt(1);
+		 
+		return newid;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return newid;
+	}
+	
 }

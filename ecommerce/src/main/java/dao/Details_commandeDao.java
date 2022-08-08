@@ -147,4 +147,34 @@ ArrayList<Details_commandeM> listeDetail = new ArrayList<>();
 		return detail;
 	}
 
+	public  ArrayList<Details_commandeM>  findByIdCommande(int id) {
+ArrayList<Details_commandeM> listeDetail = new ArrayList<>();
+CommandesDao cDao = new CommandesDao();
+ProduitsDao pDao = new ProduitsDao();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM details_commande WHERE id_commande = ?");
+			req.setInt(1, id);
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				Details_commandeM detail = new Details_commandeM(
+						rs.getInt("id_details_commande"),
+						cDao.findById(rs.getInt("id_commande")),
+						pDao.findById(rs.getInt("id_produit")),
+						rs.getInt("quantite"),
+						rs.getFloat("prix")			
+						);
+				listeDetail.add(detail);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeDetail;
+	}
+	
 }
