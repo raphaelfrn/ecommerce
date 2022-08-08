@@ -142,5 +142,36 @@ ArrayList<FavorisM> listeFavori = new ArrayList<>();
 		}
 		return favori;
 	}
+	
+	public ArrayList<FavorisM> findFavByUser(int id) {
+ArrayList<FavorisM> listeFavori = new ArrayList<>();
+ProduitsDao pDao = new ProduitsDao();
+UtilisateursDao uDao = new UtilisateursDao();
+
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM favoris INNER JOIN produits ON produits.id_produit = favoris.id_produit INNER JOIN utilisateurs ON utilisateurs.id_utilisateur = favoris.id_utilisateur WHERE favoris.id_utilisateur=?");	
+
+			req.setInt(1, id);
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				FavorisM favori = new FavorisM(
+						rs.getInt("id_favoris"),
+						pDao.findById(rs.getInt("id_produit")),
+						uDao.findById(rs.getInt("id_utilisateur"))
+						
+								
+						);
+				listeFavori.add(favori);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeFavori;
+	}
 
 }

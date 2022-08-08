@@ -49,11 +49,7 @@
 
    		</div>
    		
-   		<%-- <c:if test="${empty panierM}">
-   		<h1>Votre panier est vide</h1>
-   		</c:if>
    		
-   		<c:if test="${!empty panierM}"> --%>
    		<div>
    			<div class="container-modal-total">
 	   			<p>Total :</p>
@@ -67,7 +63,7 @@
    				<button class="modal-panier-btn-shop"><span>Continuer mon shopping</span></button>
    			</div>
    		</div>
-   		<%-- </c:if> --%>
+   		
    	</form>
 
   </div>

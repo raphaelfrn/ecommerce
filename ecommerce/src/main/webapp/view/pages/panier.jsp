@@ -61,12 +61,7 @@
             						for(PanierDetailsM pa:paniers.getArticles()){ 
             					%>
             					
-            				<%-- 	<% if(paniers == empty ){  %>
-								<article class="container-basket-product">
-								<h1>Votre panier est vide !</h1>
-									</article>
-	
-								<% }else{ %> --%>
+            			
 							<article class="container-basket-product">
 								<img alt="Image produit" src="<%=pa.getProduit().getImage() %>" />
 								<div class="content-basket-product">
@@ -87,7 +82,7 @@
 								</div>
 							</article>
 								<% } %>	
-						<%-- 	<% } %> --%>
+						
 					
 						
 							<!--  Prix et adresse de livraison -->
@@ -148,86 +143,31 @@
 
 			<section class="container-wishlist">
 				<div class="content-wishlist">
+				
+				<c:forEach items="${favoris}" var="fav">
 					<article class="container-wishlist-product">
-						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
+						<img class= "wishlist-product-img" alt="Image produit" src="<c:out value="${fav.id_produit.image }" />">
 						<div class="content-wishlist-product">
 							<div class="container-wishlist-product-infos">
-								<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
+								<h1><c:out value="${fav.id_produit.titre }" /></h1>
 								<p class="wishlist-product-subtitle">Feuille d'or</p>
 							</div>
 							<div class="container-wishlist-management">
-								<p>1335 €</p>
+								<p><c:out value="${fav.id_produit.prix }" /> €</p>
 								<div class="container-wishlist-management-icon">
-									<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
-									<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+								   <img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+								<form method="post">
+									<button type="submit" name="btnAdd" value="${fav.id_produit.id_produit}">
+										<img alt="Icon ajout panier" src="assets/icon/basket-add.svg"> 
+									</button>
+								</form>		
+
 								</div>
 							</div>
 						</div>
 					</article>
-					<article class="container-wishlist-product">
-						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
-						<div class="content-wishlist-product">
-							<div class="container-wishlist-product-infos">
-								<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-								<p class="wishlist-product-subtitle">Feuille d'or</p>
-							</div>
-							<div class="container-wishlist-management">
-								<p>1335 €</p>
-								<div class="container-wishlist-management-icon">
-									<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
-									<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
-								</div>
-							</div>
-						</div>
-					</article>
-					<article class="container-wishlist-product">
-						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
-						<div class="content-wishlist-product">
-							<div class="container-wishlist-product-infos">
-								<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-								<p class="wishlist-product-subtitle">Feuille d'or</p>
-							</div>
-							<div class="container-wishlist-management">
-								<p>1335 €</p>
-								<div class="container-wishlist-management-icon">
-									<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
-									<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
-								</div>
-							</div>
-						</div>
-					</article>
-					<article class="container-wishlist-product">
-						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
-						<div class="content-wishlist-product">
-							<div class="container-wishlist-product-infos">
-								<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-								<p class="wishlist-product-subtitle">Feuille d'or</p>
-							</div>
-							<div class="container-wishlist-management">
-								<p>1335 €</p>
-								<div class="container-wishlist-management-icon">
-									<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
-									<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
-								</div>
-							</div>
-						</div>
-					</article>
-					<article class="container-wishlist-product">
-						<img class= "wishlist-product-img" alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Blue1.webp">
-						<div class="content-wishlist-product">
-							<div class="container-wishlist-product-infos">
-								<h1>PHANTOM II 98 DB OPÉRA DE PARIS </h1>
-								<p class="wishlist-product-subtitle">Feuille d'or</p>
-							</div>
-							<div class="container-wishlist-management">
-								<p>1335 €</p>
-								<div class="container-wishlist-management-icon">
-									<img class="wishlist-management-icon-basket" alt="Icon d'ajout au panier" src="assets/icon/basket-add-gold.svg">
-									<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
-								</div>
-							</div>
-						</div>
-					</article>
+				</c:forEach>
+				
 				</div>
 			</section>
 		</div>

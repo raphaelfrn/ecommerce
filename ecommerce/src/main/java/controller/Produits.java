@@ -2,7 +2,6 @@ package controller;
 
 import java.io.IOException;
 
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,8 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.FavorisDao;
 import dao.ProduitsDao;
 import dao.Sous_categoriesDao;
+import dao.UtilisateursDao;
+import model.FavorisM;
 import model.PanierDetailsM;
 import model.PanierM;
 import model.ProduitsM;
@@ -50,13 +52,16 @@ public class Produits extends HttpServlet {
 		 Sous_categoriesM sousCat = sousCatDao.findById(idSousCat);
 			
 			request.setAttribute("sC", sousCat);			
-		
 			
-			if(request.getParameter("param")!=null ) {
+			
+			// add to cart
+			
+			if(request.getParameter("btnAdd")!=null ) {
 				
 				HttpSession session = request.getSession( true );
-				int id = Integer.valueOf(request.getParameter("param"));
-				ProduitsM produit = produitsDao.findById(id);
+				
+				int produitId = Integer.parseInt(request.getParameter("btnAdd"));
+				ProduitsM produit = produitsDao.findById(produitId);
 				PanierDetailsM panieradd=new PanierDetailsM(produit,1);	
 			
 				
@@ -66,6 +71,28 @@ public class Produits extends HttpServlet {
 		
 				
 			}	
+		
+
+			
+			// add to wish list
+			if(request.getParameter("btnFav")!=null ) {
+				
+				HttpSession session = request.getSession();
+				int userId = (int)session.getAttribute("userid");
+				int produitId = Integer.parseInt(request.getParameter("btnFav")) ;
+				
+				UtilisateursDao uDao = new UtilisateursDao();
+				
+				FavorisM fav = new FavorisM();
+				fav.setId_utilisateur(uDao.findById(userId));
+				fav.setId_produit(produitsDao.findById(produitId));
+				
+				
+				FavorisDao favDao = new FavorisDao();
+				request.setAttribute("listAddress", favDao.create(fav));
+		
+				
+			}
 	
 	
 			

@@ -148,9 +148,9 @@ ArrayList<Details_commandeM> listeDetail = new ArrayList<>();
 	}
 
 	public  ArrayList<Details_commandeM>  findByIdCommande(int id) {
-ArrayList<Details_commandeM> listeDetail = new ArrayList<>();
-CommandesDao cDao = new CommandesDao();
-ProduitsDao pDao = new ProduitsDao();
+	ArrayList<Details_commandeM> listeDetail = new ArrayList<>();
+	CommandesDao cDao = new CommandesDao();
+	ProduitsDao pDao = new ProduitsDao();
 		
 		try {
 			PreparedStatement req = connect.prepareStatement("SELECT * FROM details_commande WHERE id_commande = ?");
