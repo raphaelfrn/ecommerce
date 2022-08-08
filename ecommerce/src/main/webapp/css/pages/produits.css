@@ -231,6 +231,11 @@ body{
     flex-direction: row-reverse;
 }
 
+.card-produit-icons-add button {
+    background:transparent;
+    border:none;
+}
+
 .card-produit-icons-add img{
     margin-left: 24px;
     cursor: pointer;

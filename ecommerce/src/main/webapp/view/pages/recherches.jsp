@@ -72,14 +72,17 @@
 				</div>
 	
 				<div class="card-produit-icons-add">
-					<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg">
-					
-						<c:set var="url" value="param=${search.id_produit }"/>
-						<c:set var="variable" value="${search.id_produit }"/>
-						
-					<c:if test="${fn:contains(url,variable)}">
-					<%-- <a href="${pageRecherche}?${query}">	<img alt="Icon ajout panier" src="assets/icon/basket-add.svg" > </a> --%>
-					</c:if>
+					<form method="post">	
+						<button type="submit" name="btnFav" value="${search.id_produit}">	
+							<img alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg"> 
+						</button>
+					</form>
+
+					<form method="post">
+						<button type="submit" name="btnAdd" value="${search.id_produit}">
+							<img alt="Icon ajout panier" src="assets/icon/basket-add.svg"> 
+						</button>
+					</form>	
 				</div>
 			</div>
 		</div>
