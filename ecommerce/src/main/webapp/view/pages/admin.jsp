@@ -104,9 +104,9 @@ pageEncoding="UTF-8"%>
 				<article class="container-contact">
 					<div class="container-infos"><h1>Contact</h1><p><span>+</span>10 demandes non lu</p></div>
 					<div class="container-admin-commments">
-						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment1.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement </p></div>
-						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment2.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement lkkldsjkldsjvkdfvkjdsjkv v, bvjdfbvjdbsfnvjd  </p></div>
-						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment3.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement klnvkjfd vjhdbvjh vjhdbjhs cjhdsbcsdl cjlsd clhjds cjds </p></div>
+						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment1.svg"> <p class="admin-comment">Dupont Marc, Demande de renseignement </p></div>
+						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment2.svg"> <p class="admin-comment">Dupont Marc, Demande de renseignement lkkldsjkldsjvkdfvkjdsjkv v, bvjdfbvjdbsfnvjd  </p></div>
+						<div class="container-comment-infos"> <img alt="Icon commentaire" src="assets/icon/comment3.svg"> <p class="admin-comment">Dupont Marc, Demande renseignement klnvkjfd vjhdbvjh vjhdbjhs cjhdsbcsdl cjlsd clhjds cjds </p></div>
 					</div>
 					<button>Voir toutes les demandes</button>
 				</article>
@@ -146,8 +146,6 @@ pageEncoding="UTF-8"%>
 				<c:forEach items="${listSearchCount}" var="listSearchCount">
 					<p class="data-mot-cle-search-count">${listSearchCount}</p>
 				</c:forEach>
-				
-
 			</section>
 	
 		</section>

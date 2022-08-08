@@ -153,7 +153,7 @@ public class RecherchesDao implements IDao<RecherchesM>{
 		ArrayList<RecherchesM> listeRecherche = new ArrayList<>();
 		
 		try {
-			PreparedStatement req = connect.prepareStatement("SELECT * FROM recherches Group by mot_cle");
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM recherches GROUP BY mot_cle ORDER BY count(mot_cle) DESC  limit 3");
 			
 			ResultSet rs = req.executeQuery();
 			
@@ -181,7 +181,7 @@ public class RecherchesDao implements IDao<RecherchesM>{
 		ArrayList<Object> listeRechercheCount = new ArrayList<>();
 		int count =0;
 		try {
-			PreparedStatement req = connect.prepareStatement("SELECT count(*) FROM recherches Group by mot_cle");
+			PreparedStatement req = connect.prepareStatement("SELECT count(mot_cle) mcle FROM recherches GROUP BY mot_cle ORDER BY mcle DESC LIMIT 3");
 		
 			ResultSet rs = req.executeQuery();
 					
