@@ -35,7 +35,6 @@ menu_link__dashbord.addEventListener('click', () => {
 	} 
 	
 	if (container_admin_add !=null) {
-		console.log("if add pas null")
 		container_admin_add.style.display ="none";
 	}
 })
