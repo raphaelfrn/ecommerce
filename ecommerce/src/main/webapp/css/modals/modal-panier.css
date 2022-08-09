@@ -94,6 +94,23 @@
 	cursor: pointer;
 }
 
+.modal-panier-product-infos a:link{
+	text-decoration:none;
+	color:black;
+}
+.modal-panier-product-infos a:visited{
+	text-decoration:none;
+	color:black;
+}
+.modal-panier-product-infos a:hover{
+	text-decoration:none;
+	color:black;
+}
+.modal-panier-product-infos a:active{
+	text-decoration:none;
+	color:black;
+}
+
 .modal-panier-product-infos h1 {
 	font-size: 13px;
 }
@@ -116,6 +133,12 @@
 	color: #995E06 !important;
 	font-family: 'Avenir-heavy';
 	cursor: pointer;
+}
+
+.modal-panier-product-price button{
+	background:transparent;
+	border:none;
+	
 }
 
 

@@ -184,6 +184,27 @@
 	}
 }
 
+.container-basket-product-infos a{
+	text-decoration:none;
+	color:black;
+}
+.container-basket-product-infos a:link{
+	text-decoration:none;
+	color:black;
+}
+.container-basket-product-infos a:visited{
+	text-decoration:none;
+	color:black;
+}
+.container-basket-product-infos a:hover{
+	text-decoration:none;
+	color:black;
+}
+.container-basket-product-infos a:active{
+	text-decoration:none;
+	color:black;
+}
+
 .content-basket-product-infos h1 {
 	font-size: 11px;
 }
@@ -193,6 +214,7 @@
 	.container-basket-product-infos h1{
 		padding-right: 5px;
 	}
+	
 }
 
  @media screen and (min-width: 820px) 
@@ -200,6 +222,7 @@
 	.container-basket-product-infos h1{
 		font-size: 14px;
 	}
+	
 }
 
 .content-basket-product-infos p {

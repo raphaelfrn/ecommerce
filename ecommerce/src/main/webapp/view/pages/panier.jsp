@@ -63,11 +63,11 @@
             					
             			
 							<article class="container-basket-product">
-								<img alt="Image produit" src="<%=pa.getProduit().getImage() %>" />
+							<img alt="Image produit" src="<%=pa.getProduit().getImage() %>" />
 								<div class="content-basket-product">
 									<div class="container-basket-product-infos">
 										<div class="content-basket-product-infos">
-											<h1><%=pa.getProduit().getTitre() %></h1>
+										<a href="details?id=<%=pa.getProduit().getId_produit() %>&param=findById"><h1><%=pa.getProduit().getTitre() %></h1> </a>
 											<p><%=pa.getProduit().getDescription() %></p>
 										</div>
 										<div class="content-basket-quantity-price">
@@ -77,7 +77,8 @@
 									</div>
 									<div class="container-delivery-and-supr">
 										<p>Livraison offerte - Expédié sous 5 jours</p>
-										<a href="panier?idtodelete=<%=pa.getProduit().getId_produit() %>">Supprimer</a>
+										
+										 <a href="panier?idtodelete=<%=pa.getProduit().getId_produit() %>">Supprimer</a>
 									</div>
 								</div>
 							</article>
@@ -122,7 +123,7 @@
 								</div>
 							<% } %>	
 									
-						<%-- 	<a href="">	<p class="total-infos-command-delivery"> Vider le panier ${panier.vider()} </p></a> --%>
+					
 							</div>
 						</div>
 						<div class="container-basket-total-validate">
@@ -132,7 +133,14 @@
 							</div>
 							<p class="basket-secure-payment">Paiement sécurisé</p>
 							<div class="container-basket-btn">
-							<button name="btnCommande">Valider ma commande</button>
+							
+							<% if((boolean)session.getAttribute("isConnected")==true){ %>
+							
+							<button name="btnCommande">Valider ma commande</button> 
+							<% }else{ %>
+							
+							<p>Veuillez vous connecter pour valider votre commande</p>
+							<% } %>	
 							</div>
 						</div>
 					</section>
