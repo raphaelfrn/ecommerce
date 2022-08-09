@@ -125,14 +125,36 @@ pageEncoding="UTF-8"%>
 				</div>
 			</section>
 			
-			<section  class="container-admin-add">
-				<h1>Coucou add</h1>
-			</section>
-			
 			<section  class="container-admin-users">
 				<h1>Coucou Client</h1>
 			</section>
 			
+			<section  class="container-admin-add">
+				<div class="container-admin-add-row1">
+					<div class="container-add-categories content-admin-add-row1">
+						<div class="container-add-icon">
+							 <img class="add-icon-cat" alt="Icons categorie" src="assets/icon/icons-add-cat.svg">
+						</div>
+						<div class="title-add-content"><h1>Catégorie</h1></div> 
+						<div class="icon-add-content"><img alt="Icon d'ajout" src="assets/icon/icon-content-add.svg"></div>
+					</div>
+					<div class="container-add-subcategories content-admin-add-row1">
+						<div class="container-add-icon">
+							<img class="add-icon-subcat" alt="Icons sous categorie" src="assets/icon/icons-add-subcat.svg">	
+						</div>	
+						<div class="title-add-content"><h1>Sous catégorie</h1></div> 
+						<div class="icon-add-content"><img alt="Icon d'ajout" src="assets/icon/icon-content-add.svg"></div>
+					</div>
+					<div class="container-add-products content-admin-add-row1">
+						<div class="container-add-icon">
+							 <img class="add-icon-product" alt="Icon produits" src="assets/icon/icon-add-product.svg">
+						</div>
+						<div class="title-add-content"><h1>Produit</h1></div> 
+						<div class="icon-add-content"><img alt="Icon d'ajout" src="assets/icon/icon-content-add.svg"></div>
+					</div>
+				</div>
+				
+			</section>
 			
 		</section>
 	</div>
