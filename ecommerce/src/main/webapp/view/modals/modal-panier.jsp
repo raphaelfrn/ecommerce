@@ -23,7 +23,7 @@
    		<a href="${panier}">Voir mon panier</a>
    	</div>
    	
-   	<form action="${panier}">
+   	<form method="post">
    		<div class="container-overflow">
 
    		
@@ -34,13 +34,13 @@
 		   		<div class="container-modal-panier-product">
 		   			<div class="container-modal-panier-product-infos">
 		   				<div class="modal-panier-product-infos">
-		   					<h1><%=pa.getProduit().getTitre() %></h1>
+		   				<a href="details?id=<%=pa.getProduit().getId_produit() %>&param=findById"><h1><%=pa.getProduit().getTitre() %></h1></a>
 		   					<p>Feuille d'or</p>
 		   				</div>
 		   				<div><input type="number" id="quantity<%=pa.getProduit().getId_produit() %>" name="inputQuantity" min="1" max="10" placeholder="0" value="<%=pa.getQte() %>"  readonly></div>
 		   			</div>
 		   			<div class="modal-panier-product-price">
-		   				<a href="panier?idtodelete=<%=pa.getProduit().getId_produit() %>">Supprimer</a>
+		   			 <button type="submit" name ="btnDelete" value="<%=pa.getProduit().getId_produit() %>">Supprimer</button>
 		   				<p><%=pa.getProduit().getPrix() %> €</p>
 		   			</div>
 		   		</div>
@@ -57,7 +57,7 @@
    			</div> 
    			
    			<div class="container-modal-panier-btn">
-   			<button class="modal-panier-btn-validate"><span>Valider</span></button>
+   			<a href="${panier}" class="modal-panier-btn-validate"><span>Valider</span></a>
    			</div>
    			<div class="container-modal-panier-btn">
    				<button class="modal-panier-btn-shop"><span>Continuer mon shopping</span></button>

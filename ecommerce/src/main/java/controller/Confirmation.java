@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,10 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.CommandesDao;
-import model.Adresses_livraisonM;
 import model.CommandesM;
-import model.PanierM;
-import model.UtilisateursM;
 
 /**
  * Servlet implementation class Confirmation
@@ -40,13 +38,9 @@ public class Confirmation extends HttpServlet {
 		HttpSession session = request.getSession();
 		System.out.println(session.getAttribute("commandeId"));
 	
-		
-CommandesM commande = cDao.findById((int) session.getAttribute("commandeId")); 
+		CommandesM commande = cDao.findById((int) session.getAttribute("commandeId")); 
 
 
-	
-		
-		
 		request.setAttribute("commande", commande);
 		
 		

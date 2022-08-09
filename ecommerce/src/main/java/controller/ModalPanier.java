@@ -57,14 +57,19 @@ public class ModalPanier extends HttpServlet {
 		 session.setAttribute( "total", total);
 		
 		
-		// delete
-		if(request.getParameter("idtodelete")!=null ) {
+		// delete and reset total
+		
+		if(request.getParameter("btnDelete")!=null ) {
 			 session = request.getSession( true );
-			int idproduit=Integer.valueOf(request.getParameter("idtodelete"));
+			 int produitId = Integer.parseInt(request.getParameter("btnDelete")) ;
 			 panier=(PanierM) session.getAttribute("panier");
-			panier.delete(idproduit);
-			session.setAttribute( "panier", panier );
+				panier.delete(produitId);
+				session.setAttribute( "panier", panier );
+				float totalDel = (float) panier.total();
+				session.setAttribute("total", totalDel);
+			 
 		}
+			
 				
 		request.getRequestDispatcher("view/modals/modal-panier.jsp").forward(request, response);
 	}
