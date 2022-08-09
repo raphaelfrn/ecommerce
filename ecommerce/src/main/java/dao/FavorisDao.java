@@ -102,15 +102,18 @@ ArrayList<FavorisM> listeFavori = new ArrayList<>();
 					+ "id_favoris = ?");
 			
 			req.setInt(1,id);
-			
 			req.executeUpdate();
 			
+			System.out.println("deleted from favoris");
 			return true;
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
+			
 		}
+		
 		return false;
 	}
 	

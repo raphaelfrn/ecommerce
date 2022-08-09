@@ -35,6 +35,15 @@
 	margin-right: 10px;
 	cursor: pointer;
 }
+.container-basket-header a {
+	text-decoration:none;
+	color:black;
+}
+
+.container-basket-header a:hover {
+	color: #AF9330;
+}
+
 
 .container-basket-header h1:hover {
 	color: #AF9330;
@@ -486,7 +495,7 @@
 
 
 .container-wishlist {
-	display: none;
+	display: flex;
 }
 
 .content-wishlist {

@@ -14,6 +14,7 @@ import dao.Adresses_livraisonDao;
 import dao.CommandesDao;
 import dao.Details_commandeDao;
 import dao.FavorisDao;
+import dao.ProduitsDao;
 import dao.UtilisateursDao;
 import model.Adresses_livraisonM;
 import model.CommandesM;
@@ -37,6 +38,8 @@ public class Panier extends HttpServlet {
 	CommandesDao cDao = new CommandesDao();
 	Details_commandeDao dcDao=new Details_commandeDao();
 	Adresses_livraisonDao adresse = new Adresses_livraisonDao();
+	ProduitsDao produitsDao = new ProduitsDao();
+	 FavorisDao favorisDao = new FavorisDao();
 	
     /**
      * @see HttpServlet#HttpServlet()
@@ -65,13 +68,8 @@ public class Panier extends HttpServlet {
 			request.setAttribute("InfosUser", userDao.findById(userId));
 			request.setAttribute("listAddress", addressDao.addressUser(userId));
 			
-			// wishlist
-			
-			FavorisDao favorisDao = new FavorisDao();
-			request.setAttribute("favoris", favorisDao.findFavByUser(userId));
-			
-			
-		} 
+			}
+	
 
 
 	// delete
@@ -84,8 +82,7 @@ public class Panier extends HttpServlet {
 		}
 		
 	
-		
-		
+
 		
 		request.getRequestDispatcher("view/pages/panier.jsp").forward(request, response);
 		
@@ -96,6 +93,7 @@ public class Panier extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+
 		boolean commandeok=false;
 		
 	// create commande
@@ -109,14 +107,14 @@ public class Panier extends HttpServlet {
 			PanierM panier=(PanierM) session.getAttribute("panier");
 			float total = (float) panier.total();
 			
-		int idAdresse =	adresse.findMainAddress(idUser).getId_adresse_livraison();
+			int idAdresse =	adresse.findMainAddress(idUser).getId_adresse_livraison();
 
 			commande.setId_utilisateur(new UtilisateursM(idUser));
 			commande.setTotal(total);
 			commande.setId_adresse_livraison(new Adresses_livraisonM(idAdresse));
 			commande.setEtat(1);
 	
-	int commandeId = cDao.createReturn(commande);
+			int commandeId = cDao.createReturn(commande);
 
 			
 			   // detail command
@@ -148,13 +146,6 @@ public class Panier extends HttpServlet {
 	}
 	
 	
-	public double total() {
-		double total=0;
-		for(PanierDetailsM dp:articles) {
-			total+=dp.getProduit().getPrix()*dp.getQte();
-		}
-		return total;
-	}
 		
 	
 }
