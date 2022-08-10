@@ -101,10 +101,13 @@ public class Panier extends HttpServlet {
 		
 		if("btnCommande" != null ) {
 			CommandesM commande = new CommandesM();
-		
 			HttpSession session = request.getSession();
-			int idUser = (int)session.getAttribute("userid");
 			
+					if((boolean)session.getAttribute("isConnected")!=false) {
+					
+					int idUser = (int)session.getAttribute("userid");
+					
+					
 			PanierM panier=(PanierM) session.getAttribute("panier");
 			float total = (float) panier.total();
 			
@@ -117,7 +120,7 @@ public class Panier extends HttpServlet {
 	
 			int commandeId = cDao.createReturn(commande);
 			
-			
+					
 
 			
 			   // detail command
@@ -138,7 +141,7 @@ public class Panier extends HttpServlet {
 			commandeok=true;
 			
 			response.sendRedirect("confirmation"); 
-			
+					}
 		}
 		
 

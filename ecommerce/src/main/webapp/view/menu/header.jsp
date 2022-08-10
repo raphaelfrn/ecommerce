@@ -14,6 +14,7 @@
 	<c:url value="/account" var="account"/>
 	<c:url value="/historique" var="historique"/>
 	<c:url value="/recherche" var="recherche"/>
+	<c:url value="/wishlist" var="wishlist"/>
 	
 	<nav class="container-nav-header">	
 		<div data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img class="icon-menu" alt="icon menu" src="assets/icon/menu.svg"></div>
@@ -36,8 +37,11 @@
 								<a href="${account}">Mon compte</a>
 							</li>
 							<li>
-							
 								<a href="${historique}">Historique de commande</a>
+							</li>
+							<li>
+							
+								<a href="${wishlist}">Wishlist</a>
 							</li>
 							<li>
 								<a href="${deconnexion}">Déconnexion</a>
