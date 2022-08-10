@@ -163,6 +163,11 @@
 
 
 .modal-panier-btn-validate {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	width: 31vw;
+    height: 5vh;
 	border: none;
     background: black;
     color: white;
@@ -172,6 +177,8 @@
 }
 
 .modal-panier-btn-validate span {
+	display: block;
+	color: white;
 	position: relative; 
   	z-index: 1;
     margin-bottom: 0;
