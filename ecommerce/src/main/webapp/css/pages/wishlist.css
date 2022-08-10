@@ -1,0 +1,293 @@
+@charset "UTF-8";
+
+
+.container-page-wishlist {
+   padding: 6% 4%;
+   background: black;
+
+}
+
+ @media screen and (min-width: 1000px) 
+{
+	.container-page-wishlist {
+	    padding: 4%;
+	}
+} 
+
+.container-page-wishlist-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+ @media screen and (min-width: 604px) 
+{
+	.container-page-wishlist-header {
+    	justify-content: flex-start;
+	}
+}  
+
+ @media screen and (min-width: 820px) 
+{
+	.container-page-wishlist-header {
+    	margin-bottom: 3%;
+	}
+} 
+
+.container-page-wishlist-header h1 {
+	color: white;
+	font-size: 14px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.container-page-wishlist-header a {
+	text-decoration:none;
+	color: white;
+}
+
+.container-page-wishlist-header a:hover {
+	color: #AF9330;
+}
+
+
+.container-page-wishlist-header h1:hover {
+	color: #AF9330;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-page-wishlist-header h1 {
+		margin-right: 24px;
+	}
+} 
+
+ @media screen and (min-width: 1600px) 
+{
+	.container-page-wishlist-header h1 {
+		font-size: 16px;
+	}
+}
+
+.container-wishlist {
+	display: flex;
+}
+
+.content-wishlist {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+	margin-top: 4%;
+}
+
+.container-wishlist-product {
+	width: 44vw;
+	padding-bottom: 6%;
+    margin-bottom: 4%;
+    border-radius: 10px;
+    background: white; 
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-wishlist-product {
+    	display: flex;
+    	padding-bottom: 0;
+    	margin-bottom: 2%;
+    	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+	}
+}
+
+.wishlist-product-img {
+	width: 44vw;
+	height: 38vw;
+	padding: 17%;
+	border-radius: 10px 10px 0;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.wishlist-product-img {
+	    width: 14vw;
+	    height: 14vh;
+	    padding: 8% 0 8% 9px;
+	}
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.wishlist-product-img {
+	    width: 24vw;
+	    padding: 5% 0 6% 2%;
+	}
+}
+
+ @media screen and (min-width: 1600px) 
+{
+	.wishlist-product-img {   
+   	 padding: 2% 0 2% 2%;
+	}
+
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.content-wishlist-product {
+		width: 100vw;
+		display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	}
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.content-wishlist-product {
+	    flex-direction: row;
+    	justify-content: space-between;	
+    	padding: 0 4%;
+	}
+}
+
+.container-wishlist-product-infos {
+	padding: 12% 8% 2%;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-wishlist-product-infos {
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: space-between;
+	    padding: 0% 9% 0;	
+	}
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.container-wishlist-product-infos {
+		display: flex;
+	    flex-direction: column;
+    	justify-content: space-evenly;
+    	padding: 0;	
+	}
+}
+.container-wishlist-product-infos a {
+	text-decoration:none;
+	color:black;
+}
+
+.container-wishlist-product-infos h1 {
+	font-size: 12px;
+}
+
+
+ @media screen and (min-width: 1200px) 
+{
+	.container-wishlist-product-infos h1 {
+		font-size: 16px;
+		margin-bottom: 0;
+	}
+}
+
+.wishlist-product-subtitle {
+	color: #AF9330;
+    font-size: 12px;
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.wishlist-product-subtitle {
+			font-size: 14px;
+ 			margin-bottom: 0;
+	}
+}
+
+.container-wishlist-management {
+	display: flex;
+    justify-content: space-between;
+        align-items: flex-end;
+/*     align-items: center; */
+    padding: 0 8%;
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.container-wishlist-management {
+	    padding: 0 9%;
+	}
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.container-wishlist-management {
+	    flex-direction: column;
+	    align-items: flex-end;
+    	justify-content: space-evenly;
+    	padding: 0;
+	}
+}
+
+.container-wishlist-management p {
+    font-size: 14px;
+	margin-bottom: 0;
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.container-wishlist-management p {
+	    font-size: 16px;
+		font-family: "Avenir-heavy";
+	}
+}
+.container-wishlist-management-icon button{
+		background:transparent;
+		border:none;
+	}
+	
+.container-wishlist-management-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+	
+
+ @media screen and (min-width: 375px) 
+{
+	.container-wishlist-management-icon {
+		display: flex;
+    	flex-direction: row;
+   		align-items: flex-start;
+	}
+}
+
+ @media screen and (min-width: 1200px) 
+{
+	.container-wishlist-management-icon {
+	    align-items: flex-end;
+	}
+}
+
+.wishlist-management-icon-basket, .wishlist-management-icon-wishlist {
+	cursor: pointer;
+	transition: 1s;
+}
+
+.wishlist-management-icon-basket:hover, .wishlist-management-icon-wishlist:hover {
+	transform: scale(1.2);
+}
+
+.wishlist-management-icon-basket {
+	width: 20px;
+	cursor: pointer;
+}
+
+.wishlist-management-icon-wishlist {
+	    width: 15px;	
+}
+
+ @media screen and (min-width: 820px) 
+{
+	.wishlist-management-icon-wishlist {
+		width: 14px;
+	}
+}
