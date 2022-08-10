@@ -43,8 +43,6 @@ public class Wishlist extends HttpServlet {
 		// wishlist
 		
 		request.setAttribute("favoris", favorisDao.findFavByUser(userId));
-		System.out.println(favorisDao.findFavByUser(userId));
-		
 		
 	// delete from wish list
 		
