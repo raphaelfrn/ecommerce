@@ -151,6 +151,8 @@ ArrayList<CommentairesM> listeCommentaire = new ArrayList<>();
 
 	public ArrayList<CommentairesM> readById(int id) {
 ArrayList<CommentairesM> listeCommentaire = new ArrayList<>();
+ProduitsDao pDao = new ProduitsDao();
+UtilisateursDao uDao = new UtilisateursDao();
 		
 		try {
 			PreparedStatement req = connect.prepareStatement("SELECT * FROM commentaires WHERE id_produit = ?");
@@ -162,8 +164,8 @@ ArrayList<CommentairesM> listeCommentaire = new ArrayList<>();
 						rs.getInt("id_commentaire"),
 						rs.getString("commentaire"),
 						rs.getInt("note"),
-						new ProduitsM(rs.getInt("id_produit")),
-						new UtilisateursM(rs.getInt("id_utilisateur"))
+						pDao.findById(rs.getInt("id_produit")),
+						uDao.findById(rs.getInt("id_utilisateur"))
 						
 						);
 				listeCommentaire.add(commentaire);
