@@ -52,7 +52,7 @@ public class Wishlist extends HttpServlet {
 			  request.getSession( true );
 			 int produitId = Integer.parseInt(request.getParameter("btnDelFav")) ;
 			 System.out.println(produitId);
-			 favorisDao.delete(produitId);
+			 favorisDao.deleteById(produitId);
 			 System.out.println("delete ok");
 			
 		}

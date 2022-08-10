@@ -98,22 +98,16 @@ ArrayList<FavorisM> listeFavori = new ArrayList<>();
 	@Override
 	public boolean delete(int id) {
 		try {
-			PreparedStatement req = connect.prepareStatement("DELETE FROM favoris WHERE "
-					+ "id_favoris = ?");
-			
+			PreparedStatement req = connect.prepareStatement("DELETE FROM favoris WHERE id_favoris = ?");
 			req.setInt(1,id);
 			req.executeUpdate();
 			
 			System.out.println("deleted from favoris");
 			return true;
-			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
-			
 		}
-		
 		return false;
 	}
 	
@@ -175,6 +169,22 @@ UtilisateursDao uDao = new UtilisateursDao();
 			e.printStackTrace();
 		}
 		return listeFavori;
+	}
+	
+	public boolean deleteById(int id) {
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("DELETE FROM favoris WHERE id_favoris = ?");
+			req.setInt(1,id);
+			req.executeUpdate();
+			
+			System.out.println("deleted from favoris");
+			return true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 }

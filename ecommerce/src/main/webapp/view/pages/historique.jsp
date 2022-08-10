@@ -39,7 +39,7 @@
 						<th class="thead-first-three">Date</th>
 						<th class="thead-first-three">Total</th>
 						<th class="thead-2-last-two">Show</th>
-						<th class="thead-2-last-two">Facture</th>
+					<!-- 	<th class="thead-2-last-two">Facture</th> -->
 					</tr>
 				</thead>
 				<tbody>
@@ -50,7 +50,7 @@
 						<td><c:out value="${commande.dateC }" /></td>
 						<td><c:out value="${commande.total } €" /></td>
 						<td><a href="${details}?idC=${commande.id_commande }"><img src="assets/icon/show.svg" alt="show"> </a></td>
-						<td><img src="assets/icon/download.svg" alt="download"></td>
+						<!-- <td><img src="assets/icon/download.svg" alt="download"></td> -->
 					</tr>
 					</c:forEach>
 					<tr>

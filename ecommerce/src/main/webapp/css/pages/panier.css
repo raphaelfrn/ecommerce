@@ -583,10 +583,15 @@
     	padding: 0;	
 	}
 }
+.container-wishlist-product-infos a {
+	text-decoration:none;
+	color:black;
+}
 
 .container-wishlist-product-infos h1 {
 	font-size: 12px;
 }
+
 
  @media screen and (min-width: 1200px) 
 {

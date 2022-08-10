@@ -10,12 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.CommentairesDao;
 import dao.ImagesDao;
 import dao.ProduitsDao;
+import dao.UtilisateursDao;
+import dao.VisitesDao;
+import model.CommentairesM;
 import model.ImagesM;
 import model.PanierDetailsM;
 import model.PanierM;
 import model.ProduitsM;
+import model.VisitesM;
 
 /**
  * Servlet implementation class DetailsProduit
@@ -26,6 +31,9 @@ public class DetailsProduit extends HttpServlet {
 	
 	ProduitsDao produitsDao = new ProduitsDao();
 	ImagesDao imagesDao = new ImagesDao();
+	CommentairesDao comDao = new CommentairesDao();
+	UtilisateursDao uDao = new UtilisateursDao();
+	VisitesDao vDao = new VisitesDao();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -48,15 +56,23 @@ public class DetailsProduit extends HttpServlet {
 		
 		if(param.equalsIgnoreCase("findById") ) {
 			
+			// affichage produit
 			ProduitsM produit = produitsDao.findById(id);
 			ArrayList<ImagesM> image = imagesDao.readByIdProduit(id);
 			
+			// compter les visites sur le produit
+			VisitesM visite = new VisitesM();
+			HttpSession session = request.getSession( true );
+			int userId = (int)session.getAttribute("userid");
+			visite.setId_utilisateur(uDao.findById(userId));
+			visite.setId_produit(produitsDao.findById(id));
+			vDao.create(visite);
 			
+			// affichage produit
 			request.setAttribute("produit", produit);
 			request.setAttribute("image", image);			
 				}
 		
-	
 		
 		// add to cart
 		
@@ -75,6 +91,13 @@ public class DetailsProduit extends HttpServlet {
 	
 			
 		}	
+	
+	
+	// read comm
+	
+	int produitId=Integer.valueOf(request.getParameter("id"));
+	request.setAttribute("commentaires", comDao.readById(produitId));
+
 		
 		
 		request.getRequestDispatcher("/view/pages/details-produit.jsp").forward(request, response);
@@ -87,7 +110,28 @@ public class DetailsProduit extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		// add a comment
+		
+if(request.getParameter("btnAddComm")!=null ) {
+			
+			HttpSession session = request.getSession( true );
+			int userId = (int)session.getAttribute("userid");
+			int produitId=Integer.valueOf(request.getParameter("id"));
+			String contenu = request.getParameter("commentaire");
+		//	int note = Integer.parseInt(request.getParameter("rating"));
+			
+			CommentairesM commentaire = new CommentairesM();
+			commentaire.setCommentaire(contenu);
+			commentaire.setNote(4);
+			commentaire.setId_produit(produitsDao.findById(produitId));
+			commentaire.setId_utilisateur(uDao.findById(userId));
+			
+			 comDao.create(commentaire);
+	
+			
+		}	
+		
 		doGet(request, response);
 	}
 

@@ -126,8 +126,9 @@
 	
 	<!-- Add a comment and note on Mobile / tablette -->
 	
-		<div class="container-comments-form">
+	<div class="container-comments-form">
 
+		<form method="post">
 			<div class="container-notation">
 				<p>Mettre une note :</p>	
 				<div class="rating">
@@ -138,54 +139,63 @@
 			
 			<div class="comment-area"> 
 					<div class="input-group mb-3">
-				  			<input type="text" class="form-control" placeholder="Entrez votre commentaire" aria-label="Entrez votre commentaire" aria-describedby="button-addon">
+				  			<input name="commentaire" type="text" class="form-control" placeholder="Entrez votre commentaire" aria-label="Entrez votre commentaire" aria-describedby="button-addon">
 				 			
-				 			  <button> <span><img alt="plus button" src="assets/icon/plus.svg"></span> </button> 
+				 			  <button type="submit" name="btnAddComm"> <span><img alt="plus button" src="assets/icon/plus.svg"></span> </button> 
 					</div>
 			 </div>
+		</form>	
 			
-			
-		</div>
+	</div>
 		
 		
 		<!-- Hidden form for desktop only -->
-		
+
 		<div class="container-form-hidden">
-			<div class="container-notation-hidden">
-				<p>Ajouter un commentaire :</p>	
-				<div class="rating">
-					<input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div> 
-			</div>	
-			
-			
-			
-			<div class="comment-area-hidden"> 
-					
-				  			<input type="text" placeholder="Entrez votre commentaire" aria-label="Entrez votre commentaire" aria-describedby="button-addon">
-				 			
-				 			  <button> <span>Ajouter</span> </button> 
-					
-			 </div>
-					
-			</div>
-		
-		
-		
+			<form method="post">
+				<div class="container-notation-hidden">
+					<p>Ajouter un commentaire :</p>
+					<div class="rating">
+						<input type="radio" name="rating" value="5" id="5"><label
+							for="5">☆</label> <input type="radio" name="rating" value="4"
+							id="4"><label for="4">☆</label> <input type="radio"
+							name="rating" value="3" id="3"><label for="3">☆</label> <input
+							type="radio" name="rating" value="2" id="2"><label
+							for="2">☆</label> <input type="radio" name="rating" value="1"
+							id="1"><label for="1">☆</label>
+					</div>
+				</div>
+				<div class="comment-area-hidden">
+
+					<input name="commentaire" type="text" placeholder="Entrez votre commentaire"
+						aria-label="Entrez votre commentaire"
+						aria-describedby="button-addon">
+
+					<button type="submit" name="btnAddComm">
+						<span>Ajouter</span>
+					</button>
+
+				</div>
+			</form>
+		</div>
+
+
+
 		<!-- the card that will be in a loop to display comments -->
 	
-	
+	<c:forEach items="${commentaires }" var="comm">
 		<div class="card-comment">
 		
 		
-			<div class="card-name-rating"><p><b>Nom du client</b></p> <div class="rating"><label>☆</label> <label>☆</label> <label>☆</label> <label>☆</label> <label>☆</label>
-			</div> </div>
+			<div class="card-name-rating"><p><b><c:out value="${comm.id_utilisateur.prenom }" /> <c:out value="${comm.id_utilisateur.nom }" /></b></p>
+			 <div class="rating"> <c:out value="${comm.note}" /></div> </div>
 			
-			<div class="container-msg"><hr>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac sapien egestas, porta lacus quis, congue neque. In libero massa, lobortis vel augue id, lobortis pellentesque turpis.</div>
+			<div class="container-msg">
+			<hr><c:out value="${comm.commentaire }" /></div>
 		
 		</div>
 		
-		
-		<!--  another card just to see, delete this when loop is rdy -->
+		</c:forEach>
 		
 		
 			
