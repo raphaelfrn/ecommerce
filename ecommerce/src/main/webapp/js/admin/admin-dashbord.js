@@ -2,14 +2,6 @@ const chartVisite = document.getElementById("chartVisite");
 const chartCategories = document.getElementById("chartCategories");
 const chartSearch = document.getElementById("chartSearch");
 
-// Menu 
-let menu_link__dashbord = document.querySelector(".admin-link-dashbord");
-let container_admin_dashbord = document.querySelector(".container-admin-dashbord");
-let menu_link_add = document.querySelector(".admin-link-add");
-let container_admin_add = document.querySelector(".container-admin-add")
-let menu_link__users = document.querySelector(".admin-link-users");
-let container_admin_users = document.querySelector(".container-admin-users");
-
 //Data
 let data_sousCat = document.querySelectorAll(".data-title-sous-cat");
 let data_product_title = document.querySelectorAll(".data-title-products");
@@ -24,44 +16,6 @@ let adminIconMail = document.querySelectorAll(".admin-icon-mail");
 let adminIconPhone = document.querySelectorAll(".admin-icon-phone");
 let adminIconContact = document.querySelectorAll(".admin-icon-contact")
 let adminIconComment = document.querySelectorAll(".admin-icon-comment")
-
-
-// Nav menu
-
-menu_link__dashbord.addEventListener('click', () => {
-	container_admin_dashbord.style.display ="block";
-	if (container_admin_users !=null) {
-		container_admin_users.style.display ="none";	
-	} 
-	
-	if (container_admin_add !=null) {
-		container_admin_add.style.display ="none";
-	}
-})
-
-menu_link__users.addEventListener('click', () => {
-	container_admin_users.style.display ="block";
-	
-	if (container_admin_add !=null) {
-		container_admin_add.style.display ="none";
-	} 
-	if (container_admin_dashbord != null) {
-		container_admin_dashbord.style.display ="none";	
-	}
-	
-})
-
-menu_link_add.addEventListener('click', () => {
-	container_admin_add.style.display ="block";
-	
-	if (container_admin_dashbord !=null) {
-		container_admin_dashbord.style.display ="none";	
-	} 
-	if (container_admin_users != null) {
-		container_admin_users.style.display ="none";	
-	}
-})
-
 
 // Icons foreach
 adminIconUsers.forEach(function(element,  index, arr){

@@ -19,14 +19,15 @@ public class CategorieDao implements IDao<CategorieM> {
 	@Override
 	public boolean create(CategorieM categorie) {
 		try {
-			PreparedStatement req = connect.prepareStatement("INSERT INTO categories (titre)"
-					+ "VALUES (?)");
+			PreparedStatement req = connect.prepareStatement("INSERT INTO categories (titre, video, description, image)"
+					+ "VALUES (?, ?, ?, ?)");
 			
 			req.setString(1, categorie.getTitre());
-			
-			
+			req.setString(2, categorie.getVideo());
+			req.setString(3, categorie.getDescription());
+			req.setString(4, categorie.getImage());
 			req.executeUpdate();
-			
+	
 			return true;
 			
 		} catch (SQLException e) {

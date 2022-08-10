@@ -11,31 +11,19 @@ pageEncoding="UTF-8"%>
 <link rel="icon" href="assets/logo/favicon.ico" type="image/x-icon">
 <link href="css/_reset.css" rel="stylesheet" type="text/css">
 <link href="assets/font/font.css" rel="stylesheet">
-<link href="css/header/header.css" rel="stylesheet">
-<link href="css/footer/footer.css" rel="stylesheet">
-<link href="css/modals/modal-connexion.css" rel="stylesheet">
-<link href="css/modals/modal-inscription.css" rel="stylesheet">
-<link href="css/pages/admin.css" rel="stylesheet">
+<link href="css/admin/admin-menu.css" rel="stylesheet">
+<link href="css/admin/admin-dashbord.css" rel="stylesheet">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-<script type="text/javascript" defer src="js/admin.js"></script>
+<script type="text/javascript" defer src="js/admin/admin-dashbord.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
 
 <title>Admin</title>
 </head>
 <body>
 	
 	<div class="container-page-admin">
-		<section class="container-admin-menu" >
-			<div class="container-logo-admin"><img class="logo-dione-admin" alt="logo Dione" src="assets/logo/logo-admin.svg"></div>
-			<ul class="container-admin-menu-ul">
-				<li class="admin-link-dashbord"> <img alt="Icon tableau de bord" src="assets/icon/icon-admin-dashbord.svg">Tableau de bord</li>
-				<li class="admin-link-users"> <img alt="Icon clients" src="assets/icon/icon-admin-users.svg"> Clients</li>
-				<li class="admin-link-add"> <img alt="Icon ajouter" src="assets/icon/icon-admin-add.svg"> Add</li>
-			</ul>
-		</section>
+		<c:import url="admin-menu.jsp"></c:import>
 		
 		<section class="container-admin">
 			<section class="container-admin-dashbord">
@@ -123,39 +111,7 @@ pageEncoding="UTF-8"%>
 						<button>Voir tous les commentaires</button>
 					</article>
 				</div>
-			</section>
-			
-			<section  class="container-admin-users">
-				<h1>Coucou Client</h1>
-			</section>
-			
-			<section  class="container-admin-add">
-				<div class="container-admin-add-row1">
-					<div class="container-add-categories content-admin-add-row1">
-						<div class="container-add-icon">
-							 <img class="add-icon-cat" alt="Icons categorie" src="assets/icon/icons-add-cat.svg">
-						</div>
-						<div class="title-add-content"><h1>Catégorie</h1></div> 
-						<div class="icon-add-content"><img alt="Icon d'ajout" src="assets/icon/icon-content-add.svg"></div>
-					</div>
-					<div class="container-add-subcategories content-admin-add-row1">
-						<div class="container-add-icon">
-							<img class="add-icon-subcat" alt="Icons sous categorie" src="assets/icon/icons-add-subcat.svg">	
-						</div>	
-						<div class="title-add-content"><h1>Sous catégorie</h1></div> 
-						<div class="icon-add-content"><img alt="Icon d'ajout" src="assets/icon/icon-content-add.svg"></div>
-					</div>
-					<div class="container-add-products content-admin-add-row1">
-						<div class="container-add-icon">
-							 <img class="add-icon-product" alt="Icon produits" src="assets/icon/icon-add-product.svg">
-						</div>
-						<div class="title-add-content"><h1>Produit</h1></div> 
-						<div class="icon-add-content"><img alt="Icon d'ajout" src="assets/icon/icon-content-add.svg"></div>
-					</div>
-				</div>
-				
-			</section>
-			
+			</section>			
 		</section>
 	</div>
 	
