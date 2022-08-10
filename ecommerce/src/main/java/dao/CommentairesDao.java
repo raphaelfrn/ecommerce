@@ -149,4 +149,32 @@ ArrayList<CommentairesM> listeCommentaire = new ArrayList<>();
 		return commentaire;
 	}
 
+	public ArrayList<CommentairesM> readById(int id) {
+ArrayList<CommentairesM> listeCommentaire = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM commentaires WHERE id_produit = ?");
+			req.setInt(1, id);
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				CommentairesM commentaire = new CommentairesM(
+						rs.getInt("id_commentaire"),
+						rs.getString("commentaire"),
+						rs.getInt("note"),
+						new ProduitsM(rs.getInt("id_produit")),
+						new UtilisateursM(rs.getInt("id_utilisateur"))
+						
+						);
+				listeCommentaire.add(commentaire);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeCommentaire;
+	}
+	
 }
