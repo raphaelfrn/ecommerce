@@ -269,5 +269,26 @@ ArrayList<ProduitsM> listeProduit = new ArrayList<>();
 				return listeProduit;
 			}
 	
+	
+	public boolean updateStockById(ProduitsM produit, int id) {
+		try {
+			PreparedStatement req = connect.prepareStatement("UPDATE produits SET stock=? WHERE id_produit=?");
+			
+			req.setInt(1, produit.getStock());			
+			req.setInt(2, id);
+			
+			req.executeUpdate();
+			
+			return true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+
+	
 
 }

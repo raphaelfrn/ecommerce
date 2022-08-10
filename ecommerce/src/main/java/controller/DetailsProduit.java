@@ -14,11 +14,13 @@ import dao.CommentairesDao;
 import dao.ImagesDao;
 import dao.ProduitsDao;
 import dao.UtilisateursDao;
+import dao.VisitesDao;
 import model.CommentairesM;
 import model.ImagesM;
 import model.PanierDetailsM;
 import model.PanierM;
 import model.ProduitsM;
+import model.VisitesM;
 
 /**
  * Servlet implementation class DetailsProduit
@@ -31,6 +33,7 @@ public class DetailsProduit extends HttpServlet {
 	ImagesDao imagesDao = new ImagesDao();
 	CommentairesDao comDao = new CommentairesDao();
 	UtilisateursDao uDao = new UtilisateursDao();
+	VisitesDao vDao = new VisitesDao();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -53,15 +56,23 @@ public class DetailsProduit extends HttpServlet {
 		
 		if(param.equalsIgnoreCase("findById") ) {
 			
+			// affichage produit
 			ProduitsM produit = produitsDao.findById(id);
 			ArrayList<ImagesM> image = imagesDao.readByIdProduit(id);
 			
+			// compter les visites sur le produit
+			VisitesM visite = new VisitesM();
+			HttpSession session = request.getSession( true );
+			int userId = (int)session.getAttribute("userid");
+			visite.setId_utilisateur(uDao.findById(userId));
+			visite.setId_produit(produitsDao.findById(id));
+			vDao.create(visite);
 			
+			// affichage produit
 			request.setAttribute("produit", produit);
 			request.setAttribute("image", image);			
 				}
 		
-	
 		
 		// add to cart
 		

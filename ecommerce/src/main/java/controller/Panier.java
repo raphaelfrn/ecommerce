@@ -98,7 +98,8 @@ public class Panier extends HttpServlet {
 		
 	// create commande
 		
-		if("btnCommande" != null) {
+		
+		if("btnCommande" != null ) {
 			CommandesM commande = new CommandesM();
 		
 			HttpSession session = request.getSession();
@@ -115,6 +116,8 @@ public class Panier extends HttpServlet {
 			commande.setEtat(1);
 	
 			int commandeId = cDao.createReturn(commande);
+			
+			
 
 			
 			   // detail command

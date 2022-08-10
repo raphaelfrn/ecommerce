@@ -37,7 +37,7 @@
 			<img alt="Image produit" src="<c:out value="${DC.id_produit.image }" />">
 				<div class="container-details-command">
 					<div class="container-infos-product">
-						<h1> <c:out value="${DC.id_produit.titre }" /> </h1>
+					<a href="details?id=${DC.id_produit.id_produit}&param=findById">	<h1> <c:out value="${DC.id_produit.titre }" /> </h1></a>
 						<p>Feuille d'or</p>
 					</div>
 					<div class="container-price">
@@ -52,10 +52,10 @@
 		
 		<div class="container-total">
 			<p class="price-product">Total: <c:out value="${commande.total }" /> €</p>
-			<div class="container-download">
+			<!-- <div class="container-download">
 				<p>Telecharger ma facture</p>
 				<img class="icon-download" alt="Icon de téléchargement" src="assets/icon/download-white.svg">
-			</div>
+			</div> -->
 		</div>
 	</div>
 </body>

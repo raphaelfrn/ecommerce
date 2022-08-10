@@ -150,6 +150,15 @@ body {
 	text-transform: uppercase;
 }
 
+.container-infos-product a {
+	color:black;
+	text-decoration:none;
+}
+
+.container-infos-product a:hover {
+	color: #AF9330;
+}
+
 .container-infos-product p {
     font-size: 12px;	
     margin-bottom: 0;
