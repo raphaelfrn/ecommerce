@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Base64;
 
 import javax.servlet.ServletException;
@@ -17,6 +18,7 @@ import dao.Adresses_livraisonDao;
 import dao.CommandesDao;
 import dao.Details_commandeDao;
 import dao.UtilisateursDao;
+import model.CommandesM;
 import model.UtilisateursM;
 
 /**
@@ -119,8 +121,13 @@ public class MyAccount extends HttpServlet {
 		
 		
 		request.setAttribute("lastCommand", cDao.readLastCommandByUserId(userId));
+		 
+		ArrayList<CommandesM> commande = cDao.readLastCommandByUserId(userId);
 		
-		// request.setAttribute("listeImage", dcDao.findByIdCommande();
+		int idC = commande.get(0).getId_commande();
+				
+		request.setAttribute("listeImage", dcDao.findByIdCommande(idC));
+		
 		request.getRequestDispatcher("view/pages/account.jsp").forward(request, response);
 	}
 	

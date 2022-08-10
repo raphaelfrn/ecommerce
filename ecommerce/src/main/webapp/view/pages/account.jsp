@@ -115,8 +115,8 @@
 					</div>
 					
 					<div class="container-last-order-img">
-					<c:forEach items="${listeImage}" var="img">
-						<img alt="Image produit" src="<c:out value="${img.id_produit.img }" />">
+					<c:forEach items="${listeImage}" var="listeImage">
+						<img alt="Image produit" src="<c:out value="${listeImage.id_produit.image }" />">
 					</c:forEach>
 					</div>
 					
