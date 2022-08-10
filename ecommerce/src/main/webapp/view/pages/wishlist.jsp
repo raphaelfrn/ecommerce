@@ -20,7 +20,7 @@
 <link href="css/header/header.css" rel="stylesheet">
 <link href="css/modals/modal-connexion.css" rel="stylesheet">
 <link href="css/modals/modal-inscription.css" rel="stylesheet">
-<link href="css/pages/panier.css" rel="stylesheet">
+<link href="css/pages/wishlist.css" rel="stylesheet">
 
 <script type="text/javascript" defer src="js/modal-connexion.js"></script>
 <script type="text/javascript" defer src="js/modal-inscription.js"></script>
@@ -35,13 +35,12 @@
 	<c:url value="/address" var="adresse"/>
 	<c:url value="/panier" var="panier"/>
 	
-	<div class="container-page-basket">
-		<div class="container-basket-header">
-			<h1 class="title-basket"> <a href="${panier}">Panier</a></h1>
-			<h1 class="title-wishlist">Wishlist</h1>				
+	<div class="container-page-wishlist">
+		<div class="container-page-wishlist-header">
+			<h1 class="title-page-basket"> <a href="${panier}">Panier</a></h1>
+			<h1 class="title-page-wishlist">Wishlist</h1>				
 		</div>
 		<div class="container-basket-wislist">
-	
 			
 			<!-- Wish list Page -->
 
