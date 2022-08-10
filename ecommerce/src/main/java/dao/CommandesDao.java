@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 import model.Adresses_livraisonM;
@@ -153,6 +152,7 @@ ArrayList<CommandesM> listeCommande = new ArrayList<>();
 		}
 		return commande;
 	}
+	
 	public ArrayList<CommandesM> readByUserId(int UserId) {
 ArrayList<CommandesM> listeCommande = new ArrayList<>();
 		
@@ -211,5 +211,35 @@ ArrayList<CommandesM> listeCommande = new ArrayList<>();
 		}
 		return newid;
 	}
+	
+	public ArrayList<CommandesM> readLastCommandByUserId(int UserId) {
+		ArrayList<CommandesM> listeCommande = new ArrayList<>();
+				
+				try {
+					PreparedStatement req = connect.prepareStatement("SELECT * FROM commandes  WHERE id_utilisateur=? ORDER BY id_commande DESC LIMIT 1");
+					req.setInt(1, UserId);
+					
+					ResultSet rs = req.executeQuery();
+					
+					while (rs.next()) {
+						CommandesM commande = new CommandesM(
+								rs.getInt("id_commande"),
+								new UtilisateursM(rs.getInt("id_utilisateur")),
+								rs.getDate("dateC"),
+								rs.getFloat("total"),
+								new Adresses_livraisonM(rs.getInt("id_adresse_livraison")),
+								rs.getInt("etat")
+								);
+						listeCommande.add(commande);
+					}
+					
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return listeCommande;
+			}
+	
 	
 }

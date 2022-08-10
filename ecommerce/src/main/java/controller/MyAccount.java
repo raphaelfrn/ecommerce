@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Base64;
 
 import javax.servlet.ServletException;
@@ -14,8 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.Adresses_livraisonDao;
+import dao.CommandesDao;
+import dao.Details_commandeDao;
 import dao.UtilisateursDao;
-import model.Adresses_livraisonM;
+import model.CommandesM;
 import model.UtilisateursM;
 
 /**
@@ -97,6 +100,9 @@ public class MyAccount extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		
+		
+		
 		request.setAttribute("InfosUser", userDao.findById(userId));
 		
 //		Suppresion compte client
@@ -107,8 +113,24 @@ public class MyAccount extends HttpServlet {
 //		}
 			
 		
+		// dernière commande : 
+		CommandesDao cDao = new CommandesDao();
+		Details_commandeDao dcDao = new Details_commandeDao();
+		System.out.println(cDao.readLastCommandByUserId(userId));
+		
+		
+		
+		request.setAttribute("lastCommand", cDao.readLastCommandByUserId(userId));
+		 
+		ArrayList<CommandesM> commande = cDao.readLastCommandByUserId(userId);
+		
+		int idC = commande.get(0).getId_commande();
+				
+		request.setAttribute("listeImage", dcDao.findByIdCommande(idC));
+		
 		request.getRequestDispatcher("view/pages/account.jsp").forward(request, response);
 	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

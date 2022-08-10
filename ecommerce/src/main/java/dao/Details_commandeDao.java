@@ -177,4 +177,7 @@ ArrayList<Details_commandeM> listeDetail = new ArrayList<>();
 		return listeDetail;
 	}
 	
+
+
+	
 }

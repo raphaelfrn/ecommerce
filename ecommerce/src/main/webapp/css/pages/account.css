@@ -221,6 +221,7 @@
 {
 	.container-last-order-infos a{
 		text-decoration: underline !important;
+		color: #C29318;
 		margin-left: 4%;
 		cursor: pointer;
 	}
@@ -229,6 +230,7 @@
 {
 	.container-last-order-infos a:hover{
 		text-decoration: none !important;
+		color: #C29318;
 	}
 }
  @media screen and (min-width: 820px) 

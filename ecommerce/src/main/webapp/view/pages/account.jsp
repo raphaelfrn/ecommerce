@@ -32,6 +32,7 @@
 	<c:url value="/historique" var="historique"/>
 	<c:url value="/account" var="account"/>
 	<c:url value="/deconnexion" var="deconnexion"/>
+	<c:url value="/detailsCommand" var="details"/>
 	
 		<c:import url="/modalUpdate"></c:import>
 		<c:import url="/header"></c:import>
@@ -102,19 +103,24 @@
 			
 			<div class="container-command">
 				<div class="container-last-order">
+				<c:forEach items="${lastCommand}" var="last">
 					<h1>Votre dernier achat</h1>
 					<div class="container-last-order-infos">
-						<p>Vendredi 12, Mars</p>
+					
+						<p><c:out value="${last.dateC }" /></p>
 						<div>
-							<span>9895,95 EUR</span>
-							<a>Voir la commande</a>
+							<span><c:out value="${last.total }" /> €</span>
+							<a href="${details}?idC=${last.id_commande}">Voir la commande</a>
 						</div>
 					</div>
+					
 					<div class="container-last-order-img">
-						<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-White1.webp">
-						<img alt="Image produit" src="assets/img/enceintes/Phantom-2/Phantom-2-Black1.webp">
-						<img alt="Image produit" src="assets/img/enceintes/Phantom-1/Phantom-1-Opera3.webp">
+					<c:forEach items="${listeImage}" var="listeImage">
+						<img alt="Image produit" src="<c:out value="${listeImage.id_produit.image }" />">
+					</c:forEach>
 					</div>
+					
+				</c:forEach>	
 				</div>
 				<a class="title-order-history" href="${historique}">Historique de commande</a>
 			</div>
