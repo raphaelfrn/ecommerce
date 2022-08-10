@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+
+/* Nav menu admin */
+.container-admin-menu {
+	height: 100vh;
+    width: 15vw;
+    background: #232222;
+    color: white;
+}
+.container-logo-admin {
+	border-bottom: 1px solid #4a4a4a; 
+	padding: 16% 13% 4%;
+	margin-bottom: 16%;
+}
+
+.container-admin-menu-ul{
+	padding: 16% 13%;
+	margin:0;
+}
+
+.container-admin-menu-ul a {
+	color: white;
+    display: flex;
+    align-items: flex-end;
+    width: 10vw;
+}
+
+.container-admin-menu-ul li{
+	display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+	margin-bottom: 28%;
+	font-family: "Avenir-heavy";
+	cursor: pointer;
+}
+
+.container-admin-menu-ul img{
+    margin-right: 4%;
+}
+
+
+.container-page-admin {
+	display: flex;
+    flex-direction: row;
+}
+
+/* Container admin interface */
+.container-admin {
+    width: 85vw;
+    height: 100vh;
+    background: #363535;
+    overflow: scroll;
+    padding: 2%;
+    font-family: "Avenir-Roman";
+} 

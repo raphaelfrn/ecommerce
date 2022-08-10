@@ -1,56 +1,5 @@
 @charset "UTF-8";
 
-.container-admin-add,
-.container-admin-users {
-	display: none;
-}
-
-.container-page-admin {
-	display: flex;
-    flex-direction: row;
-}
-
-/* Nav menu admin */
-.container-admin-menu {
-	height: 100vh;
-    width: 15vw;
-    background: #232222;
-    color: white;
-}
-.container-logo-admin {
-	border-bottom: 1px solid #4a4a4a; 
-	padding: 16% 13% 4%;
-	margin-bottom: 16%;
-}
-
-.container-admin-menu-ul{
-	padding: 16% 13%;
-	margin:0;
-}
-
-.container-admin-menu-ul li{
-	display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-	margin-bottom: 28%;
-	font-family: "Avenir-heavy";
-	cursor: pointer;
-}
-
-.container-admin-menu-ul img{
-    margin-right: 4%;
-}
-
-
-/* Container admin interface */
-.container-admin {
-    width: 85vw;
-    height: 100vh;
-    background: #363535;
-    overflow: scroll;
-    padding: 2%;
-} 
-
 .container-admin-dashbord-charts {
     display: flex;
     justify-content: space-between;
@@ -76,7 +25,6 @@
 	margin-left: 4%;
 	font-family: 'Avenir-heavy';
     letter-spacing: 1px;
-/* 	color: #f8af48; */
 	color: #7b883f;
 }
 
@@ -120,7 +68,6 @@
 .container-clients-infos {
 	width: 15vw;
 }
-
 
 .container-clients:nth-child(2) p {
 	color: #7b883f
@@ -213,8 +160,6 @@
 .container-comment-infos:nth-child(3) {
 	color: #243b2a;
 }
-
-
 
 .admin-comment::-webkit-scrollbar {
   display: none;
@@ -318,82 +263,6 @@
 .container-chart-categories span {
 	font-size: 13px!important;
 }
-
-
-
-/* Section Add */
-.container-admin-add-row1 {
-	display: flex;
-	justify-content: space-between;
-}
-
-.content-admin-add-row1 {
-	width: 24vw;
-    background: white;	
-    border-radius: 10px;
-    border: 1px solid white;
-}
-
-.container-add-icon {
-	height: 38vh;
-	display: flex;
-    justify-content: center;
-    align-items: center;
-	background: #293A2B;
-	border-radius: 10px 10px 0 0 ;
-}
-
-.add-icon-cat {	
-    width: 10vw;
-}
-
-.add-icon-subcat {
-    width: 5vw;	
-}
-
-.add-icon-product {
-	 width: 6vw;
-}
-
-.title-add-content {
-	color: white;
-    background: #0B1B1B;
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.title-add-content h1 {
-	font-size: 18px;
-    text-transform: uppercase;
-    margin-bottom: 0;
-}
-
-.icon-add-content {
-	display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 6vh;
-}
-
-.icon-add-content img {
-	width: 50px;
-}
-
-.container-add-categories {
-	
-}
-
-.container-add-subcategories {
-	
-}
-
-.container-add-products {
-	
-}
-
-
 
 /* Container data */
 .container-data-admin {
