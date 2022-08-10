@@ -67,7 +67,7 @@ body{
 }
 
 .container-data thead tr th{
-	column-width: 20vw;
+	column-width: 24vw;
 	background: #6D4407;
  	vertical-align : middle; 
  	position: sticky; 
