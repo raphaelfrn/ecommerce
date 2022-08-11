@@ -56,13 +56,34 @@
 						</div>
 						<div class="container-basket-product-overflow">
 						
+						
+							<% if ( ((PanierM)session.getAttribute("panier")).getArticles().isEmpty() ){ %>
+            		
+            				<article class="container-basket-product">
+						
+								<div class="content-basket-product">
+									<div class="container-basket-product-infos">
+										<div class="content-basket-product-infos">
+										<h1>Votre panier est vide </h1> 
+											
+										</div>
+									
+									</div>
+								
+								</div>
+							</article>
+            				
+            			
+            			<% } else { %>
+						
 						<!--  Produits dans le panier -->
 						
 					 <% PanierM paniers=(PanierM)session.getAttribute("panier");
             						for(PanierDetailsM pa:paniers.getArticles()){ 
             					%>
             					
-            			
+            	
+						
 							<article class="container-basket-product">
 							<img alt="Image produit" src="<%=pa.getProduit().getImage() %>" />
 								<div class="content-basket-product">
@@ -83,6 +104,7 @@
 									</div>
 								</div>
 							</article>
+								<% } %>	
 								<% } %>	
 						
 					
