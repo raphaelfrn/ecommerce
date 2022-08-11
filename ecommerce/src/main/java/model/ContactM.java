@@ -6,7 +6,7 @@ public class ContactM {
 	private UtilisateursM id_utilisateur;
 	private String sujet;
 	private String message;
-	private int Etat;
+	private int etat;
 	
 	// Constructors
 	
@@ -18,7 +18,7 @@ public class ContactM {
 		this.id_utilisateur = id_utilisateur;
 		this.sujet = sujet;
 		this.message = message;
-		Etat = etat;
+		this.etat = etat;
 	}
 	
 	// Getters and Setters
@@ -48,16 +48,16 @@ public class ContactM {
 		this.message = message;
 	}
 	public int getEtat() {
-		return Etat;
+		return etat;
 	}
 	public void setEtat(int etat) {
-		Etat = etat;
+		this.etat = etat;
 	}
 	
 	@Override
 	public String toString() {
 		return "ContactM [id_contact=" + id_contact + ", id_utilisateur=" + id_utilisateur + ", sujet=" + sujet
-				+ ", message=" + message + ", Etat=" + Etat + "]";
+				+ ", message=" + message + ", Etat=" + etat + "]";
 	}
 	
 }

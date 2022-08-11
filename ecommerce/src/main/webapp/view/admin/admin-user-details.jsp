@@ -65,6 +65,62 @@
 			</table>
 			</div>
 			
+			<div class="container-commentaires">
+			<table>
+				<thead>
+					<tr>
+						<th>id commentaire</th>
+						<th>Commentaire</th>
+						<th>Note</th>
+						<th>Id_produit</th>
+					<!-- 	<th class="thead-2-last-two">Facture</th> -->
+					</tr>
+				</thead>
+				<tbody>
+				
+					<c:forEach items="${listCommentaires }" var="commentaires">
+					<tr>
+						<td><c:out value="${commentaires.id_commentaire }" /></td>
+						<td><c:out value="${commentaires.commentaire }" /></td>
+						<td><c:out value="${commentaires.note }" /></td>
+						<td><c:out value="${commentaires.id_produit.id_produit }" /></td>
+						
+					</tr>
+					</c:forEach>
+					<tr>
+					
+				</tbody>
+			</table>
+			</div>
+			
+			<div class="container-contact">
+			<table>
+				<thead>
+					<tr>
+						<th>id contact</th>
+						<th>Sujet</th>
+						<th>Message</th>
+						<th>Etat</th>
+					<!-- 	<th class="thead-2-last-two">Facture</th> -->
+					</tr>
+				</thead>
+				<tbody>
+				
+					<c:forEach items="${listContact }" var="contact">
+					<tr>
+						<td><c:out value="${contact.id_contact }" /></td>
+						<td><c:out value="${contact.sujet }" /></td>
+						<td><c:out value="${contact.message }" /></td>
+						<td><c:out value="${contact.etat }" /></td>
+						
+					</tr>
+					</c:forEach>
+					<tr>
+					
+				</tbody>
+			</table>
+			</div>
+			
 		
 		
 		</section>
