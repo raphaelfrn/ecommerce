@@ -1,1 +1,61 @@
 @charset "UTF-8";
+
+
+
+.container-admin-users{
+	
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin-top:2%;
+	
+}
+
+.container-title h1{
+	color:white;
+	font-size:32px;
+	width:100%;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin-top:2%;
+}
+
+
+.container-admin-users thead{
+	
+	color:white;
+	font-size:24px;
+	background: #293A2B;
+	
+}
+
+.container-admin-users thead tr{
+	height:4vh;
+}
+
+.container-admin-users thead tr th{
+	column-width:20vw;
+	vertical-align:middle;
+}
+
+.container-admin-users tbody{
+	background: #293A2B; 
+}
+
+.container-admin-users tbody tr{
+	height:3vh;
+}
+
+.container-admin-users tbody tr:hover{
+	color:blue;
+}
+
+.container-admin-users tbody tr td{
+	vertical-align:middle;
+	text-align:center;
+}
+
+
+

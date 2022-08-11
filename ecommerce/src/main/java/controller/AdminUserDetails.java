@@ -7,22 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.CommandesDao;
 import dao.UtilisateursDao;
-import model.PanierM;
-import model.UtilisateursM;
 
 /**
- * Servlet implementation class AdminUser
+ * Servlet implementation class AdminUserDetails
  */
-@WebServlet("/adminUser")
-public class AdminUser extends HttpServlet {
+@WebServlet("/adminUserDetails")
+public class AdminUserDetails extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	UtilisateursDao uDao = new UtilisateursDao();
+      UtilisateursDao userDao = new UtilisateursDao();
+      CommandesDao cDao = new CommandesDao();
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminUser() {
+    public AdminUserDetails() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,18 +31,12 @@ public class AdminUser extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setAttribute("listUser", uDao.read());
-		
-		// delete
-				if(request.getParameter("idtodelete")!=null ) {
-					 request.getSession( true );
-					int UserId=Integer.valueOf(request.getParameter("idtodelete"));
-					uDao.delete(UserId);
-					
-				}
+		int UserId = Integer.valueOf(request.getParameter("id")) ;
+		request.setAttribute("UserInfo", userDao.findById(UserId));
+		request.setAttribute("listCommand", cDao.readByUserId(UserId));
 		
 		
-		request.getRequestDispatcher("view/admin/admin-user.jsp").forward(request, response);
+		request.getRequestDispatcher("view/admin/admin-user-details.jsp").forward(request, response);
 	}
 
 	/**
