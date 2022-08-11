@@ -137,8 +137,7 @@
 
 .modal-panier-product-price button{
 	background:transparent;
-	border:none;
-	
+	border:none;	
 }
 
 
@@ -154,13 +153,13 @@
     justify-content: center;	
 }
 
-.container-modal-panier-btn button {
+.container-modal-panier-btn button,
+.container-modal-panier-btn a {
 	width: 92vw;
     border-radius: 2px;
     height: 5vh;
     cursor: pointer;
 }
-
 
 .modal-panier-btn-validate {
 	display: flex;

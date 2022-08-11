@@ -1,9 +1,10 @@
-let alertValidatePwd = document.querySelectorAll(".alertValidatePwd");
-let confirmConnexion = document.querySelector(".confirm-connexion");
-
 //Timeout alert msg
-var myTimeout = setTimeout(() => {
-	alertValidatePwd.forEach(function(element, index, arr){	
+
+var timeout = setTimeout(() => {
+	let alertyValidatePwd = document.querySelectorAll(".alertValidatePwd");
+	let confirmConnexion = document.querySelector(".confirm-connexion");
+	
+	alertyValidatePwd.forEach(function(element, index, arr){	
 		if (arr[index] != null) {
 			arr[index].style.display = "none";
 		}
@@ -16,5 +17,5 @@ var myTimeout = setTimeout(() => {
 }, 6000) 
 
 function myStopFunction() {
-  clearTimeout(myTimeout);
+  clearTimeout(timeout);
 } 
