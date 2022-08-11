@@ -1,77 +1,199 @@
 @charset "UTF-8";
 
-
+* {
+  box-sizing: border-box;
+}
 
 .container-slider-description{
-	width:95vw;
-	margin-right:3%;
-	margin-left:3%;
+	margin: 5%;
 }
-
-.container-slider{
-	margin-right:3%;
-}
-
-
 
 @media screen and (min-width:1200px){
 	.container-slider-description{
-	display:flex;
+		display:flex;
+		justify-content: space-evenly;
+		width:95vw;
 	}	
 }
 
 
+/* Container Slider*/
+.container-slider-all {
+	display: flex;
+}
 
-@media screen and (min-width:604px){
-	.container-slider {
-	width:80vw;
-	height:auto;
-	margin-left:5% !important;
-	margin-right:5% !important;
-	margin-bottom:5%;
-	margin-top:2%;
-	}
-	
-	
+
+
+@media screen and (min-width:820px){
+	.container-slider-all {
+		flex-direction: row-reverse;
+    	justify-content: flex-end;
+	}	
+}
+
+/* @media screen and (min-width:1200px){ */
+/* 	.container-slider-all { */
+/*     	flex-direction: row-reverse; */
+/* 	}	 */
+/* } */
+
+.container-slider {
+	position: relative;
+	margin-right:3%;
+}	
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
 }
 
 @media screen and (min-width:820px){
-	.container-slider {
-	width:70vw;
-	margin-right:15% !important;
-	margin-left:10% !important;
-		
+	.mySlides {
+/* 	  margin-left: 6%; */
+	}	
+}
+
+.mySlides img {
+	width: 90vw;
+}
+
+@media screen and (min-width:820px){
+	.mySlides img {
+		width: 54vw;
+	}	
+}
+
+@media screen and (min-width:1200px){
+	.mySlides img {
+		width: 33vw;
+	}	
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+	cursor: pointer;
+    position: absolute;
+    top: 40%;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+@media screen and (min-width:820px){
+	.prev,
+	.next  {
+		top: 45%;
+	}	
+}
+
+/* Position the "next button" to the right */
+.prev {
+	left: 10px;
+}
+
+.next {
+	right: 10px;
+ 	border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  color: black;
+}
+
+
+.container-all-Thumbnail {
+	display: none;
+}
+
+@media screen and (min-width:820px){
+	
+
+	.container-all-Thumbnail {
+		display: flex;
+	    flex-direction: column;
+	    justify-content: space-between;
+	    width: 10.5vw;
+    	margin-right: 3%;
+    	max-height: 70vh;
+    	overflow: scroll;
+	}
+	
+	.container-all-Thumbnail:after{
+	  content: "";
+	  display: table;
+	  clear: both;
 	}
 }
 
 @media screen and (min-width:1200px){
-	.container-slider {
-		width:40vw;
-		margin-left:10% !important;
-		margin-right:3% !important;
-		
-	}
 	
-	.container-slider .carousel-item{
-	width:20vw;
+	.container-all-Thumbnail {
+/* 	    width: 6.5vw; */
+	    margin-right: 3%;
+	    
+	        height: 46vh;
+    width: 22vw;
+	}
+}
 
-	}
+
+.content-all-Thumbnail {
+    border: 2px solid #eaeaea;
+    border-radius: 12px;
+}
+
+
+@media screen and (min-width:1200px){
 	
+	.content-all-Thumbnail {
+		width: 5vw;
+	}
+}
+
+.container-all-Thumbnail img {
+    width: 100%;
+    border-radius: 10px;	
+}
+
+
+/* Add a transparency effect for thumnbail images */
+.thumbnail{
+	opacity: 1;
+}
+
+.active,
+.thumbnail:hover {
+	opacity: 0.6;
 }
 
 
 
 
-/* The container with the description of the product */
+
+
+
+
+
+
+/*  The container with the description of the product  */
 
 
 
 @media screen and (min-width:1200px){
 	.container-description {
-		width:30vw;
-		margin-right:5% !important;
-		
-		
+		width:30vw;	
 	}
 }
 
@@ -103,10 +225,7 @@
 }
 
 
-
-
 .title{
-
 	font-size:20px;
 	font-weight:bold;
 	margin-top:1vh;
@@ -121,10 +240,8 @@
 @media screen and (min-width:1200px){
 	.title {
 		font-size:32px;
-		
 	}
 }
-
 
 .quantity-form {
 	display:none;
@@ -140,10 +257,7 @@
 	
 	.quantity-form input[type=number]{
 	width:40px;
-	}
-	
-	
-	
+	}	
 }
 
 .container-button-price{
@@ -152,10 +266,9 @@
 	justify-content: space-between;
 }
 
-/* button add to cart*/
+/*  button add to cart  */
 
-.container-description button {
-	
+.container-description button {	
 	border: none;
     border-radius: 6px;
     background: black;
@@ -166,18 +279,14 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    
-
 }
 
 @media screen and (min-width:820px){
 	.container-description button {
 		width:300px;
 		height:60px;
-		font-size:22px;
-		
+		font-size:22px;	
 	}
-	
 }	
 
 
@@ -210,14 +319,12 @@
 .container-description h5{
 	text-align: right;
 	margin-right:3%;
-	float:right;
-	
+	float:right;	
 }
 
 @media screen and (min-width:604px){
 	.container-description h5 {
 		margin-right:10%;
-		
 	}
 }
 
@@ -245,9 +352,7 @@
 
 @media screen and (min-width:1200px){
 	.text-description {
-		font-size:20px;
-		
-		
+		font-size:20px;	
 	}
 }
 
@@ -266,14 +371,11 @@
 
 @media screen and (min-width:1200px){
 	.text-paiement {
-		font-size:16px;
-		
+		font-size:16px;	
 	}
 }
 
-
-.text-delivery{
-	
+.text-delivery{	
 	font-size:10px;
 	color: #848484;
 }
@@ -286,34 +388,25 @@
 
 @media screen and (min-width:1200px){
 	.text-delivery {
-		font-size:16px;
-		
-		
+		font-size:16px;	
 	}
 }
 
 
-/* the comments link that open the comments sections*/
-
+/*  the comments link that open the comments sections  */
 
 .comments{
 	text-decoration: underline;
-
 }
 
 @media screen and (min-width:1200px){
 	.comments {
 		margin-top : 15%;
 		font-size:20px;
-		
-		
 	}
 }
 
-
-
-
-/* the comments section */
+/* the comments section  */
 
 .container-comments{
 	width:95vw;
@@ -326,14 +419,12 @@
 @media screen and (min-width:1200px){
 	.container-comments {
 		display:flex;
-		flex-direction:row;
-		
-		
+		flex-direction:row;	
 	}
 }
 
 
-/* container form */
+/*  container form  */
 
 .container-comments-form{
 	margin-left:2%;
@@ -342,7 +433,6 @@
 .container-comments-form p{
 	color : #4D4D4D;
 }
-
 
 .container-notation{
 	display:flex;
@@ -353,7 +443,6 @@
 .container-notation p{
 	font-size:14px;
 }
-
 
 .container-form-hidden{
 	display:none;
@@ -377,7 +466,7 @@
 		margin-left:2%;
 		order:3;
 		border :1px solid #DFDFDF;
-	/*	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));  */
+/* 		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));   */
 		border-radius: 6px;
 	}
 	
@@ -404,7 +493,7 @@
 	
 }
 
-/* Rating stars */
+/*  Rating stars  */
 
 .rating {
 display: flex;
@@ -441,22 +530,13 @@ opacity: 0.4
 }
 
 
-
-
-
-
-
-/* container comment area with text area and button */
+/* container comment area with text area and button  */
 
 .comment-area{
-	
 	display:flex;
 	align-items:center;
 	margin-right:5%;
-
-	
 }
-
 
 .comment-area input[type=text] {
   background-color: #D9D9D9;
@@ -465,15 +545,9 @@ opacity: 0.4
 .comment-area input[type=text]:focus {
   background-color: #D9D9D9;
   border-color:#D9D9D9;
-  
 }
 
-
-
-
-
 .comment-area button {
-	
 	border: none;
     border-radius: 6px;
     background: black;
@@ -482,15 +556,11 @@ opacity: 0.4
     height: 50px;
     cursor: pointer;
     position: relative;
-    overflow: hidden;
-    
-    
+    overflow: hidden;    
 }
 
 
-/* card with single comments */
-
-
+/*  card with single comments  */
 
 .card-comment{
 	width:90vw;
@@ -500,17 +570,13 @@ opacity: 0.4
 	margin-bottom:2%;
 	border :1px solid #DFDFDF;
 	border-radius:6px;
-
 }
-
-
 
 .card-comment hr{
 	margin :0%;
 }
 
 .card-name-rating{
-	
 	display:flex;
 	align-items:center;
 	justify-content: space-between;
@@ -537,14 +603,11 @@ opacity: 0.4
 		width:40vw;
 		margin-top:5%;
 		color:red;
-
-		
 	}
-	
-	
 	
 	.card-comment hr{
 	margin-top:1%;
 	}
 }
+
 

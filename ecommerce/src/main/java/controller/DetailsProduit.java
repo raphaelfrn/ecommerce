@@ -70,7 +70,9 @@ public class DetailsProduit extends HttpServlet {
 			
 			// affichage produit
 			request.setAttribute("produit", produit);
-			request.setAttribute("image", image);			
+			request.setAttribute("image", image);
+			
+			System.out.println(image);
 				}
 		
 		
