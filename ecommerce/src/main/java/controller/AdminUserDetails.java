@@ -78,6 +78,8 @@ public class AdminUserDetails extends HttpServlet {
 		if(request.getParameter("btnDetailsC")!=null) {
 			int produitId = Integer.parseInt(request.getParameter("btnDetailsC")) ;
 			request.setAttribute("listDC", dcDao.findByIdCommande(produitId));
+			
+			request.setAttribute("SingleCommand", cDao.findById(produitId));
 		}
 		
 		

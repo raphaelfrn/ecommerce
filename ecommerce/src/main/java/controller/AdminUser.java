@@ -54,7 +54,11 @@ public class AdminUser extends HttpServlet {
 			request.setAttribute("listUser", uDao.readOrderByMail());
 		}
 		
-		
+		// search 
+		if(request.getParameter("btnSearch")!=null) {
+		String search = request.getParameter("inputSearch");
+		request.setAttribute("listUser", uDao.search(search));
+		}
 		
 		
 		// delete
