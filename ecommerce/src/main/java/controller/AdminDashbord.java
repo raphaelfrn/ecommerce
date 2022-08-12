@@ -69,6 +69,8 @@ public class AdminDashbord extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// Ajout categorie
+		
 		if (request.getParameter("addCat") != null) {
 			String titleCat = request.getParameter("addTitleCat");
 			String videoCat = request.getParameter("addVideoCat");

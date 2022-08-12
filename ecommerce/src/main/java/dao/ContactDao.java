@@ -201,5 +201,32 @@ public class ContactDao implements IDao<ContactM> {
 		return listeContact;
 	}
 	
+	
+	public ArrayList<ContactM> readByUserId(int id) {
+		ArrayList<ContactM> listeContact = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM contact WHERE id_utilisateur=?");
+			req.setInt(1, id);
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				ContactM contact = new ContactM(
+						rs.getInt("id_contact"),
+						new UtilisateursM(rs.getInt("id_utilisateur")),
+						rs.getString("sujet"),
+						rs.getString("message"),
+						rs.getInt("etat")					
+						);
+				listeContact.add(contact);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeContact;
+	}
 
 }

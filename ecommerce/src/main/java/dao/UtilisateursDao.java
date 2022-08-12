@@ -86,14 +86,13 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 	public boolean update(UtilisateursM utilisateur, int id) {
 		try {
 			PreparedStatement req = connect.prepareStatement("UPDATE utilisateurs SET nom=?, "
-					+ "prenom=?, date_inscription=?, email=?, mot_de_passe=? WHERE id_utilisateur=?");
+					+ "prenom=?, email=?, telephone=? WHERE id_utilisateur=?");
 			
 			req.setString(1, utilisateur.getNom());
 			req.setString(2, utilisateur.getPrenom());
-			req.setDate(3, utilisateur.getDate_inscription());
-			req.setString(4, utilisateur.getEmail());
-			req.setString(5, utilisateur.getMot_de_passe());
-			req.setInt(6, id);
+			req.setString(3, utilisateur.getEmail());
+			req.setString(4, utilisateur.getTelephone());
+			req.setInt(5, id);
 			req.executeUpdate();
 			
 			return true;
@@ -192,7 +191,7 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return false;
+		return false; 
 	}
 
 	// Find by Id
@@ -347,6 +346,124 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 		return listeUtilisateur;
 	}
 	
+	public ArrayList<UtilisateursM> readOrderById() {
+		ArrayList<UtilisateursM> listeUtilisateur = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM utilisateurs ORDER BY id_utilisateur");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				UtilisateursM utilisateur = new UtilisateursM(
+						rs.getInt("id_utilisateur"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getDate("date_inscription"),
+						rs.getString("email"),
+						rs.getString("telephone"),
+						rs.getString("mot_de_passe")
+								
+						);
+				listeUtilisateur.add(utilisateur);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeUtilisateur;
+	}	
 	
+	public ArrayList<UtilisateursM> readOrderByNom() {
+		ArrayList<UtilisateursM> listeUtilisateur = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM utilisateurs ORDER BY nom");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				UtilisateursM utilisateur = new UtilisateursM(
+						rs.getInt("id_utilisateur"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getDate("date_inscription"),
+						rs.getString("email"),
+						rs.getString("telephone"),
+						rs.getString("mot_de_passe")
+								
+						);
+				listeUtilisateur.add(utilisateur);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeUtilisateur;
+	}
+	
+	public ArrayList<UtilisateursM> readOrderByPrenom() {
+		ArrayList<UtilisateursM> listeUtilisateur = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM utilisateurs ORDER BY prenom");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				UtilisateursM utilisateur = new UtilisateursM(
+						rs.getInt("id_utilisateur"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getDate("date_inscription"),
+						rs.getString("email"),
+						rs.getString("telephone"),
+						rs.getString("mot_de_passe")
+								
+						);
+				listeUtilisateur.add(utilisateur);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeUtilisateur;
+	}
+	
+	public ArrayList<UtilisateursM> readOrderByMail() {
+		ArrayList<UtilisateursM> listeUtilisateur = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM utilisateurs ORDER BY email");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				UtilisateursM utilisateur = new UtilisateursM(
+						rs.getInt("id_utilisateur"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getDate("date_inscription"),
+						rs.getString("email"),
+						rs.getString("telephone"),
+						rs.getString("mot_de_passe")
+								
+						);
+				listeUtilisateur.add(utilisateur);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeUtilisateur;
+	}
 
 }
