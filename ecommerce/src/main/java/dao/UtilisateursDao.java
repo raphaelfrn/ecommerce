@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Base64;
 
+import model.ProduitsM;
+import model.Sous_categoriesM;
 import model.UtilisateursM;
 
 public class UtilisateursDao implements IDao<UtilisateursM> {
@@ -466,4 +468,41 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 		return listeUtilisateur;
 	}
 
+	public ArrayList<UtilisateursM> search(String mot) {
+		ArrayList<UtilisateursM> listeUtilisateur = new ArrayList<>();
+				
+				try {
+					PreparedStatement req = connect.prepareStatement("SELECT * FROM utilisateurs WHERE id_utilisateur LIKE ? OR nom LIKE ? OR prenom  LIKE ? OR date_inscription LIKE ? OR email LIKE ? OR telephone LIKE ? ");
+					req.setString(1, "%" + mot + "%");
+					req.setString(2, "%" + mot + "%");
+					req.setString(3, "%" + mot + "%");
+					req.setString(4, "%" + mot + "%");
+					req.setString(5, "%" + mot + "%");
+					req.setString(6, "%" + mot + "%");
+					
+					ResultSet rs = req.executeQuery();
+					
+					
+					while (rs.next()) {
+						UtilisateursM utilisateur = new UtilisateursM(
+								rs.getInt("id_utilisateur"),
+								rs.getString("nom"),
+								rs.getString("prenom"),
+								rs.getDate("date_inscription"),
+								rs.getString("email"),
+								rs.getString("telephone"),
+								rs.getString("mot_de_passe")
+										
+								);
+						listeUtilisateur.add(utilisateur);
+						
+					}
+					
+					
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return listeUtilisateur;
+			}
 }

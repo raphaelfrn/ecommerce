@@ -13,6 +13,15 @@
 <link href="css/admin/admin-menu.css" rel="stylesheet">
 <link href="css/admin/admin-user-details.css" rel="stylesheet">
 
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
 
 <title>Clients</title>
 </head>
@@ -26,173 +35,240 @@
 
 		<section class="container-admin">
 
-			<div class="container-infos-address">
-				<div class="container-user-infos">
+			<div class="container container-infos-address">
+
+				<!-- Informations utilisateur -->
+				<div class="container container-user-infos">
 					<h1>Infos utilisateur</h1>
+					<div class="overflow">
+						<form method="post">
+							<div class="row">
+								<div class="col">
+									<label for="idUser" class="form-label">Id utilisateur</label> <input
+										type="text" class="form-control" placeholder="First name"
+										aria-label="First name" id="idUser"
+										value="${UserInfo.id_utilisateur }" disabled readonly>
+								</div>
+								<div class="col">
+									<label for="dateInscription" class="form-label">Date
+										d'inscription</label> <input type="text" class="form-control"
+										placeholder="Last name" aria-label="Last name"
+										id="dateInscription" value="${UserInfo.date_inscription }"
+										disabled readonly>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<label for="inputNom" class="form-label">Nom</label> <input
+										type="text" class="form-control" placeholder="First name"
+										aria-label="First name" id="inputNom" name="name"
+										value="${UserInfo.nom }">
+								</div>
+								<div class="col">
+									<label for="inputPrenom" class="form-label">Prenom</label> <input
+										type="text" class="form-control" placeholder="Last name"
+										aria-label="Last name" id="inputPrenom" name="prenom"
+										value="${UserInfo.prenom }">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<label for="inputMail" class="form-label">Mail</label> <input
+										type="text" class="form-control" aria-label="First name"
+										id="inputMail" name="email" value="${UserInfo.email }">
+								</div>
+								<div class="col">
+									<label for="inputTelephone" class="form-label">Telephone</label>
+									<input type="text" class="form-control" aria-label="Last name"
+										id="inputTelephone" name="tel" value="${UserInfo.telephone }">
+								</div>
+							</div>
 
-					<form method="post">
-						<p>Id utilisateur : ${UserInfo.id_utilisateur}</p>
-						<p>Nom et Prénom :</p>
-						<input type="text" id="name" name="name" value="${UserInfo.nom }">
-						<input type="text" id="prenom" name="prenom"
-							value=" ${UserInfo.prenom }">
-						<p>Date d'inscription : ${UserInfo.date_inscription }
-						<p>Email :</p>
-						<input type="text" id="email" name="email"
-							value="${UserInfo.email }">
-						<p>Telephone :</p>
-						<input type="text" id="tel" name="tel"
-							value="${UserInfo.telephone }">
-						<button type="submit" name="btnUpdate">Modifier</button>
+							<button type="submit" class="mt-3 btn btn-success"
+								name="btnUpdate">Modifier</button>
 
-					</form>
+						</form>
+					</div>
 				</div>
 
-				<div class="container-user-address">
-				<h1>Adresses</h1>
-					<c:forEach items="${listAddress }" var="addressUser">	
-						<div class="container-address">
-							
-							<p>${addressUser.adresse}</p>
-							<p>${addressUser.code_postal} ${addressUser.ville}, ${addressUser.pays}</p>
-						</div>
-			   			
-				</c:forEach>
-				
+				<!-- Adresses -->
+
+				<div class="container container-user-address">
+					<h1>Adresses</h1>
+					<div class="overflow">
+						<table class="table table-dark table-stripped">
+							<thead>
+								<tr>
+									<th scope="col">Id adresse</th>
+									<th scope="col">Adresse</th>
+									<th scope="col">Code Postal</th>
+									<th scope="col">Ville</th>
+									<th scope="col">Pays</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<c:forEach items="${listAddress }" var="addressUser">
+									<tr>
+										<td><c:out value="${addressUser.id_adresse_livraison }" /></td>
+										<td><c:out value="${addressUser.adresse }" /></td>
+										<td><c:out value="${addressUser.code_postal }" /></td>
+										<td><c:out value="${addressUser.ville }" /></td>
+										<td><c:out value="${addressUser.pays }" /></td>
+
+									</tr>
+								</c:forEach>
+								<tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 
 			</div>
-			<div class="container-commands-details">
-				<div class="container-commands">
+			<div class="container container-commands-details">
+
+				<!-- 	Commandes -->
+				<div class="container container-commands">
 					<h1>Commandes</h1>
-					<table>
-						<thead>
-							<tr>
-								<th>N° commande</th>
-								<th>Date</th>
-								<th>Total</th>
-								<th>Show</th>
-							</tr>
-						</thead>
-						<tbody>
-
-							<c:forEach items="${listCommand }" var="commande">
+					<div class="overflow">
+						<table class="table table-dark table-stripped">
+							<thead>
 								<tr>
-									<td><c:out value="${commande.id_commande }" /></td>
-									<td><c:out value="${commande.dateC }" /></td>
-									<td><c:out value="${commande.total } €" /></td>
-									<td><form method="post"><button type="submit" name="btnDetailsC" value="${commande.id_commande }"><img src="assets/icon/show.svg" alt="show"> </button></form></td>
-								
+									<th>N° commande</th>
+									<th>Date</th>
+									<th>Total</th>
+									<th>Show</th>
 								</tr>
-							</c:forEach>
-							<tr>
-						</tbody>
-					</table>
+							</thead>
+							<tbody>
+
+								<c:forEach items="${listCommand }" var="commande">
+									<tr>
+										<td><c:out value="${commande.id_commande }" /></td>
+										<td><c:out value="${commande.dateC }" /></td>
+										<td><c:out value="${commande.total } €" /></td>
+										<td><form method="post">
+												<button type="submit" class="btnDetails" name="btnDetailsC"
+													value="${commande.id_commande }">
+													<img src="assets/icon/show.svg" alt="show">
+												</button>
+											</form></td>
+									</tr>
+								</c:forEach>
+								<tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
-				<div class="container-details">
+				<!-- 	details commande -->
+				<div class="container container-details">
 
-					<h1>
-						Commande n°
-						<c:out value="${commande.id_commande }" />
-						, Le
-						<c:out value="${commande.dateC }" />
-					</h1>
+					<h1>Details commande</h1>
+					<div class="overflow">
+						<table class="table table-dark table-stripped table-hover">
+							<thead>
+								<tr>
+									<th>Id commande</th>
+									<th>Id Details commande</th>
+									<th>Produit</th>
+									<th>Quantite</th>
+									<th>Prix</th>
+								</tr>
+							</thead>
+							<tbody>
 
+								<c:forEach items="${listDC }" var="DC">
+									<tr>
+										<td><c:out value="${DC.id_details_commande }" /></td>
+										<td><c:out value="${DC.id_commande.id_commande }" /></td>
+										<td><c:out value="${DC.id_produit.titre }" /> (id <c:out
+												value="${DC.id_produit.id_produit }" />)</td>
+										<td><c:out value="${DC.quantite }" /></td>
+										<td><c:out value="${DC.prix }" /></td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
 
+						<div class="container date-prix">
+							<p>
+								Date de la commande :
+								<c:out value="${SingleCommand.dateC }" />
+							</p>
+							<p>
+								Total de la commande : 
+								<c:out value="${SingleCommand.total }"/> €
+							</p>
 
-					<c:forEach items="${listDC }" var="DC">
-						<div class="container-row-details-command">
-							<img alt="Image produit"
-								src="<c:out value="${DC.id_produit.image }" />">
-							<div class="container-details-command">
-								<div class="container-infos-product">
-									<h1>
-										<c:out value="${DC.id_produit.titre }" />
-									</h1>
-									<p>Feuille d'or</p>
-								</div>
-								<div class="container-price">
-									<span><c:out value="${DC.quantite }" /></span>
-									<p>
-										<c:out value="${DC.prix }" />
-										€
-									</p>
-								</div>
-							</div>
 						</div>
-					</c:forEach>
-
-
-
-					<div class="container-total">
-						<p class="price-product">
-							Total:
-							<c:out value="${commande.total }" />
-							€
-						</p>
 
 					</div>
 				</div>
 
 			</div>
 
-			<div class="container-comm-contact">
-
-				<div class="container-commentaires">
+			<div class="container container-comm-contact">
+				<!-- Commentaires -->
+				<div class="container container-commentaires">
 					<h1>Commentaires</h1>
-					<table>
-						<thead>
-							<tr>
-								<th>id commentaire</th>
-								<th>Commentaire</th>
-								<th>Note</th>
-								<th>Id_produit</th>
-								<!-- 	<th class="thead-2-last-two">Facture</th> -->
-							</tr>
-						</thead>
-						<tbody>
-
-							<c:forEach items="${listCommentaires }" var="commentaires">
+					<div class="overflow">
+						<table class="table table-dark table-stripped table-hover" >
+							<thead>
 								<tr>
-									<td><c:out value="${commentaires.id_commentaire }" /></td>
-									<td><c:out value="${commentaires.commentaire }" /></td>
-									<td><c:out value="${commentaires.note }" /></td>
-									<td><c:out value="${commentaires.id_produit.id_produit }" /></td>
-
+									<th>Id commentaire</th>
+									<th>Commentaire</th>
+									<th>Note</th>
+									<th>Id_produit</th>
+									<!-- 	<th class="thead-2-last-two">Facture</th> -->
 								</tr>
-							</c:forEach>
-							<tr>
-						</tbody>
-					</table>
-				</div>
+							</thead>
+							<tbody>
 
-				<div class="container-contact">
+								<c:forEach items="${listCommentaires }" var="commentaires">
+									<tr>
+										<td><c:out value="${commentaires.id_commentaire }" /></td>
+										<td><c:out value="${commentaires.commentaire }" /></td>
+										<td><c:out value="${commentaires.note }" /></td>
+										<td><c:out value="${commentaires.id_produit.id_produit }" /></td>
+
+									</tr>
+								</c:forEach>
+								<tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- Contact -->
+				<div class="container container-contact">
 					<h1>Contact</h1>
-					<table>
-						<thead>
-							<tr>
-								<th>id contact</th>
-								<th>Sujet</th>
-								<th>Message</th>
-								<th>Etat</th>
-								<!-- 	<th class="thead-2-last-two">Facture</th> -->
-							</tr>
-						</thead>
-						<tbody>
-
-							<c:forEach items="${listContact }" var="contact">
+					<div class="overflow">
+						<table class="table table-dark table-stripped table-hover">
+							<thead>
 								<tr>
-									<td><c:out value="${contact.id_contact }" /></td>
-									<td><c:out value="${contact.sujet }" /></td>
-									<td><c:out value="${contact.message }" /></td>
-									<td><c:out value="${contact.etat }" /></td>
-
+									<th>Id contact</th>
+									<th>Sujet</th>
+									<th>Message</th>
+									<th>Etat</th>
+									<!-- 	<th class="thead-2-last-two">Facture</th> -->
 								</tr>
-							</c:forEach>
-							<tr>
-						</tbody>
-					</table>
+							</thead>
+							<tbody>
+
+								<c:forEach items="${listContact }" var="contact">
+									<tr>
+										<td><c:out value="${contact.id_contact }" /></td>
+										<td><c:out value="${contact.sujet }" /></td>
+										<td><c:out value="${contact.message }" /></td>
+										<td><c:out value="${contact.etat }" /></td>
+
+									</tr>
+								</c:forEach>
+								<tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
+
 			</div>
 
 
