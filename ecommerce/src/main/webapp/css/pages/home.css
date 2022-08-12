@@ -60,9 +60,6 @@
  @media screen and (min-width: 820px) 
 {
 	.container-hero-title  {
-/* 		top: auto; */
-/* 		bottom: 23px !important; */
-/* 		left: 35px; */
 		top: 4%;
     	bottom: 23px !important;
     	left: 35px;
@@ -375,7 +372,7 @@
 {
 	 .categorie-modifier img{
 		width: 50vw;
-	    height: 39vh;
+	    height: 44vh;
 	}
 }
 @media screen and (min-width: 1200px) 
