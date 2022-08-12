@@ -1,18 +1,21 @@
 @charset "UTF-8";
 
 
+.btn-filter{
+	display:flex;
+}
 
-a{
-color:black;	
+table a{
+color:white;	
 text-transform:none;
 }
-a:hover{
+table a:hover{
 	color:red;
 }
-a:visited{
-	color:black;
+table a:visited{
+	color:white;
 }
-a:visited:hover{
+table a:visited:hover{
 	color:red;
 }
 
@@ -56,6 +59,7 @@ a:visited:hover{
 
 .container-admin-users tbody{
 	background: #293A2B; 
+	color:white;
 }
 
 .container-admin-users tbody tr{

@@ -346,6 +346,124 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 		return listeUtilisateur;
 	}
 	
+	public ArrayList<UtilisateursM> readOrderById() {
+		ArrayList<UtilisateursM> listeUtilisateur = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM utilisateurs ORDER BY id_utilisateur");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				UtilisateursM utilisateur = new UtilisateursM(
+						rs.getInt("id_utilisateur"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getDate("date_inscription"),
+						rs.getString("email"),
+						rs.getString("telephone"),
+						rs.getString("mot_de_passe")
+								
+						);
+				listeUtilisateur.add(utilisateur);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeUtilisateur;
+	}	
 	
+	public ArrayList<UtilisateursM> readOrderByNom() {
+		ArrayList<UtilisateursM> listeUtilisateur = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM utilisateurs ORDER BY nom");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				UtilisateursM utilisateur = new UtilisateursM(
+						rs.getInt("id_utilisateur"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getDate("date_inscription"),
+						rs.getString("email"),
+						rs.getString("telephone"),
+						rs.getString("mot_de_passe")
+								
+						);
+				listeUtilisateur.add(utilisateur);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeUtilisateur;
+	}
+	
+	public ArrayList<UtilisateursM> readOrderByPrenom() {
+		ArrayList<UtilisateursM> listeUtilisateur = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM utilisateurs ORDER BY prenom");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				UtilisateursM utilisateur = new UtilisateursM(
+						rs.getInt("id_utilisateur"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getDate("date_inscription"),
+						rs.getString("email"),
+						rs.getString("telephone"),
+						rs.getString("mot_de_passe")
+								
+						);
+				listeUtilisateur.add(utilisateur);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeUtilisateur;
+	}
+	
+	public ArrayList<UtilisateursM> readOrderByMail() {
+		ArrayList<UtilisateursM> listeUtilisateur = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM utilisateurs ORDER BY email");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				UtilisateursM utilisateur = new UtilisateursM(
+						rs.getInt("id_utilisateur"),
+						rs.getString("nom"),
+						rs.getString("prenom"),
+						rs.getDate("date_inscription"),
+						rs.getString("email"),
+						rs.getString("telephone"),
+						rs.getString("mot_de_passe")
+								
+						);
+				listeUtilisateur.add(utilisateur);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeUtilisateur;
+	}
 
 }

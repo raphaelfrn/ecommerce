@@ -28,6 +28,13 @@
 		<div class="container-title">
 							<h1>Gestion des utilisateurs</h1>
 						</div>
+	<div class="btn-filter">
+	
+	<form method="post"><button type="submit" name="btnFilterId">Filtrer par Id</button></form>
+	<form method="post"><button type="submit" name="btnFilterNom">Filtrer par Nom</button></form>
+	<form method="post"><button type="submit" name="btnFilterPrenom">Filtrer par Prenom</button></form>
+	<form method="post"><button type="submit" name="btnFilterMail">Filtrer par Mail</button></form>
+	</div>					
 		
 			<section  class="container-admin-users">
 			

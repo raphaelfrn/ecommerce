@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,8 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.UtilisateursDao;
-import model.PanierM;
-import model.UtilisateursM;
 
 /**
  * Servlet implementation class AdminUser
@@ -32,7 +31,31 @@ public class AdminUser extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		// read all
 		request.setAttribute("listUser", uDao.read());
+		
+		
+		// filters
+		
+		if(request.getParameter("btnFilterId")!=null) {
+			request.setAttribute("listUser", uDao.readOrderById());
+		}
+		
+		if(request.getParameter("btnFilterNom")!=null) {
+			request.setAttribute("listUser", uDao.readOrderByNom());
+		}
+		
+		if(request.getParameter("btnFilterPrenom")!=null) {
+			request.setAttribute("listUser", uDao.readOrderByPrenom());
+		}
+			
+		if(request.getParameter("btnFilterMail")!=null) {
+			request.setAttribute("listUser", uDao.readOrderByMail());
+		}
+		
+		
+		
 		
 		// delete
 				if(request.getParameter("idtodelete")!=null ) {
