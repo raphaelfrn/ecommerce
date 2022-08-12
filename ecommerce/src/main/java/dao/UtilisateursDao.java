@@ -86,14 +86,13 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 	public boolean update(UtilisateursM utilisateur, int id) {
 		try {
 			PreparedStatement req = connect.prepareStatement("UPDATE utilisateurs SET nom=?, "
-					+ "prenom=?, date_inscription=?, email=?, mot_de_passe=? WHERE id_utilisateur=?");
+					+ "prenom=?, email=?, telephone=? WHERE id_utilisateur=?");
 			
 			req.setString(1, utilisateur.getNom());
 			req.setString(2, utilisateur.getPrenom());
-			req.setDate(3, utilisateur.getDate_inscription());
-			req.setString(4, utilisateur.getEmail());
-			req.setString(5, utilisateur.getMot_de_passe());
-			req.setInt(6, id);
+			req.setString(3, utilisateur.getEmail());
+			req.setString(4, utilisateur.getTelephone());
+			req.setInt(5, id);
 			req.executeUpdate();
 			
 			return true;

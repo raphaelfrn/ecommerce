@@ -2,6 +2,20 @@
 
 
 
+a{
+color:black;	
+text-transform:none;
+}
+a:hover{
+	color:red;
+}
+a:visited{
+	color:black;
+}
+a:visited:hover{
+	color:red;
+}
+
 .container-admin-users{
 	
 	width:100%;
@@ -49,7 +63,7 @@
 }
 
 .container-admin-users tbody tr:hover{
-	color:blue;
+	color:orange;
 }
 
 .container-admin-users tbody tr td{

@@ -7,11 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.Adresses_livraisonDao;
 import dao.CommandesDao;
 import dao.CommentairesDao;
 import dao.ContactDao;
 import dao.Details_commandeDao;
 import dao.UtilisateursDao;
+import model.UtilisateursM;
 
 /**
  * Servlet implementation class AdminUserDetails
@@ -24,6 +26,7 @@ public class AdminUserDetails extends HttpServlet {
       CommentairesDao commentairesDao = new CommentairesDao();
       Details_commandeDao dcDao = new Details_commandeDao();
       ContactDao contactDao = new ContactDao();
+      Adresses_livraisonDao addressDao = new Adresses_livraisonDao();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -42,6 +45,24 @@ public class AdminUserDetails extends HttpServlet {
 		// User info
 		request.setAttribute("UserInfo", userDao.findById(UserId));
 		
+		if(request.getParameter("btnUpdate")!=null) {
+			String nom = request.getParameter("name");
+			String prenom = request.getParameter("prenom");
+			String email = request.getParameter("email");
+			String telephone = request.getParameter("tel");
+			
+			UtilisateursM userUpdate = new UtilisateursM();
+			userUpdate.setNom(nom);
+			userUpdate.setPrenom(prenom);
+			userUpdate.setEmail(email);
+			userUpdate.setTelephone(telephone);
+			
+			userDao.update(userUpdate, UserId);
+		}
+		
+		// adresses
+		request.setAttribute("listAddress", addressDao.addressUser(UserId));
+		
 		// liste commandes
 		request.setAttribute("listCommand", cDao.readByUserId(UserId));
 		
@@ -53,7 +74,12 @@ public class AdminUserDetails extends HttpServlet {
 		
 		
 		// details commande
-	//	request.setAttribute("listCommand", dcDao.findByIdCommande());
+		
+		if(request.getParameter("btnDetailsC")!=null) {
+			int produitId = Integer.parseInt(request.getParameter("btnDetailsC")) ;
+			request.setAttribute("listDC", dcDao.findByIdCommande(produitId));
+		}
+		
 		
 		
 		request.getRequestDispatcher("view/admin/admin-user-details.jsp").forward(request, response);
