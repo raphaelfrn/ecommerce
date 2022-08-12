@@ -10,6 +10,19 @@ CommentsPanel.style.display == "none" ? CommentsPanel.style.display = "flex" : C
 });
 
 
+//Commen()s min characters
+let comment_product = document.getElementById('comment-product'); 
+	
+function MinCharactersComment() {
+
+	if( comment_product.value.length > 0) { 
+		return true; 	
+	} else {	
+		comment_product.placeholder = "Veuillez entrer au minimum 10 caractéres"; 	
+		return false; 
+	}
+}	
+
 
 //SLIDER
 let slideIndex = 1;
@@ -48,5 +61,4 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   thumbnail[slideIndex-1].className += " active";
-   
 }

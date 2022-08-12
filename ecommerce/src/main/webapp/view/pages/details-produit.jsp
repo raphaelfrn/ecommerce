@@ -77,9 +77,8 @@
 			<p class="text-delivery">Echanges et Retours Gratuits</p>
 			<p class="comments">Commentaires</p>
 		</div>
-	</div>
-	
-	<!-- Comments -->
+		
+		<!-- Comments -->
 	<div class="container-comments">
 		
 		<!-- Add a comment and note on Mobile / tablette -->
@@ -107,7 +106,7 @@
 					
 		<!-- Hidden form for desktop only -->
 		<div class="container-form-hidden">
-			<form method="post">
+			<form method="post" onsubmit="return MinCharactersComment()">
 				<div class="container-notation-hidden">
 					<p>Ajouter un commentaire :</p>
 					<div class="rating">
@@ -119,27 +118,32 @@
 					</div>
 				</div>
 				<div class="comment-area-hidden">
-					<input name="commentaire" type="text" placeholder="Entrez votre commentaire"
+					<textarea name="commentaire" id="comment-product" placeholder="Entrez votre commentaire"
 						aria-label="Entrez votre commentaire"
-						aria-describedby="button-addon">
+						aria-describedby="button-addon" maxlength="500"  minlength="10" value="" ></textarea>
 					<button type="submit" name="btnAddComm"><span>Ajouter</span></button>
 				</div>
 			</form>
 		</div>
 	
 		<!-- the card that will be in a loop to display comments -->
-		<c:forEach items="${commentaires }" var="comm">
-			<div class="card-comment">
-				<div class="card-name-rating">
-					<p><b><c:out value="${comm.id_utilisateur.prenom }" /> <c:out value="${comm.id_utilisateur.nom }" /></b></p>
-					<div class="rating"> <c:out value="${comm.note}" /></div> 
-				</div>
-				
-				<div class="container-msg">
-				<hr><c:out value="${comm.commentaire }" /></div>
+		<div class="container-all-comments-users">
+			<c:forEach items="${commentaires }" var="comm">
+				<div class="card-comment">
+					<div class="card-name-rating">
+						<p><b><c:out value="${comm.id_utilisateur.prenom }" /> <c:out value="${comm.id_utilisateur.nom }" /></b></p>
+						<div class="rating"> <c:out value="${comm.note}" /></div> 
+					</div>
+					
+					<div class="container-msg">
+					<hr><c:out value="${comm.commentaire }" /></div>
 			</div>
-		</c:forEach>
+			</c:forEach>
+		</div>
 	</div>
+	</div>
+	
+	
 	
 	<c:import url="/view/footer/footer.jsp"></c:import>
 </body>
