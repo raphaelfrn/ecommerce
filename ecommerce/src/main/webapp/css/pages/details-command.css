@@ -57,10 +57,12 @@ body {
 }
  @media screen and (min-width: 820px) 
 {
-	.container-page  {
-		margin-top: 0;
+	.container-page-detail-co {
+		margin: 2% 4%;
 	}
 }
+
+
 
 .container-overflow-details-command {
     max-height: 60vh;
