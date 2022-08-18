@@ -29,7 +29,7 @@
 	<div class="container-title">
 		<h1>Commande n° <c:out value="${commande.id_commande }" />  , Le <c:out value="${commande.dateC }" /> </h1>
 	</div>
-	<div class="container-page">
+	<div class="container-page container-page-detail-co">
 		<div class="container-overflow-details-command">
 		
 		<c:forEach items="${listDC }" var="DC">
@@ -51,7 +51,8 @@
 		</div>
 		
 		<div class="container-total">
-			<p class="price-product">Total: <c:out value="${commande.total }" /> €</p>
+			<p class="price-product">Total:</p>
+			<p class="price-product"><c:out value="${commande.total }" /> €</p>
 			<!-- <div class="container-download">
 				<p>Telecharger ma facture</p>
 				<img class="icon-download" alt="Icon de téléchargement" src="assets/icon/download-white.svg">
