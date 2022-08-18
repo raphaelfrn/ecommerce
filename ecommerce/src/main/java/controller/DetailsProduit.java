@@ -63,22 +63,24 @@ public class DetailsProduit extends HttpServlet {
 			// compter les visites sur le produit
 			VisitesM visite = new VisitesM();
 			HttpSession session = request.getSession( true );
-			int userId = (int)session.getAttribute("userid");
-			visite.setId_utilisateur(uDao.findById(userId));
+			if((boolean)session.getAttribute("isConnected")!=false) {
+				int userId = (int)session.getAttribute("userid");
+				visite.setId_utilisateur(uDao.findById(userId));
+			} else {
+				visite.setId_utilisateur(uDao.findById(1));
+			}
 			visite.setId_produit(produitsDao.findById(id));
 			vDao.create(visite);
 			
 			// affichage produit
 			request.setAttribute("produit", produit);
 			request.setAttribute("image", image);
-			
-			System.out.println(image);
-				}
+		}
 		
 		
 		// add to cart
 		
-	if(request.getParameter("btnAdd")!=null ) {
+		if(request.getParameter("btnAdd")!=null ) {
 			
 			HttpSession session = request.getSession( true );
 			
@@ -86,24 +88,18 @@ public class DetailsProduit extends HttpServlet {
 			ProduitsM produit = produitsDao.findById(id);
 			PanierDetailsM panieradd=new PanierDetailsM(produit,qte);	
 		
-			
 			PanierM panier=(PanierM) session.getAttribute("panier");
 			panier.add(panieradd);
 			session.setAttribute( "panier", panier );
-	
-			
 		}	
 	
-	
-	// read comm
-	
-	int produitId=Integer.valueOf(request.getParameter("id"));
-	request.setAttribute("commentaires", comDao.readById(produitId));
+		
+		// read comm
+		int produitId=Integer.valueOf(request.getParameter("id"));
+		request.setAttribute("commentaires", comDao.readById(produitId));
 
 		
-		
 		request.getRequestDispatcher("/view/pages/details-produit.jsp").forward(request, response);
-		
 		
 }
 		
@@ -115,7 +111,7 @@ public class DetailsProduit extends HttpServlet {
 		
 		// add a comment
 		
-if(request.getParameter("btnAddComm")!=null ) {
+		if(request.getParameter("btnAddComm")!=null ) {
 			
 			HttpSession session = request.getSession( true );
 			int userId = (int)session.getAttribute("userid");
@@ -130,8 +126,6 @@ if(request.getParameter("btnAddComm")!=null ) {
 			commentaire.setId_utilisateur(uDao.findById(userId));
 			
 			 comDao.create(commentaire);
-	
-			
 		}	
 		
 		doGet(request, response);
