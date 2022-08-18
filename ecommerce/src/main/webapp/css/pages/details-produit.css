@@ -566,7 +566,7 @@
 
 /*  Rating stars  */
 
-.rating {
+.star-rating {
 	display: flex;
 	margin-top: -10px;
 	flex-direction: row-reverse;
@@ -575,11 +575,11 @@
 	margin-right:5%;
 }
 
-.rating>input {
-	display: none;
-}
+/* .rating>input { */
+/* 	display: none; */
+/* } */
 
-.rating>label {
+.star-rating>label {
 	position: relative;
 	width: 19px;
 	font-size: 22px;
@@ -588,24 +588,60 @@
 	margin-left: 8px;
 }
 
-.rating>label::before {
+.star-rating>label::before {
 	content: "\2605";
 	position: absolute;
 }
 
-.rating>label:hover:before,
-.rating>label:hover~label:before {
-	opacity: 1 !important;
-	color: #DEB72D;
+/* .rating>label:hover:before, */
+/* .rating>label:hover~label:before { */
+/* 	opacity: 1 !important; */
+/* 	color: #DEB72D; */
+/* } */
+
+/* .rating>input:checked~label:before { */
+/* 	opacity: 1; */
+/* 	color: #DEB72D; */
+/* } */
+
+/* .rating:hover>input:checked~label:before { */
+/* 	opacity: 0.4; */
+/* } */
+/* input[type="radio"]:checked  { */
+/* 		opacity: 1; */
+/* 	color: red !important; */
+/* } */
+/* input:checked + label { */
+/*   color: red; */
+/* } */
+
+
+/* .star-rating { */
+/*   display:flex; */
+/*   flex-direction: row-reverse; */
+/*   font-size:1.5em; */
+/*   justify-content:space-around; */
+/*   padding:0.2em; */
+/*   text-align:center; */
+/*   width:5em; */
+/* } */
+
+.star-rating input {
+  display:none;
 }
 
-.rating>input:checked~label:before {
-	opacity: 1;
-	color: #DEB72D;
+.star-rating label {
+  color:  #d5d4d4;
+  cursor: pointer;
 }
 
-.rating:hover>input:checked~label:before {
-	opacity: 0.4;
+.star-rating :checked ~ label {
+   color: #fc0;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #fc0;
 }
 
 

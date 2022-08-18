@@ -117,11 +117,11 @@ public class DetailsProduit extends HttpServlet {
 			int userId = (int)session.getAttribute("userid");
 			int produitId=Integer.valueOf(request.getParameter("id"));
 			String contenu = request.getParameter("commentaire");
-		//	int note = Integer.parseInt(request.getParameter("rating"));
-			
+			int note = Integer.parseInt(request.getParameter("rating"));
+
 			CommentairesM commentaire = new CommentairesM();
 			commentaire.setCommentaire(contenu);
-			commentaire.setNote(4);
+			commentaire.setNote(note);
 			commentaire.setId_produit(produitsDao.findById(produitId));
 			commentaire.setId_utilisateur(uDao.findById(userId));
 			
