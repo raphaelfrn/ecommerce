@@ -43,17 +43,6 @@ public class Wishlist extends HttpServlet {
 		// wishlist
 		
 		request.setAttribute("favoris", favorisDao.findFavByUser(userId));
-		
-	// delete from wish list
-		
-		if(request.getParameter("btnDelFav")!=null && "btnDelFav".equals("btnDelFav") ) {
-			  request.getSession( true );
-			 int produitId = Integer.parseInt(request.getParameter("btnDelFav")) ;
-			 System.out.println(produitId);
-			 favorisDao.deleteById(produitId);
-			 System.out.println("delete ok");
-			
-		}
 
 			 
 		// add to cart from wish list

@@ -76,6 +76,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
 	margin-top: 4%;
+	width: 95vw;
 }
 
 .container-wishlist-product {

@@ -43,7 +43,7 @@ public class FavorisDao implements IDao<FavorisM> {
 
 	@Override
 	public ArrayList<FavorisM> read() {
-ArrayList<FavorisM> listeFavori = new ArrayList<>();
+		ArrayList<FavorisM> listeFavori = new ArrayList<>();
 		
 		try {
 			PreparedStatement req = connect.prepareStatement("SELECT * FROM favoris");
@@ -141,9 +141,9 @@ ArrayList<FavorisM> listeFavori = new ArrayList<>();
 	}
 	
 	public ArrayList<FavorisM> findFavByUser(int id) {
-ArrayList<FavorisM> listeFavori = new ArrayList<>();
-ProduitsDao pDao = new ProduitsDao();
-UtilisateursDao uDao = new UtilisateursDao();
+		ArrayList<FavorisM> listeFavori = new ArrayList<>();
+		ProduitsDao pDao = new ProduitsDao();
+		UtilisateursDao uDao = new UtilisateursDao();
 
 		
 		try {
@@ -174,12 +174,12 @@ UtilisateursDao uDao = new UtilisateursDao();
 	public boolean deleteById(int id) {
 		
 		try {
-			PreparedStatement req = connect.prepareStatement("DELETE FROM favoris WHERE id_favoris = ?");
+			PreparedStatement req = connect.prepareStatement("DELETE FROM favoris WHERE id_produit = ?");
 			req.setInt(1,id);
 			req.executeUpdate();
-			
-			System.out.println("deleted from favoris");
+
 			return true;
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
