@@ -87,13 +87,18 @@
 				<form method="post">
 					<div class="container-notation">
 						<p>Mettre une note :</p>	
-						<div class="rating">
-							<input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> 
-							<input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
-							<input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
-							<input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
-							<input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> 
-						</div> 
+						<div class="star-rating">
+							  <input type="radio" id="5" name="rating" value="5" />
+							  <label for="5-stars" class="star">☆</label>
+							  <input type="radio" id="4" name="rating" value="4" />
+							  <label for="4-stars" class="star">☆</label>
+							  <input type="radio" id="3" name="rating" value="3" />
+							  <label for="3-stars" class="star">☆</label>
+							  <input type="radio" id="2" name="rating" value="2" />
+							  <label for="2-stars" class="star">☆</label>
+							  <input type="radio" id="1" name="rating" value="1" />
+							  <label for="1-star" class="star">☆</label>
+						</div>
 					</div>	
 					
 					<div class="comment-area"> 
@@ -110,12 +115,17 @@
 				<form method="post" onsubmit="return MinCharactersComment()">
 					<div class="container-notation-hidden">
 						<p>Ajouter un commentaire :</p>
-						<div class="rating">
-							<input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> 
-							<input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
-							<input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
-							<input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
-							<input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+						<div class="star-rating">
+						  <input type="radio" id="5-stars" name="rating" value="5" />
+						  <label for="5-stars" class="star">☆</label>
+						  <input type="radio" id="4-stars" name="rating" value="4" />
+						  <label for="4-stars" class="star">☆</label>
+						  <input type="radio" id="3-stars" name="rating" value="3" />
+						  <label for="3-stars" class="star">☆</label>
+						  <input type="radio" id="2-stars" name="rating" value="2" />
+						  <label for="2-stars" class="star">☆</label>
+						  <input type="radio" id="1-star" name="rating" value="1" />
+						  <label for="1-star" class="star">☆</label>
 						</div>
 					</div>
 					<div class="comment-area-hidden">
