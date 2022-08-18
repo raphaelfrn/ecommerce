@@ -27,7 +27,7 @@
 	<c:import url="/header"></c:import>
 	
 	<div class="container-title">
-		<h1>Commande n° <c:out value="${commande.id_commande }" />  , Le <c:out value="${commande.dateC }" /> </h1>
+		<h1>Commande n° <c:out value="${commande.id_commande }" />, Le <c:out value="${commande.dateC }" /> </h1>
 	</div>
 	<div class="container-page container-page-detail-co">
 		<div class="container-overflow-details-command">
