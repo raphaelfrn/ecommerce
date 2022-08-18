@@ -539,6 +539,10 @@
     	align-content: center;
         margin-top: 12%;
     }
+    
+   .comment-area-hidden textarea:focus {
+         outline: none;
+    }
 	
 	.container-form-hidden button{
 		border: none;
@@ -610,9 +614,13 @@
 
 /* container comment area with text area and button  */
 
-.comment-area{
+.comment-area {
 	display:flex;
 	align-items:center;
+}
+
+.input-group input:focus {
+   outline: none !important;
 }
 
 .comment-area input[type=text] {
