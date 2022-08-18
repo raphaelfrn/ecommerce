@@ -708,6 +708,29 @@
 	justify-content: space-between;
 	margin-bottom:-1%;
 }
+
+.data_note {
+	color: #DEB72D;
+	letter-spacing: 1px;
+	font-size:10px;
+}
+
+@media screen and (min-width:820px){
+	
+	.card-comment {
+			font-size:12px;
+	}
+}
+
+@media screen and (min-width:1200px){
+	
+	.data_note {
+		font-size:14px;
+	}
+}
+
+
+
 .container-msg{
 	margin-bottom:5%;
 }

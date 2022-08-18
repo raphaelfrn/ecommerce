@@ -192,8 +192,7 @@ public class ContactDao implements IDao<ContactM> {
 						);
 				listeContact.add(contact);
 			}
-			
-			
+				
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

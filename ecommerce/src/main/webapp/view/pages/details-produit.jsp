@@ -144,14 +144,17 @@ pageEncoding="UTF-8"%>
 					<div class="card-comment">
 						<div class="card-name-rating">
 							<p><b><c:out value="${comm.id_utilisateur.prenom }" /> <c:out value="${comm.id_utilisateur.nom }" /></b></p>
-							<div class="rating"> <c:out value="${comm.note}" /></div> 
+							 <p class="data_note"> note: <c:out value="${comm.note}" />/5 </p>
 						</div>
 						
 						<div class="container-msg">
-						<hr><c:out value="${comm.commentaire }" /></div>
-				</div>
+							<hr><c:out value="${comm.commentaire }" />
+						</div>
+					</div>
 				</c:forEach>
 			</div>
+			
+			
 		</div>
 	</div>
 	

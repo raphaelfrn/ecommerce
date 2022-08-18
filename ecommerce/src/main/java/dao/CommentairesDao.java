@@ -150,9 +150,9 @@ ArrayList<CommentairesM> listeCommentaire = new ArrayList<>();
 	}
 
 	public ArrayList<CommentairesM> readById(int id) {
-ArrayList<CommentairesM> listeCommentaire = new ArrayList<>();
-ProduitsDao pDao = new ProduitsDao();
-UtilisateursDao uDao = new UtilisateursDao();
+		ArrayList<CommentairesM> listeCommentaire = new ArrayList<>();
+		ProduitsDao pDao = new ProduitsDao();
+		UtilisateursDao uDao = new UtilisateursDao();
 		
 		try {
 			PreparedStatement req = connect.prepareStatement("SELECT * FROM commentaires WHERE id_produit = ?");
@@ -184,29 +184,30 @@ UtilisateursDao uDao = new UtilisateursDao();
 		ProduitsDao pDao = new ProduitsDao();
 		UtilisateursDao uDao = new UtilisateursDao();
 				
-				try {
-					PreparedStatement req = connect.prepareStatement("SELECT * FROM commentaires WHERE id_utilisateur = ?");
-					req.setInt(1, id);
-					ResultSet rs = req.executeQuery();
-					
-					while (rs.next()) {
-						CommentairesM commentaire = new CommentairesM(
-								rs.getInt("id_commentaire"),
-								rs.getString("commentaire"),
-								rs.getInt("note"),
-								pDao.findById(rs.getInt("id_produit")),
-								uDao.findById(rs.getInt("id_utilisateur"))
-								
-								);
-						listeCommentaire.add(commentaire);
-					}
-					
-					
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+			try {
+				PreparedStatement req = connect.prepareStatement("SELECT * FROM commentaires WHERE id_utilisateur = ?");
+				req.setInt(1, id);
+				ResultSet rs = req.executeQuery();
+				
+				while (rs.next()) {
+					CommentairesM commentaire = new CommentairesM(
+							rs.getInt("id_commentaire"),
+							rs.getString("commentaire"),
+							rs.getInt("note"),
+							pDao.findById(rs.getInt("id_produit")),
+							uDao.findById(rs.getInt("id_utilisateur"))
+							
+							);
+					listeCommentaire.add(commentaire);
 				}
-				return listeCommentaire;
+				
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+			return listeCommentaire;
+	}
+
 	
 }

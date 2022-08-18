@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.CommentairesDao;
 import dao.FavorisDao;
 import dao.ProduitsDao;
 import dao.Sous_categoriesDao;
@@ -18,6 +19,7 @@ import model.PanierDetailsM;
 import model.PanierM;
 import model.ProduitsM;
 import model.Sous_categoriesM;
+import model.UtilisateursM;
 
 /**
  * Servlet implementation class Produits
@@ -51,8 +53,8 @@ public class Produits extends HttpServlet {
 		 
 		 Sous_categoriesM sousCat = sousCatDao.findById(idSousCat);
 			
-			request.setAttribute("sC", sousCat);			
-			
+			request.setAttribute("sC", sousCat);		
+
 			
 			// add to cart
 			
