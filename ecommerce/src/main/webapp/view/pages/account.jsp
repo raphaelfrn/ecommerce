@@ -8,6 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="format-detection" content="telephone=no">
 
+<link rel="icon" href="assets/logo/favicon.ico" type="image/x-icon">
 <link href="css/_reset.css" rel="stylesheet" type="text/css">
 <link href="assets/font/font.css" rel="stylesheet">
 <link href="css/header/header.css" rel="stylesheet">

@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<link rel="icon" href="assets/logo/favicon.ico" type="image/x-icon">
 <link href="css/_reset.css" rel="stylesheet" type="text/css">
 <link href="assets/font/font.css" rel="stylesheet">
 <link href="css/header/header.css" rel="stylesheet">
