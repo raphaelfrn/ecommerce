@@ -34,6 +34,7 @@
 	<c:import url="/header"></c:import>
 	<c:url value="/address" var="adresse"/>
 	<c:url value="/panier" var="panier"/>
+	<c:url value="/deleteFav" var="deleteFav"/>
 	
 	<div class="container-page-wishlist">
 		<div class="container-page-wishlist-header">
@@ -52,18 +53,16 @@
 						<img class= "wishlist-product-img" alt="Image produit" src="<c:out value="${fav.id_produit.image }" />">
 						<div class="content-wishlist-product">
 							<div class="container-wishlist-product-infos">
-					<a href="details?id=${fav.id_produit.id_produit}&param=findById"><h1><c:out value="${fav.id_produit.titre }" /></h1></a>	
+								<a href="details?id=${fav.id_produit.id_produit}&param=findById"><h1><c:out value="${fav.id_produit.titre }" /></h1></a>	
 								<p class="wishlist-product-subtitle">Feuille d'or</p>
 							</div>
 							<div class="container-wishlist-management">
 								<p><c:out value="${fav.id_produit.prix }" /> €</p>
 								<div class="container-wishlist-management-icon">
 								
-								<form method="post">
-									<button  name="btnDelFav" value="${fav.id_produit.id_produit}">
-									  	<img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
-									</button>
-								</form>
+								<a href="${deleteFav}?idProd=${fav.id_produit.id_produit}"> 
+									 <img class="wishlist-management-icon-wishlist" alt="Icon wishlist" src="assets/icon/wishlist-black.svg">
+								</a>
 								 
 								<form method="post">
 									<button name="btnAdd" value="${fav.id_produit.id_produit}">
