@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.SlidesM;
+import model.UtilisateursM;
 
 public class SlidesDao implements IDao<SlidesM> {
 	
@@ -73,15 +74,13 @@ public class SlidesDao implements IDao<SlidesM> {
 	@Override
 	public boolean update(SlidesM slide, int id) {
 		try {
-			PreparedStatement req = connect.prepareStatement("UPDATE slides SET titre=?, sous_titre=? "
-					+ "image=?, url=? WHERE id_slides=?");
+			PreparedStatement req = connect.prepareStatement("UPDATE slides SET titre=?, sous_titre=?, image=?, url=?  WHERE id_slides=?");
 			
 			req.setString(1, slide.getTitre());
 			req.setString(2, slide.getSous_titre());
 			req.setString(3, slide.getImage());
 			req.setString(4, slide.getUrl());
 			req.setInt(5, id);
-			
 			req.executeUpdate();
 			
 			return true;
