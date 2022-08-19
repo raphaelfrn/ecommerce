@@ -1,14 +1,47 @@
 @charset "UTF-8";
 
-
 .btn-filter{
-	display:flex;
+	display: flex;
+    justify-content: space-between !important;
+    margin: 0!important;
 }
 
-h1{
+.btn-filter button:first-child{
+	margin-left: 0!important;
+}
+
+.btn-filter-users {
+	width: 14vw;
+}
+
+.input-group-search {
+	 width: 20vw !important;
+}
+
+.container-admin-users {
+	margin-top: 3%;
+}
+
+
+.container-title {
+	margin: 4% 0 6%;
+}
+
+.container-title h1{
 	color:white;
 	font-size:24px;
 	text-align:center;
+	letter-spacing: 2px;
+}
+
+.btn-show-user {
+    background-color: #b28e39 !important;
+	border-color: #b28e39 !important;
+}
+
+.btn-delete-user {
+	background-color: #623035 !important;
+	border-color: #623035!important;
 }
 
 

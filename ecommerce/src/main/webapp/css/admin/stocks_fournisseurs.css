@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.continer-add-stock {
+    width: 24vw;
+    height: 40vh;
+    background: #13202c;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.icon-stock{
+	width: 100px;
+}

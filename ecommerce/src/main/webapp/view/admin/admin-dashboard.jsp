@@ -12,9 +12,9 @@ pageEncoding="UTF-8"%>
 <link href="css/_reset.css" rel="stylesheet" type="text/css">
 <link href="assets/font/font.css" rel="stylesheet">
 <link href="css/admin/admin-menu.css" rel="stylesheet">
-<link href="css/admin/admin-dashbord.css" rel="stylesheet">
+<link href="css/admin/admin-dashboard.css" rel="stylesheet">
 
-<script type="text/javascript" defer src="js/admin/admin-dashbord.js"></script>
+<script type="text/javascript" defer src="js/admin/admin-dashboard.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 
 

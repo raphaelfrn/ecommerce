@@ -20,7 +20,7 @@
 	display: flex;
     justify-content: center;
     align-items: center;
-	background: #293A2B;
+	background: #232a24;
 	border-radius: 10px 10px 0 0 ;
 }
 
@@ -63,13 +63,15 @@
 	cursor: pointer; 
 }
 
-.admin-form-add-cat {
+.admin-form-add-cat,
+.admin-form-add-products,
+.admin-form-add-subcategories {
 	display: none;
     flex-direction: column;
     align-items: center;
 }
 
-.admin-input-add {
+.admin-input-add, .select-add-csp {
 	width: 24vw;
     background: black;
     border: none;
@@ -79,9 +81,171 @@
     caret-color: white;
     -webkit-text-fill-color: white; 
     cursor: pointer;
+    outline: none;
 }
+
+/* select { */
+/* 	text-align: center; */
+/* } */
 
 .icon-add-content button {
     background: transparent;
     border: none;
+}
+
+
+/* Add Slide */
+
+.continer-add-slider {
+	display: flex;
+    flex-direction: row;
+	margin: 6% 0; 
+    height: 40vh;
+    background: #1a201d;;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.container-carousel{
+	width: 20.5vw;
+    height: 40vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+/*     border-left: 1px solid white; */
+/*     border-right: 1px solid white; */
+}
+
+.icon-carousel{
+	width: 100px;
+}
+
+.container-add-slide,
+.container-update-slide,
+.container-delete-slide {
+		width: 20.5vw;
+}
+
+.container-title-slides {
+	height: 20%;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-title-slides h1 {
+	color: white;
+	letter-spacing: 1px;
+	font-size:16px;
+}
+
+.container-add-slide {
+    background: #212730;
+    border-radius: 7px 0px 0px 10px;
+}
+
+.form-add-slide, .container-form-slide-input {
+	height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.container-form-slide-input input{
+	width: 100%;
+	height: 7vh;
+    border-radius: 0;
+    border: none;
+    padding: 4%;
+    caret-color: black;
+    -webkit-text-fill-color: black; 
+    outline: none;
+    font-size: 18px;
+}
+
+.form-add-slide input:nth-child(1) {
+	background: #d6dcce;
+}
+
+.form-add-slide input:nth-child(2) {
+	background: #bcc2b4;
+}
+
+.form-add-slide input:nth-child(3) {
+	background: #9fa597;
+}
+
+.form-add-slide input:nth-child(4) {
+	background: #808579;
+}
+
+.btn-slide {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    height: 6vh;
+    background: #0a130a;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.btn-slide-add {
+	border-radius: 0 0 0 9px;	
+}
+
+.container-update-slide {
+	background: #535956;
+	border-right: 1px solid white;
+}
+
+input, select, button {
+	cursor: pointer;	
+}
+
+.form-update-slide {
+	height: 100% !important;
+}
+
+.form-update-slide input, select {
+	background: #535956;
+	border: none;
+	border-bottom: 1px solid #131313;
+    font-size: 18px;
+}
+
+select:focus {
+	outline:none;
+}
+
+.container-delete-slide {
+	background: #2b302d;
+	border-radius: 0 10px 10px 0;
+}
+
+.container-delete-slide select {
+	height: 16vh;
+    text-align: center;
+    background: #212730;
+    color: white;
+}
+
+.alert-msg-add {
+    color: white;
+    font-size: 15px;
+    padding: 2%;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    letter-spacing: 1px;
+}
+
+.alertAddmsg {
+	background: #2e3b2e;
+}
+
+.alertNoAddmsg {
+	background: #520404;
 }

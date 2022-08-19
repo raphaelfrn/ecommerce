@@ -4,74 +4,131 @@ body a{
 	text-decoration: none;
 	color:white;
 }
+
 body a:hover{
 	color:white;
 }
-h1{
+
+.title-admin-user-details {
 	color:white;
-	font-size:24px;
+	font-size:26px;
 	text-align:center;
+	margin-bottom: 8% !important;
 }
 
 .overflow{
 	height:30vh;
 	overflow:auto;
 }
+
 /* info + adresses */
 .container-infos-address{
 	display:flex;
+	justify-content: space-between;
+	margin-bottom: 8%;
 }
 
 /* user info */
 .container-user-infos{
+	width: 32vw !important;
+	background: #182418;
+    padding: 6% !important;
+    border-radius: 10px;
 	width:30%;
 	color:white;
 	text-align:center;
+}
+
+.container-user-infos input {
+    margin-bottom: 14%;
+}
+
+.container-user-infos button {
+	width: 23.5vw;
+    background: black;
+    border: none;
+}
+.container-user-infos button:hover {
+	width: 23vw;
+    background: white;
+    color: black;
+    border: none;
+}
+
+.container-user-address {
+    background: #3b463b;
+    border-radius: 10px;
+    padding: 6% 2% 8%;
+    width: 30vw !important;
 }
 
 /* adresses */
 .container-address{
-	width:30%;
+	width: 32vw !important;
 	color:white;
 	text-align:center;
-
 }
+
 /* commande + details */
 .container-commands-details {
 	display:flex;
+	justify-content: space-between;
+	margin-bottom: 8%;
 }
 
 /* commandes */
 
-.container-commands{
-	width:45%;
+.container-commands {
+    width: 32vw !important;
+	background: #616461;
+    border-radius: 10px;
+    padding: 6% 0;
+}
+
+.container-commands form {
+	text-align: center;
+}
+
+.container-commands button {
+	border: none;
+	background: transparent;
 }
 
 /* details commande */
 
-.container-details{
-	width:45%;
+.container-details {
+    width: 32vw !important;
+    background: #151b15;
+    border-radius: 10px;
+    padding: 6% 2%;
 }
 
-.date-prix p{
+.date-prix p {
 	color:white;
 }
 
-
 /* commentaire + contact */
-.container-comm-contact{
+.container-comm-contact {
 	display:flex;
+	justify-content: space-between;
+	margin-bottom: 8%;
 }
 
 /* commentaires */
 
 .container-commentaires{
-	width:45%;
+	width: 32vw !important;
+	background: #303340;
+	border-radius: 10px;
+    padding: 6% 2%;
 }
 
 /* contact */
 .container-contact{
-	width:45%;
+	width: 32vw !important;
+	background: #3f4d4a;
+	border-radius: 10px;
+    padding: 6% 2%;
 }
 
 

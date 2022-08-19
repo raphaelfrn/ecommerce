@@ -39,8 +39,8 @@
 
 				<!-- Informations utilisateur -->
 				<div class="container container-user-infos">
-					<h1>Infos utilisateur</h1>
-					<div class="overflow">
+					<h1 class="title-admin-user-details">Infos utilisateur</h1>
+					<div class="">
 						<form method="post">
 							<div class="row">
 								<div class="col">
@@ -94,7 +94,7 @@
 				<!-- Adresses -->
 
 				<div class="container container-user-address">
-					<h1>Adresses</h1>
+					<h1 class="title-admin-user-details">Adresses</h1>
 					<div class="overflow">
 						<table class="table table-dark table-stripped">
 							<thead>
@@ -129,7 +129,7 @@
 
 				<!-- 	Commandes -->
 				<div class="container container-commands">
-					<h1>Commandes</h1>
+					<h1 class="title-admin-user-details">Commandes</h1>
 					<div class="overflow">
 						<table class="table table-dark table-stripped">
 							<thead>
@@ -150,7 +150,7 @@
 										<td><form method="post">
 												<button type="submit" class="btnDetails" name="btnDetailsC"
 													value="${commande.id_commande }">
-													<img src="assets/icon/show.svg" alt="show">
+													<img src="assets/icon/show-white.svg" alt="show">
 												</button>
 											</form></td>
 									</tr>
@@ -163,7 +163,7 @@
 				<!-- 	details commande -->
 				<div class="container container-details">
 
-					<h1>Details commande</h1>
+					<h1 class="title-admin-user-details">Details commande</h1>
 					<div class="overflow">
 						<table class="table table-dark table-stripped table-hover">
 							<thead>
@@ -210,7 +210,7 @@
 			<div class="container container-comm-contact">
 				<!-- Commentaires -->
 				<div class="container container-commentaires">
-					<h1>Commentaires</h1>
+					<h1 class="title-admin-user-details">Commentaires</h1>
 					<div class="overflow">
 						<table class="table table-dark table-stripped table-hover" >
 							<thead>
@@ -240,7 +240,7 @@
 				</div>
 				<!-- Contact -->
 				<div class="container container-contact">
-					<h1>Contact</h1>
+					<h1 class="title-admin-user-details">Contact</h1>
 					<div class="overflow">
 						<table class="table table-dark table-stripped table-hover">
 							<thead>
