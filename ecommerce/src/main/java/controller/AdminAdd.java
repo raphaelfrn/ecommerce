@@ -15,7 +15,9 @@ import dao.SlidesDao;
 import dao.Sous_categoriesDao;
 import model.CategorieM;
 import model.ProduitsM;
+import model.SlidesM;
 import model.Sous_categoriesM;
+import model.UtilisateursM;
 
 /**
  * Servlet implementation class AdminAdd
@@ -43,8 +45,53 @@ public class AdminAdd extends HttpServlet {
 		
 		request.setAttribute("listCategories", catDao.read());
 		request.setAttribute("listSubCategories", subCatDao.read());
-		request.setAttribute("listSlides", slidesDao.read());
 		
+	
+		//Update Slide
+			
+		if (request.getParameter("updateSlide") != null) {
+			
+			String SlideSelectedUpdate = request.getParameter("SlideSelectedUpdate");
+			String updateTitleSlide = request.getParameter("updateTitleSlide");
+			String updateSubTitlteSlide = request.getParameter("updateSubTitlteSlide");
+			String updateImgVideoSlide = request.getParameter("updateImgVideoSlide");
+			String updateUrlSlide = request.getParameter("updateUrlSlide");
+			
+			boolean SlideUpdateNo=false;
+			
+			if (SlideSelectedUpdate != "" && updateTitleSlide != "" && updateSubTitlteSlide != "" && updateImgVideoSlide != "" && updateUrlSlide !="") {
+				
+				int slideSelectedId = Integer.parseInt(request.getParameter("SlideSelectedUpdate"));
+				
+				SlidesM slide = new SlidesM();
+				slide.setTitre(updateTitleSlide);
+				slide.setSous_titre(updateSubTitlteSlide);
+				slide.setImage(updateImgVideoSlide);
+				slide.setUrl(updateUrlSlide);
+				request.setAttribute("SlideMsgUpdate", slidesDao.update(slide, slideSelectedId));
+				
+			} else {
+				SlideUpdateNo = true;
+			}
+			request.setAttribute("SlideUpdateNo", SlideUpdateNo);
+		}
+
+		
+		// Delete slide
+			if (request.getParameter("deleteSlide") != null) {
+				String deleteSlideId = request.getParameter("SlideSelectedDelete");
+				
+				boolean SlidemsgNoDelete=false;
+				if (deleteSlideId != ""  ) {
+					int selectedSlide = Integer.parseInt(request.getParameter("SlideSelectedDelete"));
+					request.setAttribute("SlideMsgDelete", slidesDao.delete(selectedSlide));
+				} else {
+					SlidemsgNoDelete = true;
+				}
+				request.setAttribute("SlidemsgNoDelete", SlidemsgNoDelete);
+			}
+		
+			request.setAttribute("listSlides", slidesDao.read());
 		
 		request.getRequestDispatcher("view/admin/admin-add.jsp").forward(request, response);
 	}
@@ -54,7 +101,7 @@ public class AdminAdd extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Ajout categorie		
+		// Ajout categorie
 		if (request.getParameter("addCat") != null) {
 			String titleCat = request.getParameter("addTitleCat");
 			String videoCat = request.getParameter("addVideoCat");
@@ -142,6 +189,29 @@ public class AdminAdd extends HttpServlet {
 
 			}
 			request.setAttribute("prodMsgNo", prodMsgNo);
+		}
+		
+		
+		// Ajout slide
+		if (request.getParameter("addSlide") != null) {
+			String addTitleSlide = request.getParameter("addTitleSlide");
+			String addSubTitlteSlide = request.getParameter("addSubTitlteSlide");
+			String addImgVideoSlide = request.getParameter("addImgVideoSlide");
+			String addUrlSlide = request.getParameter("addUrlSlide");
+			
+			SlidesM slide = new SlidesM();
+			slide.setTitre(addTitleSlide);
+			slide.setSous_titre(addSubTitlteSlide);
+			slide.setImage(addImgVideoSlide);
+			slide.setUrl(addUrlSlide);
+			
+			boolean SlidemsgNo=false;
+			if (addTitleSlide != "" && addSubTitlteSlide != "" && addImgVideoSlide != "" && addUrlSlide != "") {
+				request.setAttribute("SlideMsg", slidesDao.create(slide));
+			} else {
+				SlidemsgNo = true;
+			}
+			request.setAttribute("SlidemsgNo", SlidemsgNo);
 		}
 		
 		

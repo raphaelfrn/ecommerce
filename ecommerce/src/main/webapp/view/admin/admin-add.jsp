@@ -141,6 +141,16 @@
 						<input class="" type="text" id="" name="addImgVideoSlide" value=""  placeholder="Image ou Video *" >
 						<input class="" type="text" id="" name="addUrlSlide" value=""  placeholder="url *" >
 						<button type="submit" class="btn-slide btn-slide-add" name="addSlide">Ajouter</button>
+						<c:if test="${SlideMsg}">
+							<div class="alert-msg-add alertAddmsg">
+								<p>L'ajout a bien été pris en compte</p>
+							</div>
+						</c:if>
+						<c:if test="${SlidemsgNo}">
+							<div class="alert-msg-add alertNoAddmsg">
+								<p>Veuillez remplir tous les champs</p>
+							</div>
+						</c:if>	
 					</form>
 				</div>
 				
@@ -150,7 +160,7 @@
 				
 				<div class="container-update-slide">
 					<form method="post" class="form-update-slide container-form-slide-input">
-						<select name="SlideSelected" id="slides">
+						<select name="SlideSelectedUpdate" id="slides">
 				 			<option value="">-- Slides --</option>
 				 			<c:if test="${!empty listSlides}">
 						 		<c:forEach items="${listSlides}" var="listSlides">
@@ -163,6 +173,16 @@
 						<input class="" type="text" id="" name="updateImgVideoSlide" value=""  placeholder="Image ou Video *" >
 						<input class="" type="text" id="" name="updateUrlSlide" value=""  placeholder="url *" >
 						<button type="submit" class="btn-slide" name="updateSlide">Modifier</button>
+						<c:if test="${SlideMsgUpdate}">
+							<div class="alert-msg-add alertAddmsg">
+								<p>Le slide a bien été modifié</p>
+							</div>
+						</c:if>
+						<c:if test="${SlideUpdateNo}">
+							<div class="alert-msg-add alertNoAddmsg">
+								<p>Le slide n'a pas pu être modifié</p>
+							</div>
+						</c:if>	
 					</form>
 				</div>
 				
@@ -171,7 +191,7 @@
 						<h1>Delete</h1>
 					</div>
 					<form method="post" class="form-delete-slide container-form-slide-input">
-						<select name="SlideSelected" id="slides">
+						<select name="SlideSelectedDelete" id="slides">
 				 			<option value="">-- Slides --</option>
 				 			<c:if test="${!empty listSlides}">
 						 		<c:forEach items="${listSlides}" var="listSlides">
@@ -179,7 +199,17 @@
 								</c:forEach>
 							</c:if>
 						</select>
-						<button type="submit" class="btn-slide" name="updateSlide">Supprimer</button>
+						<button type="submit" class="btn-slide" name="deleteSlide">Supprimer</button>
+						<c:if test="${SlideMsgDelete}">
+							<div class="alert-msg-add alertAddmsg">
+								<p>Le slide a bien été supprimé</p>
+							</div>
+						</c:if>
+						<c:if test="${SlidemsgNoDelete}">
+							<div class="alert-msg-add alertNoAddmsg">
+								<p>Le slide n'a pas pu être supprimé</p>
+							</div>
+						</c:if>	
 					</form>
 				</div>
 			</section>
