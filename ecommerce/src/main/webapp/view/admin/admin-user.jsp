@@ -41,26 +41,26 @@
 
 				<form method="post">
 					<button type="submit" name="btnFilterId"
-						class="m-3 ml-3 btn btn-dark">Filtrer par Id</button>
+						class="m-3 ml-3 btn btn-dark btn-filter-users">Filtrer par Id</button>
 				</form>
 				<form method="post">
-					<button type="submit" name="btnFilterNom" class="m-3 btn btn-dark">Filtrer
+					<button type="submit" name="btnFilterNom" class="m-3 btn btn-dark btn-filter-users">Filtrer
 						par Nom</button>
 				</form>
 				<form method="post">
 					<button type="submit" name="btnFilterPrenom"
-						class="m-3 btn btn-dark">Filtrer par Prenom</button>
+						class="m-3 btn btn-dark btn-filter-users">Filtrer par Prenom</button>
 				</form>
 				<form method="post">
-					<button type="submit" name="btnFilterMail" class="m-3 btn btn-dark">Filtrer
+					<button type="submit" name="btnFilterMail" class="m-3 btn btn-dark btn-filter-users">Filtrer
 						par Mail</button>
 				</form>
 				<form method="post">
-					<div class="input-group m-3">
-						<input type="text" class="form-control" placeholder="Recherche"
+					<div class="input-group m-3 input-group-search">
+						<input type="text" class="form-control input-filter-users-search" placeholder="Recherche"
 							aria-label="Recherche" aria-describedby="btnSearch"
 							name="inputSearch">
-						<button type="submit" name="btnSearch" class=" btn btn-dark"
+						<button type="submit" name="btnSearch" class=" btn btn-dark btn-filter-users-search"
 							id="btnSearch">Rechercher</button>
 					</div>
 				</form>
@@ -93,9 +93,9 @@
 									<td><c:out value="${user.email }" /></td>
 									<td><c:out value="${user.telephone }" /></td>
 									<td><a href="adminUserDetails?id=${user.id_utilisateur }"><button
-												type="button" class="btn btn-success">Show</button></a></td>
+												type="button" class="btn btn-success btn-show-user">Show</button></a></td>
 									<td>
-										<button type="button" class="btn btn-danger"
+										<button type="button" class="btn btn-danger btn-delete-user"
 											data-bs-toggle="modal" data-bs-target="#modalSupp-<c:out value="${user.id_utilisateur }" />">Delete</button>
 									</td>
 								</tr>
