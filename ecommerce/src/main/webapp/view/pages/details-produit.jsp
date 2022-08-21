@@ -62,7 +62,10 @@ pageEncoding="UTF-8"%>
 			<div class="container-description">
 				<div class="container-title-icon">
 					<p class="title"><c:out value="${produit.titre }" /></p>
-					<img class="icon-bookmark" alt="bookmark" src="assets/icon/bookmark.svg">
+					<% if((boolean)session.getAttribute("isConnected")==true){ %>
+				<form method="post">	<button type="submit" name="btnFav" value="${produit.id_produit}">	<img class="icon-bookmark" alt="Icon d'ajout à la liste de favoris" src="assets/icon/wishlist-add.svg"> </button></form>
+				<% } %>
+				
 				</div>
 				<p class="text-description"><c:out value="${produit.description }" /></p>
 				<div class="quantity-form">
@@ -83,6 +86,8 @@ pageEncoding="UTF-8"%>
 		
 			<!-- Comments -->
 		<div class="container-comments">
+		<% if((boolean)session.getAttribute("isConnected")==true){ %>
+		
 			<!-- Add a comment and note on Mobile / tablette -->
 			<div class="container-comments-form">
 				<form method="post">
@@ -110,6 +115,7 @@ pageEncoding="UTF-8"%>
 					 </div>
 				</form>			
 			</div>
+			
 						
 			<!-- Hidden form for desktop only -->
 			<div class="container-form-hidden">
@@ -137,6 +143,28 @@ pageEncoding="UTF-8"%>
 					</div>
 				</form>
 			</div>
+		<% } %>
+		<% if((boolean)session.getAttribute("isConnected")==false){ %>
+		<div class="container-form-hidden">
+					
+						<h5> Veuillez vous connecter pour laisser un commentaire</h5>
+				
+				
+			</div>
+			<% } %>
+		
+		<c:if test="${empty commentaires}">
+		<div class="container-all-comments-users">
+				
+					<div class="card-comment">
+						<div class="container-msg">
+							<h5>Il n'y a pas encore de commentaire sur cet article.</h5>
+						</div>
+					</div>
+				
+			</div>	
+		
+		</c:if>
 		
 			<!-- the card that will be in a loop to display comments -->
 			<div class="container-all-comments-users">
@@ -152,9 +180,9 @@ pageEncoding="UTF-8"%>
 						</div>
 					</div>
 				</c:forEach>
-			</div>
-			
-			
+			</div>	
+		
+		
 		</div>
 	</div>
 	

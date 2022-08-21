@@ -294,10 +294,33 @@
 	}
 }
 
+/* button add to fav */
+
+.container-title-icon button{
+	border:none;
+	background:transparent;
+	cursor: pointer;
+	width: 16px;
+}
+
+
+@media screen and (min-width:604px){
+	.container-title-icon button {
+		width:20px;
+	}
+}
+
+@media screen and (min-width:820px){
+	.container-title-icon button{
+		margin-right:0;
+		width: 22px;
+	}
+}
+
 
 /*  button add to cart  */
 
-.container-description button {	
+.quantity-form button {	
 	border: none;
     border-radius: 6px;
     background: black;
@@ -311,7 +334,7 @@
 }
 
 @media screen and (min-width:820px){
-	.container-description button {
+	.quantity-form button {
 		width:300px;
 		height:60px;
 		font-size:22px;	
@@ -320,7 +343,7 @@
 
 
 @media screen and (min-width:1200px){
-	.container-description button {
+	.quantity-form button {
 	    width: 280px;
 	    height: 48px;
 	    font-size: 18px;
@@ -328,21 +351,21 @@
 }
 
 @media screen and (min-width:1400px){
-	.container-description button {
+	.quantity-form button {
 	     width: 346px;
 	    height: 48px;
 	    font-size: 18px;
 	}
 }		
 
-.container-description button span{
+.quantity-form button span{
 	position: relative; 
   	z-index: 1;
     margin-bottom: 0;
     margin-left: 10px;
 }
 
-.container-description button:after {
+.quantity-form button:after {
   content: "";
   position: absolute;
   left: 0;
@@ -356,7 +379,7 @@
   transform: translateX(-150%) translateY(-25%) rotate(45deg);
 }
 
-.container-description button:hover:after {
+.quantity-form button:hover:after {
 	 -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
  	transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
