@@ -11,11 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.CommentairesDao;
+import dao.FavorisDao;
 import dao.ImagesDao;
 import dao.ProduitsDao;
 import dao.UtilisateursDao;
 import dao.VisitesDao;
 import model.CommentairesM;
+import model.FavorisM;
 import model.ImagesM;
 import model.PanierDetailsM;
 import model.PanierM;
@@ -92,6 +94,23 @@ public class DetailsProduit extends HttpServlet {
 			panier.add(panieradd);
 			session.setAttribute( "panier", panier );
 		}	
+		
+		// add to wish list
+		if(request.getParameter("btnFav")!=null ) {
+			
+			HttpSession session = request.getSession();
+			int userId = (int)session.getAttribute("userid");
+			int produitId = Integer.parseInt(request.getParameter("btnFav")) ;
+			FavorisM fav = new FavorisM();
+			fav.setId_utilisateur(uDao.findById(userId));
+			fav.setId_produit(produitsDao.findById(produitId));
+			
+			FavorisDao favDao = new FavorisDao();
+			request.setAttribute("listAddress", favDao.create(fav));
+	
+			
+		}
+		
 	
 		
 		// read comm
