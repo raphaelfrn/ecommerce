@@ -100,20 +100,25 @@ pageEncoding="UTF-8"%>
 					<article class="container-contact">
 						<div class="container-infos"><h1>Contact</h1><p><span>+</span>${NbrContactNotRead} demandes non lu</p></div>
 						<div class="container-admin-commments">
-							 <c:forEach items="${listLastContact}" var="listLastContact">
+							<c:forEach items="${listLastContact}" var="listLastContact">
 								<div class="container-comment-infos"> <img class="admin-icon-contact"  alt="Icon commentaire" src="assets/icon/comment1.svg"> <p class="admin-comment">${listLastContact.id_utilisateur.nom} ${listLastContact.id_utilisateur.prenom}, ${listLastContact.message} </p></div>
-						</c:forEach>
-							
+							</c:forEach>
 						</div>
 						<button>Voir toutes les demandes</button>
 					</article>
 					
 					<article class="container-comments">
-						<div class="container-infos"><h1>Commentaires</h1><p><span>+</span>10 commentaires</p></div>
+						<div class="container-infos"><h1>Commentaires</h1><p><span>+</span>${NbrLastComments} commentaires</p></div>
 						<div class="container-admin-commments">
-							<div class="container-comment-infos"> <img class="admin-icon-comment" alt="Icon commentaire" src="assets/icon/comment1.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement </p></div>
-							<div class="container-comment-infos"> <img class="admin-icon-comment" alt="Icon commentaire" src="assets/icon/comment2.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement lkkldsjkldsjvkdfvkjdsjkv v, bvjdfbvjdbsfnvjd  </p></div>
-							<div class="container-comment-infos"> <img class="admin-icon-comment" alt="Icon commentaire" src="assets/icon/comment3.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement klnvkjfd vjhdbvjh vjhdbjhs cjhdsbcsdl cjlsd clhjds cjds </p></div>
+							<c:forEach items="${lastComments}" var="lastComments">
+								<div class="container-comment-infos"> 
+									<img class="admin-icon-comment" alt="Icon commentaire" src="assets/icon/comment1.svg">
+									<p class="admin-comment">${lastComments.id_utilisateur.nom} ${lastComments.id_utilisateur.prenom}, ${lastComments.commentaire}</p>
+								</div>
+							</c:forEach>
+							
+<!-- 							<div class="container-comment-infos"> <img class="admin-icon-comment" alt="Icon commentaire" src="assets/icon/comment2.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement lkkldsjkldsjvkdfvkjdsjkv v, bvjdfbvjdbsfnvjd  </p></div> -->
+<!-- 							<div class="container-comment-infos"> <img class="admin-icon-comment" alt="Icon commentaire" src="assets/icon/comment3.svg"> <p class="admin-comment">Dupont Marc, Commentaire renseignement klnvkjfd vjhdbvjh vjhdbjhs cjhdsbcsdl cjlsd clhjds cjds </p></div> -->
 						</div>
 						<button>Voir tous les commentaires</button>
 					</article>
