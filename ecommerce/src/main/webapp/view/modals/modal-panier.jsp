@@ -84,7 +84,7 @@
 			<div>
 				<div class="container-modal-total">
 					<p>Total :</p>
-					<p>${total}€</p>
+					<p>${total} &euro;</p>
 				</div>
 
 				<div class="container-modal-panier-btn">

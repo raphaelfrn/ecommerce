@@ -77,6 +77,7 @@ public class Produits extends HttpServlet {
 
 			
 			// add to wish list
+			boolean addWishList = false;
 			if(request.getParameter("btnFav")!=null ) {
 				
 				HttpSession session = request.getSession();
@@ -88,14 +89,14 @@ public class Produits extends HttpServlet {
 				FavorisM fav = new FavorisM();
 				fav.setId_utilisateur(uDao.findById(userId));
 				fav.setId_produit(produitsDao.findById(produitId));
-				
+				addWishList = true;
 				
 				FavorisDao favDao = new FavorisDao();
 				request.setAttribute("listAddress", favDao.create(fav));
 		
 				
 			}
-	
+			request.setAttribute("addWishList", addWishList);
 	
 			
 		

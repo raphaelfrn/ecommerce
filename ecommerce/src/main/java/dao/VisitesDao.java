@@ -147,5 +147,82 @@ public class VisitesDao implements IDao<VisitesM> {
 		}
 		return visite;
 	}
-
+	
+	// visit By Product
+	public ArrayList<VisitesM> visitByProd() {
+		ArrayList<VisitesM> listeVisiteByProd = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("	SELECT COUNT(visites.id_produit), visites.id_produit, titre FROM `visites` "
+					+ "INNER JOIN produits on produits.id_produit = visites.id_produit GROUP BY produits.titre");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				VisitesM visite = new VisitesM(
+						
+						new ProduitsM(rs.getInt("id_produit"), rs.getString("titre"))
+						);
+				listeVisiteByProd.add(visite);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeVisiteByProd;
+	}
+	
+	// Nbr visit By Product
+		public ArrayList<Integer> nbrVisitByProd() {
+			ArrayList<Integer> listeNbrVisiteByProd = new ArrayList<>();
+			int  nbrV = 0;
+			try {
+				PreparedStatement req = connect.prepareStatement("	SELECT COUNT(visites.id_produit) FROM `visites` "
+						+ "INNER JOIN produits on produits.id_produit = visites.id_produit GROUP BY produits.titre");
+				
+				ResultSet rs = req.executeQuery();
+				
+				while (rs.next()) {
+					nbrV =rs.getInt(1);	
+					listeNbrVisiteByProd.add(nbrV);
+				}
+				
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return listeNbrVisiteByProd;
+		}
+		
+		//Visit By Year
+		public ArrayList<VisitesM> visitByYear() {
+			ArrayList<VisitesM> listeVisite = new ArrayList<>();
+			
+			try {
+				PreparedStatement req = connect.prepareStatement("SELECT * FROM `visites` WHERE YEAR(dateV) = YEAR(CURRENT_DATE)");
+				
+				ResultSet rs = req.executeQuery();
+				
+				while (rs.next()) {
+					VisitesM visite = new VisitesM(
+							rs.getInt("id_visite"),
+							new ProduitsM(rs.getInt("id_produit")),
+							new UtilisateursM(rs.getInt("id_utilisateur")),
+							rs.getDate("dateV")
+									
+							);
+					listeVisite.add(visite);
+				}
+				
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return listeVisite;
+		}
+				
 }

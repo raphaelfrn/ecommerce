@@ -44,7 +44,7 @@ public class Details_commandeDao implements IDao<Details_commandeM> {
 
 	@Override
 	public ArrayList<Details_commandeM> read() {
-ArrayList<Details_commandeM> listeDetail = new ArrayList<>();
+		ArrayList<Details_commandeM> listeDetail = new ArrayList<>();
 		
 		try {
 			PreparedStatement req = connect.prepareStatement("SELECT * FROM details_commande");
@@ -177,7 +177,56 @@ ArrayList<Details_commandeM> listeDetail = new ArrayList<>();
 		return listeDetail;
 	}
 	
+	// Produit Phare
+	public Details_commandeM productBestSeller() {
+		Details_commandeM detail = null;
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT id_details_commande, id_commande, details_commande.id_produit, produits.titre, "
+					+ "produits.image, quantite, MAX(quantite), produits.prix, details_commande.prix FROM `details_commande` INNER JOIN produits on produits.id_produit = details_commande.id_produit");
+			
+			ResultSet rs = req.executeQuery();
+			
+			if(rs.next()) {
+				 detail = new Details_commandeM(
+						rs.getInt("id_details_commande"),
+						new CommandesM(rs.getInt("id_commande")),
+						new ProduitsM(rs.getInt("id_produit"), rs.getString("titre"), rs.getFloat("prix"), rs.getString("image")),
+						rs.getInt("quantite"),
+						rs.getFloat("prix")			
+						);
+			}	
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return detail;
+	}
 
-
+	// Total by Categorie
+	public ArrayList<Integer> totalCaByCat() {
+		ArrayList<Integer> listTotalByCat = new ArrayList<>();
+		int  totalCaByCat = 0;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT AVG(commandes.total) FROM details_commande"
+					+ " INNER JOIN produits on produits.id_produit = details_commande.id_produit INNER JOIN sous_categories "
+					+ "on sous_categories.id_sous_categorie = produits.id_sous_categorie INNER JOIN categories "
+					+ "on categories.id_categorie = sous_categories.id_categorie INNER JOIN commandes "
+					+ "on commandes.id_commande = details_commande.id_commande Group BY categories.id_categorie");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				totalCaByCat =rs.getInt(1);	
+				listTotalByCat.add(totalCaByCat);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listTotalByCat;
+	}
 	
 }

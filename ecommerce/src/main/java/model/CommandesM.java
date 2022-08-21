@@ -17,9 +17,17 @@ public class CommandesM {
 
 	public CommandesM(int id_commande) {
 		this.id_commande = id_commande;
-	}
-		
+	}	
 	
+	public CommandesM(float total) {
+		this.total = total;
+	}
+
+	public CommandesM(int id_commande, float total) {
+		this.id_commande = id_commande;
+		this.total = total;
+	}
+
 	public CommandesM(UtilisateursM id_utilisateur, Date dateC, float total) {
 		super();
 		this.id_utilisateur = id_utilisateur;

@@ -21,7 +21,17 @@ public class ProduitsM {
 		this.id_produit = id_produit;
 	}
 
+	public ProduitsM(int id_produit, String titre) {
+		this.id_produit = id_produit;
+		this.titre = titre;
+	}
 
+	public ProduitsM(int id_produit, String titre, float prix, String image) {
+		this.id_produit = id_produit;
+		this.titre = titre;
+		this.prix = prix;
+		this.image = image;
+	}
 
 	public ProduitsM(int id_produit, String titre, String description, float prix, String image,
 			Sous_categoriesM id_sous_categorie, int stock, int stock_minimum) {

@@ -32,23 +32,30 @@ pageEncoding="UTF-8"%>
 						<div class="container-sales">
 							<article class="container-total-sales container-total-sales-years">
 								<div class="container-infos"><h1>CA annuel</h1></div>
-								<p class="total-CA">455000 €</p>
+								<c:forEach items="${caByYear}" var="caByYear">
+									<p class="total-CA">${caByYear} €</p>
+								</c:forEach>							
 							</article>
 							<article class="container-total-sales container-total-sales-month">
 								<div class="container-infos"><h1>CA mensuel</h1><p><span>+</span>25<span>%</span></p></div>
-								<p class="total-CA">395349 €</p>
+								<c:forEach items="${caByMonth}" var="caByMonth">
+									<p class="total-CA">${caByMonth} €</p>
+								</c:forEach>	
 							</article>
 
 						</div>
 						<div class="container-leader-visites">
 							<article class="container-leader-product">
 								<div class="container-infos"><h1>Produit Phare</h1></div>
-								<p><span>+</span>25000 €</p>
-								<div class="container-leader-product-img"><img alt="Image produit leader" src="assets/img/enceintes/Phantom-1/Phantom-1-Black300x300.webp"></div>
-								<h1 class="leader-product">Phantom I Black</h1>
+								<p><span>+</span>${totalBestSeller} €</p>
+								<div class="container-leader-product-img">
+									<img alt="Image produit leader" src=${listBestSeller.id_produit.image }>
+								</div>
+								<h1 class="leader-product">${listBestSeller.id_produit.titre }</h1>
 							</article>
+							
 							<article class="container-chart-visite">
-								<div class="container-infos container-chart-infos"><h1>Visites</h1> <p>Nbr de visites: <span>18850</span> </p> </div>
+								<div class="container-infos container-chart-infos"><h1>Visites</h1> <p>Nbr de visites: <span>${visitByYear}</span> </p> </div>
 								<canvas id="chartVisite" aria-label="chart" role="img" ></canvas>
 							</article>
 						</div>
@@ -61,7 +68,7 @@ pageEncoding="UTF-8"%>
 				</div>
 	
 				<article class="container-last-clients">
-					<div class="container-infos"><h1>Nbr de clients : ${listUserNnbr}</h1><p><span>+</span>160<span></span></p></div>
+					<div class="container-infos"><h1>Nbr de clients : ${listUserNnbr}</h1><p><span>+</span>${usersByMonth}<span></span></p></div>
 						<c:forEach items="${listUsersLastRegister}" var="listUsersLastRegister">
 							<div class="container-clients">
 								<div class="container-clients-infos"> 
@@ -123,13 +130,21 @@ pageEncoding="UTF-8"%>
 		<c:forEach items="${listCat}" var="listCat">
 			<p class="data-title-cat">${listCat.titre}</p>
 		</c:forEach>
+		
+		<c:forEach items="${totalCaByCat}" var="totalCaByCat">
+			<p class="data-Ca-by-cat">${totalCaByCat}</p>
+		</c:forEach>
 
 		<c:forEach items="${listSousCat}" var="listSousCat">
 			<p class="data-title-sous-cat">${listSousCat.titre}</p>
 		</c:forEach>
 
-		<c:forEach items="${listProducts}" var="listProducts">
-			<p class="data-title-products">${listProducts.titre}</p>
+		<c:forEach items="${visitByProd}" var="visitByProd">
+			<p class="data-title-products">${visitByProd.id_produit.titre}</p>
+		</c:forEach>
+		
+		<c:forEach items="${nbrVisitByProd}" var="nbrVisitByProd">
+			<p class="data-title-nbr-visit">${nbrVisitByProd}</p>
 		</c:forEach>
 		
 		<c:forEach items="${listSearch}" var="listSearch">
@@ -139,6 +154,7 @@ pageEncoding="UTF-8"%>
 		<c:forEach items="${listSearchCount}" var="listSearchCount">
 			<p class="data-mot-cle-search-count">${listSearchCount}</p>
 		</c:forEach>
+		
 	</section>
 </body>
 </html>

@@ -22,6 +22,9 @@ public class VisitesM {
 		this.dateV = dateV;
 	}
 	
+	public VisitesM(ProduitsM id_produit) {
+		this.id_produit = id_produit;
+	}
 	// Getters and Setters
 
 	

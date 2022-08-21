@@ -126,7 +126,7 @@
 								
 								<% if((boolean)session.getAttribute("isConnected")==false){ %>
 									<div class="container-total-infos-command-client">
-	            						<p>Adresse : Veuillez vous connecter et rafraîchir la page (F5)  </p>
+	            						
 	            					</div>
             					
 								<% }else{ %>
