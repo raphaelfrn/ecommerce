@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.CategorieDao;
 import dao.CommandesDao;
+import dao.CommentairesDao;
 import dao.ContactDao;
 import dao.Details_commandeDao;
 import dao.ProduitsDao;
@@ -18,7 +18,7 @@ import dao.RecherchesDao;
 import dao.Sous_categoriesDao;
 import dao.UtilisateursDao;
 import dao.VisitesDao;
-import model.Details_commandeM;
+//import model.Details_commandeM;
 
 /**
  * Servlet implementation class AdminDashboard
@@ -36,6 +36,7 @@ public class AdminDashboard extends HttpServlet {
 		CommandesDao commandesDao = new CommandesDao();
 		Details_commandeDao detailsCoDao = new Details_commandeDao();
 		VisitesDao visitDao = new VisitesDao();
+		CommentairesDao commentDao = new CommentairesDao();
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -71,6 +72,11 @@ public class AdminDashboard extends HttpServlet {
 		request.setAttribute("caByMonth", commandesDao.caByMonth());
 		request.setAttribute("listBestSeller", detailsCoDao.productBestSeller());
 		request.setAttribute("totalCaByCat", detailsCoDao.totalCaByCat());
+		
+		request.setAttribute("lastComments", commentDao.lastComments());
+		request.setAttribute("NbrLastComments", commentDao.read().size());
+		System.out.println(commentDao.read().size());
+		
 		
 		//Total BestSeller
 		float price = detailsCoDao.productBestSeller().getPrix();

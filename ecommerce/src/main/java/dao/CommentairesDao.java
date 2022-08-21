@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.CommentairesM;
+import model.ContactM;
 import model.ProduitsM;
 import model.UtilisateursM;
 
@@ -207,6 +208,36 @@ ArrayList<CommentairesM> listeCommentaire = new ArrayList<>();
 				e.printStackTrace();
 			}
 			return listeCommentaire;
+	}
+	
+	// 3 comments last
+	public ArrayList<CommentairesM> lastComments() {
+		ArrayList<CommentairesM> listeComments = new ArrayList<>();
+		
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT * FROM commentaires inner join utilisateurs "
+					+ "on commentaires.id_utilisateur = utilisateurs.id_utilisateur INNER JOIN produits "
+					+ "on produits.id_produit = commentaires.id_produit ORDER by id_commentaire DESC LIMIT 3");
+			
+			ResultSet rs = req.executeQuery();
+			
+			while (rs.next()) {
+				CommentairesM comment = new CommentairesM(
+						rs.getInt("id_commentaire"),
+						rs.getString("commentaire"),
+						rs.getInt("note"),
+						new ProduitsM(rs.getInt("id_produit"), rs.getString("titre")),
+						new UtilisateursM(rs.getInt("id_utilisateur"), rs.getString("nom"), rs.getString("prenom"))		
+						);
+				listeComments.add(comment);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listeComments;
 	}
 
 	
