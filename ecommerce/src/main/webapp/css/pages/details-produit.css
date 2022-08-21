@@ -81,8 +81,8 @@
 
 @media screen and (min-width:1200px){
 	.mySlides img {
-			width: 38vw;
-		    height: 55vh;
+		width: 38vw;
+		height: 65vh;
 	}	
 }
 
@@ -160,8 +160,8 @@
 	
 	.container-all-Thumbnail  {
 		margin-right: 3%;
-		height: 55vh;
 		width: 8.5vw;
+		max-height: 65vh;
 	}
 }
 
@@ -752,10 +752,9 @@
 	}
 }
 
-
-
-.container-msg{
-	margin-bottom:5%;
+.container-msg h8 {
+	margin: 0!important;
+	color: #cf9415
 }
 
 @media screen and (min-width:1200px){
