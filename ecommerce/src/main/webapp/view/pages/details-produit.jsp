@@ -147,23 +147,18 @@ pageEncoding="UTF-8"%>
 		<% if((boolean)session.getAttribute("isConnected")==false){ %>
 		<div class="container-form-hidden">
 					
-						<h5> Veuillez vous connecter pour laisser un commentaire</h5>
+						<h8> Veuillez vous connecter pour laisser un commentaire</h8>
 				
 				
 			</div>
 			<% } %>
 		
 		<c:if test="${empty commentaires}">
-		<div class="container-all-comments-users">
-				
-					<div class="card-comment">
-						<div class="container-msg">
-							<h5>Il n'y a pas encore de commentaire sur cet article.</h5>
-						</div>
-					</div>
-				
+			<div class="container-all-comments-users">
+				<div class="container-msg">
+					<h8>Il n'y a pas encore de commentaire sur cet article.</h8>
+				</div>
 			</div>	
-		
 		</c:if>
 		
 			<!-- the card that will be in a loop to display comments -->
