@@ -45,7 +45,7 @@ public class CommandesDao implements IDao<CommandesM> {
 	
 	@Override
 	public ArrayList<CommandesM> read() {
-ArrayList<CommandesM> listeCommande = new ArrayList<>();
+		ArrayList<CommandesM> listeCommande = new ArrayList<>();
 		
 		try {
 			PreparedStatement req = connect.prepareStatement("SELECT * FROM commandes");
@@ -241,7 +241,50 @@ ArrayList<CommandesM> listeCommande = new ArrayList<>();
 				return listeCommande;
 			}
 	
+	// CA annuel
+	public ArrayList<Object> caByYear() {
+		ArrayList<Object> listCaByYear = new ArrayList<>();
+		float ca =0;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT SUM(total) FROM commandes WHERE YEAR(dateC) = YEAR(CURRENT_DATE)");
+		
+			ResultSet rs = req.executeQuery();
+					
+			while (rs.next()) {
+				ca =rs.getFloat(1);	
+				listCaByYear.add(ca);		
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listCaByYear;
+	}
 	
+	// CA monsuel 
 	
+	public ArrayList<Object> caByMonth() {
+		ArrayList<Object> listCaByMonth = new ArrayList<>();
+		float ca =0;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT SUM(total) FROM commandes WHERE YEAR(dateC) = YEAR(CURRENT_DATE) and MONTH(dateC) = MONTH(CURRENT_DATE)");
+		
+			ResultSet rs = req.executeQuery();
+					
+			while (rs.next()) {
+				ca =rs.getFloat(1);	
+				listCaByMonth.add(ca);		
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return listCaByMonth;
+	}
+
 	
 }

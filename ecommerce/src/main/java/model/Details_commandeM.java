@@ -13,8 +13,7 @@ public class Details_commandeM {
 	
 	public Details_commandeM() {
 	}
-
-
+	
 	public Details_commandeM(int id_details_commande, CommandesM id_commande, ProduitsM id_produit, int quantite,
 			float prix) {
 		this.id_details_commande = id_details_commande;

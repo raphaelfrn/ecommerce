@@ -504,5 +504,26 @@ public class UtilisateursDao implements IDao<UtilisateursM> {
 					e.printStackTrace();
 				}
 				return listeUtilisateur;
+	}
+	
+	//  New users by  month
+	public int usersByMonth() {
+		int users =0;
+		try {
+			PreparedStatement req = connect.prepareStatement("SELECT COUNT(*) FROM utilisateurs WHERE YEAR(date_inscription) = YEAR(CURRENT_DATE)"
+					+ " and MONTH(date_inscription) = MONTH(CURRENT_DATE)");
+		
+			ResultSet rs = req.executeQuery();
+					
+			if (rs.next()) {
+				users =rs.getInt(1);			
 			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return users;
+	}
+	
 }

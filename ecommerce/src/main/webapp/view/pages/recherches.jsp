@@ -67,8 +67,8 @@
 			
 				<div class="card-produit-infos">
 					<p><c:out value="${search.prix }"/> €</p>
-					<img alt="Icon étoile" src="assets/icon/star.svg">
-					<span>4,5</span>
+<!-- 					<img alt="Icon étoile" src="assets/icon/star.svg"> -->
+<!-- 					<span>4,5</span> -->
 				</div>
 	
 				<div class="card-produit-icons-add">

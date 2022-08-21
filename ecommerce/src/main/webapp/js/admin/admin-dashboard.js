@@ -5,7 +5,9 @@ const chartSearch = document.getElementById("chartSearch");
 //Data
 let data_sousCat = document.querySelectorAll(".data-title-sous-cat");
 let data_product_title = document.querySelectorAll(".data-title-products");
+let data_nbr_visit = document.querySelectorAll(".data-title-nbr-visit");
 let data_cat = document.querySelectorAll(".data-title-cat");
+let data_ca_by_cat = document.querySelectorAll(".data-Ca-by-cat");
 let data_motCle = document.querySelectorAll(".data-mot-cle-search");
 let data_motCle_count = document.querySelectorAll(".data-mot-cle-search-count");
 
@@ -79,18 +81,23 @@ adminIconComment.forEach(function(element,  index, arr){
 
 
 // Graphique visite
-let arrayNameUser = [];
+let arrayTitleProd = [];
 data_product_title.forEach(function(element){
-	arrayNameUser.push(element.textContent);
+	arrayTitleProd.push(element.textContent);
 })
+
+let arrayNbrVisit = [];
+data_nbr_visit.forEach(function(element){
+	arrayNbrVisit.push(element.textContent);
+}) 
+console.log(arrayNbrVisit)
 
 const  visiteChart = new Chart(chartVisite, {
 	type: "bar",
 	data: {
-		labels: arrayNameUser,
+		labels: arrayTitleProd,
 		datasets: [{
-			data: [250, 190, 400, 100, 20, 400, 134, 208, 167, 600, 52, 298, 67, 67, 567, 345,299,204, 600, 456, 324,56, 573,294,100, 78, 
-			123, 343, 567, 89, 345, 209, 134, 58],
+			data:arrayNbrVisit,
 			
 		backgroundColor: [
 						'#c2bc97',
@@ -110,7 +117,7 @@ const  visiteChart = new Chart(chartVisite, {
 		},
 		scales: {
 			y: { 
-				suggestedMax: 600,
+//				suggestedMax: 600,
 				grid: {
 					display: false 
 				},
@@ -142,10 +149,15 @@ data_cat.forEach(function(element){
 	arrayCat.push(element.textContent);
 })
 
+let arrayCaByCat= [];
+data_ca_by_cat.forEach(function(element){
+	arrayCaByCat.push(element.textContent);
+})
+
 const dataCat = {
   labels: arrayCat,
   datasets: [{
-    data: [20, 10, 16, 10],
+    data: arrayCaByCat,
     backgroundColor: [
 			'#000807',
 			'#051c1b',
