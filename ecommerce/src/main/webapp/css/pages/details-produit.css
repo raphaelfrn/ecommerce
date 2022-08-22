@@ -223,7 +223,7 @@
 	display:flex;
 	align-items:center;
 	justify-content: space-between;
-	align-items: baseline;
+	align-items: flex-start;
 }
 
 
@@ -242,7 +242,13 @@
 @media screen and (min-width:820px){
 	.icon-bookmark{
 		margin-right:0;
-		width: 22px;
+		width: 26px;
+	}
+}
+
+@media screen and (min-width:820px){
+	.icon-bookmark{
+		width: 30px;
 	}
 }
 
