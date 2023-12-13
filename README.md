@@ -20,10 +20,13 @@ git clone git@github.com:raphaelfrn/ecommerce.git
 ```
 
 
-Make sure to create a table "ecommerce" in Xampp and import the eCommerce.sql file, otherwise it won't load
-in eclipse, select import project from files, and add the ecommerce file.
-Right click on the project in eclipse, and just click "Run on Server"
-If you face a 404 try adding /home to the url
+-Make sure to create a table "ecommerce" in Xampp and import the eCommerce.sql file, otherwise it won't load
+<br/>
+-in eclipse, select import project from files, and add the ecommerce file.
+<br/>
+-Right click on the project in eclipse, and just click "Run on Server"
+<br/>
+-If you face a 404 try adding /home to the url
 
 
 
