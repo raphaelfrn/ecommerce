@@ -4,7 +4,7 @@ This app is a student project made at Afpa in 2022, created by [Mauduit-0] and m
 With 18 tables, and an administration menu, it's possible to Create Read Update or Delete anything on the site.
 It is possible to manage products, purchase, orders, invoices, categories, subcategories, research every products on the site, customize videos and images sliders, manage customers, delivery adresses linked to customers and use a wishlist.
 
-##Required
+## Required
 Java 17
 <br/>
 [Tomcat] 9
@@ -13,7 +13,7 @@ Eclipse 2022-06
 <br/>
 Xampp (or whatever you want for mysql db)
 
-##How to setup:
+## How to setup:
 
 ```sh
 git clone git@github.com:raphaelfrn/ecommerce.git
